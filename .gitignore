@@ -1,6 +1,12 @@
+/bin
+
 *.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
+
+*.orig
+*.sql
+
+Settings.properties
