@@ -1022,7 +1022,7 @@ public class MetFrag {
 			WrapperSpectrum spec, boolean useProxy, double mzabs,
 			double mzppm, double searchppm, boolean molredundancycheck,
 			boolean breakRings, int treeDepth, boolean hydrogenTest, boolean neutralLossInEveryLayer, 
-			boolean bondEnergyScoring, boolean breakOnlySelectedBonds, int limit, boolean isStoreFragments, 
+			boolean bondEnergyScoring, boolean breakOnlySelectedBonds, int startindex, int endindex, boolean isStoreFragments, 
 			String pathToStoreFrags, int numberThreads, String chemSpiderToken, boolean verbose,
 			String sampleName, boolean localdb, boolean onlyChnopsCompounds, String dblink, String dbuser,
 			String dbpass, boolean uniqueInchi) {
@@ -1068,9 +1068,11 @@ public class MetFrag {
 	    FragmenterThread.setVerbose(verbose);
 	    FragmenterThread.setSizeCandidates(candidates.size());
 	    
-		for (int c = 0; c < candidates.size(); c++) {
-			if(c > limit)
-				break;
+	    endindex = Math.min(endindex, candidates.size());
+
+	    FragmenterThread.setCandidateNumber(startindex);
+	    
+		for (int c = startindex - 1; c < endindex; c++) {
 			FragmenterThread ft = new FragmenterThread(candidates.get(c), database, pubchem, spec, mzabs, mzppm, 
 					molredundancycheck, molredundancycheck, treeDepth, hydrogenTest, neutralLossInEveryLayer, 
 					bondEnergyScoring, breakOnlySelectedBonds, chemSpiderToken, isStoreFragments, pathToStoreFrags, 

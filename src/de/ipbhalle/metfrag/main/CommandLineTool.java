@@ -68,7 +68,6 @@ public class CommandLineTool {
 	public static MutualInteger treeDepth = new MutualInteger(2);
 	public static MutualInteger mode = new MutualInteger(3);
 	public static String formula = "";
-	public static boolean molredundancycheck = false;
 	public static boolean breakRings = false;
 	public static boolean storeFragments = false;
 	public static String resultspath = System.getProperty("java.io.tmpdir");
@@ -84,6 +83,8 @@ public class CommandLineTool {
 	public static String settingsfile = "";
 	public static MutualInteger charge = new MutualInteger(1);
 	public static boolean uniquebyinchi = false;
+	public static MutualInteger startindex = new MutualInteger(1);
+	public static MutualInteger endindex = new MutualInteger(Integer.MAX_VALUE);
 	
 	public static boolean databaseIsSet = false;
 	public static boolean locationIsSet = false;
@@ -96,7 +97,6 @@ public class CommandLineTool {
 	public static boolean treedepthIsSet = false;
 	public static boolean modeIsSet = false;
 	public static boolean formulaIsSet = false;
-	public static boolean molredundancycheckIsSet = false;
 	public static boolean breakRingsIsSet = false;
 	public static boolean storeFragmentsIsSet = false;
 	public static boolean resultPathIsSet = false;
@@ -109,6 +109,7 @@ public class CommandLineTool {
 	public static boolean saveParametersIsSet = false;
 	public static boolean localdbIsSet = false;
 	public static boolean chargeIsSet = false;
+	public static boolean rangeIsSet = false;
 	
 	public static boolean usesdf = false;
 
@@ -143,7 +144,6 @@ public class CommandLineTool {
 		options.addOption("t", "treedepth", true, "treedepth used for in silico fragmentation (default: 2) note: high values result in high computation time");
 		options.addOption("M", "mode", true, "mode used for measured ms/ms spectrum:\n"+Modes.getString()+"(default: 2)");
 		options.addOption("f", "formula", true, "molecular formula of measured compound used for candidate search in database (-d) (not used by default; not used if sdf database is selected (-d))");
-		options.addOption("r", "molredundancycheck", false, "use molecular formula to discard in silico genarated fragments in case of equality (not used by default) note: setting this value can reduce computation time and number of fragments");
 		options.addOption("B", "breakrings", false, "allow splitting of aromatic rings of candidate structures during in silico fragmentation (not used by default)");
 		options.addOption("F", "storefragments", false, "store in silico generated fragments of candidate molecules (not used by default)");
 		options.addOption("R", "resultspath", true, "directory where result files are stored (default: /tmp)");
@@ -157,6 +157,8 @@ public class CommandLineTool {
 		options.addOption("P", "saveparameters", false, "save used parameters (not used by default)");
 		options.addOption("e", "printexamplespecfile", false, "print an example spectrum data file (not used by default)");
 		options.addOption("C", "charge", true, "charge used in combination with mode (-M):\n"+Charges.getString()+" (default: 1)");
+		options.addOption("r", "range", true, "range of candidates that will be processed:\n N (first N), M-N (from M to N), M- (from M), -N (till N)\n" +
+				"if N is greater than the number of candidates it will be set accordingly");
 		
 		// parse the command line arguments
 		CommandLine line = null;
@@ -236,7 +238,7 @@ public class CommandLineTool {
 					System.out.println("using database "+database);
 				}
 				results = MetFrag.startConvenienceSDF(spec, mzabs.getValue(), mzppm.getValue(), searchppm.getValue(), 
-							molredundancycheck, breakRings, treeDepth.getValue(), true, false, true, false, 
+							true, breakRings, treeDepth.getValue(), true, false, true, false, 
 							Integer.MAX_VALUE, true, sdfFile, "", null, searchppmIsSet, pathToStoreFrags,
 							numberThreads.getValue(), verbose, sampleName, onlyBiologicalCompounds);
 			} catch(Exception e) {
@@ -253,10 +255,10 @@ public class CommandLineTool {
 					System.out.println("using database "+database);
 				}
 				results = MetFrag.startConvenience(database, databaseIDs, formula, exactMass.getValue(), spec, 
-						useProxy, mzabs.getValue(), mzppm.getValue(), searchppm.getValue(), molredundancycheck, 
-						breakRings, treeDepth.getValue(), true, false, true, false, Integer.MAX_VALUE, true, 
-						pathToStoreFrags, numberThreads.getValue(), chemSpiderToken, verbose, sampleName, localdb, 
-						onlyBiologicalCompounds, dblink, dbuser, dbpass, uniquebyinchi);
+						useProxy, mzabs.getValue(), mzppm.getValue(), searchppm.getValue(), true, 
+						breakRings, treeDepth.getValue(), true, false, true, false, startindex.getValue(), 
+						endindex.getValue(), true, pathToStoreFrags, numberThreads.getValue(), chemSpiderToken, 
+						verbose, sampleName, localdb, onlyBiologicalCompounds, dblink, dbuser, dbpass, uniquebyinchi);
 			} catch(Exception e) {
 				System.out.println("Error: "+e.getMessage());
 				System.out.println("Error: Could not perform in silico fragmentation step.");
@@ -283,6 +285,29 @@ public class CommandLineTool {
 				System.out.println("Warning: Unknown option "+opts[j].getOpt());
 			}
 			switch(opts[j].getOpt().charAt(0)) {
+				case 'r':
+					String startToSet = "1";
+					String endToSet = String.valueOf(Integer.MAX_VALUE);
+					String[] split = opts[j].getValue().trim().split("-");
+					if(split.length == 1) {
+						if(opts[j].getValue().trim().contains("-")) startToSet = split[0];
+						else endToSet = split[0];
+					}
+					if(split.length == 2) {
+						if(split[0].length() == 0 && split[1].length() == 0) {
+							correct = 2;
+							System.out.println("Error: Wrong value for range (-r) given!");
+						}
+						if(split[0].length() == 0) endToSet = split[1];
+						else {
+							startToSet = split[0];
+							endToSet = split[1];
+						}
+					}
+					correct = setIntegerValue(startToSet, true, "startindex", startindex);
+					correct = setIntegerValue(endToSet, true, "endindex", endindex);
+					rangeIsSet = true;
+					break;
 				case 'C':
 					correct = setIntegerValue(opts[j].getValue().trim(), true, "charge", charge);
 					chargeIsSet = true;
@@ -340,10 +365,6 @@ public class CommandLineTool {
 				case 'P': //setting formula
 					saveParameters = true;
 					saveParametersIsSet = true;
-					break;
-				case 'r': //setting molredundancycheck
-					molredundancycheck = true;
-					molredundancycheckIsSet = true;
 					break;
 				case 'v': //setting molredundancycheck
 					verbose = true;
@@ -455,6 +476,16 @@ public class CommandLineTool {
 		if(numberThreadsIsSet) {
 			if(numberThreads.getValue() == 0) {
 				System.out.println("Error: Number threads is 0. Set a minimum value of 1.");
+				correct = false;
+			}
+		}
+		if(rangeIsSet) {
+			if(startindex.getValue() < 1) {
+				System.out.println("Error: Start index is smaller than 1.");
+				correct = false;
+			}
+			if(startindex.getValue() > endindex.getValue()) {
+				System.out.println("Error: Start index ("+startindex.getValue()+") is greater than end index ("+endindex.getValue()+").");
 				correct = false;
 			}
 		}
@@ -895,7 +926,6 @@ public class CommandLineTool {
 		params += "spectrumfile:\t" + spectrumfile + "\n";
 		params += (sdfFileIsSet && sdfFile.length() != 0) ? "sdffile:\t" + sdfFile + "\n" : "sdffile:\tnot used\n";
 		params += onlyBiologicalCompounds ? "onlybiologicalcompounds:\tyes\n" : "onlybiologicalcompounds:\tno\n";
-		params += molredundancycheck ? "molredundancycheck:\tyes\n" : "molredundancycheck:\tno\n";
 		params += breakRings ? "breakrings:\tyes\n" : "breakrings:\tno\n";
 		params += storeFragments ? "storefragments:\tyes\n" : "storefragments:\tno\n";
 		params += verbose ? "verbose:\tyes\n" : "verbose:\tno\n";
@@ -1025,6 +1055,7 @@ public class CommandLineTool {
 	public static class Modes {
 		
 		private static int[] validModes = {1, 0 ,-1};
+		private static int[] validModesHelp = {3, 2 ,1};
 		private static String[] modeValues = {"[M + H]","[M]","[M - H]"};
 		
 		public static boolean contains(MutualInteger value) {
@@ -1037,7 +1068,7 @@ public class CommandLineTool {
 		public static String getString() {
 			String string = "";
 			for(int i = 0; i < validModes.length; i++) {
-				string += validModes[i]+"\t -> \t"+modeValues[i]+"\n";
+				string += validModesHelp[i]+"\t -> \t"+modeValues[i]+"\n";
 			}
 			return string;
 		}

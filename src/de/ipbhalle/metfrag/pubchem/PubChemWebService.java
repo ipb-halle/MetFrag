@@ -219,14 +219,14 @@ public class PubChemWebService {
 		String listkey = pug_soap.inputList(cids, PCIDType.eID_CID);
 		String downloadKey = pug_soap.download(listkey, FormatType.eFormat_SDF,
 				CompressType.eCompress_None, false);
-		System.out.println("DownloadKey = " + downloadKey);
 		status = null;
+		System.out.print("Waiting for download to finish...");
 		while ((status = pug_soap.getOperationStatus(downloadKey)) == StatusType.eStatus_Running
 				|| status == StatusType.eStatus_Queued) {
-			System.out.println("Waiting for download to finish...");
+			System.out.print(".");
 			Thread.sleep(1000);
 		}
-		
+		System.out.println();
 		// On success, get the download URL, save to local file
 		if (status == StatusType.eStatus_Success) {
 			
@@ -246,13 +246,11 @@ public class PubChemWebService {
 			InputStream input = fetch.getInputStream();
 
 			// open local file based on the URL file name
-            File tempFile = File.createTempFile(url.getFile().substring(url.getFile().lastIndexOf(System.getProperty("file.separator"))), ".sdf");
+		    File tempFile = File.createTempFile(url.getFile().substring(url.getFile().lastIndexOf(System.getProperty("file.separator"))), ".sdf");
 
             // Delete temp file when program exits.
             tempFile.deleteOnExit();
             FileOutputStream output = new FileOutputStream(tempFile);
-
-			System.out.println("Writing data to " + tempFile.getName());
 
 			// buffered read/write
 			byte[] buffer = new byte[10000];
@@ -269,17 +267,13 @@ public class PubChemWebService {
 	       
 	        MDLV2000Reader reader = new MDLV2000Reader(in);
 	        ChemFile fileContents = (ChemFile)reader.read(new ChemFile());
-	        System.out.println("Got " + fileContents.getChemSequence(0).getChemModelCount() + " atom containers");
 
-		   
-	        
 	        //ReaderFactory factory = new ReaderFactory();
 	        //ISimpleChemObjectReader reader = factory.createReader(in);
 	        //IChemFile content = (IChemFile)reader.read(new ChemFile());
 	        
 	        //IChemFile content = (IChemFile)cor.read(DefaultChemObjectBuilder.getInstance().newChemFile());
 	        
-	        System.out.println("Read the file");
 	        this.containers = ChemFileManipulator.getAllAtomContainers(fileContents);
 	        System.out.println("Got " + containers.size() + " atom containers");
 	        
@@ -287,7 +281,6 @@ public class PubChemWebService {
 	        SmilesGenerator generatorSmiles = new SmilesGenerator();
 			for (int i = 0; i < cids.length; i++) {
 				candidatesString.add(cids[i] + "");
-				System.out.println(cids[i]);
 				this.retrievedHits.put(cids[i], generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getMolecule(0)));
 			}
 	        
@@ -466,7 +459,7 @@ public class PubChemWebService {
 	 * @return
 	 */
 	public Vector<String> getHitsByMassHTTP(double mass, double error, int limit) {
-		Vector<String> cids = new Vector<String>();
+		java.util.Stack<String> cids = new java.util.Stack<String>();
 		double minMass = mass - error;
 		double maxMass = mass + error;
 
@@ -482,7 +475,7 @@ public class PubChemWebService {
 			String line = "";
 			while((line = breader.readLine()) != null) {
 				if(line.contains("<Id>") && line.contains("</Id>")) {
-					cids.add(line.replaceAll("\\D", "").trim());
+					cids.push(line.replaceAll("\\D", "").trim());
 				}
 			}
 			stream.close();

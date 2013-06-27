@@ -267,7 +267,7 @@ public class Candidates {
 		{
 			if(pubchem == null) return candidates;
 			if(formula != "")
-				candidates = pubchem.getHitsBySumFormulaHTTP(formula);
+				candidates = pubchem.getHitsbySumFormula(formula, false);
 			else {
 				candidates = pubchem.getHitsByMassHTTP(exactMass, (PPMTool.getPPMDeviation(exactMass, searchppm)), Integer.MAX_VALUE);
 			}

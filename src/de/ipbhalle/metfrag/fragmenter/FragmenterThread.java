@@ -76,7 +76,7 @@ public class FragmenterThread implements Runnable{
 	
 	private String chemSpiderToken = "";
 	private static boolean verbose;
-	private static int candidateNumber;
+	private static int candidateNumber = 1;
 	private static int sizeCandidates;
 	private boolean onlyChnopsCompounds = false;
 	
@@ -324,6 +324,7 @@ public class FragmenterThread implements Runnable{
 		this.sampleName = sampleName;
 		this.saveFragmentsPath = pathToStoreFrags;
 	}
+	
 	@Override public void run()
 	{		
 		IAtomContainer molecule = null;
@@ -354,15 +355,18 @@ public class FragmenterThread implements Runnable{
 			}
 			
 			if(molecule == null) {
-				if(verbose) System.out.println((++candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.candidate +" -> error reading molecule");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.candidate +" -> error reading molecule");
+				incrementCandidateNumber();
 				return;
 			}
 			else if(!ConnectivityChecker.isConnected(molecule)) {
-				if(verbose) System.out.println((++candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no connected molecule");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no connected molecule");
+				incrementCandidateNumber();
 				return;
 			}
 			else if(this.onlyChnopsCompounds && !isCHNOPSCompound(molecule)) {
-				if(verbose) System.out.println((++candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no CHNOPS compound");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no CHNOPS compound");
+				incrementCandidateNumber();
 				return;
 			}
 	        
@@ -500,7 +504,10 @@ public class FragmenterThread implements Runnable{
 					hitsListTest.add(hits.get(i).getFragment());
 				}
 
-				if(verbose) System.out.println((++candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate);
+				if(verbose) {
+					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate);
+					incrementCandidateNumber();
+				}
 			}
 			catch(CDKException e)
 			{
@@ -667,6 +674,18 @@ public class FragmenterThread implements Runnable{
 			if(!isInside) return false;
     	}
     	return true;
+	}
+
+	public static synchronized void incrementCandidateNumber() {
+		candidateNumber++;
+	}
+	
+	/**
+	 * 
+	 * @param _candidateNumber
+	 */
+	public static void setCandidateNumber(int _candidateNumber) {
+		candidateNumber = _candidateNumber;
 	}
 	
 	/**
