@@ -142,7 +142,7 @@ public class CommandLineTool {
 		options.addOption("b", "biological", false, "only consider compounds including CHNOPS atoms (not used by default)");
 		options.addOption("i", "databaseids", true, "database ids of compounds used for in silico fragmentation (separated by ,) (not used by default; not used if sdf database is selected (-d)) note: given ids must be valid ids of given database (-d)");
 		options.addOption("t", "treedepth", true, "treedepth used for in silico fragmentation (default: 2) note: high values result in high computation time");
-		options.addOption("M", "mode", true, "mode used for measured ms/ms spectrum:\n"+Modes.getString()+"(default: 2)");
+		options.addOption("M", "mode", true, "mode used for measured ms/ms spectrum:\n"+Modes.getString()+"(default: 3)");
 		options.addOption("f", "formula", true, "molecular formula of measured compound used for candidate search in database (-d) (not used by default; not used if sdf database is selected (-d))");
 		options.addOption("B", "breakrings", false, "allow splitting of aromatic rings of candidate structures during in silico fragmentation (not used by default)");
 		options.addOption("F", "storefragments", false, "store in silico generated fragments of candidate molecules (not used by default)");
@@ -157,8 +157,7 @@ public class CommandLineTool {
 		options.addOption("P", "saveparameters", false, "save used parameters (not used by default)");
 		options.addOption("e", "printexamplespecfile", false, "print an example spectrum data file (not used by default)");
 		options.addOption("C", "charge", true, "charge used in combination with mode (-M):\n"+Charges.getString()+" (default: 1)");
-		options.addOption("r", "range", true, "range of candidates that will be processed:\n N (first N), M-N (from M to N), M- (from M), -N (till N)\n" +
-				"if N is greater than the number of candidates it will be set accordingly");
+		options.addOption("r", "range", true, "range of candidates that will be processed: N (first N), M-N (from M to N), M- (from M), -N (till N); if N is greater than the number of candidates it will be set accordingly");
 		
 		// parse the command line arguments
 		CommandLine line = null;
@@ -1081,20 +1080,20 @@ public class CommandLineTool {
 	 */
 	public static class Charges {
 		
-		private static char[] validModes = {1, 2};
+		private static int[] validCharges = {1, 2};
 		private static String[] modeValues = {"positive", "negative"};
 		
 		public static boolean contains(MutualInteger value) {
-			for(int i = 0; i < validModes.length; i++) {
-				if(validModes[i] == value.getValue() + value.getOffset()) return true;
+			for(int i = 0; i < validCharges.length; i++) {
+				if(validCharges[i] == value.getValue() + value.getOffset()) return true;
 			}
 			return false;
 		}
 		
 		public static String getString() {
 			String string = "";
-			for(int i = 0; i < validModes.length; i++) {
-				string += validModes[i]+"\t -> \t"+modeValues[i]+"\n";
+			for(int i = 0; i < validCharges.length; i++) {
+				string += validCharges[i] + "\t -> \t"+modeValues[i]+"\n";
 			}
 			return string;
 		}
