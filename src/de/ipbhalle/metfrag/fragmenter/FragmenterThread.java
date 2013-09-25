@@ -374,7 +374,17 @@ public class FragmenterThread implements Runnable{
 	        try
 	        {
 		        //add hydrogens
-		        AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
+	        	while(true) {
+	        		try {
+	        			AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
+	        			//bad workaround for non-reproducible NullPointerException in this function
+	        			//seems like a cdk bug?!
+	        		} catch(NullPointerException e) {
+	        			continue;
+	        		}
+	        		break;
+	        	}
+		        
 		        CDKHydrogenAdder hAdder = CDKHydrogenAdder.getInstance(molecule.getBuilder());
 		        for(int i = 0; i < molecule.getAtomCount(); i++) { 	
 		        	hAdder.addImplicitHydrogens(molecule, molecule.getAtom(i));
