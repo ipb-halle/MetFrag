@@ -26,10 +26,12 @@ import java.util.Vector;
 
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
+import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLV2000Reader;
+import org.openscience.cdk.io.iterator.IteratingMDLReader;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
 public class SDFFile {
@@ -110,4 +112,36 @@ public class SDFFile {
 		
         return ret;
 	}	
+	
+	public static List<IAtomContainer> ReadSDFFileIteratively(String path, Vector<String> forbiddenAtoms) throws FileNotFoundException, CDKException
+	{
+		IteratingMDLReader reader;
+		List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
+		
+		File f = new File(path);
+		
+		if(f.isFile())
+		{
+			reader = new IteratingMDLReader(new FileReader(f), DefaultChemObjectBuilder.getInstance());
+	        while (reader.hasNext()) {
+	        	IAtomContainer con = (IAtomContainer)reader.next();
+	        	boolean contains = false;
+	        	Iterable<IAtom> it_atoms = con.atoms();
+	        	Iterator<IAtom> atoms = it_atoms.iterator();
+	        	while(atoms.hasNext()) {
+	        		IAtom atom = atoms.next();
+	        		for(String atomName : forbiddenAtoms) {
+		        		if(atom.getSymbol().compareTo(atomName) == 0) {
+	        				contains = true;
+	        				break;
+		        		}
+		        		if(contains) break;
+	        		}
+	        	}
+	        	if(!contains) ret.add(con);
+			}
+		}
+		
+        return ret;
+	}
 }

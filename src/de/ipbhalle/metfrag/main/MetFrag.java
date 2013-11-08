@@ -1171,7 +1171,7 @@ public class MetFrag {
 		try
 		{
 			try {
-				candidates = SDFFile.ReadSDFFile(sdfFile, forbiddenAtoms);
+				candidates = SDFFile.ReadSDFFileIteratively(sdfFile, forbiddenAtoms);
 			} catch (CDKException e) {
 				e.printStackTrace();
 			}
