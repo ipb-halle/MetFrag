@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- link rel="shortcut icon" href="/images/favicon.png" -->
+
+    <title>MetFrag - {{ page.title }}</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    {% if page.container == "none" %}
+    <link rel="stylesheet" href="/css/no-container.css">
+    {% endif %}
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45551716-1', 'c-ruttkies.github.io/MetFrag');
+  ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/images/MetLogoCube_Green.png "></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      {% include navbar.html %}
+    </div>
+</div>
+
+{% if page.container == "none" %}
+  {{ content }}
+{% else %}
+<div class="container">
+  {{ content }}
+</div>
+{% endif %}
+</div>
+
+<div id="footer">
+  {% include footer.html %}
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/fixes.js"></script>
+
+</body>
+</html>
+

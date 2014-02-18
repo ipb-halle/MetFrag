@@ -1,0 +1,99 @@
+body,html {
+  height: 100%;
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 30px;
+  background: #fff;
+  padding-right: 15px;
+}
+
+.navbar-brand { 
+  padding: 3px;
+  padding-left: 15px;
+}
+
+.navbar-nav>li>a {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand img { height: 58px;}
+
+.iframewrap {  height: 100%; }
+.iframewrap iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.container {
+  padding-bottom: 30px;
+}
+
+.table th, .table td { text-align: center;}
+
+/* homepage styles */
+#home-header {
+  height: 290px;
+  background: black url("/images/banner_website.png") no-repeat center center;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -15px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  position: relative;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  //height: 60px;
+  background-color: #555;
+  border-top: 3px solid #75D5F3;
+  padding: 15px;
+  color: #efefef;
+}
+#footer a { color: #B4B3B3; }
+#footer a:hover { color: #efefef; }
+
+ul.news li {
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+ul.news li:hover {
+  background-color: #F5F8F8
+}
+
+
+/* examples list */
+ul#examples {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul#examples li {
+  padding-left: 115px;
+  background: url(/images/nmrML-file.jpg) no-repeat;
+  background-size: 82px 100px;
+  min-height: 100px;
+  padding-top: 5px;
+  margin-top: 20px;
+}
+
+ul#examples li h3 {
+  margin-top: 0;
+}
+
+

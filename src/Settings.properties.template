@@ -1,3 +1,0 @@
-dbPostgres = jdbc:postgresql://host:5432/database
-userPostgres = user
-passwordPostgres = password

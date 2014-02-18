@@ -1,12 +1,3 @@
-/bin
-
-*.class
-
-# Package Files #
-*.war
-*.ear
-
-*.orig
-*.sql
-
-Settings.properties
+_site
+*~
+*.swp
