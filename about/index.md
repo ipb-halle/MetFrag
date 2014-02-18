@@ -14,8 +14,8 @@ using the fragment peak matches gives hints to the quality of the candidate spec
 
 ### Availability
 
-MetFrag can be easily used via the <a href="/projects/metfragweb">web tool</a>. For high-troughput data processing the <a href="/projects/commandline">commandline version</a> should be most convenient as well
-as the <a href="/projects/metfragr">R-package</a> for users versed in the R programming language.
+MetFrag can be easily used via the <a href="/MetFrag/projects/metfragweb">web tool</a>. For high-troughput data processing the <a href="/MetFrag/projects/commandline">commandline version</a> should be most convenient as well
+as the <a href="/MetFrag/projects/metfragr">R-package</a> for users versed in the R programming language.
 
 ### License
 

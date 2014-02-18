@@ -7,7 +7,7 @@ nav:
 
 ### Contact Us
 
-If you have any questions you can send an email to the developers at: <script type="text/javascript" language="javascript" src="/js/email.js" >
+If you have any questions you can send an email to the developers at: <script type="text/javascript" language="javascript" src="/MetFrag/js/email.js" >
 </script><noscript>Sorry, you need Javascript on to view our email address.</noscript>
 
 <a class="btn btn-primary" href="https://github.com/c-ruttkies/MetFrag" role="button">Find us on

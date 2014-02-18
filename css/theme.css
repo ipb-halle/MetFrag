@@ -37,7 +37,7 @@ body,html {
 /* homepage styles */
 #home-header {
   height: 290px;
-  background: black url("/images/banner_website.png") no-repeat center center;
+  background: black url("/MetFrag/images/banner_website.png") no-repeat center center;
 }
 
 
@@ -77,23 +77,5 @@ ul.news li:hover {
 }
 
 
-/* examples list */
-ul#examples {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul#examples li {
-  padding-left: 115px;
-  background: url(/images/nmrML-file.jpg) no-repeat;
-  background-size: 82px 100px;
-  min-height: 100px;
-  padding-top: 5px;
-  margin-top: 20px;
-}
-
-ul#examples li h3 {
-  margin-top: 0;
-}
 
 
