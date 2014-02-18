@@ -2,8 +2,8 @@
 // Random encryption key feature by Andrew Moulden, Site Engineering Ltd
 // This code is freeware provided these four comment lines remain intact
 // A wizard to generate this code is at http://www.jottings.com/obfuscator/
-{ coded = "SI17@IEtEA.7tO"
-  key = "NOt3oGQlcsbKunwmhd7q4AUTPCRIHEDJVfXBvL9M8kZi6pz1agrF2eWj5SyxY0"
+{ coded = "TkCHHEDd@DuL-aKrrd.Sd"
+  key = "bZMvGxkIKW4ue09VUPg2ALwo5ilEhQFOCd8cfRtnYjJ37sDrqaBXpmSyT61HNz"
   shift=coded.length
   link=""
   for (i=0; i<coded.length; i++) {
@@ -11,7 +11,7 @@
       ltr = coded.charAt(i)
       link += (ltr)
     }
-    else {
+    else {     
       ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
       link += (key.charAt(ltr))
     }
