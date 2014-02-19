@@ -432,7 +432,7 @@ public class CommandLineTool {
 			String footer = "\nexample: java -jar metfrag.jar -d pubchem -D example_spectrum_file.mb -S example -R /tmp/results -n 271.2 -a 0.01 -p 10 -v -r -B\n" +
 					"\n\r" +
 					"\nThe SDF result files include scores and number of declared peaks of the candidate molecules.\n" +
-			        "For web interface usage, see http://msbi.ipb-halle.de/MetFrag\n" +
+			        "For further information visit official website on http://c-ruttkies.github.io/MetFrag\n" +
 			        "Bug Reports to <cruttkie@ipb-halle.de>";                      
 			 
 			 
