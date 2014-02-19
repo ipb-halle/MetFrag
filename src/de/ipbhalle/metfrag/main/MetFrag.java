@@ -1096,7 +1096,10 @@ public class MetFrag {
 
 		if(query != null) query.closeConnection();
 		
-		Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+	//	Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector>[] scoreInfo = Scoring.getCombinedScoreMoreInfo(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector> scoresNormalized = scoreInfo[0];
+		
 		Double[] scores = new Double[scoresNormalized.size()];
 		scores = scoresNormalized.keySet().toArray(scores);
 		Arrays.sort(scores);
@@ -1105,18 +1108,30 @@ public class MetFrag {
 		Map<String, IAtomContainer> candidateToStructure = results.getMapCandidateToStructure();
 		Map<String, Vector<PeakMolPair>> candidateToFragments = results.getMapCandidateToFragments();
 		
+		results.getRealScoreMap();
+		
 		List<MetFragResult> results = new ArrayList<MetFragResult>();
 		for (int i = scores.length -1; i >=0 ; i--) {
 			Vector<String> list = scoresNormalized.get(scores[i]);
-			for (String string : list) {
+			Vector<Double> retPeakCount = scoreInfo[1].get(scores[i]);
+			Vector<Double> retBondEnergyCount = scoreInfo[2].get(scores[i]);
+			for (int l = 0; l < list.size(); l++) {
 				//get corresponding structure
+				String string = list.get(l);
 				IAtomContainer tmp = candidateToStructure.get(string);
 				tmp = AtomContainerManipulator.removeHydrogens(tmp);
 				
+				MetFragResult curResult = null;
+				
 				if(isStoreFragments)
-					results.add(new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size(), candidateToFragments.get(string)));
+					curResult = new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size(), candidateToFragments.get(string));
 				else
-					results.add(new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size()));
+					curResult = new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size());
+				
+				curResult.setRawPeakMatchScore(retPeakCount.get(0));
+				curResult.setRawBondEnergyScore(retBondEnergyCount.get(l));
+				
+				results.add(curResult);
 			}
 		}		
 		
@@ -1239,7 +1254,9 @@ public class MetFrag {
 			}//sleep for 1000 ms
 		}
 
-		Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+	//	Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector>[] scoreInfo = Scoring.getCombinedScoreMoreInfo(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector> scoresNormalized = scoreInfo[0];
 		Double[] scores = new Double[scoresNormalized.size()];
 		scores = scoresNormalized.keySet().toArray(scores);
 		Arrays.sort(scores);
@@ -1252,12 +1269,25 @@ public class MetFrag {
 		List<MetFragResult> res = new ArrayList<MetFragResult>();
 		for (int i = scores.length -1; i >=0 ; i--) {
 			Vector<String> list = scoresNormalized.get(scores[i]);
-			for (String string : list) {
+			Vector<Double> retPeakCount = scoreInfo[1].get(scores[i]);
+			Vector<Double> retBondEnergyCount = scoreInfo[2].get(scores[i]);
+			for (int l = 0; l < list.size(); l++) {
 				//get corresponding structure
+				String string = list.get(l);
 				IAtomContainer tmp = candidateToStructure.get(string);
 				tmp = AtomContainerManipulator.removeHydrogens(tmp);
 				
-				res.add(new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size(), candidateToFragments.get(string)));
+				MetFragResult curResult = new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size(), candidateToFragments.get(string));
+				
+				try {
+					curResult.setRawPeakMatchScore(retPeakCount.get(0));
+					curResult.setRawBondEnergyScore(retBondEnergyCount.get(l));
+				}
+				catch(Exception e) {
+					System.out.println(retPeakCount + " " + retBondEnergyCount);
+					System.out.println(retPeakCount.size() + " " + retBondEnergyCount.size());
+				}
+				res.add(curResult);
 			}
 		}		
 		return res;

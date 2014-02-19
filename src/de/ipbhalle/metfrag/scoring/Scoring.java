@@ -306,7 +306,112 @@ public class Scoring {
 		return ret;
 	}
 	
+	/**
+	 * scoring and getting a bit more info than only the normalized score!
+	 * 
+	 * @param realScoreMap
+	 * @param mapCandidateToEnergy
+	 * @param mapCandidateToHydrogenPenalty
+	 * @return
+	 */
+	public static Map<Double, Vector>[] getCombinedScoreMoreInfo(Map<Double, Vector<String>> realScoreMap, Map<String, Double> mapCandidateToEnergy, Map<String, Double> mapCandidateToHydrogenPenalty)
+	{
+		Map<Double, Vector<String>> ret = new HashMap<Double, Vector<String>>();
+		double maxScore = 0.0;
+		double maxBondEnergy = 0.0;
+		
+		for (Double score : realScoreMap.keySet()) {
+			if(score > maxScore)
+				maxScore = score;
+			
+			Vector<String> cands = realScoreMap.get(score);
+			for (String candidate : cands) {
+				double bondEnergy = mapCandidateToEnergy.get(candidate);
+				double hydrogenPenalty = 0;
+				try
+				{
+					hydrogenPenalty = mapCandidateToHydrogenPenalty.get(candidate);
+				}
+				catch(NullPointerException e)
+				{
+					System.err.println("ERROR: Null Pointer exception in scoring! \n" + e.getMessage());
+				}
+				double combinedEnergy = bondEnergy + hydrogenPenalty;
+				if(combinedEnergy > maxBondEnergy)
+					maxBondEnergy = combinedEnergy;
+			}
+		}
+		
 
+		Map<Double, Vector<Double>> retPeakCount = new HashMap<Double, Vector<Double>>();
+		Map<Double, Vector<Double>> retBondEnergyCount = new HashMap<Double, Vector<Double>>();
+		//now compute the final score....normalize the weighted peaks to 1 and the bond energy to 0.5 and finally add them up
+		//and add them together
+		for (Double score : realScoreMap.keySet()) {
+			double normalizedScore = Math.round((score / maxScore) * 1000) / 1000.0;
+			Vector<String> cands = realScoreMap.get(score);
+			Vector<Double> bondEnergyCount = new Vector<Double>();
+			Vector<Double> peakCount = new Vector<Double>();
+			for (String candidate : cands) {
+				double bondEnergy = mapCandidateToEnergy.get(candidate);
+				double hydrogenPenalty = 0;
+				try
+				{
+					hydrogenPenalty = mapCandidateToHydrogenPenalty.get(candidate);
+				}
+				catch(NullPointerException e)
+				{
+					System.err.println("ERROR: Null Pointer exception in scoring! \n" + e.getMessage());
+				}
+				double combinedEnergy = bondEnergy + hydrogenPenalty;
+				
+				double normalizedBondEnergy = 0;
+				//more than 1 peak explained
+				if(bondEnergy > 0)
+				{
+					//now normalize the bond energy and subtract it from 1
+					normalizedBondEnergy = Math.round((combinedEnergy / maxBondEnergy) * 1000) / 1000.0;
+				}
+				
+				
+				//TODO: 4 delivers better results than 2
+				double finalScore = normalizedScore - (normalizedBondEnergy / 4);
+				
+				if(finalScore < 0)
+					finalScore = 0.0;
+				
+				if(ret.containsKey(finalScore))
+				{
+					Vector<String> temp = ret.get(finalScore);
+					temp.add(candidate);
+					ret.remove(finalScore);
+					ret.put(finalScore, temp);
+					
+					Vector<Double> peakCounts = retPeakCount.get(finalScore);
+					peakCounts.add(score);
+					Vector<Double> bondEnergyCounts = retBondEnergyCount.get(finalScore);
+					bondEnergyCounts.add(combinedEnergy);
+				}
+				else
+				{
+					Vector<String> temp = new Vector<String>();
+					temp.add(candidate);
+					ret.put(finalScore, temp);
+					
+					Vector<Double> peakCounts = new Vector<Double>();
+					Vector<Double> bondEnergyCounts = new Vector<Double>();
+					peakCounts.add(score);
+					bondEnergyCounts.add(combinedEnergy);
+					
+					retPeakCount.put(finalScore, peakCounts);
+					retBondEnergyCount.put(finalScore, bondEnergyCounts);
+				}
+			}
+		}		
+		
+		return new Map[] {ret, retPeakCount, retBondEnergyCount};
+	}
+	
 	/**
 	 * Gets the optimization matrix entries.
 	 * 

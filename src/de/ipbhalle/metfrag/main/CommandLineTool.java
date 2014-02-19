@@ -152,7 +152,7 @@ public class CommandLineTool {
 		options.addOption("D", "spectrumfile", true, "file containing peak data (mandatory) note: commandline options overwrite parameters given in the spectrum data file");
 		options.addOption("T", "threads", true, "number of threads used for fragment calculation (default: number of available cpu cores)");
 		options.addOption("c", "chemspidertoken", true, "Token for ChemSpider database search (not used by default; only necessary (mandatory) if ChemSpider database (-d) is selected)");
-		options.addOption("v", "verbose", false, "get more output information (not used by default)");
+		options.addOption("v", "verbose", false, "get more output information during the processing (not used by default)");
 		options.addOption("S", "samplename", true, "name of the sample measured (mandatory) note: result files are stored with given value");
 		options.addOption("P", "saveparameters", false, "save used parameters (not used by default)");
 		options.addOption("e", "printexamplespecfile", false, "print an example spectrum data file (not used by default)");
@@ -813,6 +813,9 @@ public class CommandLineTool {
 					
 				}
 			}*/
+
+			tmp.setProperty("PeakScore", result.getRawPeakMatchScore());
+			tmp.setProperty("BondEnergyScore", result.getRawBondEnergyScore());
 			tmp.setProperty("Score", result.getScore());
 	        for (IBond bond : tmp.bonds()) {
 				if(bond.getStereo() == null)

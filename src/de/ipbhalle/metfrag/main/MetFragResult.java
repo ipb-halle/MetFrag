@@ -17,7 +17,6 @@
 
 package de.ipbhalle.metfrag.main;
 
-import java.util.List;
 import java.util.Vector;
 
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -31,6 +30,9 @@ public class MetFragResult {
 	private double score = 0.0;
 	private int peaksExplained = 0;
 	private Vector<PeakMolPair> fragments = null;
+	
+	private double rawPeakMatchScore = 0.0;
+	private double rawBondEnergyScore = 0.0;
 	
 	/**
 	 * Instantiates a new MetFrag result.
@@ -105,4 +107,21 @@ public class MetFragResult {
 		return fragments;
 	}
 
+
+	public double getRawPeakMatchScore() {
+		return rawPeakMatchScore;
+	}
+
+	public void setRawPeakMatchScore(double rawPeakMatchScore) {
+		this.rawPeakMatchScore = rawPeakMatchScore;
+	}
+
+	public double getRawBondEnergyScore() {
+		return rawBondEnergyScore;
+	}
+
+	public void setRawBondEnergyScore(double rawBondEnergyScore) {
+		this.rawBondEnergyScore = rawBondEnergyScore;
+	}
+	
 }
