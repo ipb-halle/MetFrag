@@ -74,65 +74,66 @@ All available parameters can be displayed by<p>
   usage: java -jar metfrag.jar [options] [args]
 
   Available options:
-   -M,--mode                     mode used for measured ms/ms spectrum:
-                                 3       ->     [M + H]
-                                 2       ->     [M]
-                                 1       ->     [M - H]
-                                 (default: 3)
-   -C,--charge                   charge used in combination with mode (-M):
-                                 1       ->     positive
-                                 2       ->     negative
-                                 (default: 1)
-   -r,--range                    range of candidates that will be processed: N
-                                 (first N), M-N (from M to N), M- (from M), -N (till N); if N is greater than the
-                                 number of candidates it will be set accordingly
-   -n,--exactmass                neutral mass of measured compound used for
-                                 candidate search in database (-d) (mandatory)
-   -l,--localdb                  use a local database together with a settings
-                                 file for candidate search (default: not used) note: only usable if pubchem
-                                 database is selected (-d)
-   -i,--databaseids              database ids of compounds used for in silico
-                                 fragmentation (separated by ,) (not used by default; not used if sdf database is
-                                 selected (-d)) note: given ids must be valid ids of given database (-d)
-   -c,--chemspidertoken          Token for ChemSpider database search (not used
-                                 by default; only necessary (mandatory) if ChemSpider database (-d) is selected)
-   -L,--sdffile                  location of the local sdf file (mandatory if
-                                 sdf database (-d) is selected)
-   -s,--searchppm                relative (ppm) mass deviation used for
-                                 candidate search in given compound database (-d) (default: 10; not used by
-                                 default if sdf database is selected (-d))
-   -f,--formula                  molecular formula of measured compound used for
-                                 candidate search in database (-d) (not used by default; not used if sdf database
-                                 is selected (-d))
-   -B,--breakrings               allow splitting of aromatic rings of candidate
-                                 structures during in silico fragmentation (not used by default)
-   -D,--spectrumfile             file containing peak data (mandatory) note:
-                                 commandline options overwrite parameters given in the spectrum data file
-   -F,--storefragments           store in silico generated fragments of
-                                 candidate molecules (not used by default)
-   -P,--saveparameters           save used parameters (not used by default)
-   -R,--resultspath              directory where result files are stored
-                                 (default: /tmp)
-   -S,--samplename               name of the sample measured (mandatory) note:
-                                 result files are stored with given value
-   -T,--threads                  number of threads used for fragment calculation
-                                 (default: number of available cpu cores)
-   -a,--mzabs                    allowed absolute (Da) mass deviation of
-                                 fragment and peak masses (default: 0.01)
-   -b,--biological               only consider compounds including CHNOPS atoms
-                                 (not used by default)
-   -d,--database                 database: kegg, pubchem, sdf, chemspider
-                                 (default: kegg)
-   -e,--printexamplespecfile     print an example spectrum data file (not used
-                                 by default)
-   -h,--help                     print help
-   -p,--mzppm                    allowed relative (ppm) mass deviation of
-                                 fragment and peak masses (default: 10)
-   -t,--treedepth                treedepth used for in silico fragmentation
-                                 (default: 2) note: high values result in high computation time
-   -v,--verbose                  get more output information during the
-                                 processing (not used by default)
-
+  <table>
+   <tr><td>-M,--mode</td><td>                mode used for measured ms/ms spectrum:</td></tr>
+      <tr><td>                          </td><td> 3       ->     [M + H]</td></tr>
+     <tr><td>                           </td><td> 2       ->     [M]</td></tr>
+     <tr><td>                           </td><td> 1       ->     [M - H]</td></tr>
+      <tr><td>                          </td><td> (default: 3)</td></tr>
+   <tr><td>-C,--charge                  </td><td> charge used in combination with mode (-M):</td></tr>
+     <tr><td>                           </td><td> 1       ->     positive</td></tr>
+     <tr><td>                          </td><td>  2       ->     negative</td></tr>
+      <tr><td>                          </td><td> (default: 1)</td></tr>
+   <tr><td>-r,--range                   </td><td> range of candidates that will be processed: N</td></tr>
+     <tr><td>                          </td><td>  (first N), M-N (from M to N), M- (from M), -N (till N); if N is greater than the</td></tr>
+     <tr><td>                           </td><td> number of candidates it will be set accordingly</td></tr>
+   <tr><td>-n,--exactmass               </td><td> neutral mass of measured compound used for</td></tr>
+      <tr><td>                          </td><td> candidate search in database (-d) (mandatory)</td></tr>
+   <tr><td>-l,--localdb                 </td><td> use a local database together with a settings</td></tr>
+     <tr><td>                           </td><td> file for candidate search (default: not used) note: only usable if pubchem</td></tr>
+     <tr><td>                           </td><td> database is selected (-d)</td></tr>
+  <tr><td> -i,--databaseids             </td><td> database ids of compounds used for in silico</td></tr>
+     <tr><td>                           </td><td> fragmentation (separated by ,) (not used by default; not used if sdf database is</td></tr>
+     <tr><td>                           </td><td> selected (-d)) note: given ids must be valid ids of given database (-d)</td></tr>
+   <tr><td>-c,--chemspidertoken         </td><td> Token for ChemSpider database search (not used</td></tr>
+     <tr><td>                           </td><td> by default; only necessary (mandatory) if ChemSpider database (-d) is selected)</td></tr>
+  <tr><td> -L,--sdffile                 </td><td> location of the local sdf file (mandatory if</td></tr>
+    <tr><td>                           </td><td>  sdf database (-d) is selected)</td></tr>
+   <tr><td>-s,--searchppm              </td><td>  relative (ppm) mass deviation used for</td></tr>
+    <tr><td>                           </td><td>  candidate search in given compound database (-d) (default: 10; not used by</td></tr>
+    <tr><td>                           </td><td>  default if sdf database is selected (-d))</td></tr>
+  <tr><td> -f,--formula                 </td><td> molecular formula of measured compound used for</td></tr>
+    <tr><td>                            </td><td> candidate search in database (-d) (not used by default; not used if sdf database</td></tr>
+    <tr><td>                            </td><td> is selected (-d))</td></tr>
+  <tr><td> -B,--breakrings              </td><td> allow splitting of aromatic rings of candidate</td></tr>
+   <tr><td>                             </td><td> structures during in silico fragmentation (not used by default)</td></tr>
+ <tr><td>  -D,--spectrumfile            </td><td> file containing peak data (mandatory) note:</td></tr>
+   <tr><td>                             </td><td> commandline options overwrite parameters given in the spectrum data file</td></tr>
+  <tr><td> -F,--storefragments          </td><td> store in silico generated fragments of</td></tr>
+   <tr><td>                             </td><td> candidate molecules (not used by default)</td></tr>
+ <tr><td>  -P,--saveparameters          </td><td> save used parameters (not used by default)</td></tr>
+ <tr><td>  -R,--resultspath             </td><td> directory where result files are stored</td></tr>
+  <tr><td>                              </td><td> (default: /tmp)</td></tr>
+ <tr><td>  -S,--samplename              </td><td> name of the sample measured (mandatory) note:</td></tr>
+ <tr><td>                              </td><td>  result files are stored with given value</td></tr>
+<tr><td>   -T,--threads                </td><td>  number of threads used for fragment calculation</td></tr>
+ <tr><td>                              </td><td>  (default: number of available cpu cores)</td></tr>
+ <tr><td>  -a,--mzabs                  </td><td>  allowed absolute (Da) mass deviation of</td></tr>
+ <tr><td>                               </td><td> fragment and peak masses (default: 0.01)</td></tr>
+ <tr><td>  -b,--biological             </td><td>  only consider compounds including CHNOPS atoms</td></tr>
+ <tr><td>                              </td><td>  (not used by default)</td></tr>
+ <tr><td>  -d,--database                </td><td> database: kegg, pubchem, sdf, chemspider</td></tr>
+ <tr><td>                               </td><td> (default: kegg)</td></tr>
+ <tr><td>  -e,--printexamplespecfile    </td><td> print an example spectrum data file (not used</td></tr>
+ <tr><td>                               </td><td> by default)</td></tr>
+ <tr><td>  -h,--help                    </td><td> print help</td></tr>
+ <tr><td>  -p,--mzppm                   </td><td> allowed relative (ppm) mass deviation of</td></tr>
+  <tr><td>                              </td><td> fragment and peak masses (default: 10)</td></tr>
+ <tr><td>  -t,--treedepth               </td><td> treedepth used for in silico fragmentation</td></tr>
+ <tr><td>                               </td><td> (default: 2) note: high values result in high computation time</td></tr>
+ <tr><td>  -v,--verbose                  </td><td>get more output information during the</td></tr>
+ <tr><td>                               </td><td> processing (not used by default)</td></tr>
+  </table>
   example: java -jar metfrag.jar -d pubchem -D example_spectrum_file.mb -S example
   -R /tmp/results -n 271.2 -a 0.01 -p 10 -v -r -B
   The SDF result files include scores and number of declared peaks of the
