@@ -108,6 +108,7 @@ All available parameters can be displayed by<p>
  <tr><td>  -p,--mzppm                   </td><td> allowed relative (ppm) mass deviation of fragment and peak masses (default: 10)</td></tr>
  <tr><td>  -t,--treedepth               </td><td> treedepth used for in silico fragmentation (default: 2) note: high values result in high computation time</td></tr>
  <tr><td>  -v,--verbose                  </td><td>get more output information during the processing (not used by default)</td></tr>
+  <tr><td></td><td></td></tr>
   </table>
   example: java -jar metfrag.jar -d pubchem -D example_spectrum_file.mb -S example -R /tmp/results -n 271.2 -a 0.01 -p 10 -v -r -B<br>
   The SDF result files include scores and number of declared peaks of the candidate molecules.<br>
