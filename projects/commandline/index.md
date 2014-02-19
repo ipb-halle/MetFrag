@@ -112,7 +112,7 @@ All available parameters can be displayed by<p>
   example: java -jar metfrag.jar -d pubchem -D example_spectrum_file.mb -S example -R /tmp/results -n 271.2 -a 0.01 -p 10 -v -r -B<br>
   The SDF result files include scores and number of declared peaks of the candidate molecules.<br>
   For further information visit official website on http://c-ruttkies.github.io/MetFrag<br>
-  Bug Reports to <cruttkie@ipb-halle.de>
+  Bug Reports to ...
 </div>
 <p><p>
 <h4>Known issues</h4>
