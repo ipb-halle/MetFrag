@@ -27,13 +27,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
-import org.openscience.cdk.Molecule;
-import org.openscience.cdk.MoleculeSet;
+import org.openscience.cdk.AtomContainerSet;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -79,6 +77,8 @@ public class FragmenterThread implements Runnable{
 	private static int candidateNumber = 1;
 	private static int sizeCandidates;
 	private boolean onlyChnopsCompounds = false;
+	
+	static int percent = 10;
 	
 	/**
 	 * Instantiates a new pubChem search thread.
@@ -306,6 +306,8 @@ public class FragmenterThread implements Runnable{
 			boolean generateFragmentsInMemory, String sampleName, 
 			boolean onlyChnopsCompounds, String pathToStoreFrags)
 	{
+		percent = 10;
+		candidateNumber = 1;
 		this.onlyChnopsCompounds = onlyChnopsCompounds;
 		this.candidate = candidate;
 		this.database = database;
@@ -355,18 +357,30 @@ public class FragmenterThread implements Runnable{
 			}
 			
 			if(molecule == null) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.candidate +" -> error reading molecule");
 				incrementCandidateNumber();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
+				if(num >= percent) {
+					System.out.print(percent + " %  ");
+					incrementPercent();
+				}
 				return;
 			}
 			else if(!ConnectivityChecker.isConnected(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no connected molecule");
 				incrementCandidateNumber();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
+				if(num >= percent) {
+					System.out.print(percent + " %  ");
+					incrementPercent();
+				}
 				return;
 			}
 			else if(this.onlyChnopsCompounds && !isCHNOPSCompound(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no CHNOPS compound");
 				incrementCandidateNumber();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
+				if(num >= percent) {
+					System.out.print(percent + " %  ");
+					incrementPercent();
+				}
 				return;
 			}
 	        
@@ -513,10 +527,16 @@ public class FragmenterThread implements Runnable{
 					hitsList.add(AtomContainerManipulator.removeHydrogens(hits.get(i).getFragment()));
 					hitsListTest.add(hits.get(i).getFragment());
 				}
-
+				
 				if(verbose) {
 					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate);
-					incrementCandidateNumber();
+				}
+
+				incrementCandidateNumber();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
+				if(num >= percent) {
+					System.out.print(percent + " %  ");
+					incrementPercent();
 				}
 			}
 			catch(CDKException e)
@@ -574,8 +594,9 @@ public class FragmenterThread implements Runnable{
 	 * 
 	 * @param hits
 	 * @throws CDKException
+	 * @throws CloneNotSupportedException 
 	 */
-	private void saveFragments(List<IAtomContainer> hits) throws CDKException {
+	private void saveFragments(List<IAtomContainer> hits) throws CDKException, CloneNotSupportedException {
 		File path = new File(this.saveFragmentsPath);
 		if(!path.exists()) {
 			System.err.println("Error: "+this.saveFragmentsPath+" does not exist.");
@@ -590,11 +611,11 @@ public class FragmenterThread implements Runnable{
 			return;
 		}
 		
-		MoleculeSet molSet = new MoleculeSet();
+		AtomContainerSet molSet = new AtomContainerSet();
 		for(int i = 0; i < hits.size(); i++) {
 			IAtomContainer molecule = hits.get(i);
 			AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
-			IMolecule molOrig = new Molecule(AtomContainerManipulator.removeHydrogens(molecule));
+			IAtomContainer molOrig = AtomContainerManipulator.removeHydrogens(molecule).clone();
 			molSet.addAtomContainer(molOrig);
 		}
 	
@@ -619,8 +640,9 @@ public class FragmenterThread implements Runnable{
 	 * 
 	 * @param hits
 	 * @throws CDKException
+	 * @throws CloneNotSupportedException 
 	 */
-	private void saveFragments(Vector<PeakMolPair> hits) throws CDKException {
+	private void saveFragments(Vector<PeakMolPair> hits) throws CDKException, CloneNotSupportedException {
 		File path = new File(this.saveFragmentsPath);
 		Vector<IAtomContainer> fragments = new Vector<IAtomContainer>();
 		if(!path.exists()) {
@@ -636,11 +658,11 @@ public class FragmenterThread implements Runnable{
 			return;
 		}
 		
-		MoleculeSet molSet = new MoleculeSet();
+		AtomContainerSet molSet = new AtomContainerSet();
 		for(int i = 0; i < hits.size(); i++) {
 			IAtomContainer molecule = hits.get(i).getFragment();
 			AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
-			IMolecule molOrig = new Molecule(AtomContainerManipulator.removeHydrogens(molecule));
+			IAtomContainer molOrig = AtomContainerManipulator.removeHydrogens(molecule).clone();
 			molOrig.setProperty("PeakMass", hits.get(i).getPeak().getMass());
 			molSet.addAtomContainer(molOrig);
 			fragments.add(molOrig);
@@ -688,6 +710,10 @@ public class FragmenterThread implements Runnable{
 
 	public static synchronized void incrementCandidateNumber() {
 		candidateNumber++;
+	}
+
+	public static synchronized void incrementPercent() {
+		percent += 10;
 	}
 	
 	/**

@@ -28,7 +28,6 @@ import javax.imageio.*;
 
 import org.freehep.graphics2d.VectorGraphics;
 import org.freehep.graphicsio.svg.SVGGraphics2D;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.*;
@@ -83,7 +82,7 @@ public class StructureToFile {
     	molAC = AtomContainerManipulator.removeHydrogens(molAC);
     	    	
         // creates CDK Molecule object and get the renderer
-    	IMolecule molSource = new Molecule(molAC);
+    	IAtomContainer molSource = molAC.clone();
     	
     	Rectangle drawArea = new Rectangle(this.width, this.height);
 		Image image = new BufferedImage(this.width, this.height, BufferedImage.TYPE_INT_RGB);
@@ -134,7 +133,7 @@ public class StructureToFile {
      * 
      * @throws Exception the exception
      */
-    public void writeMOL2SVGFile(IMolecule mol, String svgFile) throws Exception {
+    public void writeMOL2SVGFile(IAtomContainer mol, String svgFile) throws Exception {
 
         // creates CDK Molecule object and get the renderer
         //Molecule   mol      = prepareMolecule(MOLString);
@@ -211,7 +210,7 @@ public class StructureToFile {
         	String PCID = "2520";
         	IAtomContainer container = pw.getSingleMol(PCID, true);
         	container = AtomContainerManipulator.removeHydrogens(container);
-        	IMolecule mol = new Molecule(container);
+        	IAtomContainer mol = container.clone();
 			
 			sr = new StructureToFile(200,200, "/home/swolf/", false, false);
 			sr.writeMOL2PNGFile(mol, PCID + ".png");

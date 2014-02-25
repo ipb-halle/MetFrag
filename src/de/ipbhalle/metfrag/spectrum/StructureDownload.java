@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.openscience.cdk.AtomContainer;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.fingerprint.Fingerprinter;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLV2000Reader;
@@ -111,9 +110,9 @@ public class StructureDownload {
 					
 					Fingerprinter finger = new Fingerprinter();
 					MDLV2000Reader reader = new MDLV2000Reader(new FileReader(comparison.get(i)));
-					IAtomContainer temp = reader.read(new Molecule());
-					BitSet bs1 = finger.getFingerprint(temp);
-					BitSet bs2 = finger.getFingerprint(tempOrig);
+					IAtomContainer temp = reader.read(new AtomContainer());
+					BitSet bs1 = finger.getBitFingerprint(temp).asBitSet();
+					BitSet bs2 = finger.getBitFingerprint(tempOrig).asBitSet();
 					System.out.println(files[index].getName() + "-" + comparison.get(i).getName() + ": " + Tanimoto.calculate(bs1, bs2));
 				}
 			}

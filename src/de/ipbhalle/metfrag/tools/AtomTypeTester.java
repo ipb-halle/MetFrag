@@ -16,7 +16,8 @@
 
 package de.ipbhalle.metfrag.tools;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openscience.cdk.exception.CDKException;
@@ -25,7 +26,6 @@ import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
-import de.ipbhalle.metfrag.main.MetFrag;
 import de.ipbhalle.metfrag.read.SDFFile;
 
 public class AtomTypeTester {
@@ -33,7 +33,12 @@ public class AtomTypeTester {
 	public static void main(String[] args) {
 		try
         {
-			List<IAtomContainer> candidates = SDFFile.ReadSDFFile("/home/swolf/src/MetFragCommandLine/Test/030_160559_C4H13N1P2_struct_wM_END.sdf");
+			List<IAtomContainer> candidates = new ArrayList<IAtomContainer>();
+			try {
+				candidates = SDFFile.ReadSDFFile("/home/swolf/src/MetFragCommandLine/Test/030_160559_C4H13N1P2_struct_wM_END.sdf");
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 			System.out.println(candidates.size());
 			boolean error = false;
 			for (int i = 0; i < candidates.size(); i++) {
@@ -86,14 +91,9 @@ public class AtomTypeTester {
         	e.printStackTrace();
         	//skip it
         	return;
-        } catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (CDKException e) {
-			// TODO Auto-generated catch block
+        } catch (CDKException e) {
 			e.printStackTrace();
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

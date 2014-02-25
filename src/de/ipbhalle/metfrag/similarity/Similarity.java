@@ -28,9 +28,9 @@ import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.fingerprint.Fingerprinter;
+import org.openscience.cdk.fingerprint.IBitFingerprint;
 import org.openscience.cdk.fingerprint.IFingerprinter;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.similarity.Tanimoto;
 import org.openscience.cdk.smiles.SmilesParser;
@@ -115,8 +115,8 @@ public class Similarity {
 		{
 			for (String strCandidate : candidateToStructure.keySet()) {
 				Fingerprinter f = new Fingerprinter();
-				BitSet fp = f.getFingerprint(candidateToStructure.get(strCandidate));
-				candidateToFingerprint.put(strCandidate, fp);
+				IBitFingerprint fp = f.getBitFingerprint(candidateToStructure.get(strCandidate));
+				candidateToFingerprint.put(strCandidate, fp.asBitSet());
 			}
 		}
 		else
@@ -125,10 +125,10 @@ public class Similarity {
 			for (String string : candidatesToSmiles.keySet()) {
 				try
 				{
-					IMolecule mol = sp.parseSmiles(candidatesToSmiles.get(string));
+					IAtomContainer mol = sp.parseSmiles(candidatesToSmiles.get(string));
 					Fingerprinter f = new Fingerprinter();
-					BitSet fp = f.getFingerprint(mol);
-					candidateToFingerprint.put(string, fp);
+					IBitFingerprint fp = f.getBitFingerprint(mol);
+					candidateToFingerprint.put(string, fp.asBitSet());
 				}
 				catch(Exception e)
 				{
@@ -294,8 +294,8 @@ public class Similarity {
 			cand1 = sp.parseSmiles(candidatesToSmiles.get(candidate1));
 			cand2 = sp.parseSmiles(candidatesToSmiles.get(candidate2));
 		}
-		
-		return UniversalIsomorphismTester.isIsomorph(cand1, cand2);
+		UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
+		return uit.isIsomorph(cand1, cand2);
 	}
 	
 	

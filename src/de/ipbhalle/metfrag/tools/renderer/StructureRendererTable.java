@@ -31,8 +31,9 @@ public class StructureRendererTable {
 	 * 
 	 * @param original the original molecule
 	 * @param List of Fragments
+	 * @throws CloneNotSupportedException 
 	 */
-	public static void Draw(IAtomContainer original, List<IAtomContainer> l, String name) {
+	public static void Draw(IAtomContainer original, List<IAtomContainer> l, String name) throws CloneNotSupportedException {
 		
 		List<IAtomContainer> containers = new ArrayList<IAtomContainer>();
 		containers.addAll(l);
@@ -50,8 +51,9 @@ public class StructureRendererTable {
 	 * 
 	 * @param original the original molecule
 	 * @param List of Fragments
+	 * @throws CloneNotSupportedException 
 	 */
-	public static void DrawHits(IAtomContainer original, Vector<PeakMolPair> l, String name) {
+	public static void DrawHits(IAtomContainer original, Vector<PeakMolPair> l, String name) throws CloneNotSupportedException {
 		
 		List<IAtomContainer> containers = new ArrayList<IAtomContainer>();
 		containers.add(original);

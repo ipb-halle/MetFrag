@@ -37,7 +37,7 @@ import de.ipbhalle.metfrag.fragmenter.Candidates;
 
 public class SimilarityMetFusion {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		
 		if(args == null || args.length < 3)
 		{

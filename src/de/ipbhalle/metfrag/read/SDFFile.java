@@ -17,22 +17,18 @@
 package de.ipbhalle.metfrag.read;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import org.openscience.cdk.ChemFile;
-import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.io.MDLV2000Reader;
-import org.openscience.cdk.io.iterator.IteratingMDLReader;
-import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
+import org.openscience.cdk.io.iterator.IteratingSDFReader;
 
 public class SDFFile {
 	
@@ -43,26 +39,24 @@ public class SDFFile {
 	 * 
 	 * @return the list< i atom container>
 	 * 
-	 * @throws FileNotFoundException the file not found exception
 	 * @throws CDKException the CDK exception
+	 * @throws IOException 
 	 */
-	public static List<IAtomContainer> ReadSDFFile(String path) throws FileNotFoundException, CDKException
+	public static List<IAtomContainer> ReadSDFFile(String path) throws CDKException, IOException
 	{
-		MDLV2000Reader reader;
-		List<IAtomContainer> containersList;
+		IteratingSDFReader reader;
 		List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
 		
 		File f = new File(path);
 		
 		if(f.isFile())
 		{
-			reader = new MDLV2000Reader(new FileReader(f));
-	        ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
-	        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
-	        for (IAtomContainer container: containersList) {
-	        	ret.add(container);
+			reader = new IteratingSDFReader(new FileReader(f), DefaultChemObjectBuilder.getInstance());
+			while (reader.hasNext()) {
+				IAtomContainer container = (IAtomContainer)reader.next();
+				ret.add(container);
 			}
-	        
+	        reader.close();
 		}
 		
         return ret;
@@ -76,24 +70,22 @@ public class SDFFile {
 	 * @param path
 	 * @param forbiddenAtoms
 	 * @return
-	 * @throws FileNotFoundException
 	 * @throws CDKException
+	 * @throws IOException 
 	 */
-	public static List<IAtomContainer> ReadSDFFile(String path, Vector<String> forbiddenAtoms) throws FileNotFoundException, CDKException
+	public static List<IAtomContainer> ReadSDFFile(String path, Vector<String> forbiddenAtoms) throws CDKException, IOException
 	{
-		MDLV2000Reader reader;
-		List<IAtomContainer> containersList;
+		IteratingSDFReader reader;
 		List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
 		
 		File f = new File(path);
 		
 		if(f.isFile())
 		{
-			reader = new MDLV2000Reader(new FileReader(f));
-	        ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
-	        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
-	        for (IAtomContainer container: containersList) {
-	        	boolean contains = false;
+			reader = new IteratingSDFReader(new FileReader(f), DefaultChemObjectBuilder.getInstance());
+			while (reader.hasNext()) {
+	        	IAtomContainer container = (IAtomContainer)reader.next();
+				boolean contains = false;
 	        	Iterable<IAtom> it_atoms = container.atoms();
 	        	Iterator<IAtom> atoms = it_atoms.iterator();
 	        	while(atoms.hasNext()) {
@@ -108,21 +100,22 @@ public class SDFFile {
 	        	}
 	        	if(!contains) ret.add(container);
 			}
+	        reader.close();
 		}
 		
         return ret;
 	}	
 	
-	public static List<IAtomContainer> ReadSDFFileIteratively(String path, Vector<String> forbiddenAtoms) throws FileNotFoundException, CDKException
+	public static List<IAtomContainer> ReadSDFFileIteratively(String path, Vector<String> forbiddenAtoms) throws CDKException, IOException
 	{
-		IteratingMDLReader reader;
+		IteratingSDFReader reader;
 		List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
 		
 		File f = new File(path);
 		
 		if(f.isFile())
 		{
-			reader = new IteratingMDLReader(new FileReader(f), DefaultChemObjectBuilder.getInstance());
+			reader = new IteratingSDFReader(new FileReader(f), DefaultChemObjectBuilder.getInstance());
 	        while (reader.hasNext()) {
 	        	IAtomContainer con = (IAtomContainer)reader.next();
 	        	boolean contains = false;
@@ -140,6 +133,7 @@ public class SDFFile {
 	        	}
 	        	if(!contains) ret.add(con);
 			}
+	        reader.close();
 		}
 		
         return ret;

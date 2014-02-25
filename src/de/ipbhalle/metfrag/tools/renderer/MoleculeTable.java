@@ -21,15 +21,13 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 
 	
 public class MoleculeTable extends JPanel {
         
-    public MoleculeTable(List<IAtomContainer> atomContainers) {
+    public MoleculeTable(List<IAtomContainer> atomContainers) throws CloneNotSupportedException {
         int w = 200;
         int h = 200;
         
@@ -37,7 +35,7 @@ public class MoleculeTable extends JPanel {
         StructureDiagramGenerator sdg = new StructureDiagramGenerator();
         for (IAtomContainer atomContainer : atomContainers) {
             
-        	IMolecule mol = new Molecule(atomContainer);
+        	IAtomContainer mol = atomContainer.clone();
         	sdg.setMolecule(mol);
             try {
                 sdg.generateCoordinates();

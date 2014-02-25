@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.openscience.cdk.AtomContainer;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.DefaultChemObjectBuilder;
@@ -39,7 +40,6 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLReader;
 import org.openscience.cdk.io.MDLV2000Reader;
 import org.openscience.cdk.io.MDLV3000Reader;
-import org.openscience.cdk.nonotify.NNMolecule;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
@@ -411,7 +411,7 @@ public class Query {
         while(res.next()){
         	String molString = res.getString(1);
         	MDLV3000Reader reader = new MDLV3000Reader(new ByteArrayInputStream(molString.getBytes()));
-        	ret = (IAtomContainer)reader.read(new NNMolecule());
+        	ret = (IAtomContainer)reader.read(new AtomContainer());
         }
         pstmt.close();
         		
@@ -445,7 +445,7 @@ public class Query {
 	        while(res.next()){
 	        	String molString = res.getString(1);
 	        	MDLV3000Reader reader = new MDLV3000Reader(new ByteArrayInputStream(molString.getBytes()));
-	        	ret = (IAtomContainer)reader.read(new NNMolecule());
+	        	ret = (IAtomContainer)reader.read(new AtomContainer());
 	        }
 	        pstmt.close();
 		}
@@ -481,7 +481,7 @@ public class Query {
         while(res.next()){
         	String molString = res.getString(1);
         	MDLV3000Reader reader = new MDLV3000Reader(new ByteArrayInputStream(molString.getBytes()));
-        	ret = (IAtomContainer)reader.read(new NNMolecule());
+        	ret = (IAtomContainer)reader.read(new AtomContainer());
         }
         pstmt.close();
         con.close();
@@ -518,7 +518,7 @@ public class Query {
 	        while(res.next()){
 	        	String molString = res.getString(1);
 	        	MDLV3000Reader reader = new MDLV3000Reader(new ByteArrayInputStream(molString.getBytes()));
-	        	ret = (IAtomContainer)reader.read(new NNMolecule());
+	        	ret = (IAtomContainer)reader.read(new AtomContainer());
 	        }
 	        pstmt.close();
 		}

@@ -36,7 +36,8 @@ import java.util.Vector;
 
 
 import org.openscience.cdk.Atom;
-import org.openscience.cdk.Molecule;
+import org.openscience.cdk.ChemObject;
+import org.openscience.cdk.Element;
 import org.openscience.cdk.SingleElectron;
 import org.openscience.cdk.aromaticity.AromaticityCalculator;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
@@ -51,7 +52,6 @@ import org.openscience.cdk.interfaces.IMolecularFormulaSet;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IRing;
 import org.openscience.cdk.interfaces.IRingSet;
 import org.openscience.cdk.interfaces.ISingleElectron;
@@ -59,13 +59,13 @@ import org.openscience.cdk.interfaces.IBond.Stereo;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.isomorphism.IsomorphismTester;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
-import org.openscience.cdk.nonotify.NoNotificationChemObjectBuilder;
 import org.openscience.cdk.qsar.DescriptorValue;
 import org.openscience.cdk.qsar.descriptors.molecular.ALOGPDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.MannholdLogPDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.XLogPDescriptor;
 import org.openscience.cdk.qsar.result.IDescriptorResult;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
+import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
@@ -416,8 +416,9 @@ public class Fragmenter {
         
         
         //do ring detection with the original molecule
+        AllRingsFinder.usingThreshold(AllRingsFinder.Threshold.PubChem_95);
         AllRingsFinder allRingsFinder = new AllRingsFinder();
-        allRingsFinder.setTimeout(100000);
+        
         allRings = allRingsFinder.findAllRings(this.originalMolecule);
         this.aromaticBonds = new ArrayList<IBond>();
         
@@ -1346,7 +1347,7 @@ public class Fragmenter {
     	{
     		//now generate the smiles for the fragment
     		SmilesGenerator sg = new SmilesGenerator();
-    		IMolecule fragMol = new Molecule(fragment);
+    		IAtomContainer fragMol = fragment.clone();
     		String smilesFrag = sg.createSMILES(fragMol);
     		Map<Object, Object> map = fragment.getProperties();
     		map.put("smiles", smilesFrag);
@@ -1450,7 +1451,8 @@ public class Fragmenter {
     		{
     			continue;
     		}
-    		if(UniversalIsomorphismTester.isIsomorph(molecule1, fragsToCompare.get(i)))
+    		UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
+    		if(uit.isIsomorph(molecule1, fragsToCompare.get(i)))
     			return true; 
 		}
     	return isomorph;
@@ -1547,10 +1549,11 @@ public class Fragmenter {
      * @return true, if successful
      * 
      * @throws NoSuchAtomException the no such atom exception
+     * @throws CloneNotSupportedException 
      */
-    private boolean quickCheck(IAtomContainer molecule1, List<IAtomContainer> fragsToCompare) throws NoSuchAtomException
+    private boolean quickCheck(IAtomContainer molecule1, List<IAtomContainer> fragsToCompare) throws NoSuchAtomException, CloneNotSupportedException
     {
-    	IMolecule mol = new Molecule(molecule1);
+    	IAtomContainer mol = molecule1.clone();
     	IsomorphismTester it = new IsomorphismTester(mol);
     	for (int i = 0; i < fragsToCompare.size(); i++) {
     		//no match
@@ -1560,7 +1563,7 @@ public class Fragmenter {
     		}
 
 			//compare to molecule1
-    		IMolecule mol2 = new Molecule(fragsToCompare.get(i));
+    		IAtomContainer mol2 = fragsToCompare.get(i).clone();
 			if (it.isIsomorphic((mol2))) {
 				return true;
 			}
@@ -1736,8 +1739,9 @@ public class Fragmenter {
         List<IElement> elements = MolecularFormulaManipulator.elements(molecularFormula);
         for (IElement element : elements) {
         	IAtom a = new Atom(element);
-			IsotopeFactory.getInstance(a.getBuilder()).configure(a);
 			//get mass and store in map
+			IsotopeFactory isofac = IsotopeFactory.getInstance(new ChemObject().getBuilder());
+	        isofac.configure(a);
 			atomMasses.put(element.getSymbol(), a.getExactMass());
 		}
     }
@@ -1755,7 +1759,7 @@ public class Fragmenter {
     	
     	boolean[] atomsDone = new boolean[this.atomsContained];
     	
-    	IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
+    	IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
         IAtomContainer partContainer = builder.newInstance(IAtomContainer.class);
         partContainer.addAtom(atom);
         
@@ -1920,8 +1924,9 @@ public class Fragmenter {
      * 
      * @throws IOException Signals that an I/O exception has occurred.
      * @throws CDKException the CDK exception
+     * @throws CloneNotSupportedException 
      */
-    private File writeMoleculeToTemp(IAtomContainer mol, String identifier, int globalCount, String bondEnergy, Integer treeDepth) throws IOException, CDKException
+    private File writeMoleculeToTemp(IAtomContainer mol, String identifier, int globalCount, String bondEnergy, Integer treeDepth) throws IOException, CDKException, CloneNotSupportedException
     {
     	File temp = File.createTempFile(identifier + "_" + globalCount, ".sdf");
         // Delete temp file when program exits.
@@ -1933,7 +1938,7 @@ public class Fragmenter {
         SDFWriter mw = new SDFWriter(out);
         IAtomContainer tmp = mol;
         Map<Object, Object> props = mol.getProperties();
-        IMolecule test = new Molecule(tmp);
+        IAtomContainer test = tmp.clone();
         test.setProperties(props);
         test.setProperty("BondEnergy", bondEnergy);
         test.setProperty("TreeDepth", treeDepth.toString());
@@ -2040,7 +2045,7 @@ public class Fragmenter {
 	    					if(smilesRedundancyCheck)
 	    					{
 	    						SmilesGenerator sg = new SmilesGenerator();
-		    					IMolecule fragNLMol = new Molecule(fragmentNL);
+		    					IAtomContainer fragNLMol = fragmentNL.clone();
 		    					String smiles = sg.createSMILES(fragNLMol);
 		    					props.put("smiles", smiles);
 	    					}

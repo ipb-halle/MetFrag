@@ -23,12 +23,10 @@ import java.util.Map;
 
 import org.openscience.cdk.AtomContainer;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.smsd.Isomorphism;
 import org.openscience.cdk.smsd.interfaces.Algorithm;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -58,7 +56,7 @@ public class Subgraph {
     	IAtomContainer subgraph = DefaultChemObjectBuilder.getInstance().newInstance(AtomContainer.class);
 		Isomorphism comparison = new Isomorphism(Algorithm.SubStructure, true);
 		
-		IMolecule targetTemp = new Molecule((IAtomContainer)target.clone());
+		IAtomContainer targetTemp = target.clone();
 		
 		
 		AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(query);
@@ -66,8 +64,8 @@ public class Subgraph {
         
         if(removeHydrogens)
         {
-        	query = (IMolecule) AtomContainerManipulator.removeHydrogens(query);
-            targetTemp = (IMolecule) AtomContainerManipulator.removeHydrogens(targetTemp);
+        	query = AtomContainerManipulator.removeHydrogens(query);
+            targetTemp = AtomContainerManipulator.removeHydrogens(targetTemp);
         }
         
 
@@ -212,14 +210,14 @@ public class Subgraph {
     	IAtomContainer subgraph = DefaultChemObjectBuilder.getInstance().newInstance(AtomContainer.class);
 		Isomorphism comparison = new Isomorphism(Algorithm.SubStructure, true);
 		
-		IMolecule A1 = new Molecule((IAtomContainer)mol1.clone());
-		IMolecule A2 = new Molecule((IAtomContainer)mol2.clone());
+		IAtomContainer A1 = mol1.clone();
+		IAtomContainer A2 = mol2.clone();
 		
 		AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(A1);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(A2);
 
-        A1 = (IMolecule) AtomContainerManipulator.removeHydrogens(A1);
-        A2 = (IMolecule) AtomContainerManipulator.removeHydrogens(A2);
+        A1 = AtomContainerManipulator.removeHydrogens(A1);
+        A2 = AtomContainerManipulator.removeHydrogens(A2);
 
 		// set molecules and remove hydrogens
 		comparison.init(A1, A2, true, false);

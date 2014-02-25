@@ -8,7 +8,12 @@
 package com.chemspider.www;
 
 public class ExtendedCompoundInfo  implements java.io.Serializable {
-    private int CSID;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private int CSID;
 
     private java.lang.String MF;
 
@@ -306,7 +311,6 @@ public class ExtendedCompoundInfo  implements java.io.Serializable {
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ExtendedCompoundInfo)) return false;
         ExtendedCompoundInfo other = (ExtendedCompoundInfo) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

@@ -51,10 +51,8 @@ import org.openscience.cdk.interfaces.IChemObjectBuilder;
 import org.openscience.cdk.interfaces.IElement;
 import org.openscience.cdk.interfaces.IIsotope;
 import org.openscience.cdk.interfaces.IMolecularFormula;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.interfaces.IRingSet;
-import org.openscience.cdk.nonotify.NoNotificationChemObjectBuilder;
+import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
@@ -133,7 +131,7 @@ public class PostProcess {
 			allRings = validRings;
 		}
 		
-		IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
+		IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
         IAtomContainer temp = builder.newInstance(IAtomContainer.class);
 		List<IAtom> doneAtoms = new ArrayList<IAtom>();
 		List<IBond> doneBonds = new ArrayList<IBond>();	
@@ -189,8 +187,8 @@ public class PostProcess {
 						}
 						else
 						{
-							IMoleculeSet set = ConnectivityChecker.partitionIntoMolecules(temp);
-							for (IAtomContainer molecule : set.molecules()) {
+							IAtomContainerSet set = ConnectivityChecker.partitionIntoMolecules(temp);
+							for (IAtomContainer molecule : set.atomContainers()) {
 								ret.add(molecule);
 							}
 						}
@@ -217,7 +215,7 @@ public class PostProcess {
      */
     private IAtomContainer checkForCompleteNeutralLoss(IAtomContainer frag, IAtom candidateAtom, double neutralLossMass) throws CloneNotSupportedException, CDKException
     {
-    	IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
+    	IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
         IAtomContainer ret = builder.newInstance(IAtomContainer.class);
 
     	//create a copy from the original fragment
@@ -440,7 +438,7 @@ public class PostProcess {
     
     private IAtomContainer makeAtomContainer(IAtom atom, List<IBond> parts) {
         
-    	IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
+    	IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
         IAtomContainer partContainer = builder.newInstance(IAtomContainer.class);
 
         partContainer.addAtom(atom);

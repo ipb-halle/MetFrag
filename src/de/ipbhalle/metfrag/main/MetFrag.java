@@ -32,14 +32,13 @@ import java.util.concurrent.Executors;
 
 import javax.xml.rpc.ServiceException;
 
+import org.openscience.cdk.AtomContainerSet;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
-import org.openscience.cdk.MoleculeSet;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IAtomContainerSet;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IMolecularFormula;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IBond.Stereo;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.smiles.SmilesParser;
@@ -154,7 +153,7 @@ public class MetFrag {
 		//now collect the result
 		Map<String, IAtomContainer> candidateToStructure = results.getMapCandidateToStructure();
 		Map<String, Vector<PeakMolPair>> candidateToFragments = results.getMapCandidateToFragments();
-		MoleculeSet setOfMolecules = new MoleculeSet();
+		IAtomContainerSet setOfMolecules = new AtomContainerSet();
 		for (int i = scores.length -1; i >=0 ; i--) {
 			Vector<String> list = scoresNormalized.get(scores[i]);
 			for (String string : list) {
@@ -175,10 +174,10 @@ public class MetFrag {
 			}
 		}
 		
-		MoleculeSet setOfFragments = null;
+		IAtomContainerSet setOfFragments = null;
 		if(!databaseID.equals(""))
 		{
-			setOfFragments = new MoleculeSet();
+			setOfFragments = new AtomContainerSet();
 			
 			
 			for (int i = scores.length -1; i >=0 ; i--) {
@@ -186,7 +185,7 @@ public class MetFrag {
 				for (String string : list) {
 					
 					//original molecule
-					setOfFragments.addAtomContainer(new Molecule(candidateToStructure.get(string)));
+					setOfFragments.addAtomContainer(candidateToStructure.get(string));
 					Vector<PeakMolPair> fragments = candidateToFragments.get(string);
 					for (PeakMolPair frag : fragments) {
 						
@@ -195,7 +194,7 @@ public class MetFrag {
 							if(bond.getStereo() == null)
 								bond.setStereo(Stereo.UP_OR_DOWN);		
 						} 
-						IMolecule mol = new Molecule(AtomContainerManipulator.removeHydrogens(frag.getFragment()));
+						IAtomContainer mol = AtomContainerManipulator.removeHydrogens(frag.getFragment());
 						setOfFragments.addAtomContainer(mol);
 					}
 					
@@ -671,7 +670,7 @@ public class MetFrag {
 		Map<Double, Vector<String>> realScoreMap = results.getRealScoreMap();
 		Map<String, IAtomContainer> candidateToStructure = results.getMapCandidateToStructure();
 		
-		MoleculeSet setOfMolecules = new MoleculeSet();
+		IAtomContainerSet setOfMolecules = new AtomContainerSet();
 		for (int i = keysScore.length -1; i >=0 ; i--) {
 			Vector<String> list = realScoreMap.get(keysScore[i]);
 			for (String string : list) {
@@ -1185,16 +1184,16 @@ public class MetFrag {
 //		forbiddenAtoms.add("P");
 		try
 		{
-			try {
-				candidates = SDFFile.ReadSDFFileIteratively(sdfFile, forbiddenAtoms);
-			} catch (CDKException e) {
-				e.printStackTrace();
-			}
+			candidates = SDFFile.ReadSDFFileIteratively(sdfFile, forbiddenAtoms);
 		}
 		catch(FileNotFoundException e)
 		{
 			System.err.println("SDF file not found!");
 			return null;
+		} catch (CDKException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		if(verbose) System.out.println(candidates.size()+" hits in database!");
@@ -1209,6 +1208,7 @@ public class MetFrag {
 			
 	    boolean[] filteredCandidates = null; 
 	    int numCandidates = candidates.size();
+	    /*
 	    if(massFilter) {
 	    	try {
 				filteredCandidates = filterCandidates(candidates, spec.getExactMass(), searchppm);
@@ -1222,21 +1222,25 @@ public class MetFrag {
 	    		if(filteredCandidates[i]) numCandidates++;
 	    	if(verbose) System.out.println("after mass filter "+numCandidates+" candidates");
 	    }
+	    */
+	    
+	    System.out.println("Read " + candidates.size() + " candidate structures");
 	    FragmenterThread.setVerbose(verbose);
 	    FragmenterThread.setSizeCandidates(numCandidates);
 	    
 	    
 		for (int c = 0; c < candidates.size(); c++) {
-			
+
 			if(c > limit) {
 				if(verbose) System.out.println("stopped at "+c+" compounds");
 				break;
 			}
 				
 			if(massFilter && filteredCandidates != null) {
-				if(!filteredCandidates[c]) continue;
+				if(!filteredCandidates[c]) {
+					continue;
+				}
 			}
-			 
 			threadExecutor.execute(new FragmenterThread(candidates.get(c), Integer.toString(c), "SDF", spec, mzabs, 
 					mzppm, molredundancycheck, breakRings, treeDepth, false, hydrogenTest, neutralLossInEveryLayer, 
 					bondEnergyScoring, breakOnlySelectedBonds, isStoreFragments, sampleName, onlyBiologicalCompounds, 
@@ -1253,7 +1257,8 @@ public class MetFrag {
 				e.printStackTrace();
 			}//sleep for 1000 ms
 		}
-
+		System.out.println();
+		
 	//	Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
 		Map<Double, Vector>[] scoreInfo = Scoring.getCombinedScoreMoreInfo(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
 		Map<Double, Vector> scoresNormalized = scoreInfo[0];

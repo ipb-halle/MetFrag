@@ -102,8 +102,9 @@ public class ChemSpider {
 	 * 
 	 * @throws RemoteException the remote exception
 	 * @throws CDKException 
+	 * @throws CloneNotSupportedException 
 	 */
-	public static IAtomContainer getMol(String ID, boolean getAll, String token) throws RemoteException, CDKException
+	public static IAtomContainer getMol(String ID, boolean getAll, String token) throws RemoteException, CDKException, CloneNotSupportedException
 	{
 		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
 		String mol = chemSpiderProxy.getRecordMol(ID, false, token);

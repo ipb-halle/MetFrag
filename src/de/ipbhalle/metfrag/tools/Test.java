@@ -19,12 +19,11 @@ package de.ipbhalle.metfrag.tools;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.axis2.engine.DefaultObjectSupplier;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.nonotify.NoNotificationChemObjectBuilder;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
@@ -38,8 +37,9 @@ public class Test {
 
 	/**
 	 * @param args
+	 * @throws CloneNotSupportedException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		double mass = MolecularFormulaTools.getMonoisotopicMass("C17H4O14");
 		System.out.println(mass);
@@ -95,9 +95,9 @@ public class Test {
 //	        SMARTSQueryTool querytool = new SMARTSQueryTool("[$([NH2][#6])]([H])([H])[#6][H]");
 	        
 	        //TODO: SO3H
-	        SMARTSQueryTool querytool = new SMARTSQueryTool("[$([NH2][#6])]([H])([H])[#6][H]");
+	        SMARTSQueryTool querytool = new SMARTSQueryTool("[$([NH2][#6])]([H])([H])[#6][H]", DefaultChemObjectBuilder.getInstance());
 	        
-			boolean status = querytool.matches(atomContainer);
+	        boolean status = querytool.matches(atomContainer);
 			if (status) {
 			   int nmatch = querytool.countMatches();
 			   System.out.println(nmatch);

@@ -36,13 +36,12 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
-import org.openscience.cdk.MoleculeSet;
+import org.openscience.cdk.AtomContainerSet;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IBond.Stereo;
 import org.openscience.cdk.io.SDFWriter;
-import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import de.ipbhalle.metfrag.spectrum.WrapperSpectrum;
@@ -161,6 +160,7 @@ public class CommandLineTool {
 		
 		// parse the command line arguments
 		CommandLine line = null;
+		mode.setOffset(-2);
 		try {
 			line = parser.parse( options, args );
 		} catch (ParseException e1) {
@@ -212,7 +212,7 @@ public class CommandLineTool {
 		try {
 			boolean isPositive = true;
 			if(charge.getValue() == 2) isPositive = false;
-			spec = new WrapperSpectrum(peaksString, mode.getValue(), exactMass.getValue(), isPositive);
+			spec = new WrapperSpectrum(peaksString, mode.getValue() + mode.getOffset(), exactMass.getValue(), isPositive);
 		}
 		catch(Exception e) {
 			System.out.println("Error: Could not parse spectrum correctly. Check the given peak list.");
@@ -237,7 +237,7 @@ public class CommandLineTool {
 					System.out.println("using database "+database);
 				}
 				results = MetFrag.startConvenienceSDF(spec, mzabs.getValue(), mzppm.getValue(), searchppm.getValue(), 
-							true, breakRings, treeDepth.getValue(), true, false, true, false, 
+							true, breakRings, treeDepth.getValue(), true, true, true, false, 
 							Integer.MAX_VALUE, true, sdfFile, "", null, searchppmIsSet, pathToStoreFrags,
 							numberThreads.getValue(), verbose, sampleName, onlyBiologicalCompounds);
 			} catch(Exception e) {
@@ -353,7 +353,6 @@ public class CommandLineTool {
 					treedepthIsSet = true;
 					break;
 				case 'M': //setting mode
-					mode.setOffset(-2);
 					correct = setIntegerValue(opts[j].getValue().trim(), false, "mode", mode);
 					modeIsSet = true;
 					break;
@@ -758,6 +757,7 @@ public class CommandLineTool {
 	 * save the results of the metfrag run
 	 * 
 	 * @param results
+	 * @throws CloneNotSupportedException 
 	 * @throws CDKException 
 	 */
 	public static void saveResults(List<MetFragResult> results) {
@@ -765,8 +765,8 @@ public class CommandLineTool {
 			System.out.println("Error: No results.");
 			return;
 		}
-		MoleculeSet setOfMolecules = new MoleculeSet();
-		SmilesGenerator sg = new SmilesGenerator();
+		AtomContainerSet setOfMolecules = new AtomContainerSet();
+		//	SmilesGenerator sg = new SmilesGenerator();
 		//uncomment if inchi generation is avaiable on your system - jni-inchi
 		/*org.openscience.cdk.inchi.InChIGeneratorFactory factory = null;
 		try {
@@ -777,10 +777,10 @@ public class CommandLineTool {
 		for(MetFragResult result : results) {
 			IAtomContainer tmp = result.getStructure();
 			tmp = AtomContainerManipulator.removeHydrogens(tmp);
-			String smiles = sg.createSMILES(tmp);
+			//	String smiles = sg.createSMILES(tmp);
 			tmp.setProperty("DatabaseID", result.getCandidateID());
 			tmp.setProperty("NoPeaksExplained", result.getPeaksExplained());
-			tmp.setProperty("SMILES", smiles);
+		//	tmp.setProperty("SMILES", smiles);
 			//uncomment if inchi generation is avaiable on your system - jni-inchi
 		/*	IAtomContainer tmp_clone = null;
 			try {

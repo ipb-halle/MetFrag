@@ -31,7 +31,7 @@ import de.ipbhalle.metfrag.tools.renderer.StructureRenderer;
 
 public class Smsd {
 
-	public static void main(String[] args) throws CDKException, IOException {
+	public static void main(String[] args) throws CDKException, IOException, CloneNotSupportedException {
 		
 		
 		

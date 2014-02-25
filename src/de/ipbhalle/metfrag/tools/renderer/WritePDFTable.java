@@ -28,7 +28,6 @@ import de.ipbhalle.metfrag.tools.renderer.StructureRenderer.MoleculePanel;
 
 
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.interfaces.IAtom;
@@ -36,7 +35,6 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IChemObject;
 import org.openscience.cdk.interfaces.IChemObjectBuilder;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.renderer.AtomContainerRenderer;
 import org.openscience.cdk.renderer.RendererModel;
@@ -240,7 +238,7 @@ public class WritePDFTable extends MoleculeCell {
     	    	
 //    	protonatedMol = AtomContainerManipulator.removeHydrogens(protonatedMol);
         // creates CDK Molecule object and get the renderer
-    	IMolecule molSource = new Molecule(mol);
+    	IAtomContainer molSource = mol.clone();
     	
     	StructureDiagramGenerator sdg = new StructureDiagramGenerator();
 		sdg.setMolecule(molSource);
@@ -303,7 +301,7 @@ public class WritePDFTable extends MoleculeCell {
     	    	
 //    	protonatedMol = AtomContainerManipulator.removeHydrogens(protonatedMol);
         // creates CDK Molecule object and get the renderer
-    	IMolecule molSource = new Molecule(protonatedMol);
+    	IAtomContainer molSource = protonatedMol.clone();
     	
     	StructureDiagramGenerator sdg = new StructureDiagramGenerator();
 		sdg.setMolecule(molSource);
@@ -332,7 +330,7 @@ public class WritePDFTable extends MoleculeCell {
 	   	IAtomContainer invertedSubgraph = Subgraph.getInvertedSubgraph(molSource, subgraph);
 	   	
 	   	//now remove all hydrogens and add those which were protonated
-	   	molSource = (IMolecule) AtomContainerManipulator.removeHydrogens(molSource);
+	   	molSource = AtomContainerManipulator.removeHydrogens(molSource);
 	   	for (IBond bond : invertedSubgraph.bonds()) {
 			molSource.addBond(bond);
 		}

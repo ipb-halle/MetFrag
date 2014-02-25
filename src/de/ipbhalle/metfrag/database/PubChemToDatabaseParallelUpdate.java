@@ -41,9 +41,8 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.io.iterator.IteratingMDLReader;
+import org.openscience.cdk.io.iterator.IteratingMDLConformerReader;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
@@ -76,7 +75,7 @@ public class PubChemToDatabaseParallelUpdate implements Runnable {
 		    stmt = con.createStatement();
 			
 			File sdfFile = new File(path + file);
-			IteratingMDLReader reader = new IteratingMDLReader(new GZIPInputStream(new FileInputStream(sdfFile)), DefaultChemObjectBuilder.getInstance());
+			IteratingMDLConformerReader reader = new IteratingMDLConformerReader(new GZIPInputStream(new FileInputStream(sdfFile)), DefaultChemObjectBuilder.getInstance());
 
 			int count = 0;
 			

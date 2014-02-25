@@ -32,7 +32,6 @@ import java.util.Map;
 
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.atomtype.CDKAtomTypeMatcher;
 import org.openscience.cdk.interfaces.IAtom;
@@ -164,7 +163,7 @@ public class UpdateData {
 				    
 				    SmilesGenerator generatorSmiles = new SmilesGenerator();
 				    IAtomContainer molecule = AtomContainerManipulator.removeHydrogens(molRead);
-				    String smiles = generatorSmiles.createSMILES(new Molecule(molecule));
+				    String smiles = generatorSmiles.createSMILES(molecule);
 				    
 				    PreparedStatement pstmt = con.prepareStatement("UPDATE RECORD SET smiles = ? WHERE id = ?");
 			        pstmt.setString(1, smiles);

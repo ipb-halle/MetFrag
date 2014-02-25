@@ -32,7 +32,6 @@ import javax.vecmath.Point2d;
 import org.freehep.graphics2d.VectorGraphics;
 import org.freehep.graphicsio.svg.SVGGraphics2D;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.Reaction;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
@@ -90,8 +89,8 @@ public class ReactionRenderer {
     	molHighlight = AtomContainerManipulator.removeHydrogens(molHighlight);
     	    	
         // creates CDK Molecule object and get the renderer
-    	IMolecule molSource = new Molecule(molAC);
-    	IMolecule molHigh = new Molecule(molHighlight);
+    	IAtomContainer molSource = molAC.clone();
+    	IAtomContainer molHigh = molHighlight.clone();
     	
     	Rectangle drawArea = new Rectangle(this.width, this.height);
 		Image image = new BufferedImage(this.width, this.height, BufferedImage.TYPE_INT_RGB);

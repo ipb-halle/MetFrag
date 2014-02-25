@@ -32,14 +32,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IChemObject;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.renderer.AtomContainerRenderer;
 import org.openscience.cdk.renderer.RendererModel;
@@ -238,10 +236,10 @@ public class StructureRenderer extends JFrame {
      * Instantiates a new structure renderer. Just an example.
      */
     public StructureRenderer() {
-        IMolecule chain = MoleculeFactory.makeAdenine();
+        IAtomContainer chain = MoleculeFactory.makeAdenine();
                 
         StructureDiagramGenerator sdg = new StructureDiagramGenerator();
-        sdg.setMolecule((IMolecule)chain);
+        sdg.setMolecule(chain);
         
         try {
             sdg.generateCoordinates();
@@ -260,10 +258,11 @@ public class StructureRenderer extends JFrame {
      * 
      * @param original the original
      * @param name the name
+     * @throws CloneNotSupportedException 
      */
-    public StructureRenderer(IAtomContainer original, String name) {
+    public StructureRenderer(IAtomContainer original, String name) throws CloneNotSupportedException {
     	
-    	IMolecule mol = new Molecule(original);
+    	IAtomContainer mol = original.clone();
     	
     	StructureDiagramGenerator sdg = new StructureDiagramGenerator();
         sdg.setMolecule(mol);
@@ -286,10 +285,11 @@ public class StructureRenderer extends JFrame {
      * @param original the original
      * @param name the name
      * @param highlight the highlight
+     * @throws CloneNotSupportedException 
      */
-    public StructureRenderer(IAtomContainer original, IAtomContainer highlight, String name) {
+    public StructureRenderer(IAtomContainer original, IAtomContainer highlight, String name) throws CloneNotSupportedException {
     	
-    	IMolecule mol = new Molecule(original);
+    	IAtomContainer mol = original.clone();
     	
     	StructureDiagramGenerator sdg = new StructureDiagramGenerator();
         sdg.setMolecule(mol);
@@ -308,9 +308,9 @@ public class StructureRenderer extends JFrame {
     }
     
     
-    public StructureRenderer(IAtomContainer original, List<Integer> atomsTohighlight, String name) {
+    public StructureRenderer(IAtomContainer original, List<Integer> atomsTohighlight, String name) throws CloneNotSupportedException {
     	
-    	IMolecule mol = new Molecule(original);
+    	IAtomContainer mol = original.clone();
     	
     	StructureDiagramGenerator sdg = new StructureDiagramGenerator();
         sdg.setMolecule(mol);
@@ -329,7 +329,7 @@ public class StructureRenderer extends JFrame {
     }
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
     	SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
     	try {
 			IAtomContainer ac = sp.parseSmiles("CC1=NN=C(N1C2CC3CCC(C2)N3CCC(C4=CC=CC=C4)NC(=O)C5CCC(CC5)(F)F)C(C)C");

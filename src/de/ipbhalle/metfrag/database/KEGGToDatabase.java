@@ -49,7 +49,6 @@ import net.sf.jniinchi.LoadNativeLibraryException;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.atomtype.CDKAtomTypeMatcher;
 import org.openscience.cdk.exception.CDKException;
@@ -127,7 +126,7 @@ public class KEGGToDatabase {
 			
 			SmilesGenerator generatorSmiles = new SmilesGenerator();
 		    IAtomContainer molecule = AtomContainerManipulator.removeHydrogens(molRead);
-		    String smiles = generatorSmiles.createSMILES(new Molecule(molecule));
+		    String smiles = generatorSmiles.createSMILES(molecule);
 	        
 			ResultSet rs = stmt.executeQuery("SELECT nextval('compound_compound_id_seq')");
 		    rs.next();

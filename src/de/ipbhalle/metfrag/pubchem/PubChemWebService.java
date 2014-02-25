@@ -281,7 +281,7 @@ public class PubChemWebService {
 	        SmilesGenerator generatorSmiles = new SmilesGenerator();
 			for (int i = 0; i < cids.length; i++) {
 				candidatesString.add(cids[i] + "");
-				this.retrievedHits.put(cids[i], generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getMolecule(0)));
+				this.retrievedHits.put(cids[i], generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0)));
 			}
 	        
 		}
@@ -409,7 +409,7 @@ public class PubChemWebService {
 				Map<Object, Object> properties = fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0).getProperties();
 		        pubchemCIDs.add((String) properties.get("PUBCHEM_COMPOUND_CID"));
 		        System.out.println((String) properties.get("PUBCHEM_COMPOUND_CID"));
-		        this.retrievedHits.put(Integer.parseInt(properties.get("PUBCHEM_COMPOUND_CID").toString()), generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getMolecule(0)));
+		        this.retrievedHits.put(Integer.parseInt(properties.get("PUBCHEM_COMPOUND_CID").toString()), generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0)));
 			}
 
 	        System.out.println("Read the file");
@@ -717,7 +717,7 @@ public class PubChemWebService {
 			Map<Object, Object> properties = 
 					fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0).getProperties();
 	        		this.retrievedHits.put(Integer.parseInt(properties.get("PUBCHEM_COMPOUND_CID").toString()), 
-	        		generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getMolecule(0)));
+	        		generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0)));
 		}
         
         return true;
@@ -868,7 +868,7 @@ public class PubChemWebService {
 				Map<Object, Object> properties = fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0).getProperties();
 		        pubchemCIDs.add((String) properties.get("PUBCHEM_COMPOUND_CID"));
 		        System.out.println((String) properties.get("PUBCHEM_COMPOUND_CID"));
-		        this.retrievedHits.put(Integer.parseInt(properties.get("PUBCHEM_COMPOUND_CID").toString()), generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getMolecule(0)));
+		        this.retrievedHits.put(Integer.parseInt(properties.get("PUBCHEM_COMPOUND_CID").toString()), generatorSmiles.createSMILES(fileContents.getChemSequence(0).getChemModel(i).getMoleculeSet().getAtomContainer(0)));
 			}
 
 	        System.out.println("Read the file");

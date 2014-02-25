@@ -107,8 +107,9 @@ public class KeggRestService {
 	 * 
 	 * @param cid
 	 * @return
+	 * @throws CloneNotSupportedException 
 	 */
-	public static IAtomContainer getMolOnline(String cid, boolean getAll) {
+	public static IAtomContainer getMolOnline(String cid, boolean getAll) throws CloneNotSupportedException {
 		InputStream stream = getInputStreamFromURL("http://rest.kegg.jp/get/"+cid+"/mol");
 		if(stream == null) return null;
 		MDLV2000Reader reader = new MDLV2000Reader(stream);

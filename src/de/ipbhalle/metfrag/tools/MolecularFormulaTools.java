@@ -25,14 +25,12 @@ import java.util.regex.Pattern;
 import org.openscience.cdk.Atom;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.config.IsotopeFactory;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IElement;
 import org.openscience.cdk.interfaces.IMolecularFormula;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
@@ -162,8 +160,8 @@ public class MolecularFormulaTools {
 	    for (int i = 0; i < symbols.length; i++) {
 			//create temporary atom with symbol and "configure" it
 			IAtom a = new Atom(symbols[i]);
-			
 			IsotopeFactory isofac = IsotopeFactory.getInstance(new ChemObject().getBuilder());
+			//IsotopeFactory isofac = IsotopeFactory.getInstance(new ChemObject().getBuilder());
 	        isofac.configure(a);
 	        
 	        
@@ -250,12 +248,13 @@ public class MolecularFormulaTools {
 	 * 
 	 * @return true, if is biological compound
 	 * @throws InvalidSmilesException 
+	 * @throws CloneNotSupportedException 
 	 */
-	public static boolean isBiologicalCompound(IAtomContainer mol) throws InvalidSmilesException
+	public static boolean isBiologicalCompound(IAtomContainer mol) throws InvalidSmilesException, CloneNotSupportedException
 	{
 		boolean test = false;
 		SmilesGenerator sg = new SmilesGenerator();
-		IMolecule molecule = new Molecule(mol);
+		IAtomContainer molecule = mol.clone();
 		String smiles = sg.createSMILES(molecule);
 		
 		//test for only c

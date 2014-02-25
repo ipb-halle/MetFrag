@@ -32,7 +32,7 @@ public class MoleculeTableJFrame extends JFrame {
 	
 	private MoleculeTable table;
     
-    public MoleculeTableJFrame(List<IAtomContainer> atomContainers) {
+    public MoleculeTableJFrame(List<IAtomContainer> atomContainers) throws CloneNotSupportedException {
         this.table = new MoleculeTable(atomContainers);
         //JScrollPane pane = new JScrollPane(this.table);
         
@@ -58,7 +58,7 @@ public class MoleculeTableJFrame extends JFrame {
 		
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
     	List<IAtomContainer> containers = new ArrayList<IAtomContainer>();
         containers.add(MoleculeFactory.make123Triazole());
         containers.add(MoleculeFactory.makeCyclobutadiene());

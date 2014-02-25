@@ -202,8 +202,9 @@ public class Candidates {
 	 * @throws SQLException the SQL exception
 	 * @throws CDKException the CDK exception
 	 * @throws RemoteException the remote exception
+	 * @throws CloneNotSupportedException 
 	 */
-	public static IAtomContainer getCompoundLocally(String database, String candidate, String jdbc, String username, String password, boolean getAll, String token) throws SQLException, ClassNotFoundException, RemoteException, CDKException
+	public static IAtomContainer getCompoundLocally(String database, String candidate, String jdbc, String username, String password, boolean getAll, String token) throws SQLException, ClassNotFoundException, RemoteException, CDKException, CloneNotSupportedException
 	{
 		IAtomContainer molecule = null;
 
