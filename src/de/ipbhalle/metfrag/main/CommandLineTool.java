@@ -66,7 +66,7 @@ public class CommandLineTool {
 	public static boolean onlyBiologicalCompounds = false;
 	public static String[] databaseIDs = null;
 	public static MutualInteger treeDepth = new MutualInteger(2);
-	public static MutualInteger mode = new MutualInteger(3);
+	public static MutualInteger mode = new MutualInteger(3, -2);
 	public static String formula = "";
 	public static boolean breakRings = false;
 	public static boolean storeFragments = false;
@@ -237,7 +237,7 @@ public class CommandLineTool {
 					System.out.println("using database "+database);
 				}
 				results = MetFrag.startConvenienceSDF(spec, mzabs.getValue(), mzppm.getValue(), searchppm.getValue(), 
-							true, breakRings, treeDepth.getValue(), true, false, true, false, 
+							true, breakRings, treeDepth.getValue(), true, true, true, false, 
 							Integer.MAX_VALUE, true, sdfFile, "", null, searchppmIsSet, pathToStoreFrags,
 							numberThreads.getValue(), verbose, sampleName, onlyBiologicalCompounds);
 			} catch(Exception e) {
@@ -353,7 +353,6 @@ public class CommandLineTool {
 					treedepthIsSet = true;
 					break;
 				case 'M': //setting mode
-					mode.setOffset(-2);
 					correct = setIntegerValue(opts[j].getValue().trim(), false, "mode", mode);
 					modeIsSet = true;
 					break;
@@ -945,10 +944,15 @@ public class CommandLineTool {
 	public static class MutualDouble {
 		
 		private double value;
-		private double offset;
+		private double offset = 0.0;
 		
 		public MutualDouble(double value) {
 			this.value = value;
+		}
+
+		public MutualDouble(double value, double offset) {
+			this.value = value;
+			this.offset = offset;
 		}
 		
 		public void setValue(double value) {
@@ -960,7 +964,7 @@ public class CommandLineTool {
 		}
 		
 		public double getValue() {
-			return this.value;
+			return this.value + this.offset;
 		}
 
 		public double getOffset() {
@@ -988,10 +992,15 @@ public class CommandLineTool {
 	public static class MutualInteger {
 
 		private int value;
-		private int offset;
+		private int offset = 0;
 		
 		public MutualInteger(int value) {
 			this.value = value;
+		}
+		
+		public MutualInteger(int value, int offset) {
+			this.value = value;
+			this.offset = offset;
 		}
 		
 		public void setValue(int value) {
@@ -1003,7 +1012,7 @@ public class CommandLineTool {
 		}
 		
 		public int getValue() {
-			return this.value;
+			return this.value + this.offset;
 		}
 		
 		public int getOffset() {
