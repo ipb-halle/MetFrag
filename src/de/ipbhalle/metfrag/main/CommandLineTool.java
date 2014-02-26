@@ -1073,7 +1073,7 @@ public class CommandLineTool {
 		
 		public static boolean contains(MutualInteger value) {
 			for(int i = 0; i < validModes.length; i++) {
-				if(validModes[i] == value.getValue()) return true;
+				if(validModesHelp[i] == value.getValue()) return true;
 			}
 			return false;
 		}
