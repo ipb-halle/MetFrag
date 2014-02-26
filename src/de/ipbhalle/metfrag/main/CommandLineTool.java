@@ -212,7 +212,7 @@ public class CommandLineTool {
 		try {
 			boolean isPositive = true;
 			if(charge.getValue() == 2) isPositive = false;
-			spec = new WrapperSpectrum(peaksString, mode.getValue(), exactMass.getValue(), isPositive);
+			spec = new WrapperSpectrum(peaksString, mode.getValueWithOffset(), exactMass.getValue(), isPositive);
 		}
 		catch(Exception e) {
 			System.out.println("Error: Could not parse spectrum correctly. Check the given peak list.");
@@ -617,7 +617,6 @@ public class CommandLineTool {
 		try {
 			valueToSet.setValue(Integer.parseInt(value));
 		} catch(NumberFormatException e) {
-			e.printStackTrace();
 			System.out.println("Error: "+value+" is not a correct value for "+valueName+".");
 			return 1;
 		}
@@ -731,7 +730,6 @@ public class CommandLineTool {
 					chargeIsSet = true;
 				}
 				else if(line.charAt(0) == '#' && line.contains("Mode:")) {
-					mode.setOffset(-2);
 					if(setIntegerValue(line.split("Mode:")[1].trim(), true, "mode", mode) != 0) correct = false;
 					modeIsSet = true;
 				}
@@ -1011,8 +1009,12 @@ public class CommandLineTool {
 			this.offset = value;
 		}
 		
-		public int getValue() {
+		public int getValueWithOffset() {
 			return this.value + this.offset;
+		}
+		
+		public int getValue() {
+			return this.value;
 		}
 		
 		public int getOffset() {
@@ -1071,7 +1073,7 @@ public class CommandLineTool {
 		
 		public static boolean contains(MutualInteger value) {
 			for(int i = 0; i < validModes.length; i++) {
-				if(validModes[i] == value.getValue() + value.getOffset()) return true;
+				if(validModes[i] == value.getValue()) return true;
 			}
 			return false;
 		}
