@@ -1298,6 +1298,97 @@ public class MetFrag {
 		return res;
 	}
 	
+	public static List<MetFragResult> startConvenienceMetFragR(WrapperSpectrum spec,
+			double mzabs, double mzppm, double searchppm,
+			boolean molredundancycheck, boolean breakRings, int treeDepth,
+			boolean hydrogenTest, boolean neutralLossInEveryLayer, boolean bondEnergyScoring, boolean breakOnlySelectedBonds, 
+			int limit, boolean isStoreFragments, IAtomContainer[] cands, String filenameprefix, String[] ids,
+			boolean massFilter, String pathToStoreFrags, int numberThreads,
+			boolean verbose, String sampleName, boolean onlyBiologicalCompounds) {
+
+		results = new FragmenterResult();
+		
+		//now fill executor!!!
+		//number of threads depending on the available processors
+	    int threads = Runtime.getRuntime().availableProcessors();
+	    if(numberThreads != -1) threads = numberThreads;
+		//thread executor
+		ExecutorService threadExecutor = null;
+	    threadExecutor = Executors.newFixedThreadPool(threads);
+			
+	    boolean[] filteredCandidates = null; 
+	    int numCandidates = cands.length;
+	    
+	    System.out.println("Read " + cands.length + " candidate structures");
+	    FragmenterThread.setVerbose(verbose);
+	    FragmenterThread.setSizeCandidates(numCandidates);
+	    
+	    
+		for (int c = 0; c < cands.length; c++) {
+
+			if(c > limit) {
+				if(verbose) System.out.println("stopped at "+c+" compounds");
+				break;
+			}
+				
+			threadExecutor.execute(new FragmenterThread(cands[c], Integer.toString(c), "SDF", spec, mzabs, 
+					mzppm, molredundancycheck, breakRings, treeDepth, false, hydrogenTest, neutralLossInEveryLayer, 
+					bondEnergyScoring, breakOnlySelectedBonds, isStoreFragments, sampleName, onlyBiologicalCompounds, 
+					pathToStoreFrags));	
+		}
+
+		threadExecutor.shutdown();
+		
+		while(!threadExecutor.isTerminated())
+		{
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}//sleep for 1000 ms
+		}
+		System.out.println();
+		
+	//	Map<Double, Vector<String>> scoresNormalized = Scoring.getCombinedScore(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector>[] scoreInfo = Scoring.getCombinedScoreMoreInfo(results.getRealScoreMap(), results.getMapCandidateToEnergy(), results.getMapCandidateToHydrogenPenalty());
+		Map<Double, Vector> scoresNormalized = scoreInfo[0];
+		Double[] scores = new Double[scoresNormalized.size()];
+		scores = scoresNormalized.keySet().toArray(scores);
+		Arrays.sort(scores);
+		
+		
+		//now collect the result
+		Map<String, IAtomContainer> candidateToStructure = results.getMapCandidateToStructure();
+		Map<String, Vector<PeakMolPair>> candidateToFragments = results.getMapCandidateToFragments();
+	
+		List<MetFragResult> res = new ArrayList<MetFragResult>();
+		for (int i = scores.length -1; i >=0 ; i--) {
+			Vector<String> list = scoresNormalized.get(scores[i]);
+			Vector<Double> retPeakCount = scoreInfo[1].get(scores[i]);
+			Vector<Double> retBondEnergyCount = scoreInfo[2].get(scores[i]);
+			for (int l = 0; l < list.size(); l++) {
+				//get corresponding structure
+				String string = list.get(l);
+				IAtomContainer tmp = candidateToStructure.get(string);
+				tmp = AtomContainerManipulator.removeHydrogens(tmp);
+				
+				MetFragResult curResult = new MetFragResult(string, tmp, scores[i], candidateToFragments.get(string).size(), candidateToFragments.get(string));
+				
+				try {
+					curResult.setRawPeakMatchScore(retPeakCount.get(0));
+					curResult.setRawBondEnergyScore(retBondEnergyCount.get(l));
+				}
+				catch(Exception e) {
+					System.out.println(retPeakCount + " " + retBondEnergyCount);
+					System.out.println(retPeakCount.size() + " " + retBondEnergyCount.size());
+				}
+				res.add(curResult);
+			}
+		}		
+		return res;
+	}
+	
+	
 	/**
 	 * filter candidates by mass (used for sdf database)
 	 * 
