@@ -1373,10 +1373,14 @@ public class Fragmenter {
 	    			{
 	    				//now replace fragment if its "bond energy is less"
 			    		double partialChargeDiff = getCombinedEnergy((String)fragment.getProperty("PartialChargeDiff"));
-			    		for (IAtomContainer atomContainer : fragsToCompare) {
+			    		for (int k = 0; k < fragsToCompare.size(); k++) {
+			    			IAtomContainer atomContainer = fragsToCompare.get(k);
+			    		//for (IAtomContainer atomContainer : fragsToCompare) {
 							if(getCombinedEnergy((String)atomContainer.getProperty("PartialChargeDiff")) < partialChargeDiff )
 							{
 								addFragmentToListMapReplace(fragment, currentSumFormula);
+								//added on 2014-04-09
+								break;
 							}
 						}
 	    			}
@@ -1384,10 +1388,14 @@ public class Fragmenter {
 	    			{
 	    				//now replace fragment if its "bond energy is less"
 			    		double bondEnergy = getCombinedEnergy((String)fragment.getProperty("BondEnergy"));
-			    		for (IAtomContainer atomContainer : fragsToCompare) {
+			    		for (int k = 0; k < fragsToCompare.size(); k++) {
+			    		//for (IAtomContainer atomContainer : fragsToCompare) {
+			    			IAtomContainer atomContainer = fragsToCompare.get(k);
 							if(getCombinedEnergy((String)atomContainer.getProperty("BondEnergy")) > bondEnergy )
 							{
 								addFragmentToListMapReplace(fragment, currentSumFormula);
+								//added on 2014-04-09
+								break;
 							}
 						}
 	    			}
