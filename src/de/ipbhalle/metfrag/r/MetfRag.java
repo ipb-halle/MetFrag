@@ -40,7 +40,7 @@ import de.ipbhalle.metfrag.tools.MolecularFormulaTools;
  * @author c-ruttkies
  *
  */
-class MetfRag {
+public class MetfRag {
 	
 	public static IAtomContainer[] scoreMoleculesAgainstSpectrum(String _pathToSDF, double[] _masses, double[] _intensities, 
 			double _exactMass, int _numberThreads, double _mzabs, double _mzppm, double _searchppm, boolean _posCharge, 
@@ -173,11 +173,10 @@ class MetfRag {
 	}
 
 	public static IAtomContainer[] scoreMoleculesAgainstSpectrum(IAtomContainer[] candidates, double[] _masses, double[] _intensities, 
-			double _exactMass, int _numberThreads, double _mzabs, double _mzppm, double _searchppm, boolean _posCharge, 
+			double _exactMass, int _numberThreads, double _mzabs, double _mzppm, boolean _posCharge, 
 			int _mode, int _treeDepth) {
 		double mzabs = _mzabs;
 		double mzppm = _mzppm;
-		double searchppm = _searchppm;
 		double exactMass = _exactMass;
 		int treeDepth = _treeDepth;
 		int mode = _mode;
@@ -207,10 +206,6 @@ class MetfRag {
 			System.err.println("Error: The given number of threads has to be between 1 and 8!");
 			return resultMols;
 		}
-		if(mzabs < 0.0 || mzppm < 0.0 || searchppm < 0.0) {
-			System.err.println("Error: Values for mzabs, mzppm and searchppm have to be positive!");
-			return resultMols;
-		}
 		if(mode != -1 && mode != 0 && mode != 1) {
 			System.err.println("Error: Valid values for mode are -1, 0 and 1!");
 			return resultMols;
@@ -234,9 +229,9 @@ class MetfRag {
 		
 		try {
 			List<MetFragResult> results = MetFrag.startConvenienceMetFragR(
-					spec, mzabs, mzppm, searchppm, true, true, treeDepth,
+					spec, mzabs, mzppm, true, true, treeDepth,
 					true, true, true, false, Integer.MAX_VALUE, 
-					true, candidates, "", null, true, 
+					true, candidates, "", null, 
 					"", numberThreads, false, "", false);
 			
 			resultMols = new IAtomContainer[results.size()];

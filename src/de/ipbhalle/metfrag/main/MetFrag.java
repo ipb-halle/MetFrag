@@ -1299,11 +1299,11 @@ public class MetFrag {
 	}
 	
 	public static List<MetFragResult> startConvenienceMetFragR(WrapperSpectrum spec,
-			double mzabs, double mzppm, double searchppm,
+			double mzabs, double mzppm,
 			boolean molredundancycheck, boolean breakRings, int treeDepth,
 			boolean hydrogenTest, boolean neutralLossInEveryLayer, boolean bondEnergyScoring, boolean breakOnlySelectedBonds, 
 			int limit, boolean isStoreFragments, IAtomContainer[] cands, String filenameprefix, String[] ids,
-			boolean massFilter, String pathToStoreFrags, int numberThreads,
+			String pathToStoreFrags, int numberThreads,
 			boolean verbose, String sampleName, boolean onlyBiologicalCompounds) {
 
 		results = new FragmenterResult();
@@ -1316,7 +1316,6 @@ public class MetFrag {
 		ExecutorService threadExecutor = null;
 	    threadExecutor = Executors.newFixedThreadPool(threads);
 			
-	    boolean[] filteredCandidates = null; 
 	    int numCandidates = cands.length;
 	    
 	    System.out.println("Read " + cands.length + " candidate structures");
