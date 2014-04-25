@@ -78,7 +78,7 @@ public class FragmenterThread implements Runnable{
 	private static int sizeCandidates;
 	private boolean onlyChnopsCompounds = false;
 	
-	static int percent = 10;
+	static int percent = 0;
 	
 	/**
 	 * Instantiates a new pubChem search thread.
@@ -306,7 +306,7 @@ public class FragmenterThread implements Runnable{
 			boolean generateFragmentsInMemory, String sampleName, 
 			boolean onlyChnopsCompounds, String pathToStoreFrags)
 	{
-		percent = 10;
+		percent = 0;
 		candidateNumber = 1;
 		this.onlyChnopsCompounds = onlyChnopsCompounds;
 		this.candidate = candidate;
@@ -358,28 +358,29 @@ public class FragmenterThread implements Runnable{
 			
 			if(molecule == null) {
 				incrementCandidateNumber();
-				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
-				if(num >= percent) {
-					System.out.print(percent + " %  ");
-					incrementPercent();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 10.0);
+				if(num > percent) {
+					System.out.print(num + " %  ");
+					percent = num;
 				}
+				incrementCandidateNumber();
 				return;
 			}
 			else if(!ConnectivityChecker.isConnected(molecule)) {
 				incrementCandidateNumber();
-				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
-				if(num >= percent) {
-					System.out.print(percent + " %  ");
-					incrementPercent();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 10.0);
+				if(num > percent) {
+					System.out.print(num + " %  ");
+					percent = num;
 				}
 				return;
 			}
 			else if(this.onlyChnopsCompounds && !isCHNOPSCompound(molecule)) {
 				incrementCandidateNumber();
-				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
-				if(num >= percent) {
-					System.out.print(percent + " %  ");
-					incrementPercent();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 10.0);
+				if(num > percent) {
+					System.out.print(num + " %  ");
+					percent = num;
 				}
 				return;
 			}
@@ -532,12 +533,12 @@ public class FragmenterThread implements Runnable{
 					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate);
 				}
 
-				incrementCandidateNumber();
-				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 100.0);
-				if(num >= percent) {
-					System.out.print(percent + " %  ");
-					incrementPercent();
+				int num = (int)Math.floor(((double)candidateNumber / sizeCandidates) * 10.0);
+				if(num > percent) {
+					System.out.print((num * 10) + " %  ");
+					percent = num;
 				}
+				incrementCandidateNumber();
 			}
 			catch(CDKException e)
 			{
@@ -710,10 +711,6 @@ public class FragmenterThread implements Runnable{
 
 	public static synchronized void incrementCandidateNumber() {
 		candidateNumber++;
-	}
-
-	public static synchronized void incrementPercent() {
-		percent += 10;
 	}
 	
 	/**

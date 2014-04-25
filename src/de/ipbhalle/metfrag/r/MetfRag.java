@@ -285,7 +285,7 @@ public class MetfRag {
 
 	}
 	
-	/*
+	
 	public static void main(String[] args) {
 		double[] mzs = {96.0447,96.0684,104.0495,105.0701,106.0651,111.0553,117.0576,117.07,118.0652,120.0808,129.0702,130.0652,131.0729,132.0808,133.0076,133.0523,133.076,134.0964,135.0552,144.0808,145.0647,145.0887,146.0838,146.0964,147.0917,148.0757,149.0708,158.0599,159.0912,160.0994,161.1073,162.0915,172.0757,174.0788,189.1021};
 		double[] ints = {1,2,4,1,1,2,1,2,14,15,1,24,70,15,13,1,8,1,3,52,5,1,40,34,38,9,1,3,1,1,59,2,25,22,999};
@@ -294,9 +294,9 @@ public class MetfRag {
 		
 		try {
 			cons = de.ipbhalle.metfrag.read.SDFFile.ReadSDFFileIteratively("/home/cruttkie/github/Tools/results_UF406803.sdf", new Vector());
-			mols = new IAtomContainer[cons.size()];
-			for(int i = 0; i < cons.size(); i++) {
-				mols[i] = cons.get(i);
+			mols = new IAtomContainer[180];
+			for(int i = 0; i < 180; i++) {
+				mols[i] = cons.get(i % 18);
 			}
 			
 			
@@ -307,18 +307,7 @@ public class MetfRag {
 		}
 		IAtomContainer[] resultMols = scoreMoleculesAgainstSpectrum(mols, mzs, ints, 188.0950,
 			1, 0.01, 10.0, true, 1, 2);
-		scoreMoleculesAgainstSpectrum(IAtomContainer[] candidates, double[] _masses, double[] _intensities, 
-				double _exactMass, int _numberThreads, double _mzabs, double _mzppm, boolean _posCharge, 
-				int _mode, int _treeDepth) 
-	
-		Map<Object, Object> props = resultMols[9].getProperties();
-		java.util.Iterator<Object> it = props.keySet().iterator();
-		while(it.hasNext()) {
-			String key = (String)it.next();
-			System.out.println(key + " -> " + props.get(key));
-		
-		}
 			
-	}*/
+	}
 	
 }
