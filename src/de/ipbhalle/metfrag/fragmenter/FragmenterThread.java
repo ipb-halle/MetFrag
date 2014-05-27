@@ -347,7 +347,23 @@ public class FragmenterThread implements Runnable{
 					molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.c.getChemspiderToken());
 				}
 				else if(this.chemSpiderToken.length() != 0) {
-					molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpiderToken);
+					int numberRetries = 0;
+					int numberMaximumRetries = 100;
+					while(true) {
+						try {
+							molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpiderToken);
+						} catch(Exception e) {
+							if(numberRetries == numberMaximumRetries) {
+								System.err.println("Could not retrieve compound " + this.candidate + ". Maximum number of retries reached. Giving up...");
+								break;
+							}
+							System.err.println("Error: Could not retrieve compound. Retrying...");
+							numberRetries++;
+							continue;
+						}
+						if(numberRetries != 0) System.err.println("Success!");
+						break;
+					}
 				}
 				else {
 					molecule = Candidates.getCompound(this.database, this.candidate, this.pw, "");

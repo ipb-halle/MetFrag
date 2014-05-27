@@ -143,7 +143,7 @@ public class Candidates {
 	 * @throws RemoteException 
 	 * @throws CDKException 
 	 */
-	public static IAtomContainer getCompound(String database, String candidate, PubChemWebService pw, String token) throws RemoteException, CDKException
+	public static IAtomContainer getCompound(String database, String candidate, PubChemWebService pw, String token) throws Exception 
 	{
 		IAtomContainer molecule = null;
 		if(database.equals("kegg"))
@@ -172,7 +172,6 @@ public class Candidates {
 	        ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
 	        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
 	        molecule = containersList.get(0);
-	        
 		}
 		else if(database.equals("pubchem"))
 		{
