@@ -903,7 +903,7 @@ public class MetFrag {
 		if(!localdb) {
 			try {
 				pubchem = new PubChemWebService();
-				chemSpider = new ChemSpider("");
+				chemSpider = new ChemSpider(chemSpiderToken);
 				pubchem.setVerbose(verbose);
 			} catch (ServiceException e1) {
 				e1.printStackTrace();

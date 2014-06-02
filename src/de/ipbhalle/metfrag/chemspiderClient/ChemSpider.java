@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
+import org.apache.axis2.transport.http.HTTPConstants;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.exception.CDKException;
@@ -29,7 +30,10 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLV2000Reader;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
+import com.chemspider.www.InChIStub.CSIDToMol;
 import com.chemspider.www.MassSpecAPIStub;
+import com.chemspider.www.MassSpecAPIStub.GetRecordMol;
+import com.chemspider.www.MassSpecAPIStub.GetRecordMolResponse;
 import com.chemspider.www.MassSpecAPIStub.GetRecordsSdf;
 import com.chemspider.www.MassSpecAPIStub.GetRecordsSdfResponse;
 import com.chemspider.www.MassSpecAPIStub.SearchByFormulaAsync;
@@ -62,6 +66,7 @@ public class ChemSpider {
 	public Vector<String> getChemspiderByMass(Double mass, Double error) throws RemoteException
 	{
 		MassSpecAPIStub stub = new MassSpecAPIStub();
+		stub._getServiceClient().getOptions().setProperty(HTTPConstants.CHUNKED, false);
 		SearchByMassAsync sbma = new SearchByMassAsync();
 		sbma.setMass(mass);
 		sbma.setRange(error);
@@ -97,6 +102,7 @@ public class ChemSpider {
 	public Vector<String> getChemspiderBySumFormula(String molecularFormula) throws RemoteException
 	{ 
 		MassSpecAPIStub stub = new MassSpecAPIStub();
+		stub._getServiceClient().getOptions().setProperty(HTTPConstants.CHUNKED, false);
 		SearchByFormulaAsync sbfa = new SearchByFormulaAsync();
 	    sbfa.setFormula(molecularFormula);
 	    sbfa.setToken(this.token);
@@ -128,32 +134,56 @@ public class ChemSpider {
 	 */
 	public Vector<String> getChemSpiderByCsids(String[] _csids) throws RemoteException
 	{
-		MassSpecAPIStub stub = new MassSpecAPIStub();
-		AsyncSimpleSearch ass = new AsyncSimpleSearch();
-		String query = "";
-		if(_csids.length != 0) query += _csids[0];
-		for(int i = 1; i < _csids.length; i++) 
-			query += "," + _csids[i];
-        ass.setQuery(query);
-        ass.setToken(this.token);
-        SearchStub thisSearchStub = new SearchStub();
-        
-        GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
-        getRecordsSdf.setRid(thisSearchStub.asyncSimpleSearch(ass).getAsyncSimpleSearchResult());
-        getRecordsSdf.setToken(this.token);
-        GetRecordsSdfResponse grsr = stub.getRecordsSdf(getRecordsSdf);
-        Vector<String> csids = new Vector<String>();
-        try {
-			Vector<IAtomContainer> cons = this.getAtomContainerFromString(grsr.getGetRecordsSdfResult());
-			for(int i = 0; i < cons.size(); i++) {
-				String csid = (String)cons.get(i).getProperty("CSID");
-				csids.add(csid);
-				this.csidToMolecule.put(csid, cons.get(i));
-			}
-		} catch (CDKException e) {
-			e.printStackTrace();
+		Vector<String> uniqueCsidArray = new Vector<String>();
+		for(int i = 0; i < _csids.length; i++) {
+			if(!uniqueCsidArray.contains(_csids[i]))
+				uniqueCsidArray.add(_csids[i]);
 		}
-        return csids;
+		
+		MassSpecAPIStub stub = new MassSpecAPIStub();
+		stub._getServiceClient().getOptions().setProperty(HTTPConstants.CHUNKED, false);
+		Vector<String> csids = new Vector<String>();
+	    
+		if(uniqueCsidArray.size() == 1) {
+			GetRecordMol getRecorMol = new GetRecordMol();
+			getRecorMol.setCsid(uniqueCsidArray.get(0));
+			getRecorMol.setToken(this.token);
+			GetRecordMolResponse grmr = stub.getRecordMol(getRecorMol);
+			try {
+				Vector<IAtomContainer> cons = this.getAtomContainerFromString(grmr.getGetRecordMolResult());
+				csids.add(uniqueCsidArray.get(0));
+				this.csidToMolecule.put(uniqueCsidArray.get(0), cons.get(0));
+			} catch (CDKException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			AsyncSimpleSearch ass = new AsyncSimpleSearch();
+			String query = "";
+			if(uniqueCsidArray.size() != 0) query += uniqueCsidArray.get(0);
+			for(int i = 1; i < uniqueCsidArray.size(); i++)  
+				query += "," + uniqueCsidArray.get(i);
+			ass.setQuery(query);
+			ass.setToken(this.token);
+	        SearchStub thisSearchStub = new SearchStub();
+	        thisSearchStub._getServiceClient().getOptions().setProperty(HTTPConstants.CHUNKED, false);
+	        GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
+	        getRecordsSdf.setRid(thisSearchStub.asyncSimpleSearch(ass).getAsyncSimpleSearchResult());
+	        getRecordsSdf.setToken(this.token);
+	        GetRecordsSdfResponse grsr = stub.getRecordsSdf(getRecordsSdf);
+	        try {
+				Vector<IAtomContainer> cons = this.getAtomContainerFromString(grsr.getGetRecordsSdfResult());
+				for(int i = 0; i < cons.size(); i++) {
+					String csid = (String)cons.get(i).getProperty("CSID");
+					csids.add(csid);
+					this.csidToMolecule.put(csid, cons.get(i));
+				}
+			} catch (CDKException e) {
+				e.printStackTrace();
+			}
+	    }
+
+		return csids;
 	}
 	
 	/**
