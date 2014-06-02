@@ -3,7 +3,7 @@
  * PUGStub.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:35 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
         package gov.nih.nlm.ncbi.pubchemAxis2;
 
@@ -14,7 +14,7 @@
         */
 
         
-    public class PUGStub extends org.apache.axis2.client.Stub
+        public class PUGStub extends org.apache.axis2.client.Stub
         {
         protected org.apache.axis2.description.AxisOperation[] _operations;
 
@@ -25,13 +25,13 @@
 
         private static int counter = 0;
 
-        private static synchronized String getUniqueSuffix(){
+        private static synchronized java.lang.String getUniqueSuffix(){
             // reset the counter if it is greater than 99999
             if (counter > 99999){
                 counter = 0;
             }
             counter = counter + 1; 
-            return Long.toString(System.currentTimeMillis()) + "_" + counter;
+            return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
         }
 
     
@@ -49,7 +49,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetIDList"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getIDList"));
 	    _service.addOperation(__operation);
 	    
 
@@ -61,7 +61,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetAssayColumnDescription"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getAssayColumnDescription"));
 	    _service.addOperation(__operation);
 	    
 
@@ -73,7 +73,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetAssayDescription"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getAssayDescription"));
 	    _service.addOperation(__operation);
 	    
 
@@ -85,7 +85,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputStructureBase64"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputStructureBase64"));
 	    _service.addOperation(__operation);
 	    
 
@@ -97,7 +97,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "SubstructureSearch"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "substructureSearch"));
 	    _service.addOperation(__operation);
 	    
 
@@ -109,7 +109,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "SimilaritySearch2D"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "similaritySearch2D"));
 	    _service.addOperation(__operation);
 	    
 
@@ -121,7 +121,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetStandardizedStructureBase64"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getStandardizedStructureBase64"));
 	    _service.addOperation(__operation);
 	    
 
@@ -133,7 +133,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "IdentitySearch"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "identitySearch"));
 	    _service.addOperation(__operation);
 	    
 
@@ -145,7 +145,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetListItemsCount"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getListItemsCount"));
 	    _service.addOperation(__operation);
 	    
 
@@ -157,7 +157,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetEntrezKey"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getEntrezKey"));
 	    _service.addOperation(__operation);
 	    
 
@@ -169,7 +169,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputAssay"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputAssay"));
 	    _service.addOperation(__operation);
 	    
 
@@ -181,7 +181,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputList"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getStandardizedStructure"));
 	    _service.addOperation(__operation);
 	    
 
@@ -193,7 +193,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "MFSearch"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputList"));
 	    _service.addOperation(__operation);
 	    
 
@@ -205,7 +205,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetStandardizedStructure"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "mFSearch"));
 	    _service.addOperation(__operation);
 	    
 
@@ -217,7 +217,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetStatusMessage"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getStatusMessage"));
 	    _service.addOperation(__operation);
 	    
 
@@ -229,7 +229,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputEntrez"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputEntrez"));
 	    _service.addOperation(__operation);
 	    
 
@@ -241,7 +241,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "Download"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "download"));
 	    _service.addOperation(__operation);
 	    
 
@@ -253,7 +253,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetDownloadUrl"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getDownloadUrl"));
 	    _service.addOperation(__operation);
 	    
 
@@ -265,7 +265,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputStructure"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputStructure"));
 	    _service.addOperation(__operation);
 	    
 
@@ -277,7 +277,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetOperationStatus"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getOperationStatus"));
 	    _service.addOperation(__operation);
 	    
 
@@ -289,7 +289,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputListText"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputListText"));
 	    _service.addOperation(__operation);
 	    
 
@@ -301,7 +301,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetEntrezUrl"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getEntrezUrl"));
 	    _service.addOperation(__operation);
 	    
 
@@ -313,7 +313,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "InputListString"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "inputListString"));
 	    _service.addOperation(__operation);
 	    
 
@@ -325,7 +325,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "IDExchange"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "iDExchange"));
 	    _service.addOperation(__operation);
 	    
 
@@ -337,7 +337,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "Standardize"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "standardize"));
 	    _service.addOperation(__operation);
 	    
 
@@ -349,7 +349,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetAssayColumnDescriptions"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getAssayColumnDescriptions"));
 	    _service.addOperation(__operation);
 	    
 
@@ -361,7 +361,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "GetStandardizedCID"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "getStandardizedCID"));
 	    _service.addOperation(__operation);
 	    
 
@@ -373,7 +373,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "AssayDownload"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "assayDownload"));
 	    _service.addOperation(__operation);
 	    
 
@@ -385,7 +385,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "SuperstructureSearch"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "superstructureSearch"));
 	    _service.addOperation(__operation);
 	    
 
@@ -397,7 +397,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "ScoreMatrix"));
+            __operation.setName(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/", "scoreMatrix"));
 	    _service.addOperation(__operation);
 	    
 
@@ -439,8 +439,6 @@
         _serviceClient = new org.apache.axis2.client.ServiceClient(configurationContext,_service);
         
 	
-        configurationContext = _serviceClient.getServiceContext().getConfigurationContext();
-
         _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(
                 targetEndpoint));
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
@@ -479,14 +477,14 @@
                     /**
                      * Auto generated method signature
                      * Given a list key, return the identifiers as an array of integers. Note that this method expects there to be at least one identifier in the list, and will fault if the list is empty; see GetListItemsCount, which can be used to check for an empty list prior to calling GetIDList. The optional Start (zero-based) and Count parameters can be used to return smaller portions of the list, useful especially for large lists. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetIDList
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getIDList
                      * @param getIDList300
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse GetIDList(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse getIDList(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetIDList getIDList300)
                         
@@ -517,7 +515,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getIDList300,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetIDList")));
+                                                    "getIDList")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getIDList"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -548,15 +547,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -591,18 +590,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a list key, return the identifiers as an array of integers. Note that this method expects there to be at least one identifier in the list, and will fault if the list is empty; see GetListItemsCount, which can be used to check for an empty list prior to calling GetIDList. The optional Start (zero-based) and Count parameters can be used to return smaller portions of the list, useful especially for large lists. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetIDList
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetIDList
                     * @param getIDList300
                 
                 */
-                public  void startGetIDList(
+                public  void startgetIDList(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetIDList getIDList300,
 
@@ -631,7 +632,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getIDList300,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetIDList")));
+                                                    "getIDList")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getIDList"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -651,11 +653,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetIDList(
+                                        callback.receiveResultgetIDList(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetIDList(e);
+                                callback.receiveErrorgetIDList(e);
                             }
                             }
 
@@ -664,15 +666,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetIDList"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -680,37 +682,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetIDList(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetIDList(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetIDList(f);
+                                                callback.receiveErrorgetIDList(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetIDList(f);
+										    callback.receiveErrorgetIDList(f);
 									    }
 									} else {
-									    callback.receiveErrorGetIDList(f);
+									    callback.receiveErrorgetIDList(f);
 									}
 								} else {
-								    callback.receiveErrorGetIDList(error);
+								    callback.receiveErrorgetIDList(error);
 								}
                             }
 
@@ -723,7 +725,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetIDList(axisFault);
+                                    callback.receiveErrorgetIDList(axisFault);
                                 }
                             }
                 });
@@ -744,14 +746,14 @@
                     /**
                      * Auto generated method signature
                      * Get the description of column (readout) in a BioAssay, which may be the outcome, score, or a TID from the given AID. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetAssayColumnDescription
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getAssayColumnDescription
                      * @param getAssayColumnDescription302
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse GetAssayColumnDescription(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse getAssayColumnDescription(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescription getAssayColumnDescription302)
                         
@@ -782,7 +784,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayColumnDescription302,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayColumnDescription")));
+                                                    "getAssayColumnDescription")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescription"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -813,15 +816,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -856,18 +859,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Get the description of column (readout) in a BioAssay, which may be the outcome, score, or a TID from the given AID. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetAssayColumnDescription
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetAssayColumnDescription
                     * @param getAssayColumnDescription302
                 
                 */
-                public  void startGetAssayColumnDescription(
+                public  void startgetAssayColumnDescription(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescription getAssayColumnDescription302,
 
@@ -896,7 +901,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayColumnDescription302,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayColumnDescription")));
+                                                    "getAssayColumnDescription")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescription"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -916,11 +922,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetAssayColumnDescription(
+                                        callback.receiveResultgetAssayColumnDescription(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetAssayColumnDescription(e);
+                                callback.receiveErrorgetAssayColumnDescription(e);
                             }
                             }
 
@@ -929,15 +935,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescription"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -945,37 +951,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetAssayColumnDescription(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetAssayColumnDescription(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescription(f);
+                                                callback.receiveErrorgetAssayColumnDescription(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetAssayColumnDescription(f);
+										    callback.receiveErrorgetAssayColumnDescription(f);
 									    }
 									} else {
-									    callback.receiveErrorGetAssayColumnDescription(f);
+									    callback.receiveErrorgetAssayColumnDescription(f);
 									}
 								} else {
-								    callback.receiveErrorGetAssayColumnDescription(error);
+								    callback.receiveErrorgetAssayColumnDescription(error);
 								}
                             }
 
@@ -988,7 +994,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetAssayColumnDescription(axisFault);
+                                    callback.receiveErrorgetAssayColumnDescription(axisFault);
                                 }
                             }
                 });
@@ -1009,14 +1015,14 @@
                     /**
                      * Auto generated method signature
                      * Get the descriptive information for a BioAssay, including the number of user-specified readouts (TIDs) and whether a score readout is present. Optionally get version and SID/CID count information. If GetFullDataBlob is set to true, then a Base64 string of data is returned in the response instead, containing the full PubChem Assay description in the requested format (ASN or XML only). Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetAssayDescription
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getAssayDescription
                      * @param getAssayDescription304
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse GetAssayDescription(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse getAssayDescription(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescription getAssayDescription304)
                         
@@ -1047,7 +1053,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayDescription304,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayDescription")));
+                                                    "getAssayDescription")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayDescription"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1078,15 +1085,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1121,18 +1128,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Get the descriptive information for a BioAssay, including the number of user-specified readouts (TIDs) and whether a score readout is present. Optionally get version and SID/CID count information. If GetFullDataBlob is set to true, then a Base64 string of data is returned in the response instead, containing the full PubChem Assay description in the requested format (ASN or XML only). Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetAssayDescription
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetAssayDescription
                     * @param getAssayDescription304
                 
                 */
-                public  void startGetAssayDescription(
+                public  void startgetAssayDescription(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescription getAssayDescription304,
 
@@ -1161,7 +1170,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayDescription304,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayDescription")));
+                                                    "getAssayDescription")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayDescription"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1181,11 +1191,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetAssayDescription(
+                                        callback.receiveResultgetAssayDescription(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetAssayDescription(e);
+                                callback.receiveErrorgetAssayDescription(e);
                             }
                             }
 
@@ -1194,15 +1204,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayDescription"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1210,37 +1220,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetAssayDescription(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetAssayDescription(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayDescription(f);
+                                                callback.receiveErrorgetAssayDescription(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetAssayDescription(f);
+										    callback.receiveErrorgetAssayDescription(f);
 									    }
 									} else {
-									    callback.receiveErrorGetAssayDescription(f);
+									    callback.receiveErrorgetAssayDescription(f);
 									}
 								} else {
-								    callback.receiveErrorGetAssayDescription(error);
+								    callback.receiveErrorgetAssayDescription(error);
 								}
                             }
 
@@ -1253,7 +1263,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetAssayDescription(axisFault);
+                                    callback.receiveErrorgetAssayDescription(axisFault);
                                 }
                             }
                 });
@@ -1274,14 +1284,14 @@
                     /**
                      * Auto generated method signature
                      * Input a chemical structure in ASN.1 (text or binary), XML, or SDF format. The structure must be encoded as a Base64 string. Currently only single structures are supported. Returns a structure key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputStructureBase64
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputStructureBase64
                      * @param inputStructureBase64306
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response InputStructureBase64(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response inputStructureBase64(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64 inputStructureBase64306)
                         
@@ -1312,7 +1322,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputStructureBase64306,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputStructureBase64")));
+                                                    "inputStructureBase64")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructureBase64"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1343,15 +1354,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1386,18 +1397,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Input a chemical structure in ASN.1 (text or binary), XML, or SDF format. The structure must be encoded as a Base64 string. Currently only single structures are supported. Returns a structure key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputStructureBase64
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputStructureBase64
                     * @param inputStructureBase64306
                 
                 */
-                public  void startInputStructureBase64(
+                public  void startinputStructureBase64(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64 inputStructureBase64306,
 
@@ -1426,7 +1439,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputStructureBase64306,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputStructureBase64")));
+                                                    "inputStructureBase64")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructureBase64"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1446,11 +1460,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputStructureBase64(
+                                        callback.receiveResultinputStructureBase64(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputStructureBase64(e);
+                                callback.receiveErrorinputStructureBase64(e);
                             }
                             }
 
@@ -1459,15 +1473,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructureBase64"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1475,37 +1489,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputStructureBase64(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputStructureBase64(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructureBase64(f);
+                                                callback.receiveErrorinputStructureBase64(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputStructureBase64(f);
+										    callback.receiveErrorinputStructureBase64(f);
 									    }
 									} else {
-									    callback.receiveErrorInputStructureBase64(f);
+									    callback.receiveErrorinputStructureBase64(f);
 									}
 								} else {
-								    callback.receiveErrorInputStructureBase64(error);
+								    callback.receiveErrorinputStructureBase64(error);
 								}
                             }
 
@@ -1518,7 +1532,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputStructureBase64(axisFault);
+                                    callback.receiveErrorinputStructureBase64(axisFault);
                                 }
                             }
                 });
@@ -1539,14 +1553,14 @@
                     /**
                      * Auto generated method signature
                      * Search PubChem Compound for structures containing the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#SubstructureSearch
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#substructureSearch
                      * @param substructureSearch308
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse SubstructureSearch(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse substructureSearch(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearch substructureSearch308)
                         
@@ -1577,7 +1591,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     substructureSearch308,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SubstructureSearch")));
+                                                    "substructureSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "substructureSearch"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1608,15 +1623,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1651,18 +1666,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Search PubChem Compound for structures containing the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startSubstructureSearch
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startsubstructureSearch
                     * @param substructureSearch308
                 
                 */
-                public  void startSubstructureSearch(
+                public  void startsubstructureSearch(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearch substructureSearch308,
 
@@ -1691,7 +1708,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     substructureSearch308,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SubstructureSearch")));
+                                                    "substructureSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "substructureSearch"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1711,11 +1729,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultSubstructureSearch(
+                                        callback.receiveResultsubstructureSearch(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorSubstructureSearch(e);
+                                callback.receiveErrorsubstructureSearch(e);
                             }
                             }
 
@@ -1724,15 +1742,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SubstructureSearch"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1740,37 +1758,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorSubstructureSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorsubstructureSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSubstructureSearch(f);
+                                                callback.receiveErrorsubstructureSearch(f);
                                             }
 									    } else {
-										    callback.receiveErrorSubstructureSearch(f);
+										    callback.receiveErrorsubstructureSearch(f);
 									    }
 									} else {
-									    callback.receiveErrorSubstructureSearch(f);
+									    callback.receiveErrorsubstructureSearch(f);
 									}
 								} else {
-								    callback.receiveErrorSubstructureSearch(error);
+								    callback.receiveErrorsubstructureSearch(error);
 								}
                             }
 
@@ -1783,7 +1801,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorSubstructureSearch(axisFault);
+                                    callback.receiveErrorsubstructureSearch(axisFault);
                                 }
                             }
                 });
@@ -1804,14 +1822,14 @@
                     /**
                      * Auto generated method signature
                      * Search PubChem Compound for structures similar to the one given by the structure key input, based on the given Tanimoto-based similarity score. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#SimilaritySearch2D
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#similaritySearch2D
                      * @param similaritySearch2D310
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse SimilaritySearch2D(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse similaritySearch2D(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2D similaritySearch2D310)
                         
@@ -1842,7 +1860,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     similaritySearch2D310,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SimilaritySearch2D")));
+                                                    "similaritySearch2D")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "similaritySearch2D"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1873,15 +1892,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -1916,18 +1935,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Search PubChem Compound for structures similar to the one given by the structure key input, based on the given Tanimoto-based similarity score. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startSimilaritySearch2D
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startsimilaritySearch2D
                     * @param similaritySearch2D310
                 
                 */
-                public  void startSimilaritySearch2D(
+                public  void startsimilaritySearch2D(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2D similaritySearch2D310,
 
@@ -1956,7 +1977,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     similaritySearch2D310,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SimilaritySearch2D")));
+                                                    "similaritySearch2D")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "similaritySearch2D"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -1976,11 +1998,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultSimilaritySearch2D(
+                                        callback.receiveResultsimilaritySearch2D(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorSimilaritySearch2D(e);
+                                callback.receiveErrorsimilaritySearch2D(e);
                             }
                             }
 
@@ -1989,15 +2011,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SimilaritySearch2D"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2005,37 +2027,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorSimilaritySearch2D(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorsimilaritySearch2D(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSimilaritySearch2D(f);
+                                                callback.receiveErrorsimilaritySearch2D(f);
                                             }
 									    } else {
-										    callback.receiveErrorSimilaritySearch2D(f);
+										    callback.receiveErrorsimilaritySearch2D(f);
 									    }
 									} else {
-									    callback.receiveErrorSimilaritySearch2D(f);
+									    callback.receiveErrorsimilaritySearch2D(f);
 									}
 								} else {
-								    callback.receiveErrorSimilaritySearch2D(error);
+								    callback.receiveErrorsimilaritySearch2D(error);
 								}
                             }
 
@@ -2048,7 +2070,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorSimilaritySearch2D(axisFault);
+                                    callback.receiveErrorsimilaritySearch2D(axisFault);
                                 }
                             }
                 });
@@ -2069,14 +2091,14 @@
                     /**
                      * Auto generated method signature
                      * Given a structure key that has been processed by Standardize, return the chemical structure as ASN, XML, or SDF, returned as a Base64-encoded string. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetStandardizedStructureBase64
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getStandardizedStructureBase64
                      * @param getStandardizedStructureBase64312
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response GetStandardizedStructureBase64(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response getStandardizedStructureBase64(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64 getStandardizedStructureBase64312)
                         
@@ -2107,7 +2129,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStandardizedStructureBase64312,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedStructureBase64")));
+                                                    "getStandardizedStructureBase64")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructureBase64"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2138,15 +2161,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2181,18 +2204,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a structure key that has been processed by Standardize, return the chemical structure as ASN, XML, or SDF, returned as a Base64-encoded string. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetStandardizedStructureBase64
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetStandardizedStructureBase64
                     * @param getStandardizedStructureBase64312
                 
                 */
-                public  void startGetStandardizedStructureBase64(
+                public  void startgetStandardizedStructureBase64(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64 getStandardizedStructureBase64312,
 
@@ -2221,7 +2246,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStandardizedStructureBase64312,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedStructureBase64")));
+                                                    "getStandardizedStructureBase64")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructureBase64"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2241,11 +2267,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetStandardizedStructureBase64(
+                                        callback.receiveResultgetStandardizedStructureBase64(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetStandardizedStructureBase64(e);
+                                callback.receiveErrorgetStandardizedStructureBase64(e);
                             }
                             }
 
@@ -2254,15 +2280,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructureBase64"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2270,37 +2296,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetStandardizedStructureBase64(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetStandardizedStructureBase64(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructureBase64(f);
+                                                callback.receiveErrorgetStandardizedStructureBase64(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetStandardizedStructureBase64(f);
+										    callback.receiveErrorgetStandardizedStructureBase64(f);
 									    }
 									} else {
-									    callback.receiveErrorGetStandardizedStructureBase64(f);
+									    callback.receiveErrorgetStandardizedStructureBase64(f);
 									}
 								} else {
-								    callback.receiveErrorGetStandardizedStructureBase64(error);
+								    callback.receiveErrorgetStandardizedStructureBase64(error);
 								}
                             }
 
@@ -2313,7 +2339,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetStandardizedStructureBase64(axisFault);
+                                    callback.receiveErrorgetStandardizedStructureBase64(axisFault);
                                 }
                             }
                 });
@@ -2334,14 +2360,14 @@
                     /**
                      * Auto generated method signature
                      * Search PubChem Compound for structures identical to the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#IdentitySearch
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#identitySearch
                      * @param identitySearch314
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse IdentitySearch(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse identitySearch(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearch identitySearch314)
                         
@@ -2372,7 +2398,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     identitySearch314,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "IdentitySearch")));
+                                                    "identitySearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "identitySearch"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2403,15 +2430,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2446,18 +2473,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Search PubChem Compound for structures identical to the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startIdentitySearch
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startidentitySearch
                     * @param identitySearch314
                 
                 */
-                public  void startIdentitySearch(
+                public  void startidentitySearch(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearch identitySearch314,
 
@@ -2486,7 +2515,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     identitySearch314,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "IdentitySearch")));
+                                                    "identitySearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "identitySearch"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2506,11 +2536,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultIdentitySearch(
+                                        callback.receiveResultidentitySearch(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorIdentitySearch(e);
+                                callback.receiveErroridentitySearch(e);
                             }
                             }
 
@@ -2519,15 +2549,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IdentitySearch"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2535,37 +2565,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorIdentitySearch(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErroridentitySearch(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIdentitySearch(f);
+                                                callback.receiveErroridentitySearch(f);
                                             }
 									    } else {
-										    callback.receiveErrorIdentitySearch(f);
+										    callback.receiveErroridentitySearch(f);
 									    }
 									} else {
-									    callback.receiveErrorIdentitySearch(f);
+									    callback.receiveErroridentitySearch(f);
 									}
 								} else {
-								    callback.receiveErrorIdentitySearch(error);
+								    callback.receiveErroridentitySearch(error);
 								}
                             }
 
@@ -2578,7 +2608,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorIdentitySearch(axisFault);
+                                    callback.receiveErroridentitySearch(axisFault);
                                 }
                             }
                 });
@@ -2599,14 +2629,14 @@
                     /**
                      * Auto generated method signature
                      * Return the number of IDs in the set represented by the given list key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetListItemsCount
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getListItemsCount
                      * @param getListItemsCount316
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse GetListItemsCount(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse getListItemsCount(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCount getListItemsCount316)
                         
@@ -2637,7 +2667,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getListItemsCount316,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetListItemsCount")));
+                                                    "getListItemsCount")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getListItemsCount"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2668,15 +2699,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2711,18 +2742,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Return the number of IDs in the set represented by the given list key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetListItemsCount
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetListItemsCount
                     * @param getListItemsCount316
                 
                 */
-                public  void startGetListItemsCount(
+                public  void startgetListItemsCount(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCount getListItemsCount316,
 
@@ -2751,7 +2784,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getListItemsCount316,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetListItemsCount")));
+                                                    "getListItemsCount")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getListItemsCount"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2771,11 +2805,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetListItemsCount(
+                                        callback.receiveResultgetListItemsCount(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetListItemsCount(e);
+                                callback.receiveErrorgetListItemsCount(e);
                             }
                             }
 
@@ -2784,15 +2818,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetListItemsCount"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2800,37 +2834,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetListItemsCount(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetListItemsCount(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetListItemsCount(f);
+                                                callback.receiveErrorgetListItemsCount(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetListItemsCount(f);
+										    callback.receiveErrorgetListItemsCount(f);
 									    }
 									} else {
-									    callback.receiveErrorGetListItemsCount(f);
+									    callback.receiveErrorgetListItemsCount(f);
 									}
 								} else {
-								    callback.receiveErrorGetListItemsCount(error);
+								    callback.receiveErrorgetListItemsCount(error);
 								}
                             }
 
@@ -2843,7 +2877,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetListItemsCount(axisFault);
+                                    callback.receiveErrorgetListItemsCount(axisFault);
                                 }
                             }
                 });
@@ -2864,14 +2898,14 @@
                     /**
                      * Auto generated method signature
                      * Given a list key, return an Entrez history key (db, query key, and WebEnv) corresponding to that list. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetEntrezKey
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getEntrezKey
                      * @param getEntrezKey318
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse GetEntrezKey(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse getEntrezKey(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKey getEntrezKey318)
                         
@@ -2902,7 +2936,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getEntrezKey318,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetEntrezKey")));
+                                                    "getEntrezKey")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezKey"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -2933,15 +2968,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -2976,18 +3011,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a list key, return an Entrez history key (db, query key, and WebEnv) corresponding to that list. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetEntrezKey
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetEntrezKey
                     * @param getEntrezKey318
                 
                 */
-                public  void startGetEntrezKey(
+                public  void startgetEntrezKey(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKey getEntrezKey318,
 
@@ -3016,7 +3053,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getEntrezKey318,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetEntrezKey")));
+                                                    "getEntrezKey")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezKey"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -3036,11 +3074,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetEntrezKey(
+                                        callback.receiveResultgetEntrezKey(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetEntrezKey(e);
+                                callback.receiveErrorgetEntrezKey(e);
                             }
                             }
 
@@ -3049,15 +3087,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezKey"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -3065,37 +3103,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetEntrezKey(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetEntrezKey(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezKey(f);
+                                                callback.receiveErrorgetEntrezKey(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetEntrezKey(f);
+										    callback.receiveErrorgetEntrezKey(f);
 									    }
 									} else {
-									    callback.receiveErrorGetEntrezKey(f);
+									    callback.receiveErrorgetEntrezKey(f);
 									}
 								} else {
-								    callback.receiveErrorGetEntrezKey(error);
+								    callback.receiveErrorgetEntrezKey(error);
 								}
                             }
 
@@ -3108,7 +3146,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetEntrezKey(axisFault);
+                                    callback.receiveErrorgetEntrezKey(axisFault);
                                 }
                             }
                 });
@@ -3129,14 +3167,14 @@
                     /**
                      * Auto generated method signature
                      * Specify an assay table from a BioAssay AID. The table may be complete, concise, or include a ListKey-specified set of readouts (TIDs). By default, all tested substances are included, but can be restricted to a ListKey-specified set of SIDs or CIDs. Returns an assay key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputAssay
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputAssay
                      * @param inputAssay320
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse InputAssay(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse inputAssay(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputAssay inputAssay320)
                         
@@ -3167,7 +3205,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputAssay320,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputAssay")));
+                                                    "inputAssay")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputAssay"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -3198,15 +3237,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -3241,18 +3280,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Specify an assay table from a BioAssay AID. The table may be complete, concise, or include a ListKey-specified set of readouts (TIDs). By default, all tested substances are included, but can be restricted to a ListKey-specified set of SIDs or CIDs. Returns an assay key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputAssay
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputAssay
                     * @param inputAssay320
                 
                 */
-                public  void startInputAssay(
+                public  void startinputAssay(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputAssay inputAssay320,
 
@@ -3281,7 +3322,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputAssay320,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputAssay")));
+                                                    "inputAssay")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputAssay"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -3301,11 +3343,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputAssay(
+                                        callback.receiveResultinputAssay(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputAssay(e);
+                                callback.receiveErrorinputAssay(e);
                             }
                             }
 
@@ -3314,15 +3356,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputAssay"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -3330,37 +3372,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputAssay(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputAssay(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputAssay(f);
+                                                callback.receiveErrorinputAssay(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputAssay(f);
+										    callback.receiveErrorinputAssay(f);
 									    }
 									} else {
-									    callback.receiveErrorInputAssay(f);
+									    callback.receiveErrorinputAssay(f);
 									}
 								} else {
-								    callback.receiveErrorInputAssay(error);
+								    callback.receiveErrorinputAssay(error);
 								}
                             }
 
@@ -3373,7 +3415,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputAssay(axisFault);
+                                    callback.receiveErrorinputAssay(axisFault);
                                 }
                             }
                 });
@@ -3393,17 +3435,17 @@
                 
                     /**
                      * Auto generated method signature
-                     * Input a set of identifiers for a PubChem database, as an array of integers. Returns a list key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputList
-                     * @param inputList322
+                     * Given a structure key that has been processed by Standardize, return the chemical structure in as SMILES or InChI strings. Synchronous.
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getStandardizedStructure
+                     * @param getStandardizedStructure322
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse InputList(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse getStandardizedStructure(
 
-                            gov.nih.nlm.ncbi.pubchemAxis2.InputList inputList322)
+                            gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure getStandardizedStructure322)
                         
 
                     throws java.rmi.RemoteException
@@ -3412,533 +3454,6 @@
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
-              _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/InputList");
-              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-
-              // create a message context
-              _messageContext = new org.apache.axis2.context.MessageContext();
-
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env = null;
-                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    inputList322,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputList")));
-                                                
-        //adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // set the message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message contxt to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-        //execute the operation client
-        _operationClient.execute(true);
-
-
-               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
-                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
-
-                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
-
-                
-                                java.lang.Object object = fromOM(
-                                             _returnEnv.getBody().getFirstElement() ,
-                                             gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.class,
-                                              getEnvelopeNamespaces(_returnEnv));
-
-
-                                        return (gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse)object;
-                                   
-         }catch(org.apache.axis2.AxisFault f){
-
-            org.apache.axiom.om.OMElement faultElt = f.getDetail();
-            if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
-                    //make the fault by reflection
-                    try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
-                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
-                        //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
-                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                   new java.lang.Class[]{messageClass});
-                        m.invoke(ex,new java.lang.Object[]{messageObject});
-                        
-
-                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }catch(java.lang.ClassCastException e){
-                       // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }catch (java.lang.NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.reflect.InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }  catch (java.lang.IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }   catch (java.lang.InstantiationException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }
-                }else{
-                    throw f;
-                }
-            }else{
-                throw f;
-            }
-            } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-            }
-        }
-            
-                /**
-                * Auto generated method signature for Asynchronous Invocations
-                * Input a set of identifiers for a PubChem database, as an array of integers. Returns a list key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputList
-                    * @param inputList322
-                
-                */
-                public  void startInputList(
-
-                 gov.nih.nlm.ncbi.pubchemAxis2.InputList inputList322,
-
-                  final gov.nih.nlm.ncbi.pubchemAxis2.PUGCallbackHandler callback)
-
-                throws java.rmi.RemoteException{
-
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
-             _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/InputList");
-             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env=null;
-              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
-
-                    
-                                    //Style is Doc.
-                                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    inputList322,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputList")));
-                                                
-        // adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // create message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message context to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-
-                    
-                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
-                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
-                            try {
-                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
-                                
-                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.class,
-                                                                         getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputList(
-                                        (gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse)object);
-                                        
-                            } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputList(e);
-                            }
-                            }
-
-                            public void onError(java.lang.Exception error) {
-								if (error instanceof org.apache.axis2.AxisFault) {
-									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
-									org.apache.axiom.om.OMElement faultElt = f.getDetail();
-									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
-											//make the fault by reflection
-											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
-													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
-													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
-														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-															new java.lang.Class[]{messageClass});
-													m.invoke(ex,new java.lang.Object[]{messageObject});
-													
-					
-										            callback.receiveErrorInputList(new java.rmi.RemoteException(ex.getMessage(), ex));
-                                            } catch(java.lang.ClassCastException e){
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (java.lang.ClassNotFoundException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (java.lang.NoSuchMethodException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (java.lang.reflect.InvocationTargetException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (java.lang.IllegalAccessException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (java.lang.InstantiationException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            } catch (org.apache.axis2.AxisFault e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputList(f);
-                                            }
-									    } else {
-										    callback.receiveErrorInputList(f);
-									    }
-									} else {
-									    callback.receiveErrorInputList(f);
-									}
-								} else {
-								    callback.receiveErrorInputList(error);
-								}
-                            }
-
-                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
-                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
-                                onError(fault);
-                            }
-
-                            public void onComplete() {
-                                try {
-                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                                } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputList(axisFault);
-                                }
-                            }
-                });
-                        
-
-          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[11].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
-           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[11].setMessageReceiver(
-                    _callbackReceiver);
-        }
-
-           //execute the operation client
-           _operationClient.execute(false);
-
-                    }
-                
-                    /**
-                     * Auto generated method signature
-                     * Search PubChem Compound for structures of a given molecular formula, optionally allowing elements not specified to be present. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#MFSearch
-                     * @param mFSearch324
-                    
-                     */
-
-                    
-
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse MFSearch(
-
-                            gov.nih.nlm.ncbi.pubchemAxis2.MFSearch mFSearch324)
-                        
-
-                    throws java.rmi.RemoteException
-                    
-                    {
-              org.apache.axis2.context.MessageContext _messageContext = null;
-              try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
-              _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/MFSearch");
-              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-              // create a message context
-              _messageContext = new org.apache.axis2.context.MessageContext();
-
-              
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env = null;
-                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    mFSearch324,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "MFSearch")));
-                                                
-        //adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // set the message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message contxt to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-        //execute the operation client
-        _operationClient.execute(true);
-
-         
-               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
-                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
-                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
-                
-                
-                                java.lang.Object object = fromOM(
-                                             _returnEnv.getBody().getFirstElement() ,
-                                             gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class,
-                                              getEnvelopeNamespaces(_returnEnv));
-
-                               
-                                        return (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse)object;
-                                   
-         }catch(org.apache.axis2.AxisFault f){
-
-            org.apache.axiom.om.OMElement faultElt = f.getDetail();
-            if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
-                    //make the fault by reflection
-                    try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
-                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
-                        //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
-                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                   new java.lang.Class[]{messageClass});
-                        m.invoke(ex,new java.lang.Object[]{messageObject});
-                        
-
-                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }catch(java.lang.ClassCastException e){
-                       // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }catch (java.lang.NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.reflect.InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }  catch (java.lang.IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }   catch (java.lang.InstantiationException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }
-                }else{
-                    throw f;
-                }
-            }else{
-                throw f;
-            }
-            } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-            }
-        }
-            
-                /**
-                * Auto generated method signature for Asynchronous Invocations
-                * Search PubChem Compound for structures of a given molecular formula, optionally allowing elements not specified to be present. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startMFSearch
-                    * @param mFSearch324
-                
-                */
-                public  void startMFSearch(
-
-                 gov.nih.nlm.ncbi.pubchemAxis2.MFSearch mFSearch324,
-
-                  final gov.nih.nlm.ncbi.pubchemAxis2.PUGCallbackHandler callback)
-
-                throws java.rmi.RemoteException{
-
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
-             _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/MFSearch");
-             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env=null;
-              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
-
-                    
-                                    //Style is Doc.
-                                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    mFSearch324,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "MFSearch")));
-                                                
-        // adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // create message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message context to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-
-                    
-                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
-                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
-                            try {
-                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
-                                
-                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class,
-                                                                         getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultMFSearch(
-                                        (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse)object);
-                                        
-                            } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorMFSearch(e);
-                            }
-                            }
-
-                            public void onError(java.lang.Exception error) {
-								if (error instanceof org.apache.axis2.AxisFault) {
-									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
-									org.apache.axiom.om.OMElement faultElt = f.getDetail();
-									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
-											//make the fault by reflection
-											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
-													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
-													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
-														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-															new java.lang.Class[]{messageClass});
-													m.invoke(ex,new java.lang.Object[]{messageObject});
-													
-					
-										            callback.receiveErrorMFSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
-                                            } catch(java.lang.ClassCastException e){
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (java.lang.ClassNotFoundException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (java.lang.NoSuchMethodException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (java.lang.reflect.InvocationTargetException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (java.lang.IllegalAccessException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (java.lang.InstantiationException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            } catch (org.apache.axis2.AxisFault e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorMFSearch(f);
-                                            }
-									    } else {
-										    callback.receiveErrorMFSearch(f);
-									    }
-									} else {
-									    callback.receiveErrorMFSearch(f);
-									}
-								} else {
-								    callback.receiveErrorMFSearch(error);
-								}
-                            }
-
-                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
-                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
-                                onError(fault);
-                            }
-
-                            public void onComplete() {
-                                try {
-                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                                } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorMFSearch(axisFault);
-                                }
-                            }
-                });
-                        
-
-          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[12].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
-           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[12].setMessageReceiver(
-                    _callbackReceiver);
-        }
-
-           //execute the operation client
-           _operationClient.execute(false);
-
-                    }
-                
-                    /**
-                     * Auto generated method signature
-                     * Given a structure key that has been processed by Standardize, return the chemical structure in as SMILES or InChI strings. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetStandardizedStructure
-                     * @param getStandardizedStructure326
-                    
-                     */
-
-                    
-
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse GetStandardizedStructure(
-
-                            gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure getStandardizedStructure326)
-                        
-
-                    throws java.rmi.RemoteException
-                    
-                    {
-              org.apache.axis2.context.MessageContext _messageContext = null;
-              try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
               _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/GetStandardizedStructure");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -3957,9 +3472,10 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getStandardizedStructure326,
+                                                    getStandardizedStructure322,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedStructure")));
+                                                    "getStandardizedStructure")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructure"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -3990,15 +3506,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4033,26 +3549,28 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a structure key that has been processed by Standardize, return the chemical structure in as SMILES or InChI strings. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetStandardizedStructure
-                    * @param getStandardizedStructure326
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetStandardizedStructure
+                    * @param getStandardizedStructure322
                 
                 */
-                public  void startGetStandardizedStructure(
+                public  void startgetStandardizedStructure(
 
-                 gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure getStandardizedStructure326,
+                 gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure getStandardizedStructure322,
 
                   final gov.nih.nlm.ncbi.pubchemAxis2.PUGCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
              _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/GetStandardizedStructure");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -4071,9 +3589,10 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    getStandardizedStructure326,
+                                                    getStandardizedStructure322,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedStructure")));
+                                                    "getStandardizedStructure")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructure"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4093,11 +3612,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetStandardizedStructure(
+                                        callback.receiveResultgetStandardizedStructure(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetStandardizedStructure(e);
+                                callback.receiveErrorgetStandardizedStructure(e);
                             }
                             }
 
@@ -4106,15 +3625,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedStructure"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4122,37 +3641,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetStandardizedStructure(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetStandardizedStructure(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedStructure(f);
+                                                callback.receiveErrorgetStandardizedStructure(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetStandardizedStructure(f);
+										    callback.receiveErrorgetStandardizedStructure(f);
 									    }
 									} else {
-									    callback.receiveErrorGetStandardizedStructure(f);
+									    callback.receiveErrorgetStandardizedStructure(f);
 									}
 								} else {
-								    callback.receiveErrorGetStandardizedStructure(error);
+								    callback.receiveErrorgetStandardizedStructure(error);
 								}
                             }
 
@@ -4165,7 +3684,545 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetStandardizedStructure(axisFault);
+                                    callback.receiveErrorgetStandardizedStructure(axisFault);
+                                }
+                            }
+                });
+                        
+
+          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if ( _operations[11].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+          _operations[11].setMessageReceiver(
+                    _callbackReceiver);
+        }
+
+           //execute the operation client
+           _operationClient.execute(false);
+
+                    }
+                
+                    /**
+                     * Auto generated method signature
+                     * Input a set of identifiers for a PubChem database, as an array of integers. Returns a list key. Synchronous.
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputList
+                     * @param inputList324
+                    
+                     */
+
+                    
+
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse inputList(
+
+                            gov.nih.nlm.ncbi.pubchemAxis2.InputList inputList324)
+                        
+
+                    throws java.rmi.RemoteException
+                    
+                    {
+              org.apache.axis2.context.MessageContext _messageContext = null;
+              try{
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
+              _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/InputList");
+              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+              // create a message context
+              _messageContext = new org.apache.axis2.context.MessageContext();
+
+              
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env = null;
+                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    inputList324,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputList")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputList"));
+                                                
+        //adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // set the message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message contxt to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        //execute the operation client
+        _operationClient.execute(true);
+
+         
+               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
+                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+                
+                
+                                java.lang.Object object = fromOM(
+                                             _returnEnv.getBody().getFirstElement() ,
+                                             gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.class,
+                                              getEnvelopeNamespaces(_returnEnv));
+
+                               
+                                        return (gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse)object;
+                                   
+         }catch(org.apache.axis2.AxisFault f){
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt!=null){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"))){
+                    //make the fault by reflection
+                    try{
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"));
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+                        //message class
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"));
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+                                   new java.lang.Class[]{messageClass});
+                        m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    }catch(java.lang.ClassCastException e){
+                       // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }  catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }   catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }
+                }else{
+                    throw f;
+                }
+            }else{
+                throw f;
+            }
+            } finally {
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
+            }
+        }
+            
+                /**
+                * Auto generated method signature for Asynchronous Invocations
+                * Input a set of identifiers for a PubChem database, as an array of integers. Returns a list key. Synchronous.
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputList
+                    * @param inputList324
+                
+                */
+                public  void startinputList(
+
+                 gov.nih.nlm.ncbi.pubchemAxis2.InputList inputList324,
+
+                  final gov.nih.nlm.ncbi.pubchemAxis2.PUGCallbackHandler callback)
+
+                throws java.rmi.RemoteException{
+
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
+             _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/InputList");
+             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env=null;
+              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+                    
+                                    //Style is Doc.
+                                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    inputList324,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputList")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputList"));
+                                                
+        // adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+
+                    
+                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                            try {
+                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+                                
+                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
+                                                                         gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.class,
+                                                                         getEnvelopeNamespaces(resultEnv));
+                                        callback.receiveResultinputList(
+                                        (gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse)object);
+                                        
+                            } catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorinputList(e);
+                            }
+                            }
+
+                            public void onError(java.lang.Exception error) {
+								if (error instanceof org.apache.axis2.AxisFault) {
+									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+									org.apache.axiom.om.OMElement faultElt = f.getDetail();
+									if (faultElt!=null){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"))){
+											//make the fault by reflection
+											try{
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"));
+													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+													//message class
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputList"));
+														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+															new java.lang.Class[]{messageClass});
+													m.invoke(ex,new java.lang.Object[]{messageObject});
+													
+					
+										            callback.receiveErrorinputList(new java.rmi.RemoteException(ex.getMessage(), ex));
+                                            } catch(java.lang.ClassCastException e){
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (java.lang.ClassNotFoundException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (java.lang.NoSuchMethodException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (java.lang.IllegalAccessException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (java.lang.InstantiationException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            } catch (org.apache.axis2.AxisFault e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorinputList(f);
+                                            }
+									    } else {
+										    callback.receiveErrorinputList(f);
+									    }
+									} else {
+									    callback.receiveErrorinputList(f);
+									}
+								} else {
+								    callback.receiveErrorinputList(error);
+								}
+                            }
+
+                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                                onError(fault);
+                            }
+
+                            public void onComplete() {
+                                try {
+                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                                } catch (org.apache.axis2.AxisFault axisFault) {
+                                    callback.receiveErrorinputList(axisFault);
+                                }
+                            }
+                });
+                        
+
+          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if ( _operations[12].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+          _operations[12].setMessageReceiver(
+                    _callbackReceiver);
+        }
+
+           //execute the operation client
+           _operationClient.execute(false);
+
+                    }
+                
+                    /**
+                     * Auto generated method signature
+                     * Search PubChem Compound for structures of a given molecular formula, optionally allowing elements not specified to be present. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#mFSearch
+                     * @param mFSearch326
+                    
+                     */
+
+                    
+
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse mFSearch(
+
+                            gov.nih.nlm.ncbi.pubchemAxis2.MFSearch mFSearch326)
+                        
+
+                    throws java.rmi.RemoteException
+                    
+                    {
+              org.apache.axis2.context.MessageContext _messageContext = null;
+              try{
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
+              _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/MFSearch");
+              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+              // create a message context
+              _messageContext = new org.apache.axis2.context.MessageContext();
+
+              
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env = null;
+                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    mFSearch326,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "mFSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "mFSearch"));
+                                                
+        //adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // set the message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message contxt to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        //execute the operation client
+        _operationClient.execute(true);
+
+         
+               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
+                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+                
+                
+                                java.lang.Object object = fromOM(
+                                             _returnEnv.getBody().getFirstElement() ,
+                                             gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class,
+                                              getEnvelopeNamespaces(_returnEnv));
+
+                               
+                                        return (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse)object;
+                                   
+         }catch(org.apache.axis2.AxisFault f){
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt!=null){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"))){
+                    //make the fault by reflection
+                    try{
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"));
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+                        //message class
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"));
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+                                   new java.lang.Class[]{messageClass});
+                        m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    }catch(java.lang.ClassCastException e){
+                       // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }  catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }   catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }
+                }else{
+                    throw f;
+                }
+            }else{
+                throw f;
+            }
+            } finally {
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
+            }
+        }
+            
+                /**
+                * Auto generated method signature for Asynchronous Invocations
+                * Search PubChem Compound for structures of a given molecular formula, optionally allowing elements not specified to be present. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startmFSearch
+                    * @param mFSearch326
+                
+                */
+                public  void startmFSearch(
+
+                 gov.nih.nlm.ncbi.pubchemAxis2.MFSearch mFSearch326,
+
+                  final gov.nih.nlm.ncbi.pubchemAxis2.PUGCallbackHandler callback)
+
+                throws java.rmi.RemoteException{
+
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
+             _operationClient.getOptions().setAction("http://pubchem.ncbi.nlm.nih.gov/MFSearch");
+             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env=null;
+              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+                    
+                                    //Style is Doc.
+                                    
+                                                    
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    mFSearch326,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "mFSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "mFSearch"));
+                                                
+        // adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+
+                    
+                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                            try {
+                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+                                
+                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
+                                                                         gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class,
+                                                                         getEnvelopeNamespaces(resultEnv));
+                                        callback.receiveResultmFSearch(
+                                        (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse)object);
+                                        
+                            } catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrormFSearch(e);
+                            }
+                            }
+
+                            public void onError(java.lang.Exception error) {
+								if (error instanceof org.apache.axis2.AxisFault) {
+									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+									org.apache.axiom.om.OMElement faultElt = f.getDetail();
+									if (faultElt!=null){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"))){
+											//make the fault by reflection
+											try{
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"));
+													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+													//message class
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"MFSearch"));
+														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+															new java.lang.Class[]{messageClass});
+													m.invoke(ex,new java.lang.Object[]{messageObject});
+													
+					
+										            callback.receiveErrormFSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
+                                            } catch(java.lang.ClassCastException e){
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (java.lang.ClassNotFoundException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (java.lang.NoSuchMethodException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (java.lang.IllegalAccessException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (java.lang.InstantiationException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            } catch (org.apache.axis2.AxisFault e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrormFSearch(f);
+                                            }
+									    } else {
+										    callback.receiveErrormFSearch(f);
+									    }
+									} else {
+									    callback.receiveErrormFSearch(f);
+									}
+								} else {
+								    callback.receiveErrormFSearch(error);
+								}
+                            }
+
+                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                                onError(fault);
+                            }
+
+                            public void onComplete() {
+                                try {
+                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                                } catch (org.apache.axis2.AxisFault axisFault) {
+                                    callback.receiveErrormFSearch(axisFault);
                                 }
                             }
                 });
@@ -4186,14 +4243,14 @@
                     /**
                      * Auto generated method signature
                      * Given a key for any asynchronous operation, return any system messages (error messages, job info, etc.) associated with the operation, if any. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetStatusMessage
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getStatusMessage
                      * @param getStatusMessage328
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse GetStatusMessage(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse getStatusMessage(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessage getStatusMessage328)
                         
@@ -4224,7 +4281,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStatusMessage328,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStatusMessage")));
+                                                    "getStatusMessage")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStatusMessage"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4255,15 +4313,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4298,18 +4356,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a key for any asynchronous operation, return any system messages (error messages, job info, etc.) associated with the operation, if any. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetStatusMessage
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetStatusMessage
                     * @param getStatusMessage328
                 
                 */
-                public  void startGetStatusMessage(
+                public  void startgetStatusMessage(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessage getStatusMessage328,
 
@@ -4338,7 +4398,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStatusMessage328,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStatusMessage")));
+                                                    "getStatusMessage")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStatusMessage"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4358,11 +4419,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetStatusMessage(
+                                        callback.receiveResultgetStatusMessage(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetStatusMessage(e);
+                                callback.receiveErrorgetStatusMessage(e);
                             }
                             }
 
@@ -4371,15 +4432,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStatusMessage"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4387,37 +4448,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetStatusMessage(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetStatusMessage(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStatusMessage(f);
+                                                callback.receiveErrorgetStatusMessage(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetStatusMessage(f);
+										    callback.receiveErrorgetStatusMessage(f);
 									    }
 									} else {
-									    callback.receiveErrorGetStatusMessage(f);
+									    callback.receiveErrorgetStatusMessage(f);
 									}
 								} else {
-								    callback.receiveErrorGetStatusMessage(error);
+								    callback.receiveErrorgetStatusMessage(error);
 								}
                             }
 
@@ -4430,7 +4491,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetStatusMessage(axisFault);
+                                    callback.receiveErrorgetStatusMessage(axisFault);
                                 }
                             }
                 });
@@ -4451,14 +4512,14 @@
                     /**
                      * Auto generated method signature
                      * Input an Entrez history key (db, query key, and WebEnv). Returns a list key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputEntrez
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputEntrez
                      * @param inputEntrez330
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse InputEntrez(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse inputEntrez(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputEntrez inputEntrez330)
                         
@@ -4489,7 +4550,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputEntrez330,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputEntrez")));
+                                                    "inputEntrez")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputEntrez"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4520,15 +4582,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4563,18 +4625,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Input an Entrez history key (db, query key, and WebEnv). Returns a list key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputEntrez
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputEntrez
                     * @param inputEntrez330
                 
                 */
-                public  void startInputEntrez(
+                public  void startinputEntrez(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputEntrez inputEntrez330,
 
@@ -4603,7 +4667,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputEntrez330,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputEntrez")));
+                                                    "inputEntrez")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputEntrez"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4623,11 +4688,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputEntrez(
+                                        callback.receiveResultinputEntrez(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputEntrez(e);
+                                callback.receiveErrorinputEntrez(e);
                             }
                             }
 
@@ -4636,15 +4701,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputEntrez"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4652,37 +4717,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputEntrez(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputEntrez(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputEntrez(f);
+                                                callback.receiveErrorinputEntrez(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputEntrez(f);
+										    callback.receiveErrorinputEntrez(f);
 									    }
 									} else {
-									    callback.receiveErrorInputEntrez(f);
+									    callback.receiveErrorinputEntrez(f);
 									}
 								} else {
-								    callback.receiveErrorInputEntrez(error);
+								    callback.receiveErrorinputEntrez(error);
 								}
                             }
 
@@ -4695,7 +4760,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputEntrez(axisFault);
+                                    callback.receiveErrorinputEntrez(axisFault);
                                 }
                             }
                 });
@@ -4716,14 +4781,14 @@
                     /**
                      * Auto generated method signature
                      * Given a list key, prepare for download a file containing those records in the selected format. See the web download service documentation (http://pubchem.ncbi.nlm.nih.gov/pc_fetch/pc_fetch-help.html) for more detail on the supported formats and file types. Returns a download key. Asynchronous. Note that if SynchronousSingleRecord is set to true, and the ListKey contains only a single ID, then a Base64 string of data is returned synchronously in the response, instead of going through the download file.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#Download
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#download
                      * @param download332
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse Download(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse download(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.Download download332)
                         
@@ -4754,7 +4819,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     download332,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "Download")));
+                                                    "download")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "download"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4785,15 +4851,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4828,18 +4894,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a list key, prepare for download a file containing those records in the selected format. See the web download service documentation (http://pubchem.ncbi.nlm.nih.gov/pc_fetch/pc_fetch-help.html) for more detail on the supported formats and file types. Returns a download key. Asynchronous. Note that if SynchronousSingleRecord is set to true, and the ListKey contains only a single ID, then a Base64 string of data is returned synchronously in the response, instead of going through the download file.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startDownload
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startdownload
                     * @param download332
                 
                 */
-                public  void startDownload(
+                public  void startdownload(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.Download download332,
 
@@ -4868,7 +4936,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     download332,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "Download")));
+                                                    "download")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "download"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -4888,11 +4957,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultDownload(
+                                        callback.receiveResultdownload(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorDownload(e);
+                                callback.receiveErrordownload(e);
                             }
                             }
 
@@ -4901,15 +4970,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Download"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -4917,37 +4986,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorDownload(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrordownload(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorDownload(f);
+                                                callback.receiveErrordownload(f);
                                             }
 									    } else {
-										    callback.receiveErrorDownload(f);
+										    callback.receiveErrordownload(f);
 									    }
 									} else {
-									    callback.receiveErrorDownload(f);
+									    callback.receiveErrordownload(f);
 									}
 								} else {
-								    callback.receiveErrorDownload(error);
+								    callback.receiveErrordownload(error);
 								}
                             }
 
@@ -4960,7 +5029,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorDownload(axisFault);
+                                    callback.receiveErrordownload(axisFault);
                                 }
                             }
                 });
@@ -4981,14 +5050,14 @@
                     /**
                      * Auto generated method signature
                      * Given a download key, return an FTP URL that may be used to download the requested file. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetDownloadUrl
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getDownloadUrl
                      * @param getDownloadUrl334
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse GetDownloadUrl(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse getDownloadUrl(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrl getDownloadUrl334)
                         
@@ -5019,7 +5088,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getDownloadUrl334,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetDownloadUrl")));
+                                                    "getDownloadUrl")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getDownloadUrl"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5050,15 +5120,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5093,18 +5163,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a download key, return an FTP URL that may be used to download the requested file. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetDownloadUrl
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetDownloadUrl
                     * @param getDownloadUrl334
                 
                 */
-                public  void startGetDownloadUrl(
+                public  void startgetDownloadUrl(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrl getDownloadUrl334,
 
@@ -5133,7 +5205,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getDownloadUrl334,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetDownloadUrl")));
+                                                    "getDownloadUrl")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getDownloadUrl"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5153,11 +5226,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetDownloadUrl(
+                                        callback.receiveResultgetDownloadUrl(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetDownloadUrl(e);
+                                callback.receiveErrorgetDownloadUrl(e);
                             }
                             }
 
@@ -5166,15 +5239,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetDownloadUrl"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5182,37 +5255,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetDownloadUrl(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetDownloadUrl(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetDownloadUrl(f);
+                                                callback.receiveErrorgetDownloadUrl(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetDownloadUrl(f);
+										    callback.receiveErrorgetDownloadUrl(f);
 									    }
 									} else {
-									    callback.receiveErrorGetDownloadUrl(f);
+									    callback.receiveErrorgetDownloadUrl(f);
 									}
 								} else {
-								    callback.receiveErrorGetDownloadUrl(error);
+								    callback.receiveErrorgetDownloadUrl(error);
 								}
                             }
 
@@ -5225,7 +5298,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetDownloadUrl(axisFault);
+                                    callback.receiveErrorgetDownloadUrl(axisFault);
                                 }
                             }
                 });
@@ -5246,14 +5319,14 @@
                     /**
                      * Auto generated method signature
                      * Input a chemical structure as a simple (one-line) string, either SMILES or InChI. Returns a structure key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputStructure
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputStructure
                      * @param inputStructure336
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse InputStructure(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse inputStructure(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputStructure inputStructure336)
                         
@@ -5284,7 +5357,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputStructure336,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputStructure")));
+                                                    "inputStructure")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructure"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5315,15 +5389,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5358,18 +5432,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Input a chemical structure as a simple (one-line) string, either SMILES or InChI. Returns a structure key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputStructure
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputStructure
                     * @param inputStructure336
                 
                 */
-                public  void startInputStructure(
+                public  void startinputStructure(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputStructure inputStructure336,
 
@@ -5398,7 +5474,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputStructure336,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputStructure")));
+                                                    "inputStructure")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructure"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5418,11 +5495,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputStructure(
+                                        callback.receiveResultinputStructure(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputStructure(e);
+                                callback.receiveErrorinputStructure(e);
                             }
                             }
 
@@ -5431,15 +5508,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputStructure"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5447,37 +5524,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputStructure(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputStructure(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputStructure(f);
+                                                callback.receiveErrorinputStructure(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputStructure(f);
+										    callback.receiveErrorinputStructure(f);
 									    }
 									} else {
-									    callback.receiveErrorInputStructure(f);
+									    callback.receiveErrorinputStructure(f);
 									}
 								} else {
-								    callback.receiveErrorInputStructure(error);
+								    callback.receiveErrorinputStructure(error);
 								}
                             }
 
@@ -5490,7 +5567,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputStructure(axisFault);
+                                    callback.receiveErrorinputStructure(axisFault);
                                 }
                             }
                 });
@@ -5511,14 +5588,14 @@
                     /**
                      * Auto generated method signature
                      * Given a key for any asynchronous operation, return the status of that operation. Possible return values are: Success, the operation completed normally; HitLimit, TimeLimit: the operation finished normally, but one of the limits was reached (e.g. before the entire database was searched); ServerError, InputError, DataError, Stopped: there was a problem with the input or on the server, and the job has died; Queued: the operation is waiting its turn in the public queue; Running: the operation is in progress. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetOperationStatus
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getOperationStatus
                      * @param getOperationStatus338
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse GetOperationStatus(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse getOperationStatus(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatus getOperationStatus338)
                         
@@ -5549,7 +5626,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getOperationStatus338,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetOperationStatus")));
+                                                    "getOperationStatus")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getOperationStatus"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5580,15 +5658,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5623,18 +5701,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a key for any asynchronous operation, return the status of that operation. Possible return values are: Success, the operation completed normally; HitLimit, TimeLimit: the operation finished normally, but one of the limits was reached (e.g. before the entire database was searched); ServerError, InputError, DataError, Stopped: there was a problem with the input or on the server, and the job has died; Queued: the operation is waiting its turn in the public queue; Running: the operation is in progress. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetOperationStatus
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetOperationStatus
                     * @param getOperationStatus338
                 
                 */
-                public  void startGetOperationStatus(
+                public  void startgetOperationStatus(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatus getOperationStatus338,
 
@@ -5663,7 +5743,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getOperationStatus338,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetOperationStatus")));
+                                                    "getOperationStatus")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getOperationStatus"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5683,11 +5764,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetOperationStatus(
+                                        callback.receiveResultgetOperationStatus(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetOperationStatus(e);
+                                callback.receiveErrorgetOperationStatus(e);
                             }
                             }
 
@@ -5696,15 +5777,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetOperationStatus"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5712,37 +5793,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetOperationStatus(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetOperationStatus(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetOperationStatus(f);
+                                                callback.receiveErrorgetOperationStatus(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetOperationStatus(f);
+										    callback.receiveErrorgetOperationStatus(f);
 									    }
 									} else {
-									    callback.receiveErrorGetOperationStatus(f);
+									    callback.receiveErrorgetOperationStatus(f);
 									}
 								} else {
-								    callback.receiveErrorGetOperationStatus(error);
+								    callback.receiveErrorgetOperationStatus(error);
 								}
                             }
 
@@ -5755,7 +5836,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetOperationStatus(axisFault);
+                                    callback.receiveErrorgetOperationStatus(axisFault);
                                 }
                             }
                 });
@@ -5776,14 +5857,14 @@
                     /**
                      * Auto generated method signature
                      * Input a set of identifiers for a PubChem database, as a simple string of integer values separated by commas and/or whitespace. Returns a list key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputListText
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputListText
                      * @param inputListText340
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse InputListText(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse inputListText(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputListText inputListText340)
                         
@@ -5814,7 +5895,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputListText340,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputListText")));
+                                                    "inputListText")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListText"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5845,15 +5927,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5888,18 +5970,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Input a set of identifiers for a PubChem database, as a simple string of integer values separated by commas and/or whitespace. Returns a list key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputListText
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputListText
                     * @param inputListText340
                 
                 */
-                public  void startInputListText(
+                public  void startinputListText(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputListText inputListText340,
 
@@ -5928,7 +6012,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputListText340,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputListText")));
+                                                    "inputListText")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListText"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -5948,11 +6033,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputListText(
+                                        callback.receiveResultinputListText(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputListText(e);
+                                callback.receiveErrorinputListText(e);
                             }
                             }
 
@@ -5961,15 +6046,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListText"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -5977,37 +6062,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputListText(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputListText(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListText(f);
+                                                callback.receiveErrorinputListText(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputListText(f);
+										    callback.receiveErrorinputListText(f);
 									    }
 									} else {
-									    callback.receiveErrorInputListText(f);
+									    callback.receiveErrorinputListText(f);
 									}
 								} else {
-								    callback.receiveErrorInputListText(error);
+								    callback.receiveErrorinputListText(error);
 								}
                             }
 
@@ -6020,7 +6105,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputListText(axisFault);
+                                    callback.receiveErrorinputListText(axisFault);
                                 }
                             }
                 });
@@ -6041,14 +6126,14 @@
                     /**
                      * Auto generated method signature
                      * Given an Entrez history key (db, query key, and WebEnv), return an HTTP URL that may be used to view the list in Entrez. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetEntrezUrl
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getEntrezUrl
                      * @param getEntrezUrl342
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse GetEntrezUrl(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse getEntrezUrl(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrl getEntrezUrl342)
                         
@@ -6079,7 +6164,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getEntrezUrl342,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetEntrezUrl")));
+                                                    "getEntrezUrl")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezUrl"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6110,15 +6196,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6153,18 +6239,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given an Entrez history key (db, query key, and WebEnv), return an HTTP URL that may be used to view the list in Entrez. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetEntrezUrl
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetEntrezUrl
                     * @param getEntrezUrl342
                 
                 */
-                public  void startGetEntrezUrl(
+                public  void startgetEntrezUrl(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrl getEntrezUrl342,
 
@@ -6193,7 +6281,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getEntrezUrl342,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetEntrezUrl")));
+                                                    "getEntrezUrl")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezUrl"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6213,11 +6302,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetEntrezUrl(
+                                        callback.receiveResultgetEntrezUrl(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetEntrezUrl(e);
+                                callback.receiveErrorgetEntrezUrl(e);
                             }
                             }
 
@@ -6226,15 +6315,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetEntrezUrl"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6242,37 +6331,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetEntrezUrl(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetEntrezUrl(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetEntrezUrl(f);
+                                                callback.receiveErrorgetEntrezUrl(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetEntrezUrl(f);
+										    callback.receiveErrorgetEntrezUrl(f);
 									    }
 									} else {
-									    callback.receiveErrorGetEntrezUrl(f);
+									    callback.receiveErrorgetEntrezUrl(f);
 									}
 								} else {
-								    callback.receiveErrorGetEntrezUrl(error);
+								    callback.receiveErrorgetEntrezUrl(error);
 								}
                             }
 
@@ -6285,7 +6374,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetEntrezUrl(axisFault);
+                                    callback.receiveErrorgetEntrezUrl(axisFault);
                                 }
                             }
                 });
@@ -6306,14 +6395,14 @@
                     /**
                      * Auto generated method signature
                      * Input a set of identifiers for a PubChem database, as an array of strings. Returns a list key. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#InputListString
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#inputListString
                      * @param inputListString344
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse InputListString(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse inputListString(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.InputListString inputListString344)
                         
@@ -6344,7 +6433,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputListString344,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputListString")));
+                                                    "inputListString")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListString"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6375,15 +6465,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6418,18 +6508,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Input a set of identifiers for a PubChem database, as an array of strings. Returns a list key. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startInputListString
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startinputListString
                     * @param inputListString344
                 
                 */
-                public  void startInputListString(
+                public  void startinputListString(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.InputListString inputListString344,
 
@@ -6458,7 +6550,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     inputListString344,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "InputListString")));
+                                                    "inputListString")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListString"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6478,11 +6571,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultInputListString(
+                                        callback.receiveResultinputListString(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorInputListString(e);
+                                callback.receiveErrorinputListString(e);
                             }
                             }
 
@@ -6491,15 +6584,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"InputListString"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6507,37 +6600,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorInputListString(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorinputListString(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorInputListString(f);
+                                                callback.receiveErrorinputListString(f);
                                             }
 									    } else {
-										    callback.receiveErrorInputListString(f);
+										    callback.receiveErrorinputListString(f);
 									    }
 									} else {
-									    callback.receiveErrorInputListString(f);
+									    callback.receiveErrorinputListString(f);
 									}
 								} else {
-								    callback.receiveErrorInputListString(error);
+								    callback.receiveErrorinputListString(error);
 								}
                             }
 
@@ -6550,7 +6643,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorInputListString(axisFault);
+                                    callback.receiveErrorinputListString(axisFault);
                                 }
                             }
                 });
@@ -6571,14 +6664,14 @@
                     /**
                      * Auto generated method signature
                      * Convert IDs from one type to another, using any one of a variety of CID matching algorithms. Output can be a list or a downloaded file; download file compression is optional and defaults to gzip (.gz). Returns a list or download key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#IDExchange
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#iDExchange
                      * @param iDExchange346
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse IDExchange(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse iDExchange(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.IDExchange iDExchange346)
                         
@@ -6609,7 +6702,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     iDExchange346,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "IDExchange")));
+                                                    "iDExchange")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "iDExchange"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6640,15 +6734,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6683,18 +6777,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Convert IDs from one type to another, using any one of a variety of CID matching algorithms. Output can be a list or a downloaded file; download file compression is optional and defaults to gzip (.gz). Returns a list or download key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startIDExchange
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startiDExchange
                     * @param iDExchange346
                 
                 */
-                public  void startIDExchange(
+                public  void startiDExchange(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.IDExchange iDExchange346,
 
@@ -6723,7 +6819,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     iDExchange346,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "IDExchange")));
+                                                    "iDExchange")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "iDExchange"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6743,11 +6840,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultIDExchange(
+                                        callback.receiveResultiDExchange(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorIDExchange(e);
+                                callback.receiveErroriDExchange(e);
                             }
                             }
 
@@ -6756,15 +6853,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"IDExchange"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6772,37 +6869,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorIDExchange(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErroriDExchange(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorIDExchange(f);
+                                                callback.receiveErroriDExchange(f);
                                             }
 									    } else {
-										    callback.receiveErrorIDExchange(f);
+										    callback.receiveErroriDExchange(f);
 									    }
 									} else {
-									    callback.receiveErrorIDExchange(f);
+									    callback.receiveErroriDExchange(f);
 									}
 								} else {
-								    callback.receiveErrorIDExchange(error);
+								    callback.receiveErroriDExchange(error);
 								}
                             }
 
@@ -6815,7 +6912,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorIDExchange(axisFault);
+                                    callback.receiveErroriDExchange(axisFault);
                                 }
                             }
                 });
@@ -6836,14 +6933,14 @@
                     /**
                      * Auto generated method signature
                      * Standardize the structure given by the structure key input, using the same algorithm PubChem uses to construct the Compound database. Returns a structure key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#Standardize
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#standardize
                      * @param standardize348
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse Standardize(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse standardize(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.Standardize standardize348)
                         
@@ -6874,7 +6971,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     standardize348,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "Standardize")));
+                                                    "standardize")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "standardize"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -6905,15 +7003,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -6948,18 +7046,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Standardize the structure given by the structure key input, using the same algorithm PubChem uses to construct the Compound database. Returns a structure key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startStandardize
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startstandardize
                     * @param standardize348
                 
                 */
-                public  void startStandardize(
+                public  void startstandardize(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.Standardize standardize348,
 
@@ -6988,7 +7088,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     standardize348,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "Standardize")));
+                                                    "standardize")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "standardize"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7008,11 +7109,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultStandardize(
+                                        callback.receiveResultstandardize(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorStandardize(e);
+                                callback.receiveErrorstandardize(e);
                             }
                             }
 
@@ -7021,15 +7122,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"Standardize"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7037,37 +7138,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorStandardize(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorstandardize(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorStandardize(f);
+                                                callback.receiveErrorstandardize(f);
                                             }
 									    } else {
-										    callback.receiveErrorStandardize(f);
+										    callback.receiveErrorstandardize(f);
 									    }
 									} else {
-									    callback.receiveErrorStandardize(f);
+									    callback.receiveErrorstandardize(f);
 									}
 								} else {
-								    callback.receiveErrorStandardize(error);
+								    callback.receiveErrorstandardize(error);
 								}
                             }
 
@@ -7080,7 +7181,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorStandardize(axisFault);
+                                    callback.receiveErrorstandardize(axisFault);
                                 }
                             }
                 });
@@ -7101,14 +7202,14 @@
                     /**
                      * Auto generated method signature
                      * Get the description of all columns (readouts) in a BioAssay. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetAssayColumnDescriptions
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getAssayColumnDescriptions
                      * @param getAssayColumnDescriptions350
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse GetAssayColumnDescriptions(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse getAssayColumnDescriptions(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptions getAssayColumnDescriptions350)
                         
@@ -7139,7 +7240,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayColumnDescriptions350,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayColumnDescriptions")));
+                                                    "getAssayColumnDescriptions")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescriptions"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7170,15 +7272,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7213,18 +7315,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Get the description of all columns (readouts) in a BioAssay. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetAssayColumnDescriptions
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetAssayColumnDescriptions
                     * @param getAssayColumnDescriptions350
                 
                 */
-                public  void startGetAssayColumnDescriptions(
+                public  void startgetAssayColumnDescriptions(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptions getAssayColumnDescriptions350,
 
@@ -7253,7 +7357,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getAssayColumnDescriptions350,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetAssayColumnDescriptions")));
+                                                    "getAssayColumnDescriptions")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescriptions"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7273,11 +7378,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetAssayColumnDescriptions(
+                                        callback.receiveResultgetAssayColumnDescriptions(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetAssayColumnDescriptions(e);
+                                callback.receiveErrorgetAssayColumnDescriptions(e);
                             }
                             }
 
@@ -7286,15 +7391,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetAssayColumnDescriptions"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7302,37 +7407,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetAssayColumnDescriptions(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetAssayColumnDescriptions(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetAssayColumnDescriptions(f);
+                                                callback.receiveErrorgetAssayColumnDescriptions(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetAssayColumnDescriptions(f);
+										    callback.receiveErrorgetAssayColumnDescriptions(f);
 									    }
 									} else {
-									    callback.receiveErrorGetAssayColumnDescriptions(f);
+									    callback.receiveErrorgetAssayColumnDescriptions(f);
 									}
 								} else {
-								    callback.receiveErrorGetAssayColumnDescriptions(error);
+								    callback.receiveErrorgetAssayColumnDescriptions(error);
 								}
                             }
 
@@ -7345,7 +7450,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetAssayColumnDescriptions(axisFault);
+                                    callback.receiveErrorgetAssayColumnDescriptions(axisFault);
                                 }
                             }
                 });
@@ -7366,14 +7471,14 @@
                     /**
                      * Auto generated method signature
                      * Given a structure key that has been processed by Standardize, return the corresponding PubChem Compound database CID, or an empty value if the structure is not present in PubChem. Synchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#GetStandardizedCID
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#getStandardizedCID
                      * @param getStandardizedCID352
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse GetStandardizedCID(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse getStandardizedCID(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCID getStandardizedCID352)
                         
@@ -7404,7 +7509,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStandardizedCID352,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedCID")));
+                                                    "getStandardizedCID")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedCID"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7435,15 +7541,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7478,18 +7584,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given a structure key that has been processed by Standardize, return the corresponding PubChem Compound database CID, or an empty value if the structure is not present in PubChem. Synchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startGetStandardizedCID
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startgetStandardizedCID
                     * @param getStandardizedCID352
                 
                 */
-                public  void startGetStandardizedCID(
+                public  void startgetStandardizedCID(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCID getStandardizedCID352,
 
@@ -7518,7 +7626,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     getStandardizedCID352,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "GetStandardizedCID")));
+                                                    "getStandardizedCID")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedCID"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7538,11 +7647,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultGetStandardizedCID(
+                                        callback.receiveResultgetStandardizedCID(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorGetStandardizedCID(e);
+                                callback.receiveErrorgetStandardizedCID(e);
                             }
                             }
 
@@ -7551,15 +7660,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"GetStandardizedCID"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7567,37 +7676,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorGetStandardizedCID(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorgetStandardizedCID(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorGetStandardizedCID(f);
+                                                callback.receiveErrorgetStandardizedCID(f);
                                             }
 									    } else {
-										    callback.receiveErrorGetStandardizedCID(f);
+										    callback.receiveErrorgetStandardizedCID(f);
 									    }
 									} else {
-									    callback.receiveErrorGetStandardizedCID(f);
+									    callback.receiveErrorgetStandardizedCID(f);
 									}
 								} else {
-								    callback.receiveErrorGetStandardizedCID(error);
+								    callback.receiveErrorgetStandardizedCID(error);
 								}
                             }
 
@@ -7610,7 +7719,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorGetStandardizedCID(axisFault);
+                                    callback.receiveErrorgetStandardizedCID(axisFault);
                                 }
                             }
                 });
@@ -7631,14 +7740,14 @@
                     /**
                      * Auto generated method signature
                      * Given an assay key, prepare for download a file containing an assay data table in the selected format. See the assay query section of the PUG service documentation (http://pubchem.ncbi.nlm.nih.gov/pug/pughelp.html) for more detail on the supported formats. Compression is optional and defaults to gzip (.gz). Returns a download key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#AssayDownload
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#assayDownload
                      * @param assayDownload354
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse AssayDownload(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse assayDownload(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.AssayDownload assayDownload354)
                         
@@ -7669,7 +7778,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     assayDownload354,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "AssayDownload")));
+                                                    "assayDownload")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "assayDownload"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7700,15 +7810,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7743,18 +7853,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Given an assay key, prepare for download a file containing an assay data table in the selected format. See the assay query section of the PUG service documentation (http://pubchem.ncbi.nlm.nih.gov/pug/pughelp.html) for more detail on the supported formats. Compression is optional and defaults to gzip (.gz). Returns a download key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startAssayDownload
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startassayDownload
                     * @param assayDownload354
                 
                 */
-                public  void startAssayDownload(
+                public  void startassayDownload(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.AssayDownload assayDownload354,
 
@@ -7783,7 +7895,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     assayDownload354,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "AssayDownload")));
+                                                    "assayDownload")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "assayDownload"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7803,11 +7916,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultAssayDownload(
+                                        callback.receiveResultassayDownload(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorAssayDownload(e);
+                                callback.receiveErrorassayDownload(e);
                             }
                             }
 
@@ -7816,15 +7929,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"AssayDownload"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -7832,37 +7945,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorAssayDownload(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorassayDownload(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorAssayDownload(f);
+                                                callback.receiveErrorassayDownload(f);
                                             }
 									    } else {
-										    callback.receiveErrorAssayDownload(f);
+										    callback.receiveErrorassayDownload(f);
 									    }
 									} else {
-									    callback.receiveErrorAssayDownload(f);
+									    callback.receiveErrorassayDownload(f);
 									}
 								} else {
-								    callback.receiveErrorAssayDownload(error);
+								    callback.receiveErrorassayDownload(error);
 								}
                             }
 
@@ -7875,7 +7988,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorAssayDownload(axisFault);
+                                    callback.receiveErrorassayDownload(axisFault);
                                 }
                             }
                 });
@@ -7896,14 +8009,14 @@
                     /**
                      * Auto generated method signature
                      * Search PubChem Compound for structures contained within the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#SuperstructureSearch
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#superstructureSearch
                      * @param superstructureSearch356
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse SuperstructureSearch(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse superstructureSearch(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearch superstructureSearch356)
                         
@@ -7934,7 +8047,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     superstructureSearch356,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SuperstructureSearch")));
+                                                    "superstructureSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "superstructureSearch"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -7965,15 +8079,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -8008,18 +8122,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Search PubChem Compound for structures contained within the one given by the structure key input, based on a user-selected level of chemical identity: connectivity only, match isotopes and/or stereo, etc. The search may be limited by elapsed time or number of records found, or restricted to search only within a previous result set (given by a list key). Returns a list key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startSuperstructureSearch
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startsuperstructureSearch
                     * @param superstructureSearch356
                 
                 */
-                public  void startSuperstructureSearch(
+                public  void startsuperstructureSearch(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearch superstructureSearch356,
 
@@ -8048,7 +8164,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     superstructureSearch356,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "SuperstructureSearch")));
+                                                    "superstructureSearch")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "superstructureSearch"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -8068,11 +8185,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultSuperstructureSearch(
+                                        callback.receiveResultsuperstructureSearch(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorSuperstructureSearch(e);
+                                callback.receiveErrorsuperstructureSearch(e);
                             }
                             }
 
@@ -8081,15 +8198,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"SuperstructureSearch"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -8097,37 +8214,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorSuperstructureSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorsuperstructureSearch(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorSuperstructureSearch(f);
+                                                callback.receiveErrorsuperstructureSearch(f);
                                             }
 									    } else {
-										    callback.receiveErrorSuperstructureSearch(f);
+										    callback.receiveErrorsuperstructureSearch(f);
 									    }
 									} else {
-									    callback.receiveErrorSuperstructureSearch(f);
+									    callback.receiveErrorsuperstructureSearch(f);
 									}
 								} else {
-								    callback.receiveErrorSuperstructureSearch(error);
+								    callback.receiveErrorsuperstructureSearch(error);
 								}
                             }
 
@@ -8140,7 +8257,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorSuperstructureSearch(axisFault);
+                                    callback.receiveErrorsuperstructureSearch(axisFault);
                                 }
                             }
                 });
@@ -8161,14 +8278,14 @@
                     /**
                      * Auto generated method signature
                      * Compute a matrix of scores from one or two lists of IDs (if one, the IDs will be self-scored), of the selected type and in the selected format. Compression is optional and defaults to gzip (.gz). Returns a download key. Asynchronous.
-                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#ScoreMatrix
+                     * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#scoreMatrix
                      * @param scoreMatrix358
                     
                      */
 
                     
 
-                            public  gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse ScoreMatrix(
+                            public  gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse scoreMatrix(
 
                             gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrix scoreMatrix358)
                         
@@ -8199,7 +8316,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     scoreMatrix358,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "ScoreMatrix")));
+                                                    "scoreMatrix")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "scoreMatrix"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -8230,15 +8348,15 @@
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex=
-                                (java.lang.Exception) exceptionClass.newInstance();
+                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -8273,18 +8391,20 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * Compute a matrix of scores from one or two lists of IDs (if one, the IDs will be self-scored), of the selected type and in the selected format. Compression is optional and defaults to gzip (.gz). Returns a download key. Asynchronous.
-                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startScoreMatrix
+                * @see gov.nih.nlm.ncbi.pubchemAxis2.PUG#startscoreMatrix
                     * @param scoreMatrix358
                 
                 */
-                public  void startScoreMatrix(
+                public  void startscoreMatrix(
 
                  gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrix scoreMatrix358,
 
@@ -8313,7 +8433,8 @@
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     scoreMatrix358,
                                                     optimizeContent(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
-                                                    "ScoreMatrix")));
+                                                    "scoreMatrix")), new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "scoreMatrix"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -8333,11 +8454,11 @@
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
                                                                          gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultScoreMatrix(
+                                        callback.receiveResultscoreMatrix(
                                         (gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorScoreMatrix(e);
+                                callback.receiveErrorscoreMatrix(e);
                             }
                             }
 
@@ -8346,15 +8467,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(faultElt.getQName())){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(faultElt.getQName());
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex=
-														(java.lang.Exception) exceptionClass.newInstance();
+													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
+                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(faultElt.getQName());
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"ScoreMatrix"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -8362,37 +8483,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorScoreMatrix(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorscoreMatrix(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorScoreMatrix(f);
+                                                callback.receiveErrorscoreMatrix(f);
                                             }
 									    } else {
-										    callback.receiveErrorScoreMatrix(f);
+										    callback.receiveErrorscoreMatrix(f);
 									    }
 									} else {
-									    callback.receiveErrorScoreMatrix(f);
+									    callback.receiveErrorscoreMatrix(f);
 									}
 								} else {
-								    callback.receiveErrorScoreMatrix(error);
+								    callback.receiveErrorscoreMatrix(error);
 								}
                             }
 
@@ -8405,7 +8526,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorScoreMatrix(axisFault);
+                                    callback.receiveErrorscoreMatrix(axisFault);
                                 }
                             }
                 });
@@ -8763,6 +8884,34 @@
 
             }
         
+            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
+            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
             private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.InputList param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
@@ -8811,34 +8960,6 @@
             
                         try{
                              return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -9296,7 +9417,7 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetIDList param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetIDList param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9317,7 +9438,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescription param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescription param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9338,7 +9459,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescription param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescription param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9359,7 +9480,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64 param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64 param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9380,7 +9501,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearch param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearch param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9401,7 +9522,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2D param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2D param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9422,7 +9543,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64 param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64 param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9443,7 +9564,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearch param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearch param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9464,7 +9585,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCount param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCount param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9485,7 +9606,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKey param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKey param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9506,7 +9627,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputAssay param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputAssay param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9527,49 +9648,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputList param, boolean optimizeContent)
-                                        throws org.apache.axis2.AxisFault{
-
-                                             
-                                                    try{
-
-                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.InputList.MY_QNAME,factory));
-                                                            return emptyEnvelope;
-                                                        } catch(org.apache.axis2.databinding.ADBException e){
-                                                            throw org.apache.axis2.AxisFault.makeFault(e);
-                                                        }
-                                                
-
-                                        }
-                                
-                             
-                             /* methods to provide back word compatibility */
-
-                             
-                                    
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.MFSearch param, boolean optimizeContent)
-                                        throws org.apache.axis2.AxisFault{
-
-                                             
-                                                    try{
-
-                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearch.MY_QNAME,factory));
-                                                            return emptyEnvelope;
-                                                        } catch(org.apache.axis2.databinding.ADBException e){
-                                                            throw org.apache.axis2.AxisFault.makeFault(e);
-                                                        }
-                                                
-
-                                        }
-                                
-                             
-                             /* methods to provide back word compatibility */
-
-                             
-                                    
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9590,7 +9669,49 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessage param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputList param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        throws org.apache.axis2.AxisFault{
+
+                                             
+                                                    try{
+
+                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.InputList.MY_QNAME,factory));
+                                                            return emptyEnvelope;
+                                                        } catch(org.apache.axis2.databinding.ADBException e){
+                                                            throw org.apache.axis2.AxisFault.makeFault(e);
+                                                        }
+                                                
+
+                                        }
+                                
+                             
+                             /* methods to provide back word compatibility */
+
+                             
+                                    
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.MFSearch param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        throws org.apache.axis2.AxisFault{
+
+                                             
+                                                    try{
+
+                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearch.MY_QNAME,factory));
+                                                            return emptyEnvelope;
+                                                        } catch(org.apache.axis2.databinding.ADBException e){
+                                                            throw org.apache.axis2.AxisFault.makeFault(e);
+                                                        }
+                                                
+
+                                        }
+                                
+                             
+                             /* methods to provide back word compatibility */
+
+                             
+                                    
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessage param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9611,7 +9732,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputEntrez param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputEntrez param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9632,7 +9753,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.Download param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.Download param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9653,7 +9774,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrl param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrl param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9674,7 +9795,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructure param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructure param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9695,7 +9816,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatus param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatus param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9716,7 +9837,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListText param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListText param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9737,7 +9858,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrl param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrl param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9758,7 +9879,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListString param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListString param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9779,7 +9900,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IDExchange param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IDExchange param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9800,7 +9921,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.Standardize param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.Standardize param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9821,7 +9942,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptions param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptions param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9842,7 +9963,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCID param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCID param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9863,7 +9984,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.AssayDownload param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.AssayDownload param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9884,7 +10005,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearch param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearch param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -9905,7 +10026,7 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrix param, boolean optimizeContent)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrix param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
@@ -10096,6 +10217,20 @@
 
                 }
            
+                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.class.equals(type)){
+                
+                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.class.equals(type)){
+                
+                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
                 if (gov.nih.nlm.ncbi.pubchemAxis2.InputList.class.equals(type)){
                 
                            return gov.nih.nlm.ncbi.pubchemAxis2.InputList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
@@ -10120,20 +10255,6 @@
                 if (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class.equals(type)){
                 
                            return gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.class.equals(type)){
-                
-                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.class.equals(type)){
-                
-                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

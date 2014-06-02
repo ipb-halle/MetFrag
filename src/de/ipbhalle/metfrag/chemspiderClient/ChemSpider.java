@@ -18,22 +18,36 @@ package de.ipbhalle.metfrag.chemspiderClient;
 
 import java.io.StringReader;
 import java.rmi.RemoteException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.io.MDLReader;
+import org.openscience.cdk.io.MDLV2000Reader;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
-import com.chemspider.www.ExtendedCompoundInfo;
-import com.chemspider.www.MassSpecAPISoapProxy;
-
-import de.ipbhalle.metfrag.tools.MolecularFormulaTools;
+import com.chemspider.www.MassSpecAPIStub;
+import com.chemspider.www.MassSpecAPIStub.GetRecordsSdf;
+import com.chemspider.www.MassSpecAPIStub.GetRecordsSdfResponse;
+import com.chemspider.www.MassSpecAPIStub.SearchByFormulaAsync;
+import com.chemspider.www.MassSpecAPIStub.SearchByFormulaAsyncResponse;
+import com.chemspider.www.MassSpecAPIStub.SearchByMassAsync;
+import com.chemspider.www.MassSpecAPIStub.SearchByMassAsyncResponse;
+import com.chemspider.www.SearchStub;
+import com.chemspider.www.SearchStub.AsyncSimpleSearch;
 
 public class ChemSpider {
+	
+	protected String token = "";
+	protected Map<String, IAtomContainer> csidToMolecule;
+	
+	public ChemSpider(String token) {
+		this.token = token;
+		this.csidToMolecule = new HashMap<String, IAtomContainer>();
+	}
 	
 	/**
 	 * Gets Chemspider compound ID's by mass.
@@ -45,15 +59,30 @@ public class ChemSpider {
 	 * 
 	 * @throws RemoteException the remote exception
 	 */
-	public static Vector<String> getChemspiderByMass(Double mass, Double error) throws RemoteException
+	public Vector<String> getChemspiderByMass(Double mass, Double error) throws RemoteException
 	{
-		Vector<String> result = new Vector<String>();
-		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
-		String[] resultIDs = chemSpiderProxy.searchByMass2(mass, error);
-		for (int i = 0; i < resultIDs.length; i++) {
-			result.add(resultIDs[i]);
+		MassSpecAPIStub stub = new MassSpecAPIStub();
+		SearchByMassAsync sbma = new SearchByMassAsync();
+		sbma.setMass(mass);
+		sbma.setRange(error);
+		sbma.setToken(this.token);
+		SearchByMassAsyncResponse sbmar = stub.searchByMassAsync(sbma);
+		GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
+		getRecordsSdf.setRid(sbmar.getSearchByMassAsyncResult());
+		getRecordsSdf.setToken(this.token);
+		GetRecordsSdfResponse grsr = stub.getRecordsSdf(getRecordsSdf);
+		Vector<String> csids = new Vector<String>();
+		try {
+			Vector<IAtomContainer> cons = this.getAtomContainerFromString(grsr.getGetRecordsSdfResult());
+			for(int i = 0; i < cons.size(); i++) {
+				String csid = (String)cons.get(i).getProperty("CSID");
+				csids.add(csid);
+				this.csidToMolecule.put(csid, cons.get(i));
+			}
+		} catch (CDKException e) {
+			e.printStackTrace();
 		}
-		return result;
+		return csids;
 	}
 	
 	/**
@@ -65,87 +94,107 @@ public class ChemSpider {
 	 * 
 	 * @throws RemoteException the remote exception
 	 */
-	public static Vector<String> getChemspiderBySumFormula(String sumFormula) throws RemoteException
-	{
-		Vector<String> result = new Vector<String>();
-		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
-		String[] resultIDs = chemSpiderProxy.searchByFormula2(sumFormula);
-		for (int i = 0; i < resultIDs.length; i++) {
-			result.add(resultIDs[i]);
+	public Vector<String> getChemspiderBySumFormula(String molecularFormula) throws RemoteException
+	{ 
+		MassSpecAPIStub stub = new MassSpecAPIStub();
+		SearchByFormulaAsync sbfa = new SearchByFormulaAsync();
+	    sbfa.setFormula(molecularFormula);
+	    sbfa.setToken(this.token);
+	    SearchByFormulaAsyncResponse sbfar = stub.searchByFormulaAsync(sbfa);
+	    GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
+		getRecordsSdf.setRid(sbfar.getSearchByFormulaAsyncResult());
+		getRecordsSdf.setToken(this.token);
+		GetRecordsSdfResponse grsr = stub.getRecordsSdf(getRecordsSdf);
+		Vector<String> csids = new Vector<String>();
+		try {
+			Vector<IAtomContainer> cons = this.getAtomContainerFromString(grsr.getGetRecordsSdfResult());
+			for(int i = 0; i < cons.size(); i++) {
+				String csid = (String)cons.get(i).getProperty("CSID");
+				csids.add(csid);
+				this.csidToMolecule.put(csid, cons.get(i));
+			}
+		} catch (CDKException e) {
+			e.printStackTrace();
 		}
-		return result;
-	}
-	
-	
-	/**
-	 * Gets the mol by id.
-	 * 
-	 * @param ID the iD
-	 * 
-	 * @return the molby id
-	 * 
-	 * @throws RemoteException the remote exception
-	 */
-	public static String getMolByID(String ID, String token) throws RemoteException
-	{
-		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
-		String mol = chemSpiderProxy.getRecordMol(ID, false, token);
-		return mol;
+		return csids;
 	}
 	
 	/**
-	 * Gets the mol by id.
 	 * 
-	 * @param ID the iD
-	 * 
-	 * @return the molby id
-	 * 
-	 * @throws RemoteException the remote exception
-	 * @throws CDKException 
+	 * @param _csids
+	 * @param token
+	 * @return
+	 * @throws RemoteException
 	 */
-	public static IAtomContainer getMol(String ID, boolean getAll, String token) throws RemoteException, CDKException
+	public Vector<String> getChemSpiderByCsids(String[] _csids) throws RemoteException
 	{
-		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
-		String mol = chemSpiderProxy.getRecordMol(ID, false, token);
-		MDLReader reader;
-		List<IAtomContainer> containersList;
-		IAtomContainer molecule = null;
-		try
-		{
-	        reader = new MDLReader(new StringReader(mol));
-	        ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
-	        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
-	        molecule = containersList.get(0);
+		MassSpecAPIStub stub = new MassSpecAPIStub();
+		AsyncSimpleSearch ass = new AsyncSimpleSearch();
+		String query = "";
+		if(_csids.length != 0) query += _csids[0];
+		for(int i = 1; i < _csids.length; i++) 
+			query += "," + _csids[i];
+        ass.setQuery(query);
+        ass.setToken(this.token);
+        SearchStub thisSearchStub = new SearchStub();
+        
+        GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
+        getRecordsSdf.setRid(thisSearchStub.asyncSimpleSearch(ass).getAsyncSimpleSearchResult());
+        getRecordsSdf.setToken(this.token);
+        GetRecordsSdfResponse grsr = stub.getRecordsSdf(getRecordsSdf);
+        Vector<String> csids = new Vector<String>();
+        try {
+			Vector<IAtomContainer> cons = this.getAtomContainerFromString(grsr.getGetRecordsSdfResult());
+			for(int i = 0; i < cons.size(); i++) {
+				String csid = (String)cons.get(i).getProperty("CSID");
+				csids.add(csid);
+				this.csidToMolecule.put(csid, cons.get(i));
+			}
+		} catch (CDKException e) {
+			e.printStackTrace();
 		}
-		catch(Exception e)
-		{
-			System.err.println("Error retrieving chemspider id " + ID + "!");
-			return null;
-		}
+        return csids;
+	}
+	
+	/**
+	 * 
+	 * @param csid
+	 * @param getAll
+	 * @return
+	 * @throws RemoteException
+	 * @throws CDKException
+	 */
+	public IAtomContainer getMol(String csid) 
+			throws RemoteException, CDKException
+	{
+		return this.csidToMolecule.get(csid);
+	}
+	
+	/**
+	 * 
+	 * @param sdfString
+	 * @return
+	 * @throws CDKException
+	 */
+	protected Vector<IAtomContainer> getAtomContainerFromString(String sdfString) throws CDKException {
+		MDLV2000Reader reader = new MDLV2000Reader(new StringReader(sdfString));
 		
-        if(getAll)
-        	return molecule;
-        
-        if(!MolecularFormulaTools.isBiologicalCompound(molecule))
-    		molecule = null;
-        
-		return molecule;
+		java.util.List<IAtomContainer> containersList;
+		java.util.Vector<IAtomContainer> ret = new Vector<IAtomContainer>();
+		
+		ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
+        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
+        for (IAtomContainer container: containersList) {
+        	ret.add(container);
+		}
+        return ret;
 	}
 	
 	/**
-	 * Gets the extended compound information like name, mass, InchI.....
 	 * 
-	 * @param key the key
-	 * 
-	 * @return the extended cpd info
-	 * 
-	 * @throws RemoteException the remote exception
+	 * @return
 	 */
-	public static ExtendedCompoundInfo getExtendedCpdInfo(int key, String token) throws RemoteException
-	{
-		MassSpecAPISoapProxy chemSpiderProxy = new MassSpecAPISoapProxy();
-		ExtendedCompoundInfo cpdInfo = chemSpiderProxy.getExtendedCompoundInfo(key, token);
-		return cpdInfo;
+	public String getChemSpiderToken() {
+		return this.token;
 	}
-	
 }

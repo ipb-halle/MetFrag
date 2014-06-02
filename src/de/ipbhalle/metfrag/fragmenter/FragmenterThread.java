@@ -38,6 +38,7 @@ import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
+import de.ipbhalle.metfrag.chemspiderClient.ChemSpider;
 import de.ipbhalle.metfrag.databaseMetChem.Query;
 import de.ipbhalle.metfrag.fragmenter.Fragmenter;
 import de.ipbhalle.metfrag.main.Config;
@@ -55,6 +56,7 @@ public class FragmenterThread implements Runnable{
 	
 	private String database = null;
 	private PubChemWebService pw = null;
+	private ChemSpider chemSpider = null;
 	private String candidate = null;
 	private double mzabs;
 	private double mzppm;
@@ -74,7 +76,6 @@ public class FragmenterThread implements Runnable{
 	private String sampleName = "";
 	private boolean localdb = false;
 	
-	private String chemSpiderToken = "";
 	private static boolean verbose;
 	private static int candidateNumber = 1;
 	private static int sizeCandidates;
@@ -104,10 +105,11 @@ public class FragmenterThread implements Runnable{
 			WrapperSpectrum spectrum, double mzabs, double mzppm, boolean sumFormulaRedundancyCheck,
 			boolean breakAromaticRings, int treeDepth, boolean showDiagrams, boolean hydrogenTest,
 			boolean neutralLossAdd, boolean bondEnergyScoring, boolean isOnlyBreakSelectedBonds, Config c,
-			boolean generateFragmentsInMemory)
+			boolean generateFragmentsInMemory, ChemSpider chemSpider)
 	{
 		this.candidate = candidate;
 		this.pw = pw;
+		this.chemSpider = chemSpider;
 		this.database = database;
 		this.mzabs = mzabs;
 		this.mzppm = mzppm;
@@ -147,10 +149,11 @@ public class FragmenterThread implements Runnable{
 			WrapperSpectrum spectrum, double mzabs, double mzppm, boolean sumFormulaRedundancyCheck,
 			boolean breakAromaticRings, int treeDepth, boolean showDiagrams, boolean hydrogenTest,
 			boolean neutralLossAdd, boolean bondEnergyScoring, boolean isOnlyBreakSelectedBonds, Config c,
-			boolean generateFragmentsInMemory)
+			boolean generateFragmentsInMemory, ChemSpider chemSpider)
 	{
 		this.candidate = candidate;
 		this.pw = pw;
+		this.chemSpider = chemSpider;
 		this.database = database;
 		this.mzabs = mzabs;
 		this.mzppm = mzppm;
@@ -193,10 +196,11 @@ public class FragmenterThread implements Runnable{
 			WrapperSpectrum spectrum, double mzabs, double mzppm, boolean sumFormulaRedundancyCheck,
 			boolean breakAromaticRings, int treeDepth, boolean showDiagrams, boolean hydrogenTest,
 			boolean neutralLossAdd, boolean bondEnergyScoring, boolean isOnlyBreakSelectedBonds, Config c,
-			boolean generateFragmentsInMemory, String jdbc, String username, String password)
+			boolean generateFragmentsInMemory, String jdbc, String username, String password, ChemSpider chemSpider)
 	{
 		this.candidate = candidate;
 		this.pw = pw;
+		this.chemSpider = chemSpider;
 		this.database = database;
 		this.mzabs = mzabs;
 		this.mzppm = mzppm;
@@ -244,12 +248,13 @@ public class FragmenterThread implements Runnable{
 			double mzppm, boolean molredundancycheck,
 			boolean breakAromaticRings, int treeDepth, boolean hydrogenTest, 
 			boolean neutralLossInEveryLayer, boolean bondEnergyScoring, 
-			boolean breakOnlySelectedBonds, String chemSpiderToken, boolean generateFragmentsInMemory,
+			boolean breakOnlySelectedBonds, ChemSpider chemSpider, boolean generateFragmentsInMemory,
 			String pathToStoreFrags, String sampleName, boolean localdb, boolean onlyChnopsCompounds,
 			String dblink, String dbuser, String dbpass) {
 		this.candidate = candidate;
 		this.onlyChnopsCompounds = onlyChnopsCompounds;
 		this.pw = pubchem;
+		this.chemSpider = chemSpider;
 		this.database = database;
 		this.mzabs = mzabs;
 		this.mzppm = mzppm;
@@ -263,7 +268,6 @@ public class FragmenterThread implements Runnable{
 		this.treeDepth = treeDepth;
 		this.generateFragmentsInMemory = generateFragmentsInMemory;
 		this.saveFragmentsPath = pathToStoreFrags;
-		this.chemSpiderToken = chemSpiderToken;
 		this.sampleName = sampleName;
 		this.localdb = localdb;
 		this.jdbc = dblink;
@@ -338,36 +342,13 @@ public class FragmenterThread implements Runnable{
 				if(query != null) molecule = query.getCompoundUsingIdentifierConnectionOpen(this.candidate, this.database);
 			}
 			else if(pw == null && c == null) {
-				molecule = Candidates.getCompoundLocally(this.database, candidate, jdbc, username, password, false, chemSpiderToken);
+				molecule = Candidates.getCompoundLocally(this.database, candidate, jdbc, username, password, false);
 			} else if(pw == null) {
-				molecule = Candidates.getCompoundLocally(this.database, candidate, c.getJdbc(), c.getUsername(), c.getPassword(), false, chemSpiderToken);
-			} else
+				molecule = Candidates.getCompoundLocally(this.database, candidate, c.getJdbc(), c.getUsername(), c.getPassword(), false);
+			} 
+			else
 			{
-				if(c != null) {
-					molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.c.getChemspiderToken());
-				}
-				else if(this.chemSpiderToken.length() != 0) {
-					int numberRetries = 0;
-					int numberMaximumRetries = 100;
-					while(true) {
-						try {
-							molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpiderToken);
-						} catch(Exception e) {
-							if(numberRetries == numberMaximumRetries) {
-								System.err.println("Could not retrieve compound " + this.candidate + ". Maximum number of retries reached. Giving up...");
-								break;
-							}
-							System.err.println("Error: Could not retrieve compound. Retrying...");
-							numberRetries++;
-							continue;
-						}
-						if(numberRetries != 0) System.err.println("Success!");
-						break;
-					}
-				}
-				else {
-					molecule = Candidates.getCompound(this.database, this.candidate, this.pw, "");
-				}
+				molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpider);
 			}
 			
 			if(molecule == null) {

@@ -3,13 +3,16 @@
  * ExtensionMapper.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:41 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:34:40 IST)
  */
 
+        
             package gov.nih.nlm.ncbi.pubchemAxis2;
+        
             /**
             *  ExtensionMapper class
             */
+            @SuppressWarnings({"unchecked","unused"})
         
         public  class ExtensionMapper{
 
@@ -50,9 +53,9 @@
               
                   if (
                   "http://pubchem.ncbi.nlm.nih.gov/".equals(namespaceURI) &&
-                  "StatusType".equals(typeName)){
+                  "CompressType".equals(typeName)){
                    
-                            return  gov.nih.nlm.ncbi.pubchemAxis2.StatusType.Factory.parse(reader);
+                            return  gov.nih.nlm.ncbi.pubchemAxis2.CompressType.Factory.parse(reader);
                         
 
                   }
@@ -60,9 +63,9 @@
               
                   if (
                   "http://pubchem.ncbi.nlm.nih.gov/".equals(namespaceURI) &&
-                  "CompressType".equals(typeName)){
+                  "StatusType".equals(typeName)){
                    
-                            return  gov.nih.nlm.ncbi.pubchemAxis2.CompressType.Factory.parse(reader);
+                            return  gov.nih.nlm.ncbi.pubchemAxis2.StatusType.Factory.parse(reader);
                         
 
                   }

@@ -594,7 +594,7 @@ public class PubChemWebService {
 		il.setIds(aoi);
 		InputListResponse ilr = null;
 		try {
-			ilr = ps.InputList(il);
+			ilr = ps.inputList(il);
 		} catch (RemoteException e) {
 			System.err.println("Error: Pubchem sdf download failed. Contact cruttkies@ipb-halle.de!");
 			e.printStackTrace();
@@ -608,7 +608,7 @@ public class PubChemWebService {
 		d.setListKey(listKey);
 		DownloadResponse dr = null;
 		try {
-			dr = ps.Download(d);
+			dr = ps.download(d);
 		} catch (RemoteException e) {
 			System.err.println("Error: Pubchem sdf download failed. Contact cruttkies@ipb-halle.de!");
 			e.printStackTrace();
@@ -621,7 +621,7 @@ public class PubChemWebService {
         gov.nih.nlm.ncbi.pubchemAxis2.StatusType status;
         try {
 			if(this.verbose) System.out.print("downloading compounds from pubchem");
-			while ((status = ps.GetOperationStatus(req4).getStatus()) 
+			while ((status = ps.getOperationStatus(req4).getStatus()) 
 			        == gov.nih.nlm.ncbi.pubchemAxis2.StatusType.eStatus_Running || 
 			   status == gov.nih.nlm.ncbi.pubchemAxis2.StatusType.eStatus_Queued) 
 			{
@@ -643,7 +643,7 @@ public class PubChemWebService {
             req5.setDownloadKey(dr.getDownloadKey());
             URL url = null;
 			try {
-				url = new URL(ps.GetDownloadUrl(req5).getUrl());
+				url = new URL(ps.getDownloadUrl(req5).getUrl());
 			} catch (MalformedURLException e) {
 				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
 				e.printStackTrace();

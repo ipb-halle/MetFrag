@@ -56,7 +56,7 @@ public class Candidates {
 	 * 
 	 * @throws Exception the exception
 	 */
-	public static Vector<String> getOnline(String database, String databaseID, String molecularFormula, double exactMass, double searchPPM, boolean useIPBProxy, PubChemWebService pubchem) throws Exception
+	public static Vector<String> getOnline(String database, String databaseID, String molecularFormula, double exactMass, double searchPPM, boolean useIPBProxy, PubChemWebService pubchem, ChemSpider chemSpider) throws Exception
 	{
 		Vector<String> candidates = new Vector<String>();
 		
@@ -70,9 +70,9 @@ public class Candidates {
 		else if(database.equals("chemspider") && databaseID.equals(""))
 		{
 			if(molecularFormula != "")
-				candidates = ChemSpider.getChemspiderBySumFormula(molecularFormula);
+				candidates = chemSpider.getChemspiderBySumFormula(molecularFormula);
 			else
-				candidates = ChemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchPPM)));
+				candidates = chemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchPPM)));
 		}
 		else if(database.equals("pubchem") && databaseID.equals(""))
 		{
@@ -119,7 +119,7 @@ public class Candidates {
 		}
 		else if(database.equals("chemspider"))
 		{
-			candidates = ChemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchPPM)));
+		//	candidates = ChemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchPPM)));
 		}
 		else if(database.equals("pubchem"))
 		{
@@ -143,7 +143,7 @@ public class Candidates {
 	 * @throws RemoteException 
 	 * @throws CDKException 
 	 */
-	public static IAtomContainer getCompound(String database, String candidate, PubChemWebService pw, String token) throws Exception 
+	public static IAtomContainer getCompound(String database, String candidate, PubChemWebService pw, ChemSpider chemSpider) throws Exception 
 	{
 		IAtomContainer molecule = null;
 		if(database.equals("kegg"))
@@ -163,15 +163,8 @@ public class Candidates {
 		}
 		else if(database.equals("chemspider"))
 		{
-			String candidateMol = ChemSpider.getMolByID(candidate, token);
-			
-			MDLReader reader;
-			List<IAtomContainer> containersList;
-			
-	        reader = new MDLReader(new StringReader(candidateMol));
-	        ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
-	        containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
-	        molecule = containersList.get(0);
+			molecule = chemSpider.getMol(candidate);
+		
 		}
 		else if(database.equals("pubchem"))
 		{
@@ -202,7 +195,8 @@ public class Candidates {
 	 * @throws CDKException the CDK exception
 	 * @throws RemoteException the remote exception
 	 */
-	public static IAtomContainer getCompoundLocally(String database, String candidate, String jdbc, String username, String password, boolean getAll, String token) throws SQLException, ClassNotFoundException, RemoteException, CDKException
+	public static IAtomContainer getCompoundLocally(String database, String candidate, String jdbc, String username, String password, boolean getAll) 
+			throws SQLException, ClassNotFoundException, RemoteException, CDKException
 	{
 		IAtomContainer molecule = null;
 
@@ -213,7 +207,7 @@ public class Candidates {
 		}
 		else if(database.equals("chemspider"))
 		{
-			molecule = ChemSpider.getMol(candidate, true, token);
+		//	molecule = chemSpider.getMol(candidate);
 		}
 		else if(database.equals("pubchem"))
 		{
@@ -242,7 +236,7 @@ public class Candidates {
 	public static Vector<String> getOnline(String database,
 			String[] databaseIDs, String formula, double exactMass,
 			double searchppm, boolean useProxy, PubChemWebService pubchem,
-			boolean verbose) throws Exception {
+			boolean verbose, ChemSpider chemSpider) throws Exception {
 		
 		Vector<String> candidates = new Vector<String>();
 		
@@ -258,9 +252,9 @@ public class Candidates {
 		else if(database.equals("chemspider") && (databaseIDs == null || databaseIDs.length == 0))
 		{
 			if(formula != "")
-				candidates = ChemSpider.getChemspiderBySumFormula(formula);
+				candidates = chemSpider.getChemspiderBySumFormula(formula);
 			else
-				candidates = ChemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchppm)));
+				candidates = chemSpider.getChemspiderByMass(exactMass, (PPMTool.getPPMDeviation(exactMass, searchppm)));
 		}
 		else if(database.equals("pubchem") && (databaseIDs == null || databaseIDs.length == 0))
 		{
@@ -274,10 +268,15 @@ public class Candidates {
 		else if ((databaseIDs != null && databaseIDs.length != 0))
 		{	
 			candidates = new Vector<String>();
-			for(int i = 0; i < databaseIDs.length; i++)
-				candidates.add(databaseIDs[i]);
-			if(database.equals("pubchem") && pubchem != null) {
-				candidates = pubchem.getHitsByIDs(candidates);
+			if(!database.equals("chemspider")) {	
+				for(int i = 0; i < databaseIDs.length; i++)
+					candidates.add(databaseIDs[i]);
+				if(database.equals("pubchem") && pubchem != null) {
+					candidates = pubchem.getHitsByIDs(candidates);
+				}
+			} 
+			else {
+				candidates = chemSpider.getChemSpiderByCsids(databaseIDs);
 			}
 		}
 		return candidates;

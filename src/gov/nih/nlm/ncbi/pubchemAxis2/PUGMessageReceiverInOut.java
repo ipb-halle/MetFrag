@@ -3,7 +3,7 @@
  * PUGMessageReceiverInOut.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:35 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
         package gov.nih.nlm.ncbi.pubchemAxis2;
 
@@ -32,11 +32,12 @@
         }
 
         java.lang.String methodName;
-        if((op.getName() != null) && ((methodName = org.apache.axis2.util.JavaUtils.xmlNameToJava(op.getName().getLocalPart())) != null)){
+        if((op.getName() != null) && ((methodName = org.apache.axis2.util.JavaUtils.xmlNameToJavaIdentifier(op.getName().getLocalPart())) != null)){
+
 
         
 
-            if("GetIDList".equals(methodName)){
+            if("getIDList".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse getIDListResponse1 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetIDList wrappedParam =
@@ -48,13 +49,14 @@
                                                getIDListResponse1 =
                                                    
                                                    
-                                                         skel.GetIDList(wrappedParam)
+                                                         skel.getIDList(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getIDListResponse1, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getIDListResponse1, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getIDList"));
                                     } else 
 
-            if("GetAssayColumnDescription".equals(methodName)){
+            if("getAssayColumnDescription".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse getAssayColumnDescriptionResponse3 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescription wrappedParam =
@@ -66,13 +68,14 @@
                                                getAssayColumnDescriptionResponse3 =
                                                    
                                                    
-                                                         skel.GetAssayColumnDescription(wrappedParam)
+                                                         skel.getAssayColumnDescription(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayColumnDescriptionResponse3, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayColumnDescriptionResponse3, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescription"));
                                     } else 
 
-            if("GetAssayDescription".equals(methodName)){
+            if("getAssayDescription".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse getAssayDescriptionResponse5 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescription wrappedParam =
@@ -84,13 +87,14 @@
                                                getAssayDescriptionResponse5 =
                                                    
                                                    
-                                                         skel.GetAssayDescription(wrappedParam)
+                                                         skel.getAssayDescription(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayDescriptionResponse5, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayDescriptionResponse5, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayDescription"));
                                     } else 
 
-            if("InputStructureBase64".equals(methodName)){
+            if("inputStructureBase64".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response inputStructureBase64Response7 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64 wrappedParam =
@@ -102,13 +106,14 @@
                                                inputStructureBase64Response7 =
                                                    
                                                    
-                                                         skel.InputStructureBase64(wrappedParam)
+                                                         skel.inputStructureBase64(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputStructureBase64Response7, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputStructureBase64Response7, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructureBase64"));
                                     } else 
 
-            if("SubstructureSearch".equals(methodName)){
+            if("substructureSearch".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse substructureSearchResponse9 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearch wrappedParam =
@@ -120,13 +125,14 @@
                                                substructureSearchResponse9 =
                                                    
                                                    
-                                                         skel.SubstructureSearch(wrappedParam)
+                                                         skel.substructureSearch(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), substructureSearchResponse9, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), substructureSearchResponse9, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "substructureSearch"));
                                     } else 
 
-            if("SimilaritySearch2D".equals(methodName)){
+            if("similaritySearch2D".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse similaritySearch2DResponse11 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2D wrappedParam =
@@ -138,13 +144,14 @@
                                                similaritySearch2DResponse11 =
                                                    
                                                    
-                                                         skel.SimilaritySearch2D(wrappedParam)
+                                                         skel.similaritySearch2D(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), similaritySearch2DResponse11, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), similaritySearch2DResponse11, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "similaritySearch2D"));
                                     } else 
 
-            if("GetStandardizedStructureBase64".equals(methodName)){
+            if("getStandardizedStructureBase64".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response getStandardizedStructureBase64Response13 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64 wrappedParam =
@@ -156,13 +163,14 @@
                                                getStandardizedStructureBase64Response13 =
                                                    
                                                    
-                                                         skel.GetStandardizedStructureBase64(wrappedParam)
+                                                         skel.getStandardizedStructureBase64(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedStructureBase64Response13, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedStructureBase64Response13, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructureBase64"));
                                     } else 
 
-            if("IdentitySearch".equals(methodName)){
+            if("identitySearch".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse identitySearchResponse15 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearch wrappedParam =
@@ -174,13 +182,14 @@
                                                identitySearchResponse15 =
                                                    
                                                    
-                                                         skel.IdentitySearch(wrappedParam)
+                                                         skel.identitySearch(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), identitySearchResponse15, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), identitySearchResponse15, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "identitySearch"));
                                     } else 
 
-            if("GetListItemsCount".equals(methodName)){
+            if("getListItemsCount".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse getListItemsCountResponse17 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCount wrappedParam =
@@ -192,13 +201,14 @@
                                                getListItemsCountResponse17 =
                                                    
                                                    
-                                                         skel.GetListItemsCount(wrappedParam)
+                                                         skel.getListItemsCount(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getListItemsCountResponse17, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getListItemsCountResponse17, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getListItemsCount"));
                                     } else 
 
-            if("GetEntrezKey".equals(methodName)){
+            if("getEntrezKey".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse getEntrezKeyResponse19 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKey wrappedParam =
@@ -210,13 +220,14 @@
                                                getEntrezKeyResponse19 =
                                                    
                                                    
-                                                         skel.GetEntrezKey(wrappedParam)
+                                                         skel.getEntrezKey(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getEntrezKeyResponse19, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getEntrezKeyResponse19, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezKey"));
                                     } else 
 
-            if("InputAssay".equals(methodName)){
+            if("inputAssay".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse inputAssayResponse21 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputAssay wrappedParam =
@@ -228,67 +239,71 @@
                                                inputAssayResponse21 =
                                                    
                                                    
-                                                         skel.InputAssay(wrappedParam)
+                                                         skel.inputAssay(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputAssayResponse21, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputAssayResponse21, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputAssay"));
                                     } else 
 
-            if("InputList".equals(methodName)){
+            if("getStandardizedStructure".equals(methodName)){
                 
-                gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse inputListResponse23 = null;
-	                        gov.nih.nlm.ncbi.pubchemAxis2.InputList wrappedParam =
-                                                             (gov.nih.nlm.ncbi.pubchemAxis2.InputList)fromOM(
-                                    msgContext.getEnvelope().getBody().getFirstElement(),
-                                    gov.nih.nlm.ncbi.pubchemAxis2.InputList.class,
-                                    getEnvelopeNamespaces(msgContext.getEnvelope()));
-                                                
-                                               inputListResponse23 =
-                                                   
-                                                   
-                                                         skel.InputList(wrappedParam)
-                                                    ;
-                                            
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListResponse23, false);
-                                    } else 
-
-            if("MFSearch".equals(methodName)){
-                
-                gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse mFSearchResponse25 = null;
-	                        gov.nih.nlm.ncbi.pubchemAxis2.MFSearch wrappedParam =
-                                                             (gov.nih.nlm.ncbi.pubchemAxis2.MFSearch)fromOM(
-                                    msgContext.getEnvelope().getBody().getFirstElement(),
-                                    gov.nih.nlm.ncbi.pubchemAxis2.MFSearch.class,
-                                    getEnvelopeNamespaces(msgContext.getEnvelope()));
-                                                
-                                               mFSearchResponse25 =
-                                                   
-                                                   
-                                                         skel.MFSearch(wrappedParam)
-                                                    ;
-                                            
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), mFSearchResponse25, false);
-                                    } else 
-
-            if("GetStandardizedStructure".equals(methodName)){
-                
-                gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse getStandardizedStructureResponse27 = null;
+                gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse getStandardizedStructureResponse23 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure wrappedParam =
                                                              (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure)fromOM(
                                     msgContext.getEnvelope().getBody().getFirstElement(),
                                     gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.class,
                                     getEnvelopeNamespaces(msgContext.getEnvelope()));
                                                 
-                                               getStandardizedStructureResponse27 =
+                                               getStandardizedStructureResponse23 =
                                                    
                                                    
-                                                         skel.GetStandardizedStructure(wrappedParam)
+                                                         skel.getStandardizedStructure(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedStructureResponse27, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedStructureResponse23, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedStructure"));
                                     } else 
 
-            if("GetStatusMessage".equals(methodName)){
+            if("inputList".equals(methodName)){
+                
+                gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse inputListResponse25 = null;
+	                        gov.nih.nlm.ncbi.pubchemAxis2.InputList wrappedParam =
+                                                             (gov.nih.nlm.ncbi.pubchemAxis2.InputList)fromOM(
+                                    msgContext.getEnvelope().getBody().getFirstElement(),
+                                    gov.nih.nlm.ncbi.pubchemAxis2.InputList.class,
+                                    getEnvelopeNamespaces(msgContext.getEnvelope()));
+                                                
+                                               inputListResponse25 =
+                                                   
+                                                   
+                                                         skel.inputList(wrappedParam)
+                                                    ;
+                                            
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListResponse25, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputList"));
+                                    } else 
+
+            if("mFSearch".equals(methodName)){
+                
+                gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse mFSearchResponse27 = null;
+	                        gov.nih.nlm.ncbi.pubchemAxis2.MFSearch wrappedParam =
+                                                             (gov.nih.nlm.ncbi.pubchemAxis2.MFSearch)fromOM(
+                                    msgContext.getEnvelope().getBody().getFirstElement(),
+                                    gov.nih.nlm.ncbi.pubchemAxis2.MFSearch.class,
+                                    getEnvelopeNamespaces(msgContext.getEnvelope()));
+                                                
+                                               mFSearchResponse27 =
+                                                   
+                                                   
+                                                         skel.mFSearch(wrappedParam)
+                                                    ;
+                                            
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), mFSearchResponse27, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "mFSearch"));
+                                    } else 
+
+            if("getStatusMessage".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse getStatusMessageResponse29 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessage wrappedParam =
@@ -300,13 +315,14 @@
                                                getStatusMessageResponse29 =
                                                    
                                                    
-                                                         skel.GetStatusMessage(wrappedParam)
+                                                         skel.getStatusMessage(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStatusMessageResponse29, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStatusMessageResponse29, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStatusMessage"));
                                     } else 
 
-            if("InputEntrez".equals(methodName)){
+            if("inputEntrez".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse inputEntrezResponse31 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputEntrez wrappedParam =
@@ -318,13 +334,14 @@
                                                inputEntrezResponse31 =
                                                    
                                                    
-                                                         skel.InputEntrez(wrappedParam)
+                                                         skel.inputEntrez(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputEntrezResponse31, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputEntrezResponse31, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputEntrez"));
                                     } else 
 
-            if("Download".equals(methodName)){
+            if("download".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse downloadResponse33 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.Download wrappedParam =
@@ -336,13 +353,14 @@
                                                downloadResponse33 =
                                                    
                                                    
-                                                         skel.Download(wrappedParam)
+                                                         skel.download(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), downloadResponse33, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), downloadResponse33, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "download"));
                                     } else 
 
-            if("GetDownloadUrl".equals(methodName)){
+            if("getDownloadUrl".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse getDownloadUrlResponse35 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrl wrappedParam =
@@ -354,13 +372,14 @@
                                                getDownloadUrlResponse35 =
                                                    
                                                    
-                                                         skel.GetDownloadUrl(wrappedParam)
+                                                         skel.getDownloadUrl(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getDownloadUrlResponse35, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getDownloadUrlResponse35, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getDownloadUrl"));
                                     } else 
 
-            if("InputStructure".equals(methodName)){
+            if("inputStructure".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse inputStructureResponse37 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputStructure wrappedParam =
@@ -372,13 +391,14 @@
                                                inputStructureResponse37 =
                                                    
                                                    
-                                                         skel.InputStructure(wrappedParam)
+                                                         skel.inputStructure(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputStructureResponse37, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputStructureResponse37, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputStructure"));
                                     } else 
 
-            if("GetOperationStatus".equals(methodName)){
+            if("getOperationStatus".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse getOperationStatusResponse39 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatus wrappedParam =
@@ -390,13 +410,14 @@
                                                getOperationStatusResponse39 =
                                                    
                                                    
-                                                         skel.GetOperationStatus(wrappedParam)
+                                                         skel.getOperationStatus(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getOperationStatusResponse39, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getOperationStatusResponse39, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getOperationStatus"));
                                     } else 
 
-            if("InputListText".equals(methodName)){
+            if("inputListText".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse inputListTextResponse41 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputListText wrappedParam =
@@ -408,13 +429,14 @@
                                                inputListTextResponse41 =
                                                    
                                                    
-                                                         skel.InputListText(wrappedParam)
+                                                         skel.inputListText(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListTextResponse41, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListTextResponse41, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListText"));
                                     } else 
 
-            if("GetEntrezUrl".equals(methodName)){
+            if("getEntrezUrl".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse getEntrezUrlResponse43 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrl wrappedParam =
@@ -426,13 +448,14 @@
                                                getEntrezUrlResponse43 =
                                                    
                                                    
-                                                         skel.GetEntrezUrl(wrappedParam)
+                                                         skel.getEntrezUrl(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getEntrezUrlResponse43, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getEntrezUrlResponse43, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getEntrezUrl"));
                                     } else 
 
-            if("InputListString".equals(methodName)){
+            if("inputListString".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse inputListStringResponse45 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.InputListString wrappedParam =
@@ -444,13 +467,14 @@
                                                inputListStringResponse45 =
                                                    
                                                    
-                                                         skel.InputListString(wrappedParam)
+                                                         skel.inputListString(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListStringResponse45, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), inputListStringResponse45, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "inputListString"));
                                     } else 
 
-            if("IDExchange".equals(methodName)){
+            if("iDExchange".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse iDExchangeResponse47 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.IDExchange wrappedParam =
@@ -462,13 +486,14 @@
                                                iDExchangeResponse47 =
                                                    
                                                    
-                                                         skel.IDExchange(wrappedParam)
+                                                         skel.iDExchange(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), iDExchangeResponse47, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), iDExchangeResponse47, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "iDExchange"));
                                     } else 
 
-            if("Standardize".equals(methodName)){
+            if("standardize".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse standardizeResponse49 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.Standardize wrappedParam =
@@ -480,13 +505,14 @@
                                                standardizeResponse49 =
                                                    
                                                    
-                                                         skel.Standardize(wrappedParam)
+                                                         skel.standardize(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), standardizeResponse49, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), standardizeResponse49, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "standardize"));
                                     } else 
 
-            if("GetAssayColumnDescriptions".equals(methodName)){
+            if("getAssayColumnDescriptions".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse getAssayColumnDescriptionsResponse51 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptions wrappedParam =
@@ -498,13 +524,14 @@
                                                getAssayColumnDescriptionsResponse51 =
                                                    
                                                    
-                                                         skel.GetAssayColumnDescriptions(wrappedParam)
+                                                         skel.getAssayColumnDescriptions(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayColumnDescriptionsResponse51, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getAssayColumnDescriptionsResponse51, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getAssayColumnDescriptions"));
                                     } else 
 
-            if("GetStandardizedCID".equals(methodName)){
+            if("getStandardizedCID".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse getStandardizedCIDResponse53 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCID wrappedParam =
@@ -516,13 +543,14 @@
                                                getStandardizedCIDResponse53 =
                                                    
                                                    
-                                                         skel.GetStandardizedCID(wrappedParam)
+                                                         skel.getStandardizedCID(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedCIDResponse53, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), getStandardizedCIDResponse53, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "getStandardizedCID"));
                                     } else 
 
-            if("AssayDownload".equals(methodName)){
+            if("assayDownload".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse assayDownloadResponse55 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.AssayDownload wrappedParam =
@@ -534,13 +562,14 @@
                                                assayDownloadResponse55 =
                                                    
                                                    
-                                                         skel.AssayDownload(wrappedParam)
+                                                         skel.assayDownload(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), assayDownloadResponse55, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), assayDownloadResponse55, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "assayDownload"));
                                     } else 
 
-            if("SuperstructureSearch".equals(methodName)){
+            if("superstructureSearch".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse superstructureSearchResponse57 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearch wrappedParam =
@@ -552,13 +581,14 @@
                                                superstructureSearchResponse57 =
                                                    
                                                    
-                                                         skel.SuperstructureSearch(wrappedParam)
+                                                         skel.superstructureSearch(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), superstructureSearchResponse57, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), superstructureSearchResponse57, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "superstructureSearch"));
                                     } else 
 
-            if("ScoreMatrix".equals(methodName)){
+            if("scoreMatrix".equals(methodName)){
                 
                 gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse scoreMatrixResponse59 = null;
 	                        gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrix wrappedParam =
@@ -570,10 +600,11 @@
                                                scoreMatrixResponse59 =
                                                    
                                                    
-                                                         skel.ScoreMatrix(wrappedParam)
+                                                         skel.scoreMatrix(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), scoreMatrixResponse59, false);
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), scoreMatrixResponse59, false, new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/",
+                                                    "scoreMatrix"));
                                     
             } else {
               throw new java.lang.RuntimeException("method not found");
@@ -897,6 +928,34 @@
 
             }
         
+            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
+            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
             private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.InputList param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
@@ -945,34 +1004,6 @@
             
                         try{
                              return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1429,7 +1460,7 @@
 
             }
         
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1448,7 +1479,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1467,7 +1498,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1486,7 +1517,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1505,7 +1536,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1524,7 +1555,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1543,7 +1574,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1562,7 +1593,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1581,7 +1612,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1600,7 +1631,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1619,7 +1650,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1638,45 +1669,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse param, boolean optimizeContent)
-                        throws org.apache.axis2.AxisFault{
-                      try{
-                          org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                           
-                                    emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.MY_QNAME,factory));
-                                
-
-                         return emptyEnvelope;
-                    } catch(org.apache.axis2.databinding.ADBException e){
-                        throw org.apache.axis2.AxisFault.makeFault(e);
-                    }
-                    }
-                    
-                         private gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse wrapInputList(){
-                                gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse wrappedElement = new gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse();
-                                return wrappedElement;
-                         }
-                    
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse param, boolean optimizeContent)
-                        throws org.apache.axis2.AxisFault{
-                      try{
-                          org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                           
-                                    emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.MY_QNAME,factory));
-                                
-
-                         return emptyEnvelope;
-                    } catch(org.apache.axis2.databinding.ADBException e){
-                        throw org.apache.axis2.AxisFault.makeFault(e);
-                    }
-                    }
-                    
-                         private gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse wrapMFSearch(){
-                                gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse wrappedElement = new gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse();
-                                return wrappedElement;
-                         }
-                    
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1695,7 +1688,45 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                        throws org.apache.axis2.AxisFault{
+                      try{
+                          org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                           
+                                    emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse.MY_QNAME,factory));
+                                
+
+                         return emptyEnvelope;
+                    } catch(org.apache.axis2.databinding.ADBException e){
+                        throw org.apache.axis2.AxisFault.makeFault(e);
+                    }
+                    }
+                    
+                         private gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse wrapInputList(){
+                                gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse wrappedElement = new gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse();
+                                return wrappedElement;
+                         }
+                    
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                        throws org.apache.axis2.AxisFault{
+                      try{
+                          org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                           
+                                    emptyEnvelope.getBody().addChild(param.getOMElement(gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.MY_QNAME,factory));
+                                
+
+                         return emptyEnvelope;
+                    } catch(org.apache.axis2.databinding.ADBException e){
+                        throw org.apache.axis2.AxisFault.makeFault(e);
+                    }
+                    }
+                    
+                         private gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse wrapMFSearch(){
+                                gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse wrappedElement = new gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse();
+                                return wrappedElement;
+                         }
+                    
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1714,7 +1745,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1733,7 +1764,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1752,7 +1783,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1771,7 +1802,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1790,7 +1821,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1809,7 +1840,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1828,7 +1859,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1847,7 +1878,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1866,7 +1897,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1885,7 +1916,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1904,7 +1935,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1923,7 +1954,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1942,7 +1973,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1961,7 +1992,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -1980,7 +2011,7 @@
                                 return wrappedElement;
                          }
                     
-                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse param, boolean optimizeContent)
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
                           org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
@@ -2170,6 +2201,20 @@
 
                 }
            
+                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.class.equals(type)){
+                
+                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.class.equals(type)){
+                
+                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
                 if (gov.nih.nlm.ncbi.pubchemAxis2.InputList.class.equals(type)){
                 
                            return gov.nih.nlm.ncbi.pubchemAxis2.InputList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
@@ -2194,20 +2239,6 @@
                 if (gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.class.equals(type)){
                 
                            return gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.class.equals(type)){
-                
-                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructure.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.class.equals(type)){
-                
-                           return gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

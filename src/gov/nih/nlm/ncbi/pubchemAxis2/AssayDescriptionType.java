@@ -3,8 +3,9 @@
  * AssayDescriptionType.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:41 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:34:40 IST)
  */
+
             
                 package gov.nih.nlm.ncbi.pubchemAxis2;
             
@@ -12,6 +13,7 @@
             /**
             *  AssayDescriptionType bean class
             */
+            @SuppressWarnings({"unchecked","unused"})
         
         public  class AssayDescriptionType
         implements org.apache.axis2.databinding.ADBBean{
@@ -21,15 +23,6 @@
                 Namespace Prefix = ns1
                 */
             
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://pubchem.ncbi.nlm.nih.gov/")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        
 
                         /**
                         * field for Name
@@ -43,6 +36,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localNameTracker = false ;
+
+                           public boolean isNameSpecified(){
+                               return localNameTracker;
+                           }
+
                            
 
                            /**
@@ -60,14 +58,7 @@
                                * @param param Name
                                */
                                public void setName(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localNameTracker = true;
-                                       } else {
-                                          localNameTracker = false;
-                                              
-                                       }
+                            localNameTracker = param != null;
                                    
                                             this.localName=param;
                                     
@@ -87,11 +78,16 @@
                            *   in the serialized XML
                            */
                            protected boolean localDescriptionTracker = false ;
+
+                           public boolean isDescriptionSpecified(){
+                               return localDescriptionTracker;
+                           }
+
                            
 
                            /**
                            * Auto generated getter method
-                           * @return gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfString
+                           * @return gov.nih.nlm.ncbi.pubchemAxis2Axis2.ArrayOfString
                            */
                            public  gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfString getDescription(){
                                return localDescription;
@@ -104,14 +100,7 @@
                                * @param param Description
                                */
                                public void setDescription(gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfString param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localDescriptionTracker = true;
-                                       } else {
-                                          localDescriptionTracker = false;
-                                              
-                                       }
+                            localDescriptionTracker = param != null;
                                    
                                             this.localDescription=param;
                                     
@@ -131,6 +120,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localProtocolTracker = false ;
+
+                           public boolean isProtocolSpecified(){
+                               return localProtocolTracker;
+                           }
+
                            
 
                            /**
@@ -148,14 +142,7 @@
                                * @param param Protocol
                                */
                                public void setProtocol(gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfString param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localProtocolTracker = true;
-                                       } else {
-                                          localProtocolTracker = false;
-                                              
-                                       }
+                            localProtocolTracker = param != null;
                                    
                                             this.localProtocol=param;
                                     
@@ -175,6 +162,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCommentTracker = false ;
+
+                           public boolean isCommentSpecified(){
+                               return localCommentTracker;
+                           }
+
                            
 
                            /**
@@ -192,14 +184,7 @@
                                * @param param Comment
                                */
                                public void setComment(gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfString param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localCommentTracker = true;
-                                       } else {
-                                          localCommentTracker = false;
-                                              
-                                       }
+                            localCommentTracker = param != null;
                                    
                                             this.localComment=param;
                                     
@@ -279,6 +264,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localMethodTracker = false ;
+
+                           public boolean isMethodSpecified(){
+                               return localMethodTracker;
+                           }
+
                            
 
                            /**
@@ -296,14 +286,7 @@
                                * @param param Method
                                */
                                public void setMethod(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localMethodTracker = true;
-                                       } else {
-                                          localMethodTracker = false;
-                                              
-                                       }
+                            localMethodTracker = param != null;
                                    
                                             this.localMethod=param;
                                     
@@ -323,6 +306,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localTargetsTracker = false ;
+
+                           public boolean isTargetsSpecified(){
+                               return localTargetsTracker;
+                           }
+
                            
 
                            /**
@@ -340,14 +328,7 @@
                                * @param param Targets
                                */
                                public void setTargets(gov.nih.nlm.ncbi.pubchemAxis2.ArrayOfTargets param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localTargetsTracker = true;
-                                       } else {
-                                          localTargetsTracker = false;
-                                              
-                                       }
+                            localTargetsTracker = param != null;
                                    
                                             this.localTargets=param;
                                     
@@ -367,6 +348,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localVersionTracker = false ;
+
+                           public boolean isVersionSpecified(){
+                               return localVersionTracker;
+                           }
+
                            
 
                            /**
@@ -386,13 +372,8 @@
                                public void setVersion(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localVersionTracker = false;
-                                              
-                                       } else {
-                                          localVersionTracker = true;
-                                       }
+                                       localVersionTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localVersion=param;
                                     
@@ -412,6 +393,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localRevisionTracker = false ;
+
+                           public boolean isRevisionSpecified(){
+                               return localRevisionTracker;
+                           }
+
                            
 
                            /**
@@ -431,13 +417,8 @@
                                public void setRevision(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localRevisionTracker = false;
-                                              
-                                       } else {
-                                          localRevisionTracker = true;
-                                       }
+                                       localRevisionTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localRevision=param;
                                     
@@ -457,6 +438,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localLastDataChangeTracker = false ;
+
+                           public boolean isLastDataChangeSpecified(){
+                               return localLastDataChangeTracker;
+                           }
+
                            
 
                            /**
@@ -476,13 +462,8 @@
                                public void setLastDataChange(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localLastDataChangeTracker = false;
-                                              
-                                       } else {
-                                          localLastDataChangeTracker = true;
-                                       }
+                                       localLastDataChangeTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localLastDataChange=param;
                                     
@@ -502,6 +483,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountAllTracker = false ;
+
+                           public boolean isSIDCountAllSpecified(){
+                               return localSIDCountAllTracker;
+                           }
+
                            
 
                            /**
@@ -521,13 +507,8 @@
                                public void setSIDCountAll(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountAllTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountAllTracker = true;
-                                       }
+                                       localSIDCountAllTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountAll=param;
                                     
@@ -547,6 +528,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountActiveTracker = false ;
+
+                           public boolean isSIDCountActiveSpecified(){
+                               return localSIDCountActiveTracker;
+                           }
+
                            
 
                            /**
@@ -566,13 +552,8 @@
                                public void setSIDCountActive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountActiveTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountActiveTracker = true;
-                                       }
+                                       localSIDCountActiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountActive=param;
                                     
@@ -592,6 +573,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountInactiveTracker = false ;
+
+                           public boolean isSIDCountInactiveSpecified(){
+                               return localSIDCountInactiveTracker;
+                           }
+
                            
 
                            /**
@@ -611,13 +597,8 @@
                                public void setSIDCountInactive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountInactiveTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountInactiveTracker = true;
-                                       }
+                                       localSIDCountInactiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountInactive=param;
                                     
@@ -637,6 +618,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountInconclusiveTracker = false ;
+
+                           public boolean isSIDCountInconclusiveSpecified(){
+                               return localSIDCountInconclusiveTracker;
+                           }
+
                            
 
                            /**
@@ -656,13 +642,8 @@
                                public void setSIDCountInconclusive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountInconclusiveTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountInconclusiveTracker = true;
-                                       }
+                                       localSIDCountInconclusiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountInconclusive=param;
                                     
@@ -682,6 +663,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountUnspecifiedTracker = false ;
+
+                           public boolean isSIDCountUnspecifiedSpecified(){
+                               return localSIDCountUnspecifiedTracker;
+                           }
+
                            
 
                            /**
@@ -701,13 +687,8 @@
                                public void setSIDCountUnspecified(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountUnspecifiedTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountUnspecifiedTracker = true;
-                                       }
+                                       localSIDCountUnspecifiedTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountUnspecified=param;
                                     
@@ -727,6 +708,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSIDCountProbeTracker = false ;
+
+                           public boolean isSIDCountProbeSpecified(){
+                               return localSIDCountProbeTracker;
+                           }
+
                            
 
                            /**
@@ -746,13 +732,8 @@
                                public void setSIDCountProbe(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localSIDCountProbeTracker = false;
-                                              
-                                       } else {
-                                          localSIDCountProbeTracker = true;
-                                       }
+                                       localSIDCountProbeTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localSIDCountProbe=param;
                                     
@@ -772,6 +753,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountAllTracker = false ;
+
+                           public boolean isCIDCountAllSpecified(){
+                               return localCIDCountAllTracker;
+                           }
+
                            
 
                            /**
@@ -791,13 +777,8 @@
                                public void setCIDCountAll(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountAllTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountAllTracker = true;
-                                       }
+                                       localCIDCountAllTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountAll=param;
                                     
@@ -817,6 +798,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountActiveTracker = false ;
+
+                           public boolean isCIDCountActiveSpecified(){
+                               return localCIDCountActiveTracker;
+                           }
+
                            
 
                            /**
@@ -836,13 +822,8 @@
                                public void setCIDCountActive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountActiveTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountActiveTracker = true;
-                                       }
+                                       localCIDCountActiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountActive=param;
                                     
@@ -862,6 +843,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountInactiveTracker = false ;
+
+                           public boolean isCIDCountInactiveSpecified(){
+                               return localCIDCountInactiveTracker;
+                           }
+
                            
 
                            /**
@@ -881,13 +867,8 @@
                                public void setCIDCountInactive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountInactiveTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountInactiveTracker = true;
-                                       }
+                                       localCIDCountInactiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountInactive=param;
                                     
@@ -907,6 +888,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountInconclusiveTracker = false ;
+
+                           public boolean isCIDCountInconclusiveSpecified(){
+                               return localCIDCountInconclusiveTracker;
+                           }
+
                            
 
                            /**
@@ -926,13 +912,8 @@
                                public void setCIDCountInconclusive(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountInconclusiveTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountInconclusiveTracker = true;
-                                       }
+                                       localCIDCountInconclusiveTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountInconclusive=param;
                                     
@@ -952,6 +933,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountUnspecifiedTracker = false ;
+
+                           public boolean isCIDCountUnspecifiedSpecified(){
+                               return localCIDCountUnspecifiedTracker;
+                           }
+
                            
 
                            /**
@@ -971,13 +957,8 @@
                                public void setCIDCountUnspecified(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountUnspecifiedTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountUnspecifiedTracker = true;
-                                       }
+                                       localCIDCountUnspecifiedTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountUnspecified=param;
                                     
@@ -997,6 +978,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localCIDCountProbeTracker = false ;
+
+                           public boolean isCIDCountProbeSpecified(){
+                               return localCIDCountProbeTracker;
+                           }
+
                            
 
                            /**
@@ -1016,13 +1002,8 @@
                                public void setCIDCountProbe(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (param==java.lang.Integer.MIN_VALUE) {
-                                           localCIDCountProbeTracker = false;
-                                              
-                                       } else {
-                                          localCIDCountProbeTracker = true;
-                                       }
+                                       localCIDCountProbeTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
                                             this.localCIDCountProbe=param;
                                     
@@ -1030,20 +1011,6 @@
                                }
                             
 
-     /**
-     * isReaderMTOMAware
-     * @return true if the reader supports MTOM
-     */
-   public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
-        boolean isReaderMTOMAware = false;
-        
-        try{
-          isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }catch(java.lang.IllegalArgumentException e){
-          isReaderMTOMAware = false;
-        }
-        return isReaderMTOMAware;
-   }
      
      
         /**
@@ -1059,27 +1026,19 @@
 
         
                org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName){
-
-                 public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-                       AssayDescriptionType.this.serialize(parentQName,factory,xmlWriter);
-                 }
-               };
-               return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(
-               parentQName,factory,dataSource);
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
             
-       }
+        }
 
          public void serialize(final javax.xml.namespace.QName parentQName,
-                                       final org.apache.axiom.om.OMFactory factory,
-                                       org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter)
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
                                 throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,factory,xmlWriter,false);
+                           serialize(parentQName,xmlWriter,false);
          }
 
          public void serialize(final javax.xml.namespace.QName parentQName,
-                               final org.apache.axiom.om.OMFactory factory,
-                               org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
                                boolean serializeType)
             throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
             
@@ -1092,23 +1051,7 @@
 
                     prefix = parentQName.getPrefix();
                     namespace = parentQName.getNamespaceURI();
-
-                    if ((namespace != null) && (namespace.trim().length() > 0)) {
-                        java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-                        if (writerPrefix != null) {
-                            xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-                        } else {
-                            if (prefix == null) {
-                                prefix = generatePrefix(namespace);
-                            }
-
-                            xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
-                            xmlWriter.writeNamespace(prefix, namespace);
-                            xmlWriter.setPrefix(prefix, namespace);
-                        }
-                    } else {
-                        xmlWriter.writeStartElement(parentQName.getLocalPart());
-                    }
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
                 
                   if (serializeType){
                
@@ -1128,24 +1071,8 @@
                    }
                 if (localNameTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"Name", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"Name");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("Name");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "Name", xmlWriter);
+                             
 
                                           if (localName==null){
                                               // write the nil attribute
@@ -1164,40 +1091,24 @@
                                             if (localDescription==null){
                                                  throw new org.apache.axis2.databinding.ADBException("Description cannot be null!!");
                                             }
-                                           localDescription.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Description"),
-                                               factory,xmlWriter);
+                                            localDescription.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Description"),
+                                               xmlWriter);
                                         } if (localProtocolTracker){
                                             if (localProtocol==null){
                                                  throw new org.apache.axis2.databinding.ADBException("Protocol cannot be null!!");
                                             }
                                            localProtocol.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Protocol"),
-                                               factory,xmlWriter);
+                                               xmlWriter);
                                         } if (localCommentTracker){
                                             if (localComment==null){
                                                  throw new org.apache.axis2.databinding.ADBException("Comment cannot be null!!");
                                             }
                                            localComment.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Comment"),
-                                               factory,xmlWriter);
+                                               xmlWriter);
                                         }
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"NumberOfTIDs", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"NumberOfTIDs");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("NumberOfTIDs");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "NumberOfTIDs", xmlWriter);
+                             
                                                if (localNumberOfTIDs==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("NumberOfTIDs cannot be null!!");
@@ -1209,24 +1120,8 @@
                                    xmlWriter.writeEndElement();
                              
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"HasScore", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"HasScore");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("HasScore");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "HasScore", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("HasScore cannot be null!!");
@@ -1238,24 +1133,8 @@
                                    xmlWriter.writeEndElement();
                               if (localMethodTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"Method", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"Method");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("Method");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "Method", xmlWriter);
+                             
 
                                           if (localMethod==null){
                                               // write the nil attribute
@@ -1275,27 +1154,11 @@
                                                  throw new org.apache.axis2.databinding.ADBException("Targets cannot be null!!");
                                             }
                                            localTargets.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Targets"),
-                                               factory,xmlWriter);
+                                               xmlWriter);
                                         } if (localVersionTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"Version", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"Version");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("Version");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "Version", xmlWriter);
+                             
                                                if (localVersion==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("Version cannot be null!!");
@@ -1307,24 +1170,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localRevisionTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"Revision", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"Revision");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("Revision");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "Revision", xmlWriter);
+                             
                                                if (localRevision==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("Revision cannot be null!!");
@@ -1336,24 +1183,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localLastDataChangeTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"LastDataChange", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"LastDataChange");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("LastDataChange");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "LastDataChange", xmlWriter);
+                             
                                                if (localLastDataChange==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("LastDataChange cannot be null!!");
@@ -1365,24 +1196,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountAllTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountAll", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountAll");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountAll");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountAll", xmlWriter);
+                             
                                                if (localSIDCountAll==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountAll cannot be null!!");
@@ -1394,24 +1209,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountActiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountActive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountActive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountActive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountActive", xmlWriter);
+                             
                                                if (localSIDCountActive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountActive cannot be null!!");
@@ -1423,24 +1222,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountInactiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountInactive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountInactive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountInactive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountInactive", xmlWriter);
+                             
                                                if (localSIDCountInactive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountInactive cannot be null!!");
@@ -1452,24 +1235,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountInconclusiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountInconclusive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountInconclusive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountInconclusive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountInconclusive", xmlWriter);
+                             
                                                if (localSIDCountInconclusive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountInconclusive cannot be null!!");
@@ -1481,24 +1248,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountUnspecifiedTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountUnspecified", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountUnspecified");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountUnspecified");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountUnspecified", xmlWriter);
+                             
                                                if (localSIDCountUnspecified==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountUnspecified cannot be null!!");
@@ -1510,24 +1261,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSIDCountProbeTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SIDCountProbe", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SIDCountProbe");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SIDCountProbe");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SIDCountProbe", xmlWriter);
+                             
                                                if (localSIDCountProbe==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SIDCountProbe cannot be null!!");
@@ -1539,24 +1274,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountAllTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountAll", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountAll");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountAll");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountAll", xmlWriter);
+                             
                                                if (localCIDCountAll==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountAll cannot be null!!");
@@ -1568,24 +1287,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountActiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountActive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountActive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountActive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountActive", xmlWriter);
+                             
                                                if (localCIDCountActive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountActive cannot be null!!");
@@ -1597,24 +1300,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountInactiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountInactive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountInactive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountInactive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountInactive", xmlWriter);
+                             
                                                if (localCIDCountInactive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountInactive cannot be null!!");
@@ -1626,24 +1313,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountInconclusiveTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountInconclusive", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountInconclusive");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountInconclusive");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountInconclusive", xmlWriter);
+                             
                                                if (localCIDCountInconclusive==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountInconclusive cannot be null!!");
@@ -1655,24 +1326,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountUnspecifiedTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountUnspecified", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountUnspecified");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountUnspecified");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountUnspecified", xmlWriter);
+                             
                                                if (localCIDCountUnspecified==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountUnspecified cannot be null!!");
@@ -1684,24 +1339,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localCIDCountProbeTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"CIDCountProbe", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"CIDCountProbe");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("CIDCountProbe");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "CIDCountProbe", xmlWriter);
+                             
                                                if (localCIDCountProbe==java.lang.Integer.MIN_VALUE) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("CIDCountProbe cannot be null!!");
@@ -1717,36 +1356,58 @@
 
         }
 
-         /**
-          * Util method to write an attribute with the ns prefix
-          */
-          private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-              if (xmlWriter.getPrefix(namespace) == null) {
-                       xmlWriter.writeNamespace(prefix, namespace);
-                       xmlWriter.setPrefix(prefix, namespace);
-
-              }
-
-              xmlWriter.writeAttribute(namespace,attName,attValue);
-
-         }
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://pubchem.ncbi.nlm.nih.gov/")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
 
         /**
-          * Util method to write an attribute without the ns prefix
-          */
-          private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-                if (namespace.equals(""))
-              {
-                  xmlWriter.writeAttribute(attName,attValue);
-              }
-              else
-              {
-                  registerPrefix(xmlWriter, namespace);
-                  xmlWriter.writeAttribute(namespace,attName,attValue);
-              }
-          }
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
 
 
            /**
@@ -1839,25 +1500,26 @@
         }
 
 
-         /**
+        /**
          * Register a namespace prefix
          */
-         private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-                java.lang.String prefix = xmlWriter.getPrefix(namespace);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-
-                    while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                        prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
                     }
-
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
                 }
-
-                return prefix;
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
             }
+            return prefix;
+        }
 
 
   
@@ -2101,7 +1763,7 @@
                 java.util.Vector handledAttributes = new java.util.Vector();
                 
 
-                 
+                
                     
                     reader.next();
                 
@@ -2110,6 +1772,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Name").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Name" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setName(
@@ -2173,6 +1841,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","NumberOfTIDs").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"NumberOfTIDs" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setNumberOfTIDs(
@@ -2184,7 +1858,7 @@
                                 
                                 else{
                                     // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                                 }
                             
                                     
@@ -2192,6 +1866,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","HasScore").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"HasScore" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setHasScore(
@@ -2203,7 +1883,7 @@
                                 
                                 else{
                                     // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                                 }
                             
                                     
@@ -2211,6 +1891,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Method").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Method" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setMethod(
@@ -2244,6 +1930,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Version").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Version" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setVersion(
@@ -2264,6 +1956,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","Revision").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Revision" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setRevision(
@@ -2284,6 +1982,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","LastDataChange").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"LastDataChange" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setLastDataChange(
@@ -2304,6 +2008,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountAll").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountAll" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountAll(
@@ -2324,6 +2034,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountActive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountActive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountActive(
@@ -2344,6 +2060,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountInactive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountInactive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountInactive(
@@ -2364,6 +2086,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountInconclusive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountInconclusive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountInconclusive(
@@ -2384,6 +2112,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountUnspecified").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountUnspecified" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountUnspecified(
@@ -2404,6 +2138,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SIDCountProbe").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SIDCountProbe" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSIDCountProbe(
@@ -2424,6 +2164,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountAll").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountAll" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountAll(
@@ -2444,6 +2190,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountActive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountActive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountActive(
@@ -2464,6 +2216,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountInactive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountInactive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountInactive(
@@ -2484,6 +2242,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountInconclusive").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountInconclusive" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountInconclusive(
@@ -2504,6 +2268,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountUnspecified").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountUnspecified" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountUnspecified(
@@ -2524,6 +2294,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","CIDCountProbe").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"CIDCountProbe" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setCIDCountProbe(
@@ -2544,7 +2320,7 @@
                             
                                 if (reader.isStartElement())
                                 // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                             
 
 
@@ -2562,4 +2338,4 @@
 
         }
            
-          
+    

@@ -3,8 +3,9 @@
  * StructureSearchOptions.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:41 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:34:40 IST)
  */
+
             
                 package gov.nih.nlm.ncbi.pubchemAxis2;
             
@@ -12,6 +13,7 @@
             /**
             *  StructureSearchOptions bean class
             */
+            @SuppressWarnings({"unchecked","unused"})
         
         public  class StructureSearchOptions
         implements org.apache.axis2.databinding.ADBBean{
@@ -21,15 +23,6 @@
                 Namespace Prefix = ns1
                 */
             
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://pubchem.ncbi.nlm.nih.gov/")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        
 
                         /**
                         * field for MatchIsotopes
@@ -43,6 +36,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localMatchIsotopesTracker = false ;
+
+                           public boolean isMatchIsotopesSpecified(){
+                               return localMatchIsotopesTracker;
+                           }
+
                            
 
                            /**
@@ -62,13 +60,8 @@
                                public void setMatchIsotopes(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localMatchIsotopesTracker = false;
-                                              
-                                       } else {
-                                          localMatchIsotopesTracker = true;
-                                       }
+                                       localMatchIsotopesTracker =
+                                       true;
                                    
                                             this.localMatchIsotopes=param;
                                     
@@ -88,6 +81,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localMatchChargesTracker = false ;
+
+                           public boolean isMatchChargesSpecified(){
+                               return localMatchChargesTracker;
+                           }
+
                            
 
                            /**
@@ -107,13 +105,8 @@
                                public void setMatchCharges(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localMatchChargesTracker = false;
-                                              
-                                       } else {
-                                          localMatchChargesTracker = true;
-                                       }
+                                       localMatchChargesTracker =
+                                       true;
                                    
                                             this.localMatchCharges=param;
                                     
@@ -133,6 +126,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localMatchTautomersTracker = false ;
+
+                           public boolean isMatchTautomersSpecified(){
+                               return localMatchTautomersTracker;
+                           }
+
                            
 
                            /**
@@ -152,13 +150,8 @@
                                public void setMatchTautomers(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localMatchTautomersTracker = false;
-                                              
-                                       } else {
-                                          localMatchTautomersTracker = true;
-                                       }
+                                       localMatchTautomersTracker =
+                                       true;
                                    
                                             this.localMatchTautomers=param;
                                     
@@ -178,6 +171,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localRingsNotEmbeddedTracker = false ;
+
+                           public boolean isRingsNotEmbeddedSpecified(){
+                               return localRingsNotEmbeddedTracker;
+                           }
+
                            
 
                            /**
@@ -197,13 +195,8 @@
                                public void setRingsNotEmbedded(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localRingsNotEmbeddedTracker = false;
-                                              
-                                       } else {
-                                          localRingsNotEmbeddedTracker = true;
-                                       }
+                                       localRingsNotEmbeddedTracker =
+                                       true;
                                    
                                             this.localRingsNotEmbedded=param;
                                     
@@ -223,6 +216,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localSingeDoubleBondsMatchTracker = false ;
+
+                           public boolean isSingeDoubleBondsMatchSpecified(){
+                               return localSingeDoubleBondsMatchTracker;
+                           }
+
                            
 
                            /**
@@ -242,13 +240,8 @@
                                public void setSingeDoubleBondsMatch(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localSingeDoubleBondsMatchTracker = false;
-                                              
-                                       } else {
-                                          localSingeDoubleBondsMatchTracker = true;
-                                       }
+                                       localSingeDoubleBondsMatchTracker =
+                                       true;
                                    
                                             this.localSingeDoubleBondsMatch=param;
                                     
@@ -268,6 +261,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localChainsMatchRingsTracker = false ;
+
+                           public boolean isChainsMatchRingsSpecified(){
+                               return localChainsMatchRingsTracker;
+                           }
+
                            
 
                            /**
@@ -287,13 +285,8 @@
                                public void setChainsMatchRings(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localChainsMatchRingsTracker = false;
-                                              
-                                       } else {
-                                          localChainsMatchRingsTracker = true;
-                                       }
+                                       localChainsMatchRingsTracker =
+                                       true;
                                    
                                             this.localChainsMatchRings=param;
                                     
@@ -313,6 +306,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localStripHydrogenTracker = false ;
+
+                           public boolean isStripHydrogenSpecified(){
+                               return localStripHydrogenTracker;
+                           }
+
                            
 
                            /**
@@ -332,13 +330,8 @@
                                public void setStripHydrogen(boolean param){
                             
                                        // setting primitive attribute tracker to true
-                                       
-                                               if (false) {
-                                           localStripHydrogenTracker = false;
-                                              
-                                       } else {
-                                          localStripHydrogenTracker = true;
-                                       }
+                                       localStripHydrogenTracker =
+                                       true;
                                    
                                             this.localStripHydrogen=param;
                                     
@@ -358,6 +351,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localEStereoTracker = false ;
+
+                           public boolean isEStereoSpecified(){
+                               return localEStereoTracker;
+                           }
+
                            
 
                            /**
@@ -375,14 +373,7 @@
                                * @param param EStereo
                                */
                                public void setEStereo(gov.nih.nlm.ncbi.pubchemAxis2.StereoType param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localEStereoTracker = true;
-                                       } else {
-                                          localEStereoTracker = false;
-                                              
-                                       }
+                            localEStereoTracker = param != null;
                                    
                                             this.localEStereo=param;
                                     
@@ -402,6 +393,11 @@
                            *   in the serialized XML
                            */
                            protected boolean localToWebEnvTracker = false ;
+
+                           public boolean isToWebEnvSpecified(){
+                               return localToWebEnvTracker;
+                           }
+
                            
 
                            /**
@@ -419,14 +415,7 @@
                                * @param param ToWebEnv
                                */
                                public void setToWebEnv(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localToWebEnvTracker = true;
-                                       } else {
-                                          localToWebEnvTracker = false;
-                                              
-                                       }
+                            localToWebEnvTracker = param != null;
                                    
                                             this.localToWebEnv=param;
                                     
@@ -434,20 +423,6 @@
                                }
                             
 
-     /**
-     * isReaderMTOMAware
-     * @return true if the reader supports MTOM
-     */
-   public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
-        boolean isReaderMTOMAware = false;
-        
-        try{
-          isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }catch(java.lang.IllegalArgumentException e){
-          isReaderMTOMAware = false;
-        }
-        return isReaderMTOMAware;
-   }
      
      
         /**
@@ -463,27 +438,19 @@
 
         
                org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName){
-
-                 public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-                       StructureSearchOptions.this.serialize(parentQName,factory,xmlWriter);
-                 }
-               };
-               return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(
-               parentQName,factory,dataSource);
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
             
-       }
+        }
 
          public void serialize(final javax.xml.namespace.QName parentQName,
-                                       final org.apache.axiom.om.OMFactory factory,
-                                       org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter)
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
                                 throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,factory,xmlWriter,false);
+                           serialize(parentQName,xmlWriter,false);
          }
 
          public void serialize(final javax.xml.namespace.QName parentQName,
-                               final org.apache.axiom.om.OMFactory factory,
-                               org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
                                boolean serializeType)
             throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
             
@@ -496,23 +463,7 @@
 
                     prefix = parentQName.getPrefix();
                     namespace = parentQName.getNamespaceURI();
-
-                    if ((namespace != null) && (namespace.trim().length() > 0)) {
-                        java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-                        if (writerPrefix != null) {
-                            xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-                        } else {
-                            if (prefix == null) {
-                                prefix = generatePrefix(namespace);
-                            }
-
-                            xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
-                            xmlWriter.writeNamespace(prefix, namespace);
-                            xmlWriter.setPrefix(prefix, namespace);
-                        }
-                    } else {
-                        xmlWriter.writeStartElement(parentQName.getLocalPart());
-                    }
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
                 
                   if (serializeType){
                
@@ -532,24 +483,8 @@
                    }
                 if (localMatchIsotopesTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"MatchIsotopes", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"MatchIsotopes");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("MatchIsotopes");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "MatchIsotopes", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("MatchIsotopes cannot be null!!");
@@ -561,24 +496,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localMatchChargesTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"MatchCharges", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"MatchCharges");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("MatchCharges");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "MatchCharges", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("MatchCharges cannot be null!!");
@@ -590,24 +509,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localMatchTautomersTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"MatchTautomers", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"MatchTautomers");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("MatchTautomers");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "MatchTautomers", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("MatchTautomers cannot be null!!");
@@ -619,24 +522,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localRingsNotEmbeddedTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"RingsNotEmbedded", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"RingsNotEmbedded");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("RingsNotEmbedded");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "RingsNotEmbedded", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("RingsNotEmbedded cannot be null!!");
@@ -648,24 +535,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localSingeDoubleBondsMatchTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"SingeDoubleBondsMatch", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"SingeDoubleBondsMatch");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("SingeDoubleBondsMatch");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "SingeDoubleBondsMatch", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("SingeDoubleBondsMatch cannot be null!!");
@@ -677,24 +548,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localChainsMatchRingsTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"ChainsMatchRings", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"ChainsMatchRings");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("ChainsMatchRings");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "ChainsMatchRings", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("ChainsMatchRings cannot be null!!");
@@ -706,24 +561,8 @@
                                    xmlWriter.writeEndElement();
                              } if (localStripHydrogenTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"StripHydrogen", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"StripHydrogen");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("StripHydrogen");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "StripHydrogen", xmlWriter);
+                             
                                                if (false) {
                                            
                                                          throw new org.apache.axis2.databinding.ADBException("StripHydrogen cannot be null!!");
@@ -738,27 +577,11 @@
                                                  throw new org.apache.axis2.databinding.ADBException("eStereo cannot be null!!");
                                             }
                                            localEStereo.serialize(new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","eStereo"),
-                                               factory,xmlWriter);
+                                               xmlWriter);
                                         } if (localToWebEnvTracker){
                                     namespace = "http://pubchem.ncbi.nlm.nih.gov/";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"ToWebEnv", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"ToWebEnv");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("ToWebEnv");
-                                    }
-                                
+                                    writeStartElement(null, namespace, "ToWebEnv", xmlWriter);
+                             
 
                                           if (localToWebEnv==null){
                                               // write the nil attribute
@@ -779,36 +602,58 @@
 
         }
 
-         /**
-          * Util method to write an attribute with the ns prefix
-          */
-          private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-              if (xmlWriter.getPrefix(namespace) == null) {
-                       xmlWriter.writeNamespace(prefix, namespace);
-                       xmlWriter.setPrefix(prefix, namespace);
-
-              }
-
-              xmlWriter.writeAttribute(namespace,attName,attValue);
-
-         }
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://pubchem.ncbi.nlm.nih.gov/")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
 
         /**
-          * Util method to write an attribute without the ns prefix
-          */
-          private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-                if (namespace.equals(""))
-              {
-                  xmlWriter.writeAttribute(attName,attValue);
-              }
-              else
-              {
-                  registerPrefix(xmlWriter, namespace);
-                  xmlWriter.writeAttribute(namespace,attName,attValue);
-              }
-          }
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
 
 
            /**
@@ -901,25 +746,26 @@
         }
 
 
-         /**
+        /**
          * Register a namespace prefix
          */
-         private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-                java.lang.String prefix = xmlWriter.getPrefix(namespace);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-
-                    while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                        prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
                     }
-
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
                 }
-
-                return prefix;
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
             }
+            return prefix;
+        }
 
 
   
@@ -1067,7 +913,7 @@
                 java.util.Vector handledAttributes = new java.util.Vector();
                 
 
-                 
+                
                     
                     reader.next();
                 
@@ -1076,6 +922,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","MatchIsotopes").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"MatchIsotopes" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setMatchIsotopes(
@@ -1094,6 +946,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","MatchCharges").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"MatchCharges" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setMatchCharges(
@@ -1112,6 +970,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","MatchTautomers").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"MatchTautomers" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setMatchTautomers(
@@ -1130,6 +994,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","RingsNotEmbedded").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"RingsNotEmbedded" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setRingsNotEmbedded(
@@ -1148,6 +1018,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","SingeDoubleBondsMatch").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"SingeDoubleBondsMatch" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSingeDoubleBondsMatch(
@@ -1166,6 +1042,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","ChainsMatchRings").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"ChainsMatchRings" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setChainsMatchRings(
@@ -1184,6 +1066,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","StripHydrogen").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"StripHydrogen" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setStripHydrogen(
@@ -1217,6 +1105,12 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://pubchem.ncbi.nlm.nih.gov/","ToWebEnv").equals(reader.getName())){
                                 
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"ToWebEnv" +"  cannot be null");
+                                    }
+                                    
+
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setToWebEnv(
@@ -1235,7 +1129,7 @@
                             
                                 if (reader.isStartElement())
                                 // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                             
 
 
@@ -1253,4 +1147,4 @@
 
         }
            
-          
+    

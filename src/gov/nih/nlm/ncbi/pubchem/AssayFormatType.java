@@ -7,6 +7,9 @@
 
 package gov.nih.nlm.ncbi.pubchem;
 
+import javax.xml.namespace.QName;
+import javax.xml.stream.XMLStreamWriter;
+
 public class AssayFormatType implements java.io.Serializable {
     private java.lang.String _value_;
     private static java.util.HashMap _table_ = new java.util.HashMap();
@@ -70,5 +73,6 @@ public class AssayFormatType implements java.io.Serializable {
     public static org.apache.axis.description.TypeDesc getTypeDesc() {
         return typeDesc;
     }
+	
 
 }

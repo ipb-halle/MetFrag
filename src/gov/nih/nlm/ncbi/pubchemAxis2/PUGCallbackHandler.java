@@ -3,7 +3,7 @@
  * PUGCallbackHandler.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:35 LKT)
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 
     package gov.nih.nlm.ncbi.pubchemAxis2;
@@ -45,483 +45,483 @@
 
         
            /**
-            * auto generated Axis2 call back method for GetIDList method
-            * override this method for handling normal response from GetIDList operation
+            * auto generated Axis2 call back method for getIDList method
+            * override this method for handling normal response from getIDList operation
             */
-           public void receiveResultGetIDList(
+           public void receiveResultgetIDList(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetIDListResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetIDList operation
+           * override this method for handling error response from getIDList operation
            */
-            public void receiveErrorGetIDList(java.lang.Exception e) {
+            public void receiveErrorgetIDList(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetAssayColumnDescription method
-            * override this method for handling normal response from GetAssayColumnDescription operation
+            * auto generated Axis2 call back method for getAssayColumnDescription method
+            * override this method for handling normal response from getAssayColumnDescription operation
             */
-           public void receiveResultGetAssayColumnDescription(
+           public void receiveResultgetAssayColumnDescription(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetAssayColumnDescription operation
+           * override this method for handling error response from getAssayColumnDescription operation
            */
-            public void receiveErrorGetAssayColumnDescription(java.lang.Exception e) {
+            public void receiveErrorgetAssayColumnDescription(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetAssayDescription method
-            * override this method for handling normal response from GetAssayDescription operation
+            * auto generated Axis2 call back method for getAssayDescription method
+            * override this method for handling normal response from getAssayDescription operation
             */
-           public void receiveResultGetAssayDescription(
+           public void receiveResultgetAssayDescription(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetAssayDescriptionResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetAssayDescription operation
+           * override this method for handling error response from getAssayDescription operation
            */
-            public void receiveErrorGetAssayDescription(java.lang.Exception e) {
+            public void receiveErrorgetAssayDescription(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputStructureBase64 method
-            * override this method for handling normal response from InputStructureBase64 operation
+            * auto generated Axis2 call back method for inputStructureBase64 method
+            * override this method for handling normal response from inputStructureBase64 operation
             */
-           public void receiveResultInputStructureBase64(
+           public void receiveResultinputStructureBase64(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputStructureBase64Response result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputStructureBase64 operation
+           * override this method for handling error response from inputStructureBase64 operation
            */
-            public void receiveErrorInputStructureBase64(java.lang.Exception e) {
+            public void receiveErrorinputStructureBase64(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for SubstructureSearch method
-            * override this method for handling normal response from SubstructureSearch operation
+            * auto generated Axis2 call back method for substructureSearch method
+            * override this method for handling normal response from substructureSearch operation
             */
-           public void receiveResultSubstructureSearch(
+           public void receiveResultsubstructureSearch(
                     gov.nih.nlm.ncbi.pubchemAxis2.SubstructureSearchResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from SubstructureSearch operation
+           * override this method for handling error response from substructureSearch operation
            */
-            public void receiveErrorSubstructureSearch(java.lang.Exception e) {
+            public void receiveErrorsubstructureSearch(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for SimilaritySearch2D method
-            * override this method for handling normal response from SimilaritySearch2D operation
+            * auto generated Axis2 call back method for similaritySearch2D method
+            * override this method for handling normal response from similaritySearch2D operation
             */
-           public void receiveResultSimilaritySearch2D(
+           public void receiveResultsimilaritySearch2D(
                     gov.nih.nlm.ncbi.pubchemAxis2.SimilaritySearch2DResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from SimilaritySearch2D operation
+           * override this method for handling error response from similaritySearch2D operation
            */
-            public void receiveErrorSimilaritySearch2D(java.lang.Exception e) {
+            public void receiveErrorsimilaritySearch2D(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetStandardizedStructureBase64 method
-            * override this method for handling normal response from GetStandardizedStructureBase64 operation
+            * auto generated Axis2 call back method for getStandardizedStructureBase64 method
+            * override this method for handling normal response from getStandardizedStructureBase64 operation
             */
-           public void receiveResultGetStandardizedStructureBase64(
+           public void receiveResultgetStandardizedStructureBase64(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureBase64Response result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetStandardizedStructureBase64 operation
+           * override this method for handling error response from getStandardizedStructureBase64 operation
            */
-            public void receiveErrorGetStandardizedStructureBase64(java.lang.Exception e) {
+            public void receiveErrorgetStandardizedStructureBase64(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for IdentitySearch method
-            * override this method for handling normal response from IdentitySearch operation
+            * auto generated Axis2 call back method for identitySearch method
+            * override this method for handling normal response from identitySearch operation
             */
-           public void receiveResultIdentitySearch(
+           public void receiveResultidentitySearch(
                     gov.nih.nlm.ncbi.pubchemAxis2.IdentitySearchResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from IdentitySearch operation
+           * override this method for handling error response from identitySearch operation
            */
-            public void receiveErrorIdentitySearch(java.lang.Exception e) {
+            public void receiveErroridentitySearch(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetListItemsCount method
-            * override this method for handling normal response from GetListItemsCount operation
+            * auto generated Axis2 call back method for getListItemsCount method
+            * override this method for handling normal response from getListItemsCount operation
             */
-           public void receiveResultGetListItemsCount(
+           public void receiveResultgetListItemsCount(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetListItemsCountResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetListItemsCount operation
+           * override this method for handling error response from getListItemsCount operation
            */
-            public void receiveErrorGetListItemsCount(java.lang.Exception e) {
+            public void receiveErrorgetListItemsCount(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetEntrezKey method
-            * override this method for handling normal response from GetEntrezKey operation
+            * auto generated Axis2 call back method for getEntrezKey method
+            * override this method for handling normal response from getEntrezKey operation
             */
-           public void receiveResultGetEntrezKey(
+           public void receiveResultgetEntrezKey(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezKeyResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetEntrezKey operation
+           * override this method for handling error response from getEntrezKey operation
            */
-            public void receiveErrorGetEntrezKey(java.lang.Exception e) {
+            public void receiveErrorgetEntrezKey(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputAssay method
-            * override this method for handling normal response from InputAssay operation
+            * auto generated Axis2 call back method for inputAssay method
+            * override this method for handling normal response from inputAssay operation
             */
-           public void receiveResultInputAssay(
+           public void receiveResultinputAssay(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputAssayResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputAssay operation
+           * override this method for handling error response from inputAssay operation
            */
-            public void receiveErrorInputAssay(java.lang.Exception e) {
+            public void receiveErrorinputAssay(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputList method
-            * override this method for handling normal response from InputList operation
+            * auto generated Axis2 call back method for getStandardizedStructure method
+            * override this method for handling normal response from getStandardizedStructure operation
             */
-           public void receiveResultInputList(
-                    gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from InputList operation
-           */
-            public void receiveErrorInputList(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for MFSearch method
-            * override this method for handling normal response from MFSearch operation
-            */
-           public void receiveResultMFSearch(
-                    gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from MFSearch operation
-           */
-            public void receiveErrorMFSearch(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for GetStandardizedStructure method
-            * override this method for handling normal response from GetStandardizedStructure operation
-            */
-           public void receiveResultGetStandardizedStructure(
+           public void receiveResultgetStandardizedStructure(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedStructureResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetStandardizedStructure operation
+           * override this method for handling error response from getStandardizedStructure operation
            */
-            public void receiveErrorGetStandardizedStructure(java.lang.Exception e) {
+            public void receiveErrorgetStandardizedStructure(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetStatusMessage method
-            * override this method for handling normal response from GetStatusMessage operation
+            * auto generated Axis2 call back method for inputList method
+            * override this method for handling normal response from inputList operation
             */
-           public void receiveResultGetStatusMessage(
+           public void receiveResultinputList(
+                    gov.nih.nlm.ncbi.pubchemAxis2.InputListResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from inputList operation
+           */
+            public void receiveErrorinputList(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for mFSearch method
+            * override this method for handling normal response from mFSearch operation
+            */
+           public void receiveResultmFSearch(
+                    gov.nih.nlm.ncbi.pubchemAxis2.MFSearchResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from mFSearch operation
+           */
+            public void receiveErrormFSearch(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getStatusMessage method
+            * override this method for handling normal response from getStatusMessage operation
+            */
+           public void receiveResultgetStatusMessage(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetStatusMessageResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetStatusMessage operation
+           * override this method for handling error response from getStatusMessage operation
            */
-            public void receiveErrorGetStatusMessage(java.lang.Exception e) {
+            public void receiveErrorgetStatusMessage(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputEntrez method
-            * override this method for handling normal response from InputEntrez operation
+            * auto generated Axis2 call back method for inputEntrez method
+            * override this method for handling normal response from inputEntrez operation
             */
-           public void receiveResultInputEntrez(
+           public void receiveResultinputEntrez(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputEntrezResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputEntrez operation
+           * override this method for handling error response from inputEntrez operation
            */
-            public void receiveErrorInputEntrez(java.lang.Exception e) {
+            public void receiveErrorinputEntrez(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for Download method
-            * override this method for handling normal response from Download operation
+            * auto generated Axis2 call back method for download method
+            * override this method for handling normal response from download operation
             */
-           public void receiveResultDownload(
+           public void receiveResultdownload(
                     gov.nih.nlm.ncbi.pubchemAxis2.DownloadResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from Download operation
+           * override this method for handling error response from download operation
            */
-            public void receiveErrorDownload(java.lang.Exception e) {
+            public void receiveErrordownload(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetDownloadUrl method
-            * override this method for handling normal response from GetDownloadUrl operation
+            * auto generated Axis2 call back method for getDownloadUrl method
+            * override this method for handling normal response from getDownloadUrl operation
             */
-           public void receiveResultGetDownloadUrl(
+           public void receiveResultgetDownloadUrl(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetDownloadUrlResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetDownloadUrl operation
+           * override this method for handling error response from getDownloadUrl operation
            */
-            public void receiveErrorGetDownloadUrl(java.lang.Exception e) {
+            public void receiveErrorgetDownloadUrl(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputStructure method
-            * override this method for handling normal response from InputStructure operation
+            * auto generated Axis2 call back method for inputStructure method
+            * override this method for handling normal response from inputStructure operation
             */
-           public void receiveResultInputStructure(
+           public void receiveResultinputStructure(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputStructureResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputStructure operation
+           * override this method for handling error response from inputStructure operation
            */
-            public void receiveErrorInputStructure(java.lang.Exception e) {
+            public void receiveErrorinputStructure(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetOperationStatus method
-            * override this method for handling normal response from GetOperationStatus operation
+            * auto generated Axis2 call back method for getOperationStatus method
+            * override this method for handling normal response from getOperationStatus operation
             */
-           public void receiveResultGetOperationStatus(
+           public void receiveResultgetOperationStatus(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetOperationStatusResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetOperationStatus operation
+           * override this method for handling error response from getOperationStatus operation
            */
-            public void receiveErrorGetOperationStatus(java.lang.Exception e) {
+            public void receiveErrorgetOperationStatus(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputListText method
-            * override this method for handling normal response from InputListText operation
+            * auto generated Axis2 call back method for inputListText method
+            * override this method for handling normal response from inputListText operation
             */
-           public void receiveResultInputListText(
+           public void receiveResultinputListText(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputListTextResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputListText operation
+           * override this method for handling error response from inputListText operation
            */
-            public void receiveErrorInputListText(java.lang.Exception e) {
+            public void receiveErrorinputListText(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetEntrezUrl method
-            * override this method for handling normal response from GetEntrezUrl operation
+            * auto generated Axis2 call back method for getEntrezUrl method
+            * override this method for handling normal response from getEntrezUrl operation
             */
-           public void receiveResultGetEntrezUrl(
+           public void receiveResultgetEntrezUrl(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetEntrezUrlResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetEntrezUrl operation
+           * override this method for handling error response from getEntrezUrl operation
            */
-            public void receiveErrorGetEntrezUrl(java.lang.Exception e) {
+            public void receiveErrorgetEntrezUrl(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for InputListString method
-            * override this method for handling normal response from InputListString operation
+            * auto generated Axis2 call back method for inputListString method
+            * override this method for handling normal response from inputListString operation
             */
-           public void receiveResultInputListString(
+           public void receiveResultinputListString(
                     gov.nih.nlm.ncbi.pubchemAxis2.InputListStringResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from InputListString operation
+           * override this method for handling error response from inputListString operation
            */
-            public void receiveErrorInputListString(java.lang.Exception e) {
+            public void receiveErrorinputListString(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for IDExchange method
-            * override this method for handling normal response from IDExchange operation
+            * auto generated Axis2 call back method for iDExchange method
+            * override this method for handling normal response from iDExchange operation
             */
-           public void receiveResultIDExchange(
+           public void receiveResultiDExchange(
                     gov.nih.nlm.ncbi.pubchemAxis2.IDExchangeResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from IDExchange operation
+           * override this method for handling error response from iDExchange operation
            */
-            public void receiveErrorIDExchange(java.lang.Exception e) {
+            public void receiveErroriDExchange(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for Standardize method
-            * override this method for handling normal response from Standardize operation
+            * auto generated Axis2 call back method for standardize method
+            * override this method for handling normal response from standardize operation
             */
-           public void receiveResultStandardize(
+           public void receiveResultstandardize(
                     gov.nih.nlm.ncbi.pubchemAxis2.StandardizeResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from Standardize operation
+           * override this method for handling error response from standardize operation
            */
-            public void receiveErrorStandardize(java.lang.Exception e) {
+            public void receiveErrorstandardize(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetAssayColumnDescriptions method
-            * override this method for handling normal response from GetAssayColumnDescriptions operation
+            * auto generated Axis2 call back method for getAssayColumnDescriptions method
+            * override this method for handling normal response from getAssayColumnDescriptions operation
             */
-           public void receiveResultGetAssayColumnDescriptions(
+           public void receiveResultgetAssayColumnDescriptions(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetAssayColumnDescriptionsResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetAssayColumnDescriptions operation
+           * override this method for handling error response from getAssayColumnDescriptions operation
            */
-            public void receiveErrorGetAssayColumnDescriptions(java.lang.Exception e) {
+            public void receiveErrorgetAssayColumnDescriptions(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for GetStandardizedCID method
-            * override this method for handling normal response from GetStandardizedCID operation
+            * auto generated Axis2 call back method for getStandardizedCID method
+            * override this method for handling normal response from getStandardizedCID operation
             */
-           public void receiveResultGetStandardizedCID(
+           public void receiveResultgetStandardizedCID(
                     gov.nih.nlm.ncbi.pubchemAxis2.GetStandardizedCIDResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from GetStandardizedCID operation
+           * override this method for handling error response from getStandardizedCID operation
            */
-            public void receiveErrorGetStandardizedCID(java.lang.Exception e) {
+            public void receiveErrorgetStandardizedCID(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for AssayDownload method
-            * override this method for handling normal response from AssayDownload operation
+            * auto generated Axis2 call back method for assayDownload method
+            * override this method for handling normal response from assayDownload operation
             */
-           public void receiveResultAssayDownload(
+           public void receiveResultassayDownload(
                     gov.nih.nlm.ncbi.pubchemAxis2.AssayDownloadResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from AssayDownload operation
+           * override this method for handling error response from assayDownload operation
            */
-            public void receiveErrorAssayDownload(java.lang.Exception e) {
+            public void receiveErrorassayDownload(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for SuperstructureSearch method
-            * override this method for handling normal response from SuperstructureSearch operation
+            * auto generated Axis2 call back method for superstructureSearch method
+            * override this method for handling normal response from superstructureSearch operation
             */
-           public void receiveResultSuperstructureSearch(
+           public void receiveResultsuperstructureSearch(
                     gov.nih.nlm.ncbi.pubchemAxis2.SuperstructureSearchResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from SuperstructureSearch operation
+           * override this method for handling error response from superstructureSearch operation
            */
-            public void receiveErrorSuperstructureSearch(java.lang.Exception e) {
+            public void receiveErrorsuperstructureSearch(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for ScoreMatrix method
-            * override this method for handling normal response from ScoreMatrix operation
+            * auto generated Axis2 call back method for scoreMatrix method
+            * override this method for handling normal response from scoreMatrix operation
             */
-           public void receiveResultScoreMatrix(
+           public void receiveResultscoreMatrix(
                     gov.nih.nlm.ncbi.pubchemAxis2.ScoreMatrixResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from ScoreMatrix operation
+           * override this method for handling error response from scoreMatrix operation
            */
-            public void receiveErrorScoreMatrix(java.lang.Exception e) {
+            public void receiveErrorscoreMatrix(java.lang.Exception e) {
             }
                 
 

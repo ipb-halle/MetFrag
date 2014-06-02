@@ -47,6 +47,7 @@ import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
+import de.ipbhalle.metfrag.chemspiderClient.ChemSpider;
 import de.ipbhalle.metfrag.databaseMetChem.CandidateMetChem;
 import de.ipbhalle.metfrag.databaseMetChem.Query;
 import de.ipbhalle.metfrag.fragmenter.Candidates;
@@ -114,7 +115,8 @@ public class MetFrag {
 		//get configuration
 		Config config = new Config();
 		PubChemWebService pubchem = new PubChemWebService();
-		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, config.getSearchPPM(), useProxy, pubchem);
+		ChemSpider chemSpider = new ChemSpider(config.getChemspiderToken());
+		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, config.getSearchPPM(), useProxy, pubchem, chemSpider);
 
 		//now fill executor!!!
 		//number of threads depending on the available processors
@@ -127,7 +129,7 @@ public class MetFrag {
 		for (int c = 0; c < candidates.size(); c++) {				
 			threadExecutor.execute(new FragmenterThread(candidates.get(c), database, pubchem, spectrum, config.getMzabs(), config.getMzppm(), 
 					config.isSumFormulaRedundancyCheck(), config.isBreakAromaticRings(), config.getTreeDepth(), false, config.isHydrogenTest(), config.isNeutralLossAdd(), 
-					config.isBondEnergyScoring(), config.isOnlyBreakSelectedBonds(), config, false));		
+					config.isBondEnergyScoring(), config.isOnlyBreakSelectedBonds(), config, false, chemSpider));		
 		}
 		
 		threadExecutor.shutdown();
@@ -267,7 +269,8 @@ public class MetFrag {
 	{
 		results = new FragmenterResult();
 		PubChemWebService pubchem = new PubChemWebService();
-		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, useProxy, pubchem);
+		ChemSpider chemSpider = new ChemSpider("");
+		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, useProxy, pubchem, chemSpider);
 
 
 		//now fill executor!!!
@@ -285,7 +288,7 @@ public class MetFrag {
 			
 			threadExecutor.execute(new FragmenterThread(candidates.get(c), database, pubchem, spectrum, mzabs, mzppm, 
 					molecularFormulaRedundancyCheck, breakAromaticRings, treeDepth, false, hydrogenTest, neutralLossInEveryLayer, 
-					bondEnergyScoring, breakOnlySelectedBonds, null, false));		
+					bondEnergyScoring, breakOnlySelectedBonds, null, false, chemSpider));		
 		}
 		
 		threadExecutor.shutdown();
@@ -370,7 +373,7 @@ public class MetFrag {
 			
 		threadExecutor.execute(new FragmenterThread(candidateStructure, candidate, database, pubchem, spectrum, mzabs, mzppm, 
 				molecularFormulaRedundancyCheck, breakAromaticRings, treeDepth, false, hydrogenTest, neutralLossInEveryLayer, 
-				bondEnergyScoring, breakOnlySelectedBonds, null, false));		
+				bondEnergyScoring, breakOnlySelectedBonds, null, false, null));		
 		
 		threadExecutor.shutdown();
 		
@@ -446,12 +449,14 @@ public class MetFrag {
 	{
 		
 		PubChemWebService pw = null;
+		ChemSpider chemSpider = null;
 		results = new FragmenterResult();
 		List<String> candidates = null;
 		if(molecularFormula != null && !molecularFormula.equals("") || (databaseID != null && !databaseID.equals("")))
 		{
 			pw = new PubChemWebService();
-			candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, false, pw);
+			chemSpider = new ChemSpider("");
+			candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, false, pw, chemSpider);
 		}
 		else
 			candidates = Candidates.getLocally(database, exactMass, searchPPM, jdbc, username, password);
@@ -473,7 +478,7 @@ public class MetFrag {
 			
 			threadExecutor.execute(new FragmenterThread(candidates.get(c), database, null, spectrum, mzabs, mzppm, 
 					molecularFormulaRedundancyCheck, breakAromaticRings, treeDepth, false, hydrogenTest, neutralLossInEveryLayer, 
-					bondEnergyScoring, breakOnlySelectedBonds, null, true, jdbc, username, password));		
+					bondEnergyScoring, breakOnlySelectedBonds, null, true, jdbc, username, password, chemSpider));		
 		}
 		
 		threadExecutor.shutdown();
@@ -572,81 +577,6 @@ public class MetFrag {
 		}
 		return ret;
 	}
-	
-	
-	/**
-	 * MetFrag. Start the fragmenter thread. Afterwards score the results.
-	 * This method is mainly used to evaluate MetFrag against the test data set.
-	 * 
-	 * @param database the database
-	 * @param searchPPM the search ppm
-	 * @param databaseID the database id
-	 * @param molecularFormula the molecular formula
-	 * @param exactMass the exact mass
-	 * @param spectrum the spectrum
-	 * 
-	 * @return the string
-	 * 
-	 * @throws Exception the exception
-	 */
-	public void startScriptable(boolean useProxy, boolean writeSDF) throws Exception
-	{
-		results = new FragmenterResult();
-		//get configuration
-		Config config = new Config("outside");
-		WrapperSpectrum spectrum = new WrapperSpectrum(config.getFolder() + file);
-		
-		String database = "";
-		if(config.isKEGG())
-			database = "kegg";
-		else if(config.isPubChem())
-			database = "pubchem";
-		
-		PubChemWebService pubchem = null;
-		List<String> candidates = Candidates.getLocally(database, spectrum.getExactMass(), config.getSearchPPM(), config.getJdbc(), config.getUsername(), config.getPassword());
-		
-//		this.candidateCount = candidates.size();
-		results.addToCompleteLog("\n*****************************************************\n\n");
-		results.addToCompleteLog("\nFile: " + file + " ====> " + getCorrectCandidateID(spectrum, config));
-		
-		
-		//now fill executor!!!
-		//number of threads depending on the available processors
-	    int threads = Runtime.getRuntime().availableProcessors();
-	    //thread executor
-	    ExecutorService threadExecutor = null;
-	    System.out.println("Used Threads: " + threads);
-	    threadExecutor = Executors.newFixedThreadPool(threads);
-
-		for (int c = 0; c < candidates.size(); c++) {				
-			threadExecutor.execute(new FragmenterThread(candidates.get(c), database, pubchem, spectrum, config.getMzabs(), config.getMzppm(), 
-					config.isSumFormulaRedundancyCheck(), config.isBreakAromaticRings(), config.getTreeDepth(), false, config.isHydrogenTest(), config.isNeutralLossAdd(), 
-					config.isBondEnergyScoring(), config.isOnlyBreakSelectedBonds(), config, true));		
-		}
-		
-		threadExecutor.shutdown();
-		
-		//wait until all threads are finished
-		int count = 0;
-		while(!threadExecutor.isTerminated())
-		{
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}//sleep for 1000 ms
-			if(count == 1000)
-				System.err.println("ThreadExecutor is not terminated!");
-			else
-				Thread.sleep(5000);
-			
-			count++;
-		}
-		
-
-		evaluateResults(getCorrectCandidateID(spectrum, config), spectrum, true, config.getFolder(), writeSDF);		
-	}
-	
 	
 	private String getCorrectCandidateID(WrapperSpectrum spectrum, Config config)
 	{
@@ -920,68 +850,6 @@ public class MetFrag {
 		
 		return parameterOptimizationMatrix.toString();
 	}
-	
-	
-	
-	
-	
-	/**
-	 * The main method to start metfrag using command line parameters and start evaluation
-	 * This is used for the gridengine.
-	 * 
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {		
-		
-		String currentFile = "";
-		String date = "";
-		boolean writeSDF = false;
-		
-		try
-		{
-			//thats the current file
-			if(args[0] != null)
-			{
-				currentFile = args[0];
-			}
-			else
-			{
-				System.err.println("Error! Parameter missing!");
-				System.exit(1);
-			}
-			
-			//thats the date for the log file
-			if(args[1] != null)
-			{
-				date = args[1]; 
-			}
-			else
-			{
-				System.err.println("Error! Parameter missing!");
-				System.exit(1);
-			}
-			if(args.length > 2 && args[2] != null)
-			{
-				writeSDF = true;
-			}
-		}
-		catch(Exception e)
-		{
-			System.err.println("Error! Parameter missing!");
-			System.exit(1);
-		}
-			
-		
-		MetFrag metFrag = new MetFrag(currentFile, date);
-		try {
-//			String resultsTable = "Spectrum\tCorrectCpdID\tHits\trankWorstCase\trankTanimoto\trankIsomorph\texactMass\tRuntime";
-			metFrag.startScriptable(true, writeSDF);
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.exit(1);
-		}
-		
-	}
 
 	/**
 	 * used for database search of command line tool
@@ -1030,16 +898,18 @@ public class MetFrag {
 		results = new FragmenterResult();
 		Vector<String> candidates = new Vector<String>();
 		PubChemWebService pubchem = null;
+		ChemSpider chemSpider = null;
 		
 		if(!localdb) {
 			try {
 				pubchem = new PubChemWebService();
+				chemSpider = new ChemSpider("");
 				pubchem.setVerbose(verbose);
 			} catch (ServiceException e1) {
 				e1.printStackTrace();
 			}
 			try {
-				candidates = Candidates.getOnline(database, databaseIDs, formula, exactMass, searchppm, useProxy, pubchem, verbose);
+				candidates = Candidates.getOnline(database, databaseIDs, formula, exactMass, searchppm, useProxy, pubchem, verbose, chemSpider);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -1075,7 +945,7 @@ public class MetFrag {
 		for (int c = startindex - 1; c < endindex; c++) {
 			FragmenterThread ft = new FragmenterThread(candidates.get(c), database, pubchem, spec, mzabs, mzppm, 
 					molredundancycheck, molredundancycheck, treeDepth, hydrogenTest, neutralLossInEveryLayer, 
-					bondEnergyScoring, breakOnlySelectedBonds, chemSpiderToken, isStoreFragments, pathToStoreFrags, 
+					bondEnergyScoring, breakOnlySelectedBonds, chemSpider, isStoreFragments, pathToStoreFrags, 
 					sampleName, localdb, onlyChnopsCompounds, dblink, dbuser, dbpass);
 			threadExecutor.execute(ft);		
 		}
