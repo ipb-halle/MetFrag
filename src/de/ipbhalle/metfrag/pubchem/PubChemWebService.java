@@ -465,8 +465,9 @@ public class PubChemWebService {
 
 		String urlname = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 				+ "?db=pccompound"
-				+ "&term=" + minMass + "[ExactMass]:" + maxMass + "[ExactMass]"
+				+ "&term=" + minMass + "[MIMASS]:" + maxMass + "[MIMASS]"
 				+ "&RetMax=" + limit;
+		
 		InputStream stream = getInputStreamFromURL(urlname);
 		
 		if(stream == null) return cids;
@@ -596,12 +597,12 @@ public class PubChemWebService {
 		try {
 			ilr = ps.inputList(il);
 		} catch (RemoteException e) {
-			System.err.println("Error: Pubchem sdf download failed. Contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Contact cruttkie@ipb-halle.de!");
 			e.printStackTrace();
 			return false;
 		} 
 		if(ilr == null){
-			System.err.println("Error: Pubchem sdf download failed. Contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Contact cruttkie@ipb-halle.de!");
 			return false;
 		}
 		String listKey = ilr.getListKey();
@@ -610,7 +611,7 @@ public class PubChemWebService {
 		try {
 			dr = ps.download(d);
 		} catch (RemoteException e) {
-			System.err.println("Error: Pubchem sdf download failed. Contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Contact cruttkie@ipb-halle.de!");
 			e.printStackTrace();
 			return false;
 		}
@@ -629,11 +630,11 @@ public class PubChemWebService {
 				if(this.verbose) System.out.print(".");
 			}
 		} catch (RemoteException e) {
-			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 			e.printStackTrace();
 			return false;
 		} catch (InterruptedException e) {
-			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 			e.printStackTrace();
 			return false;
 		}
@@ -645,11 +646,11 @@ public class PubChemWebService {
 			try {
 				url = new URL(ps.getDownloadUrl(req5).getUrl());
 			} catch (MalformedURLException e) {
-				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 				e.printStackTrace();
 				return false;
 			} catch (RemoteException e) {
-				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 				e.printStackTrace();
 				return false;
 			}
@@ -662,7 +663,7 @@ public class PubChemWebService {
 				fetch = url.openConnection();
 	            input = fetch.getInputStream();
 			} catch (IOException e) {
-				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 				e.printStackTrace();
 				return false;
 			}
@@ -671,7 +672,7 @@ public class PubChemWebService {
 			try {
 				output = new FileOutputStream(filename.getAbsoluteFile());
 			} catch (FileNotFoundException e) {
-				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 				e.printStackTrace();
 				return false;
 			}
@@ -683,12 +684,12 @@ public class PubChemWebService {
 				    output.write(buffer, 0, n);
 				output.close();
 			} catch (IOException e) {
-				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+				System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 				e.printStackTrace();
 				return false;  
 			}
         } else {
-            System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+            System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
             return false;            
         }
         
@@ -696,7 +697,7 @@ public class PubChemWebService {
         try {
 			in = new FileInputStream(filename);
 		} catch (FileNotFoundException e) {
-			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 			return false; 
 		}
         
@@ -705,7 +706,7 @@ public class PubChemWebService {
 		try {
 			fileContents = (ChemFile)reader.read(new ChemFile());
 		} catch (CDKException e) {
-			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkies@ipb-halle.de!");
+			System.err.println("Error: Pubchem sdf download failed. Please contact cruttkie@ipb-halle.de!");
 			e.printStackTrace();
 			return false; 
 		}

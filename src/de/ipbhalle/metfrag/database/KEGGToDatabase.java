@@ -30,22 +30,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Vector;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
+/*
 import net.sf.jniinchi.INCHI_KEY;
 import net.sf.jniinchi.JniInchiInput;
 import net.sf.jniinchi.JniInchiWrapper;
 import net.sf.jniinchi.LoadNativeLibraryException;
-
+*/
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.DefaultChemObjectBuilder;

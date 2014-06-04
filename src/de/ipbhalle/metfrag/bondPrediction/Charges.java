@@ -46,7 +46,6 @@ import de.ipbhalle.metfrag.tools.renderer.StructureRenderer;
 
 public class Charges {
 	
-	private IAtomContainer mol;
 	private IAtomContainer molWithAllProtonationSites;
 	private Map<String, Double> bondToBondLength;
 	private boolean verbose = false;
@@ -72,17 +71,6 @@ public class Charges {
 	
 	
 	/**
-	 * Gets the original molecule after it was processed.
-	 * 
-	 * @return the original molecule
-	 */
-	public IAtomContainer getOriginalMolecule()
-	{
-		return this.mol;
-	}
-	
-	
-	/**
 	 * Calculate bonds which will most likely break.
 	 * It returns a list with bonds.
 	 * 
@@ -93,27 +81,26 @@ public class Charges {
 	public List<String> calculateBondsToBreak(IAtomContainer mol) throws CloneNotSupportedException, CDKException
 	{		
 		List<String> bondsToBreak = new ArrayList<String>();
-		this.mol = mol;
 		
 		try {
         	GasteigerMarsiliPartialCharges peoe = new GasteigerMarsiliPartialCharges();
 //        	GasteigerPEPEPartialCharges pepe = new GasteigerPEPEPartialCharges();
-            AtomContainerManipulator.convertImplicitToExplicitHydrogens(this.mol);
-            AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(this.mol);
-            this.mol = MoleculeTools.moleculeNumbering(this.mol);
-    		peoe.calculateCharges(this.mol);
+            AtomContainerManipulator.convertImplicitToExplicitHydrogens(mol);
+            AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+            mol = MoleculeTools.moleculeNumbering(mol);
+    		peoe.calculateCharges(mol);
 //	    	pepe.calculateCharges(cpd);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.err.println("Error here3");
 			e.printStackTrace();
 		}	
         
 
 		//now get the atoms with the smallest partial charge
 		List<AtomProperty> atomCharges = new ArrayList<AtomProperty>();
-		boolean[] atomDone = new boolean[this.mol.getAtomCount()];
+		boolean[] atomDone = new boolean[mol.getAtomCount()];
 
-		for (IBond bond : this.mol.bonds()) {			
+		for (IBond bond : mol.bonds()) {			
         	for (IAtom atom : bond.atoms()) {
         		if(!atomDone[Integer.parseInt(atom.getID())])
         		{
@@ -133,7 +120,7 @@ public class Charges {
 //		}
 		
 		IAtomContainer[] molArray = new IAtomContainer[2];
-		molArray[0] = this.mol;
+		molArray[0] = mol;
 		this.molWithAllProtonationSites = (IAtomContainer)mol.clone();
 		
 		List<Distance> cpd1BondToDistance = new ArrayList<Distance>();
@@ -153,7 +140,7 @@ public class Charges {
 			else if(!chargesArray[i].getAtom().getSymbol().equals("C") && !chargesArray[i].getAtom().getSymbol().equals("H"))
 			{				
 				//now add hydrogen atom
-				protonatedMol = (IAtomContainer) this.mol.clone();
+				protonatedMol = (IAtomContainer) mol.clone();
 				IAtom hydrogenAtom = new Atom("H");
 				if(verbose)
 					System.out.println("Protonation of atom: " + chargesArray[i].getAtom().getSymbol()  + (Integer.parseInt(chargesArray[i].getAtom().getID()) + 1));
@@ -286,7 +273,7 @@ public class Charges {
 				
 				if(verbose)
 					System.out.println(tempResult);
-				this.results.add(new ChargeResult(this.mol, protonatedMol, outputStructure, tempResult));
+				this.results.add(new ChargeResult(mol, protonatedMol, outputStructure, tempResult));
 
 //				for (String string : notMatched) {
 //					System.out.println(string);
@@ -316,7 +303,7 @@ public class Charges {
 		
 		//now add the complete combined result in front of the list
 		String combinedResults = "";
-		for (IBond bond : this.mol.bonds()) {
+		for (IBond bond : mol.bonds()) {
 			combinedResults += bond.getAtom(0).getSymbol() + (Integer.parseInt(bond.getAtom(0).getID()) + 1) + "-" + bond.getAtom(1).getSymbol() + (Integer.parseInt(bond.getAtom(1).getID()) + 1) + "\t" + bondToBondLength.get(bond.getID()) + "\n";
 		}
 //		for (String bond : bondToBondLength.keySet()) {
@@ -326,7 +313,7 @@ public class Charges {
 		AtomContainerManipulator.convertImplicitToExplicitHydrogens(this.molWithAllProtonationSites);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(this.molWithAllProtonationSites);
         this.molWithAllProtonationSites = MoleculeTools.moleculeNumbering(this.molWithAllProtonationSites);
-		this.results.add(0, new ChargeResult(this.mol, this.molWithAllProtonationSites, this.molWithAllProtonationSites, combinedResults));
+		this.results.add(0, new ChargeResult(mol, this.molWithAllProtonationSites, this.molWithAllProtonationSites, combinedResults));
 		
 		
 		return bondsToBreak;

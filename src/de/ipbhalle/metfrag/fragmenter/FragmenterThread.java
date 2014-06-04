@@ -349,6 +349,7 @@ public class FragmenterThread implements Runnable{
 			else
 			{
 				molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpider);
+				System.out.println(molecule.getProperty("CSID"));
 			}
 			
 			if(molecule == null) {
@@ -393,6 +394,9 @@ public class FragmenterThread implements Runnable{
 	        	MetFrag.results.addToCompleteLog("Error: " + candidate + " Message: " + e.getMessage());
             	return;
             }
+	        catch(Exception e) {
+	        	System.err.println("Error: Adding hydrogens failed.");
+	        }
 	        
 	        
 	        Vector<Peak> peakList = spectrum.getPeakList();
@@ -529,7 +533,7 @@ public class FragmenterThread implements Runnable{
 			}
 			catch(Exception e)
 			{
-				System.out.println("Error: " + e.getMessage());
+				System.out.println("Error: " + e.getMessage() + " here1");
 				e.printStackTrace();
 				MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + " File: " + candidate);
 			}
@@ -557,9 +561,10 @@ public class FragmenterThread implements Runnable{
 		}
 		catch(Exception e)
 		{
-			System.out.println("Error: " + e.getMessage());
+			System.out.println("Error: " + e.getMessage() + " here2 " + candidate + " " + candidateNumber);
 			e.printStackTrace();
 			MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + "File: " + candidate);
+			System.exit(1);
 		}
 	}
 

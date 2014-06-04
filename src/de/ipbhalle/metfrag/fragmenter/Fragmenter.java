@@ -36,6 +36,7 @@ import java.util.Vector;
 
 
 import org.openscience.cdk.Atom;
+import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.Molecule;
 import org.openscience.cdk.SingleElectron;
 import org.openscience.cdk.aromaticity.AromaticityCalculator;
@@ -59,12 +60,10 @@ import org.openscience.cdk.interfaces.IBond.Stereo;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.isomorphism.IsomorphismTester;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
-import org.openscience.cdk.nonotify.NoNotificationChemObjectBuilder;
 import org.openscience.cdk.qsar.DescriptorValue;
 import org.openscience.cdk.qsar.descriptors.molecular.ALOGPDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.MannholdLogPDescriptor;
 import org.openscience.cdk.qsar.descriptors.molecular.XLogPDescriptor;
-import org.openscience.cdk.qsar.result.IDescriptorResult;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
@@ -1763,8 +1762,9 @@ public class Fragmenter {
     	
     	boolean[] atomsDone = new boolean[this.atomsContained];
     	
-    	IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
-        IAtomContainer partContainer = builder.newInstance(IAtomContainer.class);
+    //	IChemObjectBuilder builder = NoNotificationChemObjectBuilder.getInstance();
+    	IChemObjectBuilder builder = DefaultChemObjectBuilder.getInstance();
+    	IAtomContainer partContainer = builder.newInstance(IAtomContainer.class);
         partContainer.addAtom(atom);
         
         

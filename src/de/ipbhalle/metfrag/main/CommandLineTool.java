@@ -709,34 +709,42 @@ public class CommandLineTool {
 			breader = new BufferedReader(new FileReader(file));
 			String line = "";
 			while((line = breader.readLine()) != null) {
-				if(line.charAt(0) == '#' && line.contains("Sample:")) {
-					sampleName = line.split("Sample:")[1].trim();
-					sampleNameIsSet = true;
+				line = line.trim();
+				if(line.length() == 0) continue;
+				//check for comment
+				if(line.startsWith("##")) continue;
+				//check for parameter set
+				if(line.startsWith("#")) {
+					line = line.replaceFirst("#", "").trim();
+					if(line.startsWith("Sample:")) {
+						sampleName = line.split("Sample:")[1].trim();
+						sampleNameIsSet = true;
+					}
+					else if(line.startsWith("ID:")) {
+						databaseIDs = line.split("ID:")[1].trim().split(",");
+						databaseIDsIsSet = true;
+					}
+					else if(line.startsWith("Parent Mass:")) {
+						if(setDoubleValue(line.split("Parent Mass:")[1].trim(), true, "exactmass", exactMass) != 0) correct = false;
+						exactMassIsSet = true; 
+					}
+					else if(line.startsWith("Search PPM:")) {
+						if(setDoubleValue(line.split("Search PPM:")[1].trim(), true, "searchppm", searchppm) != 0) correct = false;
+						searchppmIsSet = true;
+					}
+					else if(line.startsWith("Charge:")) {
+						if(setIntegerValue(line.split("Charge:")[1].trim(), true, "charge", charge) != 0) correct = false;
+						chargeIsSet = true;
+					}
+					else if(line.startsWith("Mode:")) {
+						if(setIntegerValue(line.split("Mode:")[1].trim(), true, "mode", mode) != 0) correct = false;
+						modeIsSet = true;
+					}
+					else {
+						System.out.println("Warning: Option "+line.split(":")[0].trim()+" in spectrum data file not known.");
+					}
 				}
-				else if(line.charAt(0) == '#' && line.contains("ID:")) {
-					databaseIDs = line.split("ID:")[1].trim().split(",");
-					databaseIDsIsSet = true;
-				}
-				else if(line.charAt(0) == '#' && line.contains("Parent Mass:")) {
-					if(setDoubleValue(line.split("Parent Mass:")[1].trim(), true, "exactmass", exactMass) != 0) correct = false;
-					exactMassIsSet = true; 
-				}
-				else if(line.charAt(0) == '#' && line.contains("Search PPM:")) {
-					if(setDoubleValue(line.split("Search PPM:")[1].trim(), true, "searchppm", searchppm) != 0) correct = false;
-					searchppmIsSet = true;
-				}
-				else if(line.charAt(0) == '#' && line.contains("Charge:")) {
-					if(setIntegerValue(line.split("Charge:")[1].trim(), true, "charge", charge) != 0) correct = false;
-					chargeIsSet = true;
-				}
-				else if(line.charAt(0) == '#' && line.contains("Mode:")) {
-					if(setIntegerValue(line.split("Mode:")[1].trim(), true, "mode", mode) != 0) correct = false;
-					modeIsSet = true;
-				}
-				else if(line.charAt(0) == '#' && line.split("#")[1].trim().length() != 0) {
-					System.out.println("Warning: Option "+line.split("#")[1].trim()+" in spectrum data file not known.");
-				}
-				else if(line.charAt(0) != '#' && line.length() != 0) peaksString += line + "\n";
+				else peaksString += line + "\n";
 			}
 			breader.close();
 		} catch (IOException e) {
