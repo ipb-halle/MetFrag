@@ -349,21 +349,20 @@ public class FragmenterThread implements Runnable{
 			else
 			{
 				molecule = Candidates.getCompound(this.database, this.candidate, this.pw, this.chemSpider);
-				System.out.println(molecule.getProperty("CSID"));
 			}
 			
 			if(molecule == null) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.candidate +" -> error reading molecule");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.getCandidateID() +" -> error reading molecule");
 				incrementCandidateNumber();
 				return;
 			}
 			else if(!ConnectivityChecker.isConnected(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no connected molecule");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no connected molecule");
 				incrementCandidateNumber();
 				return;
 			}
 			else if(this.onlyChnopsCompounds && !isCHNOPSCompound(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate + " -> no CHNOPS compound");
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no CHNOPS compound");
 				incrementCandidateNumber();
 				return;
 			}
@@ -391,11 +390,11 @@ public class FragmenterThread implements Runnable{
 	        }
 	        catch(IllegalArgumentException e)
             {
-	        	MetFrag.results.addToCompleteLog("Error: " + candidate + " Message: " + e.getMessage());
+	        	MetFrag.results.addToCompleteLog("Error: " + this.getCandidateID() + " Message: " + e.getMessage());
             	return;
             }
 	        catch(Exception e) {
-	        	System.err.println("Error: Adding hydrogens failed.");
+	        	System.err.println("Error: " + this.getCandidateID() + " adding hydrogens failed.");
 	        }
 	        
 	        
@@ -470,13 +469,13 @@ public class FragmenterThread implements Runnable{
 				if(realScoreMap.containsKey(currentScore))
 		        {
 		        	Vector<String> tempList = realScoreMap.get(currentScore);
-		        	tempList.add(candidate);
+		        	tempList.add(this.getCandidateID());
 		        	realScoreMap.put(currentScore, tempList);
 		        }
 		        else
 		        {
 		        	Vector<String> temp = new Vector<String>();
-		        	temp.add(candidate);
+		        	temp.add(this.getCandidateID());
 		        	realScoreMap.put(currentScore, temp);
 		        }
 				
@@ -484,13 +483,13 @@ public class FragmenterThread implements Runnable{
 				if(scoreMap.containsKey(hits.size()))
 		        {
 		        	List<String> tempList = scoreMap.get(hits.size());
-		        	tempList.add(candidate);
+		        	tempList.add(this.getCandidateID());
 		        	scoreMap.put(hits.size(), tempList);
 		        }
 		        else
 		        {
 		        	List<String> temp = new ArrayList<String>();
-		        	temp.add(candidate);
+		        	temp.add(this.getCandidateID());
 		        	scoreMap.put(hits.size(), temp);
 		        }
 
@@ -516,55 +515,52 @@ public class FragmenterThread implements Runnable{
 				}
 
 				if(verbose) {
-					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.candidate);
+					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID());
 					incrementCandidateNumber();
 				}
 			}
 			catch(CDKException e)
 			{
 				System.out.println("CDK error!" + e.getMessage());
-				MetFrag.results.addToCompleteLog("CDK Error! " + e.getMessage() + " File: " + candidate);
+				MetFrag.results.addToCompleteLog("CDK Error! " + e.getMessage() + " File: " + this.getCandidateID());
 			}
 			catch(OutOfMemoryError e)
 			{
 				System.out.println("Out of memory: " + e.getMessage() + "\n" + e.getStackTrace());
 				System.gc();
-				MetFrag.results.addToCompleteLog("Out of memory! "+ e.getMessage() + " File: " + candidate);
+				MetFrag.results.addToCompleteLog("Out of memory! "+ e.getMessage() + " File: " + this.getCandidateID());
 			}
 			catch(Exception e)
 			{
-				System.out.println("Error: " + e.getMessage() + " here1");
 				e.printStackTrace();
-				MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + " File: " + candidate);
+				MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + " File: " + this.getCandidateID());
 			}
 		}
 		catch(CDKException e)
 		{
 			System.out.println("CDK error!" + e.getMessage());
-			MetFrag.results.addToCompleteLog("CDK Error! " + e.getMessage() + "File: " + candidate);
+			MetFrag.results.addToCompleteLog("CDK Error! " + e.getMessage() + "File: " + this.getCandidateID());
 		}
 		catch(FileNotFoundException e)
 		{
 			System.out.println("File not found" + e.getMessage());
-			MetFrag.results.addToCompleteLog("File not found error! "+ e.getMessage() + "File: " + candidate);
+			MetFrag.results.addToCompleteLog("File not found error! "+ e.getMessage() + "File: " + this.getCandidateID());
 		}
 		catch(IOException e)
 		{
 			System.out.println("IO error: " + e.getMessage());
-			MetFrag.results.addToCompleteLog("IO Error! "+ e.getMessage() + "File: " + candidate);
+			MetFrag.results.addToCompleteLog("IO Error! "+ e.getMessage() + "File: " + this.getCandidateID());
 		}
 		catch(OutOfMemoryError e)
 		{
 			System.out.println("Out of memory: " + e.getMessage() + "\n" + e.getStackTrace());
 			System.gc();
-			MetFrag.results.addToCompleteLog("Out of memory! "+ e.getMessage() + "File: " + candidate);
+			MetFrag.results.addToCompleteLog("Out of memory! "+ e.getMessage() + "File: " + this.getCandidateID());
 		}
 		catch(Exception e)
 		{
-			System.out.println("Error: " + e.getMessage() + " here2 " + candidate + " " + candidateNumber);
 			e.printStackTrace();
-			MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + "File: " + candidate);
-			System.exit(1);
+			MetFrag.results.addToCompleteLog("Error! "+ e.getMessage() + "File: " + this.getCandidateID());
 		}
 	}
 
@@ -602,7 +598,7 @@ public class FragmenterThread implements Runnable{
 	
 		SDFWriter writer1;
 		try {
-			writer1 = new SDFWriter(new FileWriter(new File(this.saveFragmentsPath+"/"+this.sampleName+"_"+this.candidate+"_fragments.sdf")));
+			writer1 = new SDFWriter(new FileWriter(new File(this.saveFragmentsPath+"/"+this.sampleName+"_"+this.getCandidateID()+"_fragments.sdf")));
 			try {
 				writer1.write(molSet);
 			} catch (CDKException e) {
@@ -650,7 +646,7 @@ public class FragmenterThread implements Runnable{
 		
 		SDFWriter writer1;
 		try {
-			writer1 = new SDFWriter(new FileWriter(new File(this.saveFragmentsPath+System.getProperty("file.separator")+this.sampleName+"_"+this.candidate+"_fragments.sdf")));
+			writer1 = new SDFWriter(new FileWriter(new File(this.saveFragmentsPath+System.getProperty("file.separator")+this.sampleName+"_"+this.getCandidateID()+"_fragments.sdf")));
 			try {
 				writer1.write(molSet);
 			} catch (CDKException e) {
@@ -706,5 +702,10 @@ public class FragmenterThread implements Runnable{
 	 */
 	public static void setSizeCandidates(int _candidateSize) {
 		sizeCandidates = _candidateSize;
+	}
+	
+	public String getCandidateID() {
+		if(this.database.equals("chemspider")) return this.chemSpider.getCandidateID(this.candidate);
+		return this.candidate;
 	}
 }

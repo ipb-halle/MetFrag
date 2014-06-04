@@ -19,13 +19,10 @@ package de.ipbhalle.metfrag.chemspiderClient;
 import java.io.IOException;
 import java.io.StringReader;
 import java.rmi.RemoteException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Vector;
 import java.util.zip.GZIPInputStream;
 
 import org.apache.axis2.transport.http.HTTPConstants;
-import org.apache.log4j.Logger;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
 import org.openscience.cdk.exception.CDKException;
@@ -50,12 +47,10 @@ import com.chemspider.www.MassSpecAPIStub.GetCompressedRecordsSdfResponse;
 public class ChemSpider {
 	
 	protected String token = "";
-	protected Map<String, IAtomContainer> csidToMolecule;
-	private static final Logger LOG = Logger.getLogger(ChemSpider.class.getName());
+	protected IAtomContainer[] candidates = null;
 	
 	public ChemSpider(String token) {
 		this.token = token;
-		this.csidToMolecule = new HashMap<String, IAtomContainer>();
 	}
 	
 	/**
@@ -139,14 +134,16 @@ public class ChemSpider {
 		Vector<String> csids = new Vector<String>();
 	    
 		if(uniqueCsidArray.size() == 1) {
+			this.candidates = new IAtomContainer[1];
 			GetRecordMol getRecorMol = new GetRecordMol();
 			getRecorMol.setCsid(uniqueCsidArray.get(0));
 			getRecorMol.setToken(this.token);
 			GetRecordMolResponse grmr = stub.getRecordMol(getRecorMol);
 			try {
 				Vector<IAtomContainer> cons = this.getAtomContainerFromString(grmr.getGetRecordMolResult());
-				csids.add(uniqueCsidArray.get(0));
-				this.csidToMolecule.put(uniqueCsidArray.get(0), cons.get(0));
+				csids.add(String.valueOf(0));
+				this.candidates[0] = cons.get(0);
+			
 			} catch (CDKException e) {
 				e.printStackTrace();
 			}
@@ -166,7 +163,6 @@ public class ChemSpider {
 	        GetRecordsSdf getRecordsSdf = new GetRecordsSdf();
 	        getRecordsSdf.setRid(thisSearchStub.asyncSimpleSearch(ass).getAsyncSimpleSearchResult());
 	        getRecordsSdf.setToken(this.token);
-	      
 	        csids = this.downloadCompressedSDF(thisSearchStub.asyncSimpleSearch(ass).getAsyncSimpleSearchResult(), stub);
 	    }
 		stub._getServiceClient().cleanupTransport();
@@ -204,11 +200,11 @@ public class ChemSpider {
 		        MDLV2000Reader reader = new MDLV2000Reader(gin);
 		        ChemFile fileContents = (ChemFile)reader.read(new ChemFile());
 		        java.util.List<IAtomContainer> cons = ChemFileManipulator.getAllAtomContainers(fileContents);
+				this.candidates = new IAtomContainer[cons.size()];
 		        for(int i = 0; i < cons.size(); i++) {
-					String csid = (String)cons.get(i).getProperty("CSID");
-					csids.add(csid);
-					this.csidToMolecule.put(csid, cons.get(i));
-				}
+					csids.add(String.valueOf(i));
+					this.candidates[i] = cons.get(i);
+		        }
 		        reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -218,6 +214,7 @@ public class ChemSpider {
 				System.err.println("Problem retrieving ChemSpider webservices");
 			}
 		}
+              
      	return csids;
 	}
 	
@@ -229,10 +226,11 @@ public class ChemSpider {
 	 * @throws RemoteException
 	 * @throws CDKException
 	 */
-	public synchronized IAtomContainer getMol(String csid) 
+	public synchronized IAtomContainer getMol(String id) 
 			throws RemoteException, CDKException
 	{
-		return this.csidToMolecule.get(csid);
+		int intID = Integer.parseInt(id);
+		return this.candidates[intID];
 	}
 	
 	/**
@@ -266,5 +264,10 @@ public class ChemSpider {
 	 */
 	public String getChemSpiderToken() {
 		return this.token;
+	}
+	
+	public String getCandidateID(String index) {
+		int intIndex = Integer.parseInt(index);
+		return (String)this.candidates[intIndex].getProperty("CSID");
 	}
 }
