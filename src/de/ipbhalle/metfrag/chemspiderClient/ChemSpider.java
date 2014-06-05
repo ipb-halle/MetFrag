@@ -22,6 +22,7 @@ import java.rmi.RemoteException;
 import java.util.Vector;
 import java.util.zip.GZIPInputStream;
 
+import org.apache.axis2.transaction.TransactionConfiguration;
 import org.apache.axis2.transport.http.HTTPConstants;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
@@ -177,6 +178,9 @@ public class ChemSpider {
 	 * @return
 	 */
 	protected Vector<String> downloadCompressedSDF(String rid, MassSpecAPIStub stub) {
+		TransactionConfiguration tc = new TransactionConfiguration();
+		tc.setTransactionTimeout(Integer.MAX_VALUE);
+		stub._getServiceClient().getAxisConfiguration().setTransactionConfig(tc);
 		GetCompressedRecordsSdf getCompressedRecordsSdf = new GetCompressedRecordsSdf();
 		getCompressedRecordsSdf.setRid(rid);
 		getCompressedRecordsSdf.setToken(this.token);

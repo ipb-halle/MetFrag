@@ -259,6 +259,7 @@ public class CommandLineTool {
 						endindex.getValue(), true, pathToStoreFrags, numberThreads.getValue(), chemSpiderToken, 
 						verbose, sampleName, localdb, onlyBiologicalCompounds, dblink, dbuser, dbpass, uniquebyinchi);
 			} catch(Exception e) {
+				e.printStackTrace();
 				System.out.println("Error: "+e.getMessage());
 				System.out.println("Error: Could not perform in silico fragmentation step.");
 				System.exit(1);

@@ -342,9 +342,9 @@ public class FragmenterThread implements Runnable{
 				if(query != null) molecule = query.getCompoundUsingIdentifierConnectionOpen(this.candidate, this.database);
 			}
 			else if(pw == null && c == null) {
-				molecule = Candidates.getCompoundLocally(this.database, candidate, jdbc, username, password, false);
+				molecule = Candidates.getCompoundLocally(this.database, this.candidate, jdbc, username, password, false);
 			} else if(pw == null) {
-				molecule = Candidates.getCompoundLocally(this.database, candidate, c.getJdbc(), c.getUsername(), c.getPassword(), false);
+				molecule = Candidates.getCompoundLocally(this.database, this.candidate, c.getJdbc(), c.getUsername(), c.getPassword(), false);
 			} 
 			else
 			{
@@ -409,14 +409,14 @@ public class FragmenterThread implements Runnable{
 	        		generatedFrags = fragmenter.generateFragmentsInMemory(molecule, true, treeDepth);
 	        	else
 	        	{
-	        		List<File> fragsFiles = fragmenter.generateFragmentsEfficient(molecule, false, treeDepth, candidate);
+	        		List<File> fragsFiles = fragmenter.generateFragmentsEfficient(molecule, false, treeDepth, this.getCandidateID());
 	        		generatedFrags = Molfile.ReadfolderTemp(fragsFiles);
 	        	}
 	        }
 	        catch(OutOfMemoryError e)
 	        {
 	        	System.out.println("OUT OF MEMORY ERROR! " + treeDepth);
-	        	MetFrag.results.addToCompleteLog("Error: " + candidate + " Message: " + e.getMessage());
+	        	MetFrag.results.addToCompleteLog("Error: " + this.getCandidateID() + " Message: " + e.getMessage());
 	        	return;
 	        }
 
@@ -437,7 +437,7 @@ public class FragmenterThread implements Runnable{
 				if(this.saveFragmentsPath != "") saveFragments(hits);
 				
 				//now "real" scoring --> depends on intensities
-				Scoring score = new Scoring(spectrum, candidate);
+				Scoring score = new Scoring(spectrum, this.getCandidateID());
 				double currentScore = 0.0;
 				if(this.bondEnergyScoring)
 //					currentScore = score.computeScoringWithBondEnergies(hits);
@@ -451,16 +451,16 @@ public class FragmenterThread implements Runnable{
 					currentBondEnergy = currentBondEnergy / afp.getHits().size();
 				
 				//set the added up energy of every fragment
-				MetFrag.results.getMapCandidateToEnergy().put(candidate, currentBondEnergy);
-				MetFrag.results.getMapCandidateToHydrogenPenalty().put(candidate, score.getPenalty());
-				MetFrag.results.getMapCandidateToPartialChargesDiff().put(candidate, score.getPartialChargesDiff());
+				MetFrag.results.getMapCandidateToEnergy().put(this.getCandidateID(), currentBondEnergy);
+				MetFrag.results.getMapCandidateToHydrogenPenalty().put(this.getCandidateID(), score.getPenalty());
+				MetFrag.results.getMapCandidateToPartialChargesDiff().put(this.getCandidateID(), score.getPartialChargesDiff());
 				
 				//also output the optimization matrix if needed
-				MetFrag.results.getCandidateToOptimizationMatrixEntries().put(candidate, score.getOptimizationMatrixEntries());	
+				MetFrag.results.getCandidateToOptimizationMatrixEntries().put(this.getCandidateID(), score.getOptimizationMatrixEntries());	
 				
 				//also add the structure to results file
-				MetFrag.results.getMapCandidateToStructure().put(candidate, molecule);
-				MetFrag.results.getMapCandidateToFragments().put(candidate, afp.getHits());
+				MetFrag.results.getMapCandidateToStructure().put(this.getCandidateID(), molecule);
+				MetFrag.results.getMapCandidateToFragments().put(this.getCandidateID(), afp.getHits());
 				
 				
 				
@@ -504,7 +504,7 @@ public class FragmenterThread implements Runnable{
 				
 
 				//write things to log file
-				MetFrag.results.addToCompleteLog("\nCandidate: " + candidate + "\t #Peaks: " + spectrum.getPeakList().size() + "\t #Found: " + hits.size());
+				MetFrag.results.addToCompleteLog("\nCandidate: " + this.getCandidateID() + "\t #Peaks: " + spectrum.getPeakList().size() + "\t #Found: " + hits.size());
 				MetFrag.results.addToCompleteLog("\tPeaks: " + peaks);
 				
 				List<IAtomContainer> hitsListTest = new ArrayList<IAtomContainer>();
