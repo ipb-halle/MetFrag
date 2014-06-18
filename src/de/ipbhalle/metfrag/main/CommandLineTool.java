@@ -36,6 +36,8 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.openscience.cdk.MoleculeSet;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -120,14 +122,17 @@ public class CommandLineTool {
 	public static WrapperSpectrum spec = null;
 	public static String peaksString = "";
 	
-	
+	private static Logger logger = Logger.getRootLogger();
+	static {
+		logger.setLevel(Level.ERROR);
+	}
 	
 	/**
 	 * @param args
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) {
-		
+
 		CommandLineParser parser = new PosixParser();
 	
 		// create the Options

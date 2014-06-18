@@ -115,7 +115,7 @@ public class MetFrag {
 		//get configuration
 		Config config = new Config();
 		PubChemWebService pubchem = new PubChemWebService();
-		ChemSpider chemSpider = new ChemSpider(config.getChemspiderToken());
+		ChemSpider chemSpider = new ChemSpider(config.getChemspiderToken(), false);
 		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, config.getSearchPPM(), useProxy, pubchem, chemSpider);
 
 		//now fill executor!!!
@@ -269,7 +269,7 @@ public class MetFrag {
 	{
 		results = new FragmenterResult();
 		PubChemWebService pubchem = new PubChemWebService();
-		ChemSpider chemSpider = new ChemSpider("");
+		ChemSpider chemSpider = new ChemSpider("", false);
 		Vector<String> candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, useProxy, pubchem, chemSpider);
 
 
@@ -455,7 +455,7 @@ public class MetFrag {
 		if(molecularFormula != null && !molecularFormula.equals("") || (databaseID != null && !databaseID.equals("")))
 		{
 			pw = new PubChemWebService();
-			chemSpider = new ChemSpider("");
+			chemSpider = new ChemSpider("", false);
 			candidates = Candidates.getOnline(database, databaseID, molecularFormula, exactMass, searchPPM, false, pw, chemSpider);
 		}
 		else
@@ -903,7 +903,7 @@ public class MetFrag {
 		if(!localdb) {
 			try {
 				pubchem = new PubChemWebService();
-				chemSpider = new ChemSpider(chemSpiderToken);
+				chemSpider = new ChemSpider(chemSpiderToken, verbose);
 				pubchem.setVerbose(verbose);
 			} catch (ServiceException e1) {
 				e1.printStackTrace();
@@ -940,7 +940,7 @@ public class MetFrag {
 	    
 	    endindex = Math.min(endindex, candidates.size());
 
-	    FragmenterThread.setCandidateNumber(startindex);
+	    FragmenterThread.setCandidateNumber(startindex - 1);
 	    
 		for (int c = startindex - 1; c < endindex; c++) {
 			FragmenterThread ft = new FragmenterThread(candidates.get(c), database, pubchem, spec, mzabs, mzppm, 

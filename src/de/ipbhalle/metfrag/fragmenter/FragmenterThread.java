@@ -77,7 +77,7 @@ public class FragmenterThread implements Runnable{
 	private boolean localdb = false;
 	
 	private static boolean verbose;
-	private static int candidateNumber = 1;
+	private static int candidateNumber = 0;
 	private static int sizeCandidates;
 	private boolean onlyChnopsCompounds = false;
 	
@@ -352,18 +352,18 @@ public class FragmenterThread implements Runnable{
 			}
 			
 			if(molecule == null) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.getCandidateID() +" -> error reading molecule");
 				incrementCandidateNumber();
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: "+ this.getCandidateID() +" -> error reading molecule");
 				return;
 			}
 			else if(!ConnectivityChecker.isConnected(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no connected molecule");
 				incrementCandidateNumber();
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no connected molecule");
 				return;
 			}
 			else if(this.onlyChnopsCompounds && !isCHNOPSCompound(molecule)) {
-				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no CHNOPS compound");
 				incrementCandidateNumber();
+				if(verbose) System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID() + " -> no CHNOPS compound");
 				return;
 			}
 	        
@@ -384,7 +384,12 @@ public class FragmenterThread implements Runnable{
 		        
 		        CDKHydrogenAdder hAdder = CDKHydrogenAdder.getInstance(molecule.getBuilder());
 		        for(int i = 0; i < molecule.getAtomCount(); i++) { 	
-		        	hAdder.addImplicitHydrogens(molecule, molecule.getAtom(i));
+		        	try {
+		        		hAdder.addImplicitHydrogens(molecule, molecule.getAtom(i));
+		        	}
+		        	catch(Exception e) {
+		        		molecule.getAtom(i).setImplicitHydrogenCount(0);
+		        	}
 		        }
 		        AtomContainerManipulator.convertImplicitToExplicitHydrogens(molecule);
 	        }
@@ -393,9 +398,6 @@ public class FragmenterThread implements Runnable{
 	        	MetFrag.results.addToCompleteLog("Error: " + this.getCandidateID() + " Message: " + e.getMessage());
             	return;
             }
-	        catch(Exception e) {
-	        	System.err.println("Error: " + this.getCandidateID() + " adding hydrogens failed.");
-	        }
 	        
 	        
 	        Vector<Peak> peakList = spectrum.getPeakList();
@@ -450,73 +452,67 @@ public class FragmenterThread implements Runnable{
 				if(currentBondEnergy > 0)
 					currentBondEnergy = currentBondEnergy / afp.getHits().size();
 				
-				//set the added up energy of every fragment
-				MetFrag.results.getMapCandidateToEnergy().put(this.getCandidateID(), currentBondEnergy);
-				MetFrag.results.getMapCandidateToHydrogenPenalty().put(this.getCandidateID(), score.getPenalty());
-				MetFrag.results.getMapCandidateToPartialChargesDiff().put(this.getCandidateID(), score.getPartialChargesDiff());
+				synchronized (MetFrag.results) {
+					//set the added up energy of every fragment
+					MetFrag.results.getMapCandidateToEnergy().put(this.getCandidateID(), currentBondEnergy);
+					MetFrag.results.getMapCandidateToHydrogenPenalty().put(this.getCandidateID(), score.getPenalty());
+					MetFrag.results.getMapCandidateToPartialChargesDiff().put(this.getCandidateID(), score.getPartialChargesDiff());
+					
+					//also output the optimization matrix if needed
+					MetFrag.results.getCandidateToOptimizationMatrixEntries().put(this.getCandidateID(), score.getOptimizationMatrixEntries());	
+					
+					//also add the structure to results file
+					MetFrag.results.getMapCandidateToStructure().put(this.getCandidateID(), molecule);
+					MetFrag.results.getMapCandidateToFragments().put(this.getCandidateID(), afp.getHits());
+					
+					
+					
+					Map<Double, Vector<String>> realScoreMap = MetFrag.results.getRealScoreMap();
+					//save score in hashmap...if there are several hits with the same score --> vector of strings
+					if(realScoreMap.containsKey(currentScore))
+			        {
+			        	Vector<String> tempList = realScoreMap.get(currentScore);
+			        	tempList.add(this.getCandidateID());
+			        	realScoreMap.put(currentScore, tempList);
+			        }
+			        else
+			        {
+			        	Vector<String> temp = new Vector<String>();
+			        	temp.add(this.getCandidateID());
+			        	realScoreMap.put(currentScore, temp);
+			        }
+					
+					Map<Integer, List<String>> scoreMap = MetFrag.results.getScoreMap();
+					if(scoreMap.containsKey(hits.size()))
+			        {
+			        	List<String> tempList = scoreMap.get(hits.size());
+			        	tempList.add(this.getCandidateID());
+			        	scoreMap.put(hits.size(), tempList);
+			        }
+			        else
+			        {
+			        	List<String> temp = new ArrayList<String>();
+			        	temp.add(this.getCandidateID());
+			        	scoreMap.put(hits.size(), temp);
+			        }
+	
 				
-				//also output the optimization matrix if needed
-				MetFrag.results.getCandidateToOptimizationMatrixEntries().put(this.getCandidateID(), score.getOptimizationMatrixEntries());	
-				
-				//also add the structure to results file
-				MetFrag.results.getMapCandidateToStructure().put(this.getCandidateID(), molecule);
-				MetFrag.results.getMapCandidateToFragments().put(this.getCandidateID(), afp.getHits());
-				
-				
-				
-				Map<Double, Vector<String>> realScoreMap = MetFrag.results.getRealScoreMap();
-				//save score in hashmap...if there are several hits with the same score --> vector of strings
-				if(realScoreMap.containsKey(currentScore))
-		        {
-		        	Vector<String> tempList = realScoreMap.get(currentScore);
-		        	tempList.add(this.getCandidateID());
-		        	realScoreMap.put(currentScore, tempList);
-		        }
-		        else
-		        {
-		        	Vector<String> temp = new Vector<String>();
-		        	temp.add(this.getCandidateID());
-		        	realScoreMap.put(currentScore, temp);
-		        }
-				
-				Map<Integer, List<String>> scoreMap = MetFrag.results.getScoreMap();
-				if(scoreMap.containsKey(hits.size()))
-		        {
-		        	List<String> tempList = scoreMap.get(hits.size());
-		        	tempList.add(this.getCandidateID());
-		        	scoreMap.put(hits.size(), tempList);
-		        }
-		        else
-		        {
-		        	List<String> temp = new ArrayList<String>();
-		        	temp.add(this.getCandidateID());
-		        	scoreMap.put(hits.size(), temp);
-		        }
-
-			
-				//get all the identified peaks
-				String peaks = "";
-				Double bondEnergy = 0.0;
-				for (int i = 0; i < hits.size(); i++) {
-					bondEnergy += Fragmenter.getCombinedEnergy((String)hits.get(i).getFragment().getProperty("BondEnergy"));
-					peaks += hits.get(i).getPeak().getMass() + "[" + hits.get(i).getFragment().getProperty("BondEnergy") + "]" +  " ";
+					//get all the identified peaks
+					String peaks = "";
+					Double bondEnergy = 0.0;
+					for (int i = 0; i < hits.size(); i++) {
+						bondEnergy += Fragmenter.getCombinedEnergy((String)hits.get(i).getFragment().getProperty("BondEnergy"));
+						peaks += hits.get(i).getPeak().getMass() + "[" + hits.get(i).getFragment().getProperty("BondEnergy") + "]" +  " ";
+					}
+					
+	
+					//write things to log file
+					MetFrag.results.addToCompleteLog("\nCandidate: " + this.getCandidateID() + "\t #Peaks: " + spectrum.getPeakList().size() + "\t #Found: " + hits.size());
+					MetFrag.results.addToCompleteLog("\tPeaks: " + peaks);
 				}
-				
-
-				//write things to log file
-				MetFrag.results.addToCompleteLog("\nCandidate: " + this.getCandidateID() + "\t #Peaks: " + spectrum.getPeakList().size() + "\t #Found: " + hits.size());
-				MetFrag.results.addToCompleteLog("\tPeaks: " + peaks);
-				
-				List<IAtomContainer> hitsListTest = new ArrayList<IAtomContainer>();
-				for (int i = 0; i < hits.size(); i++) {
-					List<IAtomContainer> hitsList = new ArrayList<IAtomContainer>();
-					hitsList.add(AtomContainerManipulator.removeHydrogens(hits.get(i).getFragment()));
-					hitsListTest.add(hits.get(i).getFragment());
-				}
-
 				if(verbose) {
-					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID());
 					incrementCandidateNumber();
+					System.out.println((candidateNumber) + " of " + sizeCandidates + " - ID: " + this.getCandidateID());
 				}
 			}
 			catch(CDKException e)
