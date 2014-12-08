@@ -164,11 +164,9 @@ public class Scoring {
 			//NEW trained data from hill
 			//W = [Peak intensity]^m * [Mass]^n
 			weightedPeaks += Math.pow(this.mzToIntensity.get(hits.get(i).getPeak().getMass()), 1.150429) * Math.pow(((hits.get(i).getPeak().getMass() / candidateExactMass) * 10), 1.843564);
-			
 			//bond energy
 			String bondEnergies = (String)hits.get(i).getFragment().getProperty("BondEnergy");
 			BDE += Fragmenter.getCombinedEnergy(bondEnergies);
-			
 			//hydrogen penalty
 			hydrogenPenalty += (hits.get(i).getHydrogenPenalty() * 100);
 			
@@ -180,8 +178,6 @@ public class Scoring {
 			this.optimizationMatrixEntries.add(new OptimizationMatrixEntry(candidateID, hits.get(i).getPeak().getMass(), hits.get(i).getPeak().getRelIntensity(), bondEnergies, hits.get(i).getHydrogenPenalty(), partialCharges));
 			
 		}
-		
-		
 		this.scoreBondEnergy = BDE;
 		this.scoreChargesDiff = partialChargesDiff;
 		this.penalty = hydrogenPenalty;
@@ -199,7 +195,7 @@ public class Scoring {
 			tempPartialCharges = partialChargesDiff / hits.size();
 		}
 		score = (a * weightedPeaks) - (b * (tempPartialCharges * tempPartialCharges));
-
+		
 		return score;
 	}
 	

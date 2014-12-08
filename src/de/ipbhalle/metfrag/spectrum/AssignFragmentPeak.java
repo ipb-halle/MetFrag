@@ -20,6 +20,7 @@ import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.formula.MolecularFormula;
 import org.openscience.cdk.interfaces.IMolecularFormula;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
 import de.ipbhalle.metfrag.massbankParser.Peak;
@@ -83,7 +84,6 @@ public class AssignFragmentPeak {
 		
 		for (int i=0; i< peakList.size(); i++)
 		{
-			//System.out.println("Peak: " + this.peakList.get(i).getMass() + " ====================================");
 			boolean test = true;
 			for (int j = 0; j < this.acs.size(); j++) {
 				//matched peak
@@ -147,13 +147,10 @@ public class AssignFragmentPeak {
         double peakLow = peak - this.mzabs - PPMTool.getPPMDeviation(peak, this.mzppm);
         double peakHigh = peak + this.mzabs + PPMTool.getPPMDeviation(peak, this.mzppm);
         double massToCompare = mass + massForMode;
-        
         String neutralLoss = "";
     	if(ac.getProperty("NlElementalComposition") != null && ac.getProperty("NlElementalComposition") != "")
     		neutralLoss = " -" + ac.getProperty("NlElementalComposition");
-    
-        
-        if((massToCompare >= peakLow && massToCompare <= peakHigh))
+    	if((massToCompare >= peakLow && massToCompare <= peakHigh))
         {
         	found = true;
         	matchedMass = Math.round(massToCompare*10000.0)/10000.0;
@@ -166,15 +163,14 @@ public class AssignFragmentPeak {
         	
         	//System.out.println("HIT!" + (double)Math.round(((mass+protonMass)-peak) * 10000)/10000 + " Mass: " + (double)Math.round((mass + protonMass)* 10000)/10000 + " " + MolecularFormulaManipulator.getString(molecularFormula) + " " + mode + "H Error: " + (double)Math.round((Math.abs((mass+protonMass)-peak)*10000))/10000);
         }
-        //now try to decrease the hydrogens...at most the treedepth
+    	 //now try to decrease the hydrogens...at most the treedepth
         if(hydrogenTest && !found)
         {
         	int treeDepth = Integer.parseInt((String)ac.getProperty("TreeDepth"));
         	for(int i= 1; i <= treeDepth; i++)
         	{
     			double hMass = i * Constants.HYDROGEN_MASS;
-    			
-    			//found
+    		    //found
     			if(((massToCompare - hMass) >= peakLow && (massToCompare - hMass) <= peakHigh))
     			{
     				found = true;

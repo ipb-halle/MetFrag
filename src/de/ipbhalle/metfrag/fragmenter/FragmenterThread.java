@@ -35,8 +35,10 @@ import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.io.SDFWriter;
+import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
+import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 
 import de.ipbhalle.metfrag.chemspiderClient.ChemSpider;
 import de.ipbhalle.metfrag.databaseMetChem.Query;
@@ -423,8 +425,7 @@ public class FragmenterThread implements Runnable{
 	        }
 
 	        List<IAtomContainer> l = generatedFrags;
-	                
-
+	         
 	        try
 			{					
 				//clean up peak list
@@ -446,7 +447,7 @@ public class FragmenterThread implements Runnable{
 					currentScore = score.computeScoringOptimized(hits, spectrum.getExactMass());
 				else
 					currentScore = score.computeScoringPeakMolPair(hits);
-				
+			
 				double currentBondEnergy = score.getBDE();
 	
 				if(currentBondEnergy > 0)
