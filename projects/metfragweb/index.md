@@ -9,7 +9,7 @@ nav:
 <a class="btn btn-primary" href="http://msbi.ipb-halle.de/MetFrag" role="button">MetFrag Web tool</a> 
 <hr>
 
-The web tool of MetFrag has several fields for setting parameters that depend on your experimental conditions during the MS acquisition. At first the parameters for the 
+The web tool of MetFrag has several fields for setting parameters that depend on your experimental conditions during the MS acquisition. For the <span style="color: red">beta</span> version of the web tool, which includes an <i>in silico</i> derivatised verions of the KEGG database, visit this <a href="/MetFrag/projects/metfragwebbeta">page</a>. At first the parameters for the 
 structure database query have to be defined under <span style="border-bottom: 1px black dotted;">Database Settings</span>. The structure database has to be selected that can be queried either by 
 a monoisotopic mass, a molecular formula or comma separated database dependent identifiers. The first has to be defined together with a mass deviation in ppm.
 
