@@ -18,11 +18,11 @@ a monoisotopic mass, a molecular formula or comma separated database dependent i
 </div>
 
 After setting the parameters for the database query the "Search upstream DB" button can be pushed to submit the database query.
-<div>
+<div style="padding: 10px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta1_dbsearch.png">
 </div>
 After a short processing time the number of candidates found in the database with the defined filter criteria is displayed.
-<div>
+<div style="padding: 10px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta2_commented.png">
 </div>
 Then the parameters for MetFrag processing have to be defined under the <span style="border-bottom: 1px black dotted;">MetFrag Settings</span>. This includes the ionisation mode as together 
@@ -33,10 +33,10 @@ Then MetFrag starts the <span style="font-style: italic;">in silico</span> fragm
 candidate, respectively. Finally, the score ranked list of candidates will be displayed after the processing has finshed successfully. Each row in this list includes the score, number of explained
 peaks, name, molecular formula, monoisotopic mass, image and database identifier of the candiate. Additionally, in the last column links are given to download or display the fragments
 assigned to the given mass peaks for specific candidate. The database identifier is a external link to the entry of the selected database.
-<div>
+<div style="padding: 10px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta3_commented.png">
 </div>
 <div style="padding-bottom:10px">The fragments view shows the assigned fragments for a specific candidate of the list.</div>
-<div>
+<div style="padding: 10px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta4.png">
 </div>
