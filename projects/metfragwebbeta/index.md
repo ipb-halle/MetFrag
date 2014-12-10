@@ -27,7 +27,7 @@ After a short processing time the number of candidates found in the database wit
 </div>
 Then the parameters for MetFrag processing have to be defined under the <span style="border-bottom: 1px black dotted;">MetFrag Settings</span>. This includes the ionisation mode as together 
 with the charge the data has been acquired. Additionally, the a relative and absolute mass deviation has to be defined with which <span style="font-style: italic;">in silico</span> generated
-fragments will be mapped to the experimental data defined in the "Peaks" text field. After all parameters are defined correctly, the button "Process all x compounds! START" has to be pushed to start
+fragments will be mapped to the experimental data defined in the "Peaks" text field. After all parameters are defined correctly, the button "Start MetFrag" has to be pushed to start
 the processing.<br> 
 Then MetFrag starts the <span style="font-style: italic;">in silico</span> fragmentation, the mapping of the fragments to the given mass peaks and the scoring for each retrieved
 candidate, respectively. Finally, the score ranked list of candidates will be displayed after the processing has finshed successfully. Each row in this list includes the score, number of explained
@@ -36,7 +36,7 @@ assigned to the given mass peaks for specific candidate. The database identifier
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta3_commented.png">
 </div>
-<div>The fragments view shows the assigned fragments for a specific candidate of the list.</div>
+<div>The fragments view shows the assigned fragments for a specific candidate of the list highlighted in blue color.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragweb/metfragbeta4.png">
 </div>
