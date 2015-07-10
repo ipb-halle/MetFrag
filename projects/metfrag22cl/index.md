@@ -20,7 +20,7 @@ After downloading the executable jar MetFrag can generally be run by
 </div>
 <p><p>
 <h4>Parameter file</h4>
-MetFrag2.2 CL needs a <span style="font-weight:bold">parameter file</span> of specific layout as input. The parameter file contains all necessary information for the processing of a given MS/MS peak list. An example parameter file can be downloaded <a class="btn btn-primary" href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a> and corresponding example <a class="btn btn-primary" href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">data</a> file containg the mz peak list is also needed.
+MetFrag2.2 CL needs a <span style="font-weight:bold">parameter file</span> of specific layout as input. The parameter file contains all necessary information for the processing of a given MS/MS peak list. An example parameter file can be downloaded <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a> and corresponding example <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">data</a> file containg the mz peak list is also needed.
 <p>
 To view the contents of the example file it can be opened with a text editor. Lines starting with # are comments and not used by MetFrag.
 <div class="code">
