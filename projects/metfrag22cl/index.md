@@ -77,20 +77,20 @@ A first example run can be realized by the following command:
 <p><p>
 You will get the following output:
 <div class="code">
-INFO  de.ipbhalle.metfraglib.database.OnlinePubChemDatabase - Fetching candidates from PubChem
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 8 candidate(s)
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 10 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 30 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 40 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 50 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 60 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 80 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 90 %
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 100 %
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) were discarded before processing due to pre-filtering
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded during processing due to errors
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 1 candidate(s) discarded after processing due to post-filtering
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate(s)
+INFO  de.ipbhalle.metfraglib.database.OnlinePubChemDatabase - Fetching candidates from PubChem<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 8 candidate(s)<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 10 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 30 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 40 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 50 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 60 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 80 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 90 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 100 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) were discarded before processing due to pre-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded during processing due to errors<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 1 candidate(s) discarded after processing due to post-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate(s)<br>
 </div>
 <p><p>
 First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
