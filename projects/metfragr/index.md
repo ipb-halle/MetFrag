@@ -17,7 +17,7 @@ role="button">Submit an issue</a>
 The R package enables functionalities from the MetFrag Commandline tool to be used within R prgramming language. 
 
 <h3>Install</h3>
-
+<h4>Local Install</h4>
 First, check out the MetFragR GitHub repository and build the package (on command line):
 <div class="code">
   <table>
@@ -33,6 +33,16 @@ After the succesful build turn into R and install the package:
 </table>
 </div>
  
+<h4>Net Install (over GitHub)</h4>
+The easiest way to install MetFragR is to use the GitHub link: 
+<div class="code">
+  <table>
+    <tr><td>library(devtools)</td><td>
+    <tr><td>install_github("c-ruttkies/MetFragR/metfRag")</td><td>
+    <tr><td>library(metfRag)</td><td>
+</table>
+</div>
+
 <h3>Example</h3>
 
 The following example shows how to run a simple MetFrag query in R.
