@@ -20,56 +20,65 @@ The R package enables functionalities from the MetFrag Commandline tool to be us
 
 - checkout the MetFragR git repository
 - build the package (on command line):
-
- R CMD check metfRag
- R CMD build metfRag
-
+<div class="code">
+  <table>
+    <tr><td>R CMD check metfRag</td><td>
+    <tr><td>R CMD build metfRag</td><td>
+</table>
+</div>
 - install the package (in R):
 
- install.packages("metfRag",repos=NULL,type="source")
- library(metfRag)
+<div class="code">
+  <table>
+    <tr><td>install.packages("metfRag",repos=NULL,type="source")</td><td>
+    <tr><td>library(metfRag)</td><td>
+</table>
+</div>
  
 <h3>Example</h3>
 
 The following example shows how to run a simple MetFrag query in R.
-
- #first define the settings object
- settingsObject<-list()
- #set database parameters to select candidates
- settingsObject[["DatabaseSearchRelativeMassDeviation"]]<-5.0
- settingsObject[["FragmentPeakMatchAbsoluteMassDeviation"]]<-0.001
- settingsObject[["FragmentPeakMatchRelativeMassDeviation"]]<-5.0
- settingsObject[["MetFragDatabaseType"]]<-"PubChem"
- #the more information about the precurosr is available
- #the more precise is the candidate selection
- settingsObject[["NeutralPrecursorMass"]]<-253.966126
- settingsObject[["NeutralPrecursorMolecularFormula"]]<-"C7H5Cl2FN2O3"
- settingsObject[["PrecursorCompoundIDs"]]<-c("50465", "57010914", "56974741", "88419651", "23354334")
- #define the peaklist as 2-dimensional matrix
- settingsObject[["PeakList"]]<-matrix(c(
- 90.97445, 681,
- 106.94476, 274,
- 110.02750, 110,
- 115.98965, 95,
- 117.98540, 384,
- 124.93547, 613,
- 124.99015, 146,
- 125.99793, 207,
- 133.95592, 777,
- 143.98846, 478,
- 144.99625, 352,
- 146.00410, 999,
- 151.94641, 962,
- 160.96668, 387,
- 163.00682, 782,
- 172.99055, 17,
- 178.95724, 678,
- 178.97725, 391,
- 180.97293, 999,
- 196.96778, 720,
- 208.96780, 999,
- 236.96245, 999,
- 254.97312, 999), ncol=2, byrow=TRUE)
- #run MetFrag
- scored.candidates<-run.metfrag(settingsObject)
- #scored.candidates is a data.frame with scores and candidate properties 
+<div class="code">
+  <table>
+ <tr><td>#first define the settings object</td><td>
+ <tr><td>settingsObject<-list()</td><td>
+ <tr><td>#set database parameters to select candidates</td><td>
+ <tr><td>settingsObject[["DatabaseSearchRelativeMassDeviation"]]<-5.0</td><td>
+ <tr><td>settingsObject[["FragmentPeakMatchAbsoluteMassDeviation"]]<-0.001</td><td>
+ <tr><td>settingsObject[["FragmentPeakMatchRelativeMassDeviation"]]<-5.0</td><td>
+ <tr><td>settingsObject[["MetFragDatabaseType"]]<-"PubChem"</td><td>
+ <tr><td>#the more information about the precurosr is available</td><td>
+ <tr><td>#the more precise is the candidate selection</td><td>
+ <tr><td>settingsObject[["NeutralPrecursorMass"]]<-253.966126</td><td>
+ <tr><td>settingsObject[["NeutralPrecursorMolecularFormula"]]<-"C7H5Cl2FN2O3"</td><td>
+ <tr><td>settingsObject[["PrecursorCompoundIDs"]]<-c("50465", "57010914", "56974741", "88419651", "23354334")</td><td>
+ <tr><td>#define the peaklist as 2-dimensional matrix</td><td>
+ <tr><td>settingsObject[["PeakList"]]<-matrix(c(</td><td>
+ <tr><td>90.97445, 681,</td><td>
+ <tr><td>106.94476, 274,</td><td>
+ <tr><td>110.02750, 110,</td><td>
+ <tr><td>115.98965, 95,</td><td>
+ <tr><td>117.98540, 384,</td><td>
+ <tr><td>124.93547, 613,</td><td>
+ <tr><td>124.99015, 146,</td><td>
+ <tr><td>125.99793, 207,</td><td>
+ <tr><td>133.95592, 777,</td><td>
+ <tr><td>143.98846, 478,</td><td>
+ <tr><td>144.99625, 352,</td><td>
+ <tr><td>146.00410, 999,</td><td>
+ <tr><td>151.94641, 962,</td><td>
+ <tr><td>160.96668, 387,</td><td>
+ <tr><td>163.00682, 782,</td><td>
+ <tr><td>172.99055, 17,</td><td>
+ <tr><td>178.95724, 678,</td><td>
+ <tr><td>178.97725, 391,</td><td>
+ <tr><td>180.97293, 999,</td><td>
+ <tr><td>196.96778, 720,</td><td>
+ <tr><td>208.96780, 999,</td><td>
+ <tr><td>236.96245, 999,</td><td>
+ <tr><td>254.97312, 999), ncol=2, byrow=TRUE)</td><td>
+ <tr><td>#run MetFrag</td><td>
+ <tr><td>scored.candidates<-run.metfrag(settingsObject)</td><td>
+ <tr><td>#scored.candidates is a data.frame with scores and candidate properties </td><td>
+</table>
+</div>
