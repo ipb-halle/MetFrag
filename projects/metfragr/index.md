@@ -27,7 +27,6 @@ The R package enables functionalities from the MetFrag Commandline tool to be us
 </table>
 </div>
 - install the package (in R):
-
 <div class="code">
   <table>
     <tr><td>install.packages("metfRag",repos=NULL,type="source")</td><td>
@@ -40,19 +39,19 @@ The R package enables functionalities from the MetFrag Commandline tool to be us
 The following example shows how to run a simple MetFrag query in R.
 <div class="code">
   <table>
- <tr><td>#first define the settings object</td><td>
+ <tr><td style="font-weight: bold">#first define the settings object</td><td>
  <tr><td>settingsObject<-list()</td><td>
- <tr><td>#set database parameters to select candidates</td><td>
+ <tr><td style="font-weight: bold">#set database parameters to select candidates</td><td>
  <tr><td>settingsObject[["DatabaseSearchRelativeMassDeviation"]]<-5.0</td><td>
  <tr><td>settingsObject[["FragmentPeakMatchAbsoluteMassDeviation"]]<-0.001</td><td>
  <tr><td>settingsObject[["FragmentPeakMatchRelativeMassDeviation"]]<-5.0</td><td>
  <tr><td>settingsObject[["MetFragDatabaseType"]]<-"PubChem"</td><td>
- <tr><td>#the more information about the precurosr is available</td><td>
- <tr><td>#the more precise is the candidate selection</td><td>
+ <tr><td style="font-weight: bold">#the more information about the precurosr is available</td><td>
+ <tr><td style="font-weight: bold">#the more precise is the candidate selection</td><td>
  <tr><td>settingsObject[["NeutralPrecursorMass"]]<-253.966126</td><td>
  <tr><td>settingsObject[["NeutralPrecursorMolecularFormula"]]<-"C7H5Cl2FN2O3"</td><td>
  <tr><td>settingsObject[["PrecursorCompoundIDs"]]<-c("50465", "57010914", "56974741", "88419651", "23354334")</td><td>
- <tr><td>#define the peaklist as 2-dimensional matrix</td><td>
+ <tr><td style="font-weight: bold">#define the peaklist as 2-dimensional matrix</td><td>
  <tr><td>settingsObject[["PeakList"]]<-matrix(c(</td><td>
  <tr><td>90.97445, 681,</td><td>
  <tr><td>106.94476, 274,</td><td>
@@ -77,8 +76,8 @@ The following example shows how to run a simple MetFrag query in R.
  <tr><td>208.96780, 999,</td><td>
  <tr><td>236.96245, 999,</td><td>
  <tr><td>254.97312, 999), ncol=2, byrow=TRUE)</td><td>
- <tr><td>#run MetFrag</td><td>
+ <tr><td style="font-weight: bold">#run MetFrag</td><td>
  <tr><td>scored.candidates<-run.metfrag(settingsObject)</td><td>
- <tr><td>#scored.candidates is a data.frame with scores and candidate properties </td><td>
+ <tr><td style="font-weight: bold">#scored.candidates is a data.frame with scores and candidate properties </td><td>
 </table>
 </div>
