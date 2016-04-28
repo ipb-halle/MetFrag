@@ -14,13 +14,16 @@ role="button">Submit an issue</a>
 
 <hr>
 
-The R package enables functionalities from the MetFrag Commandline tool to be used within R prgramming language. 
+The R package enables functionalities from the MetFrag Commandline tool to be used within the R programming language. 
 
 <h3>Install</h3>
 <h4 style="padding-top: 10px">Local Install</h4>
 First, check out the MetFragR GitHub repository and build the package (on command line):
 <div class="code">
   <table>
+    <tr><td>git clone https://github.com/c-ruttkies/MetFragR.git</td><td>
+    <tr><td>cd MetFragR</td><td>
+    <tr><td></td><td>
     <tr><td>R CMD check metfRag</td><td>
     <tr><td>R CMD build metfRag</td><td>
 </table>
