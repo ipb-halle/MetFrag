@@ -10,6 +10,7 @@ nav:
 The new MetFrag commandline tool is available. It combines a more efficient fragmenter and functionalities to include additional information to score the retrieved candidates. The inclusion of retention time information from liquid chromatography and reference information is now possible.
 
 <a class="btn btn-primary" href="http://msbi.ipb-halle.de/~cruttkie/metfrag/MetFrag2.3-CL.jar" role="button">Download MetFrag CL</a>
+<a class="btn btn-primary" href="https://github.com/c-ruttkies/MetFragRelaunched" role="button">MetFrag CL on github</a>
 
 <hr>
 
