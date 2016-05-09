@@ -141,7 +141,7 @@ When defining pre-processing filters further parameters have to be defined:<br><
  <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
  <tr><td>ElementExclusionFilter</td><td>-</td><td>FilterExcludedElements</td></tr>
 </table><br>
-Examples:<br><br>
+<span style="font-weight: bold">Examples:</span><br><br>
 <div class="code">
 <table>
  <tr><td style="font-weight: bold">#</td></tr>
