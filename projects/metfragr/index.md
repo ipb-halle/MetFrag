@@ -112,9 +112,9 @@ The following example shows how to run a simple MetFrag query in R.
 </div>
 
 
-<h3>Candidates Filter</h3>
+<h3>Candidate Filters</h3>
 <h4 style="padding-top: 10px">Pre-pocessing Candidate Filters</h4>
-Filters can be defined to filter candidate prior to fragmentation. Following filters are available:<br>
+Filters can be defined to filter candidates prior to fragmentation. Following filters are available:<br>
 <table style="margin-left: 10px;">
  <tr><td>UnconnectedCompoundFilter</td><td>-</td><td>filter non-connected compounds (e.g. salts)</td></tr>
  <tr><td>IsotopeFilter</td><td>-</td><td>filter compounds containing non-standard isotopes</td></tr>
@@ -191,3 +191,35 @@ Defining multiple filters at once is possible:<br><br>
 </table>
 </div>
 </div>
+<h4 style="padding-top: 10px">Post-pocessing Candidate Filters</h4>
+Filters can be defined to filter candidates after fragmentation and scoring. Following filters are available:<br>
+<table style="margin-left: 10px;">
+ <tr><td>InChIKeyFilter</td><td>-</td><td>filter stereoisomers by comparing first part of compounds' InChIKeys</td></tr>
+ <tr><td></td><td></td><td>only the best-scored candidate remains in the result list</td></tr>
+</table><br>
+<h3>Candidate Scores</h3>
+MetFrag is able to include different scores used to calculate a final score which is used to rank candidates within the candidate list. Besides pre-defined scores database dependent scores can be defined. <br>
+<table style="margin-left: 10px;">
+ <tr><td>FragmenterScore</td><td>-</td><td>Uses intensities, m/z values and bond energies of fragment-peak-matches</td></tr>
+ <tr><td>SmartsSubstructureInclusionScore</td><td>-</td><td>Score candiates by presence of defined substructures</td></tr>
+ <tr><td>SmartsSubstructureExclusionScore</td><td>-</td><td>Score candiates by absence of defined substructures</td></tr>
+ <tr><td>SuspectListScore</td><td>-</td><td>Score candidates by presence in defined suspect list</td></tr>
+ <tr><td>RetentionTimeScore</td><td>-</td><td>Score candidate with retention time information</td></tr>
+ <tr><td>OfflineMetFusionScore</td><td>-</td><td>Uses predifined spectral library to calculate MetFusion like similarity score</td></tr>
+</table><br>
+When defining additional scores further parameters need to be defined:<br><br>
+<table style="margin-left: 10px;">
+ <tr><td>SmartsSubstructureInclusionScore</td><td>-</td><td>ScoreSmartsInclusionList</td></tr>
+ <tr><td>SmartsSubstructureExclusionScore</td><td>-</td><td>ScoreSmartsExclusionList</td></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td>SuspectListScore</td><td>-</td><td>ScoreSuspectLists</td></tr>
+ <tr><td></td><td></td><td>File path of file containing InChIKeys of suspect list one per line</td></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td>RetentionTimeScore</td><td>-</td><td>RetentionTimeTrainingFile, ExperimentalRetentionTimeValue</td></tr>
+ <tr><td></td><td></td><td>RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
+ <tr><td></td><td></td><td>e.g.:</td></tr>
+ <tr><td></td><td></td><td>RetentionTime|InChI</td></tr>
+ <tr><td></td><td></td><td>14.7|InChI=1S/C10H6F17O4P/c11-3(12,1-2-31-32(28,29)30)4(13,14)5(15,16)6(17,18)7(19,20)8(21,22)9(23,24)10(25,26)27/h1-2H2,(H2,28,29,30)</td></tr>
+ <tr><td></td><td></td><td>7.7|InChI=1S/C14H21NO5S/c1-4-11-7-6-8-12(5-2)14(11)15(10-20-3)13(16)9-21(17,18)19/h6-8H,4-5,9-10H2,1-3H3,(H,17,18,19)</td></tr>
+ <tr><td></td><td></td><td>4.8|InChI=1S/C16H25NO2/c1-17(2)12-15(13-6-8-14(18)9-7-13)16(19)10-4-3-5-11-16/h6-9,15,18-19H,3-5,10-12H2,1-2H3</td></tr><tr><td></td><td></td><td>...</td></tr>
+</table><br>
