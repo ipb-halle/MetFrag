@@ -212,13 +212,13 @@ When defining additional scores further parameters need to be defined:<br><br>
  <tr><td>SmartsSubstructureExclusionScore</td><td>-</td><td>ScoreSmartsExclusionList</td></tr>
  <tr><td></td><td></td><td></td></tr>
  <tr><td>SuspectListScore</td><td>-</td><td>ScoreSuspectLists</td></tr>
- <tr><td></td><td></td><td>File path of file containing InChIKeys of suspect list one per line</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">File path of file containing InChIKeys of suspect list one per line</td></tr>
  <tr><td></td><td></td><td></td></tr>
  <tr><td>RetentionTimeScore</td><td>-</td><td>RetentionTimeTrainingFile, ExperimentalRetentionTimeValue</td></tr>
- <tr><td></td><td></td><td>RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
- <tr><td></td><td></td><td>e.g.:</td></tr>
- <tr><td></td><td></td><td>RetentionTime|InChI</td></tr>
- <tr><td></td><td></td><td>14.7|InChI=1S/C10H6F17O4P/c11-3(12,1-2-31-32(28,29)30)4(13,14)5(15,16)6(17,18)7(19,20)8(21,22)9(23,24)10(25,26)27/h1-2H2,(H2,28,29,30)</td></tr>
- <tr><td></td><td></td><td>7.7|InChI=1S/C14H21NO5S/c1-4-11-7-6-8-12(5-2)14(11)15(10-20-3)13(16)9-21(17,18)19/h6-8H,4-5,9-10H2,1-3H3,(H,17,18,19)</td></tr>
- <tr><td></td><td></td><td>4.8|InChI=1S/C16H25NO2/c1-17(2)12-15(13-6-8-14(18)9-7-13)16(19)10-4-3-5-11-16/h6-9,15,18-19H,3-5,10-12H2,1-2H3</td></tr><tr><td></td><td></td><td>...</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">e.g.:</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">RetentionTime|InChI</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">14.7|InChI=1S/C10H6F17O4P/c11-3(12,1-2-31-32(28,29)30)4(13,14)5(15,16)6(17,18)7(19,20)8(21,22)9(23,24)10(25,26)27/h1-2H2,(H2,28,29,30)</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">7.7|InChI=1S/C14H21NO5S/c1-4-11-7-6-8-12(5-2)14(11)15(10-20-3)13(16)9-21(17,18)19/h6-8H,4-5,9-10H2,1-3H3,(H,17,18,19)</td></tr>
+ <tr><td></td><td></td><td style="paddin-left: 10px">4.8|InChI=1S/C16H25NO2/c1-17(2)12-15(13-6-8-14(18)9-7-13)16(19)10-4-3-5-11-16/h6-9,15,18-19H,3-5,10-12H2,1-2H3</td></tr><tr><td></td><td></td><td>...</td></tr>
 </table><br>
