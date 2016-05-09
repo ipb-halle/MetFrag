@@ -116,6 +116,9 @@ The following example shows how to run a simple MetFrag query in R.
 <h4 style="padding-top: 10px">Pre-pocessing Candidate Filters</h4>
 Filters can be defined to filter candidate prior to fragmentation. Following filters are available:
 <table>
+ <tr><td>UnconnectedCompoundFilter</td><td>-</td><td>filter non-connected compounds (e.g. salts)</td></tr>
+ <tr><td>IsotopeFilter</td><td>-</td><td>filter compounds containing non-standard isotopes</td></tr>
+ <tr><td></td><td></td><td></td></tr>
  <tr><td>MinimumElementsFilter</td><td>-</td><td>filter by minimum of contained elements</td></tr>
  <tr><td>MaximumElementsFilter</td><td>-</td><td>filter by maximum of contained elements</td></tr>
  <tr><td></td><td></td><td></td></tr>
@@ -126,7 +129,19 @@ Filters can be defined to filter candidate prior to fragmentation. Following fil
  <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
  <tr><td>ElementExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
 </table>
-
+When defining pre-processing filters further parameters have to be defined:
+<table>
+ <tr><td>MinimumElementsFilter</td><td>-</td><td>FilterMinimumElements</td></tr>
+ <tr><td>MaximumElementsFilter</td><td>-</td><td>FilterMaximumElements</td></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td>SmartsSubstructureInclusionFilter</td><td>-</td><td>SmartsSubstructureInclusionScoreSmartsList</td></tr>
+ <tr><td>SmartsSubstructureExclusionFilter</td><td>-</td><td>SmartsSubstructureExclusionScoreSmartsList</td></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td>ElementInclusionFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
+ <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
+ <tr><td>ElementExclusionFilter</td><td>-</td><td>FilterExcludedElements</td></tr>
+</table>
+Examples:
 <div class="code">
 
 </div>
