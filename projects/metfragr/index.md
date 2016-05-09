@@ -198,6 +198,8 @@ Filters can be defined to filter candidates after fragmentation and scoring. Fol
 </table><br>
 <h3>Candidate Scores</h3>
 MetFrag is able to include different scores used to calculate a final score which is used to rank candidates within the candidate list. Besides pre-defined scores database dependent scores can be defined. <br>
+For each additional defined score a weight needs to be defined used to calculate the final score for each candidate.<br>
+<h4>Candidate Scores</h4>
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">FragmenterScore</td><td>-</td><td>Uses intensities, m/z values and bond energies of fragment-peak-matches</td></tr>
  <tr><td style="font-weight: bold;">SmartsSubstructureInclusionScore</td><td>-</td><td>Score candiates by presence of defined substructures</td></tr>
@@ -222,3 +224,19 @@ When defining additional scores further parameters need to be defined:<br><br>
  <tr><td></td><td></td><td style="padding-left: 10px">7.7|InChI=1S/C14H21NO5S/c1-4-11-7-6-8-12(5-2)14(11)15(10-20-3)13(16)9-21(17,18)19/h6-8H,4-5,9-10H2,1-3H3,(H,17,18,19)</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px">4.8|InChI=1S/C16H25NO2/c1-17(2)12-15(13-6-8-14(18)9-7-13)16(19)10-4-3-5-11-16/h6-9,15,18-19H,3-5,10-12H2,1-2H3</td></tr><tr><td></td><td></td><td>...</td></tr>
 </table><br>
+<h4>Database Dependent Scores</h4>
+Dependent on the used database different scores. When using local file databases any score defined as candidate property can be used as scoring term.<br>
+Following scoring terms are pre-defined for available databases:
+<table style="margin-left: 10px;">
+ <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
+ <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount </td></tr>
+</table><br>
+<h4>Examples</h4>
+<div class="code">
+<table>
+ <tr><td>settingsObject[["MetFragScoreTypes"]]<-c("FragmenterScore","ScoreSmartsInclusionList","RetentionTimeScore")</td></tr>
+ <tr><td>settingsObject[["FilterMinimumElements"]]<-c("[OX2H]","c1cccc1")</td></tr>
+ <tr><td>settingsObject[["RetentionTimeTrainingFile"]]<-"C:/Documents/RetentionTimeFile.txt"</td></tr>
+ <tr><td>settingsObject[["RetentionTimeTrainingFile"]]<-c(1.0,0.5,0.5)</td></tr>
+</table><br>
+</div>
