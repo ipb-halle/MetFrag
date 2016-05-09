@@ -180,5 +180,12 @@ When defining pre-processing filters further parameters have to be defined:<br><
  <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("ElementExclusionFilter")</td></tr>
  <tr><td style="font-weight: bold"># filter out compounds including bromine or chlorine</td></tr>
  <tr><td>settingsObject[["FilterExcludedElements"]]<-c("Cl","Br")</td></tr>
+</table><br>
+Defining multiple filters at once is possible:<br><br>
+<table>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("MinimumElementsFilter", "MaximumElementsFilter")</td></tr>
+ <tr><td>settingsObject[["FilterMinimumElements"]]<-"N2O3"</td></tr>
+ <tr><td>settingsObject[["FilterMinimumElements"]]<-"N5O7"</td></tr>
 </table>
+
 </div>
