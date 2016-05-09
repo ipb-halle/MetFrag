@@ -234,8 +234,8 @@ Following scoring terms are pre-defined for available databases:
 <h4>Examples</h4>
 <div class="code">
 <table>
- <tr><td>settingsObject[["MetFragScoreTypes"]]<-c("FragmenterScore","ScoreSmartsInclusionList","RetentionTimeScore")</td></tr>
- <tr><td>settingsObject[["FilterMinimumElements"]]<-c("[OX2H]","c1cccc1")</td></tr>
+ <tr><td>settingsObject[["MetFragScoreTypes"]]<-c("FragmenterScore","SmartsSubstructureInclusionScore","RetentionTimeScore")</td></tr>
+ <tr><td>settingsObject[["ScoreSmartsInclusionList"]]<-c("[OX2H]","c1cccc1")</td></tr>
  <tr><td>settingsObject[["RetentionTimeTrainingFile"]]<-"C:/Documents/RetentionTimeFile.txt"</td></tr>
  <tr><td>settingsObject[["MetFragScoreWeights"]]<-c(1.0,0.5,0.5)</td></tr>
 </table><br>
