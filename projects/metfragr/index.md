@@ -143,5 +143,42 @@ When defining pre-processing filters further parameters have to be defined:
 </table>
 Examples:
 <div class="code">
-
+<table>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># MinimumElementsFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("MinimumElementsFilter")</td></tr>
+ <tr><td style="font-weight: bold"># include compounds with at least 2 nitrogens and 3 oxygens</td></tr>
+ <tr><td>settingsObject[["FilterMinimumElements"]]<-"N2O3"</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># MaximumElementsFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("MaximumElementsFilter")</td></tr>
+ <tr><td style="font-weight: bold"># filter out compounds with at maximum 5 nitrogens and 7 oxygens</td></tr>
+ <tr><td>settingsObject[["FilterMinimumElements"]]<-"N5O7"</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># SmartsSubstructureInclusionFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("SmartsSubstructureInclusionFilter")</td></tr>
+ <tr><td style="font-weight: bold"># include compounds containing benzene</td></tr>
+ <tr><td>settingsObject[["SmartsSubstructureInclusionScoreSmartsList"]]<-c("c1ccccc1")</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># SmartsSubstructureExclusionFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("SmartsSubstructureExclusionFilter")</td></tr>
+ <tr><td style="font-weight: bold"># filter out compounds containing hydroxyl groups</td></tr>
+ <tr><td>settingsObject[["SmartsSubstructureInclusionScoreSmartsList"]]<-c("[OX2H]")</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># ElementInclusionFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("ElementInclusionFilter")</td></tr>
+ <tr><td style="font-weight: bold"># include compounds containing nitrogen and oxygen</td></tr>
+ <tr><td>settingsObject[["FilterIncludedElements"]]<-c("N","O")</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># ElementExclusionFilter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("ElementExclusionFilter")</td></tr>
+ <tr><td style="font-weight: bold"># filter out compounds including bromine or chlorine</td></tr>
+ <tr><td>settingsObject[["FilterExcludedElements"]]<-c("Cl","Br")</td></tr>
+</table>
 </div>
