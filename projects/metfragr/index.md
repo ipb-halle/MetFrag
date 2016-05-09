@@ -116,30 +116,30 @@ The following example shows how to run a simple MetFrag query in R.
 <h4 style="padding-top: 10px">Pre-pocessing Candidate Filters</h4>
 Filters can be defined to filter candidates prior to fragmentation. Following filters are available:<br>
 <table style="margin-left: 10px;">
- <tr><td>UnconnectedCompoundFilter</td><td>-</td><td>filter non-connected compounds (e.g. salts)</td></tr>
- <tr><td>IsotopeFilter</td><td>-</td><td>filter compounds containing non-standard isotopes</td></tr>
+ <tr><td style="font-weight: bold;">UnconnectedCompoundFilter</td><td>-</td><td>filter non-connected compounds (e.g. salts)</td></tr>
+ <tr><td style="font-weight: bold;">IsotopeFilter</td><td>-</td><td>filter compounds containing non-standard isotopes</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>MinimumElementsFilter</td><td>-</td><td>filter by minimum of contained elements</td></tr>
- <tr><td>MaximumElementsFilter</td><td>-</td><td>filter by maximum of contained elements</td></tr>
+ <tr><td style="font-weight: bold;">MinimumElementsFilter</td><td>-</td><td>filter by minimum of contained elements</td></tr>
+ <tr><td style="font-weight: bold;">MaximumElementsFilter</td><td>-</td><td>filter by maximum of contained elements</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>SmartsSubstructureInclusionFilter</td><td>-</td><td>filter by presence of defined sub-structures</td></tr>
- <tr><td>SmartsSubstructureExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureInclusionFilter</td><td>-</td><td>filter by presence of defined sub-structures</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>ElementInclusionFilter</td><td>-</td><td>filter by presence of defined elements (other elements are allowed)</td></tr>
- <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
- <tr><td>ElementExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
+ <tr><td style="font-weight: bold;">ElementInclusionFilter</td><td>-</td><td>filter by presence of defined elements (other elements are allowed)</td></tr>
+ <tr><td style="font-weight: bold;">ElementInclusionExclusiveFilter</td><td>-</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
+ <tr><td style="font-weight: bold;">ElementExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
 </table><br>
 When defining pre-processing filters further parameters have to be defined:<br><br>
 <table style="margin-left: 10px;">
- <tr><td>MinimumElementsFilter</td><td>-</td><td>FilterMinimumElements</td></tr>
- <tr><td>MaximumElementsFilter</td><td>-</td><td>FilterMaximumElements</td></tr>
+ <tr><td style="font-weight: bold;">MinimumElementsFilter</td><td>-</td><td>FilterMinimumElements</td></tr>
+ <tr><td style="font-weight: bold;">MaximumElementsFilter</td><td>-</td><td>FilterMaximumElements</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>SmartsSubstructureInclusionFilter</td><td>-</td><td>SmartsSubstructureInclusionScoreSmartsList</td></tr>
- <tr><td>SmartsSubstructureExclusionFilter</td><td>-</td><td>SmartsSubstructureExclusionScoreSmartsList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureInclusionFilter</td><td>-</td><td>SmartsSubstructureInclusionScoreSmartsList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureExclusionFilter</td><td>-</td><td>SmartsSubstructureExclusionScoreSmartsList</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>ElementInclusionFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
- <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
- <tr><td>ElementExclusionFilter</td><td>-</td><td>FilterExcludedElements</td></tr>
+ <tr><td style="font-weight: bold;">ElementInclusionFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
+ <tr><td style="font-weight: bold;">ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
+ <tr><td style="font-weight: bold;">ElementExclusionFilter</td><td>-</td><td>FilterExcludedElements</td></tr>
 </table><br>
 <span style="font-weight: bold">Examples:</span><br><br>
 <div class="code">
@@ -193,28 +193,28 @@ Defining multiple filters at once is possible:<br><br>
 <h4 style="padding-top: 10px">Post-pocessing Candidate Filters</h4>
 Filters can be defined to filter candidates after fragmentation and scoring. Following filters are available:<br>
 <table style="margin-left: 10px;">
- <tr><td>InChIKeyFilter</td><td>-</td><td>filter stereoisomers by comparing first part of compounds' InChIKeys</td></tr>
+ <tr><td style="font-weight: bold;">InChIKeyFilter</td><td>-</td><td>filter stereoisomers by comparing first part of compounds' InChIKeys</td></tr>
  <tr><td></td><td></td><td>only the best-scored candidate remains in the result list</td></tr>
 </table><br>
 <h3>Candidate Scores</h3>
 MetFrag is able to include different scores used to calculate a final score which is used to rank candidates within the candidate list. Besides pre-defined scores database dependent scores can be defined. <br>
 <table style="margin-left: 10px;">
- <tr><td>FragmenterScore</td><td>-</td><td>Uses intensities, m/z values and bond energies of fragment-peak-matches</td></tr>
- <tr><td>SmartsSubstructureInclusionScore</td><td>-</td><td>Score candiates by presence of defined substructures</td></tr>
- <tr><td>SmartsSubstructureExclusionScore</td><td>-</td><td>Score candiates by absence of defined substructures</td></tr>
- <tr><td>SuspectListScore</td><td>-</td><td>Score candidates by presence in defined suspect list</td></tr>
- <tr><td>RetentionTimeScore</td><td>-</td><td>Score candidate with retention time information</td></tr>
- <tr><td>OfflineMetFusionScore</td><td>-</td><td>Uses predifined spectral library to calculate MetFusion like similarity score</td></tr>
+ <tr><td style="font-weight: bold;">FragmenterScore</td><td>-</td><td>Uses intensities, m/z values and bond energies of fragment-peak-matches</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureInclusionScore</td><td>-</td><td>Score candiates by presence of defined substructures</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureExclusionScore</td><td>-</td><td>Score candiates by absence of defined substructures</td></tr>
+ <tr><td style="font-weight: bold;">SuspectListScore</td><td>-</td><td>Score candidates by presence in defined suspect list</td></tr>
+ <tr><td style="font-weight: bold;">RetentionTimeScore</td><td>-</td><td>Score candidate with retention time information</td></tr>
+ <tr><td style="font-weight: bold;">OfflineMetFusionScore</td><td>-</td><td>Uses predifined spectral library to calculate MetFusion like similarity score</td></tr>
 </table><br>
 When defining additional scores further parameters need to be defined:<br><br>
 <table style="margin-left: 10px;">
- <tr><td>SmartsSubstructureInclusionScore</td><td>-</td><td>ScoreSmartsInclusionList</td></tr>
- <tr><td>SmartsSubstructureExclusionScore</td><td>-</td><td>ScoreSmartsExclusionList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureInclusionScore</td><td>-</td><td>ScoreSmartsInclusionList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureExclusionScore</td><td>-</td><td>ScoreSmartsExclusionList</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>SuspectListScore</td><td>-</td><td>ScoreSuspectLists</td></tr>
+ <tr><td style="font-weight: bold;">SuspectListScore</td><td>-</td><td>ScoreSuspectLists</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px">File path of file containing InChIKeys of suspect list one per line</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td>RetentionTimeScore</td><td>-</td><td>RetentionTimeTrainingFile, ExperimentalRetentionTimeValue</td></tr>
+ <tr><td style="font-weight: bold;">RetentionTimeScore</td><td>-</td><td>RetentionTimeTrainingFile, ExperimentalRetentionTimeValue</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px">RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px">e.g.:</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px">RetentionTime|InChI</td></tr>
