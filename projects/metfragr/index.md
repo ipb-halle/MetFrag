@@ -50,27 +50,33 @@ The easiest way to install MetFragR is to use the GitHub link:
 The following example shows how to run a simple MetFrag query in R.
 <div class="code">
   <table>
- <tr><td style="font-weight: bold">#</td><td>
+ <tr><td style="font-weight: bold">#</td></tr>
  <tr><td style="font-weight: bold"># first define the settings object</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td>settingsObject<-list()</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td style="font-weight: bold"># set database parameters to select candidates</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td>settingsObject[["DatabaseSearchRelativeMassDeviation"]]<-5.0</td><td>
- <tr><td>settingsObject[["FragmentPeakMatchAbsoluteMassDeviation"]]<-0.001</td><td>
- <tr><td>settingsObject[["FragmentPeakMatchRelativeMassDeviation"]]<-5.0</td><td>
- <tr><td>settingsObject[["MetFragDatabaseType"]]<-"PubChem"</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td style="font-weight: bold"># the more information about the precurosr is available</td><td>
- <tr><td style="font-weight: bold"># the more precise is the candidate selection</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td>settingsObject[["NeutralPrecursorMass"]]<-253.966126</td><td>
- <tr><td>settingsObject[["NeutralPrecursorMolecularFormula"]]<-"C7H5Cl2FN2O3"</td><td>
- <tr><td>settingsObject[["PrecursorCompoundIDs"]]<-c("50465", "57010914", "56974741", "88419651", "23354334")</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td style="font-weight: bold"># define the peaklist as 2-dimensional matrix</td><td>
- <tr><td style="font-weight: bold">#</td><td>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject<-list()</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># set database parameters to select candidates</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["DatabaseSearchRelativeMassDeviation"]]<-5.0</td></tr>
+ <tr><td>settingsObject[["FragmentPeakMatchAbsoluteMassDeviation"]]<-0.001</td></tr>
+ <tr><td>settingsObject[["FragmentPeakMatchRelativeMassDeviation"]]<-5.0</td></tr>
+ <tr><td>settingsObject[["MetFragDatabaseType"]]<-"PubChem"</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># the more information about the precurosr is available</td></tr>
+ <tr><td style="font-weight: bold"># the more precise is the candidate selection</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>settingsObject[["NeutralPrecursorMass"]]<-253.966126</td></tr>
+ <tr><td>settingsObject[["NeutralPrecursorMolecularFormula"]]<-"C7H5Cl2FN2O3"</td></tr>
+ <tr><td>settingsObject[["PrecursorCompoundIDs"]]<-c("50465", "57010914", "56974741", "88419651", "23354334")</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># pre and post-processing filter</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># define filters to filter unconnected compounds (e.g. salts)</td></tr>
+ <tr><td>settingsObject[["MetFragPreProcessingCandidateFilter"]]<-c("UnconnectedCompoundFilter","IsotopeFilter")</td></tr>
+ <tr><td>settingsObject[["MetFragPostProcessingCandidateFilter"]]<-c("InChIKeyFilter")</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># define the peaklist as 2-dimensional matrix</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
  <tr><td>settingsObject[["PeakList"]]<-matrix(c(</td><td>
  <tr><td>90.97445, 681,</td><td>
  <tr><td>106.94476, 274,</td><td>
@@ -94,13 +100,33 @@ The following example shows how to run a simple MetFrag query in R.
  <tr><td>196.96778, 720,</td><td>
  <tr><td>208.96780, 999,</td><td>
  <tr><td>236.96245, 999,</td><td>
- <tr><td>254.97312, 999), ncol=2, byrow=TRUE)</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td style="font-weight: bold"># run MetFrag</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td>scored.candidates<-run.metfrag(settingsObject)</td><td>
- <tr><td style="font-weight: bold">#</td><td>
- <tr><td style="font-weight: bold"># scored.candidates is a data.frame with scores and candidate properties </td><td>
- <tr><td style="font-weight: bold">#</td><td>
+ <tr><td>254.97312, 999), ncol=2, byrow=TRUE)</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># run MetFrag</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td>scored.candidates<-run.metfrag(settingsObject)</td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
+ <tr><td style="font-weight: bold"># scored.candidates is a data.frame with scores and candidate properties </td></tr>
+ <tr><td style="font-weight: bold">#</td></tr>
 </table>
+</div>
+
+
+<h3>Candidates Filter</h3>
+<h4 style="padding-top: 10px">Pre-pocessing Candidate Filters</h4>
+Filters can be defined to filter candidate prior to fragmentation. Following filters are available:
+<table>
+ <tr><td>MinimumElementsFilter</td><td>filter by minimum of contained elements</td></tr>
+ <tr><td>MaximumElementsFilter</td><td>filter by maximum of contained elements</td></tr>
+ <tr><td></td><td></td></tr>
+ <tr><td>SmartsSubstructureInclusionFilter</td><td>filter by presence of defined sub-structures</td></tr>
+ <tr><td>SmartsSubstructureExclusionFilter</td><td>filter by absence of defined sub-structures</td></tr>
+ <tr><td></td><td></td></tr>
+ <tr><td>ElementInclusionFilter</td><td>filter by presence of defined elements (other elements are allowed)</td></tr>
+ <tr><td>ElementInclusionExclusiveFilter</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
+ <tr><td>ElementExclusionFilter</td><td>filter by absence of defined sub-structures</td></tr>
+</table>
+
+<div class="code">
+
 </div>
