@@ -116,15 +116,15 @@ The following example shows how to run a simple MetFrag query in R.
 <h4 style="padding-top: 10px">Pre-pocessing Candidate Filters</h4>
 Filters can be defined to filter candidate prior to fragmentation. Following filters are available:
 <table>
- <tr><td>MinimumElementsFilter</td><td></td><td>filter by minimum of contained elements</td></tr>
- <tr><td>MaximumElementsFilter</td><td></td><td>filter by maximum of contained elements</td></tr>
+ <tr><td>MinimumElementsFilter</td><td>-</td><td>filter by minimum of contained elements</td></tr>
+ <tr><td>MaximumElementsFilter</td><td>-</td><td>filter by maximum of contained elements</td></tr>
  <tr><td></td><td></td></tr>
- <tr><td>SmartsSubstructureInclusionFilter</td><td></td><td>filter by presence of defined sub-structures</td></tr>
- <tr><td>SmartsSubstructureExclusionFilter</td><td></td><td>filter by absence of defined sub-structures</td></tr>
+ <tr><td>SmartsSubstructureInclusionFilter</td>-<td></td><td>filter by presence of defined sub-structures</td></tr>
+ <tr><td>SmartsSubstructureExclusionFilter</td>-<td></td><td>filter by absence of defined sub-structures</td></tr>
  <tr><td></td><td></td></tr>
- <tr><td>ElementInclusionFilter</td><td></td><td>filter by presence of defined elements (other elements are allowed)</td></tr>
- <tr><td>ElementInclusionExclusiveFilter</td><td></td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
- <tr><td>ElementExclusionFilter</td><td></td><td>filter by absence of defined sub-structures</td></tr>
+ <tr><td>ElementInclusionFilter</td><td>-</td><td>filter by presence of defined elements (other elements are allowed)</td></tr>
+ <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
+ <tr><td>ElementExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
 </table>
 
 <div class="code">
