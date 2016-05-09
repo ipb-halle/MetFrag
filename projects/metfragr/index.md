@@ -129,7 +129,7 @@ Filters can be defined to filter candidate prior to fragmentation. Following fil
  <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>filter by presence of defined elements (no other elements are allowed)</td></tr>
  <tr><td>ElementExclusionFilter</td><td>-</td><td>filter by absence of defined sub-structures</td></tr>
 </table><br>
-When defining pre-processing filters further parameters have to be defined:<br>
+When defining pre-processing filters further parameters have to be defined:<br><br>
 <table>
  <tr><td>MinimumElementsFilter</td><td>-</td><td>FilterMinimumElements</td></tr>
  <tr><td>MaximumElementsFilter</td><td>-</td><td>FilterMaximumElements</td></tr>
@@ -141,7 +141,7 @@ When defining pre-processing filters further parameters have to be defined:<br>
  <tr><td>ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
  <tr><td>ElementExclusionFilter</td><td>-</td><td>FilterExcludedElements</td></tr>
 </table><br>
-Examples:<br>
+Examples:<br><br>
 <div class="code">
 <table>
  <tr><td style="font-weight: bold">#</td></tr>
