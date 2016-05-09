@@ -241,3 +241,11 @@ Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScor
  <tr><td>settingsObject[["MetFragScoreWeights"]]<-c(1.0,0.5,0.5)</td></tr>
 </table><br>
 </div>
+Defining FragmenterScore and database dependent soring terms for ExtendedPubChem database.<br><br>
+<div class="code">
+<table>
+ <tr><td>settingsObject[["MetFragDatabaseType"]]<-c("ExtendedPubChem")</td></tr>
+ <tr><td>settingsObject[["MetFragScoreTypes"]]<-c("FragmenterScore","PubChemNumberPatents","PubChemNumberPubMedReferences")</td></tr>
+ <tr><td>settingsObject[["MetFragScoreWeights"]]<-c(1.0,0.5,0.5)</td></tr>
+</table><br>
+</div>
