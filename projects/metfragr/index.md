@@ -196,7 +196,6 @@ Filters can be defined to filter candidates after fragmentation and scoring. Fol
  <tr><td>InChIKeyFilter</td><td>-</td><td>filter stereoisomers by comparing first part of compounds' InChIKeys</td></tr>
  <tr><td></td><td></td><td>only the best-scored candidate remains in the result list</td></tr>
 </table><br>
-
 <h3>Candidate Scores</h3>
 MetFrag is able to include different scores used to calculate a final score which is used to rank candidates within the candidate list. Besides pre-defined scores database dependent scores can be defined. <br>
 <table style="margin-left: 10px;">
