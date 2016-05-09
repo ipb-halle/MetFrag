@@ -196,7 +196,7 @@ Filters can be defined to filter candidates after fragmentation and scoring. Fol
  <tr><td style="font-weight: bold;">InChIKeyFilter</td><td>-</td><td>filter stereoisomers by comparing first part of compounds' InChIKeys</td></tr>
  <tr><td></td><td></td><td>only the best-scored candidate remains in the result list</td></tr>
 </table><br>
-<h3>Candidate Scores</h3>
+<h3>Pre-defined Candidate Scores</h3>
 MetFrag is able to include different scores used to calculate a final score which is used to rank candidates within the candidate list. Besides pre-defined scores database dependent scores can be defined. For each additional defined score a weight needs to be defined used to calculate the final score for each candidate.<br>
 <h4>Candidate Scores</h4>
 <table style="margin-left: 10px;">
@@ -225,7 +225,7 @@ When defining additional scores further parameters need to be defined:<br><br>
 </table><br>
 <h4>Database Dependent Scores</h4>
 Dependent on the used database different scores. When using local file databases any score defined as candidate property can be used as scoring term.<br>
-Following scoring terms are pre-defined for available databases:<br>
+Following scoring terms are pre-defined for available databases:<br><br>
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
  <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount </td></tr>
