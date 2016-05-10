@@ -213,23 +213,22 @@ When defining additional scores further parameters need to be defined:<br><br>
  <tr><td style="font-weight: bold;">SmartsSubstructureExclusionScore</td><td>-</td><td>ScoreSmartsExclusionList</td></tr>
  <tr><td></td><td></td><td></td></tr>
  <tr><td style="font-weight: bold;">SuspectListScore</td><td>-</td><td>ScoreSuspectLists</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">File path of file containing InChIKeys of suspect list one per line</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- File path of file containing InChIKeys of suspect list one per line</td></tr>
  <tr><td></td><td></td><td></td></tr>
  <tr><td style="font-weight: bold;">RetentionTimeScore</td><td>-</td><td>RetentionTimeTrainingFile, ExperimentalRetentionTimeValue</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">e.g.:</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">RetentionTime|InChI</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">14.7|InChI=1S/C10H6F17O4P/c11-3(12,1-2-31-32(28,29)30)4(13,14)5(15,16)6(17,18)7(19,20)8(21,22)9(23,24)10(25,26)27/h1-2H2,(H2,28,29,30)</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">7.7|InChI=1S/C14H21NO5S/c1-4-11-7-6-8-12(5-2)14(11)15(10-20-3)13(16)9-21(17,18)19/h6-8H,4-5,9-10H2,1-3H3,(H,17,18,19)</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">4.8|InChI=1S/C16H25NO2/c1-17(2)12-15(13-6-8-14(18)9-7-13)16(19)10-4-3-5-11-16/h6-9,15,18-19H,3-5,10-12H2,1-2H3</td></tr>
- <tr><td></td><td></td><td style="padding-left: 10px">...</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- RetentionTimeTrainingFile is the file path of file containing retention time and InChI for logP calculation -> one per line</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- example file can be found <a href="RetentionTimeFile.csv">here</a></td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- mandatory columns are: RetentionTime, InChI or UserLogP</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- InChI is used to calculate logP values with models included within CDK</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px">- UserLogP (if defined) is used instead of InChI but has to be available within the candidate list as well</td></tr>
+ <tr><td></td><td></td><td style="padding-left: 10px; color: red">- RetentionTime values and ExperimentalRetentionTimeValue need to be acquired on the same system</td></tr>
 </table><br>
 <h4>Database Dependent Scores</h4>
 Dependent on the used database different scores. When using local file databases any score defined as candidate property can be used as scoring term.<br>
 Following scoring terms are pre-defined for available databases:<br><br>
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
- <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount </td></tr>
+ <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount</td></tr>
 </table><br>
 <h4>Examples</h4>
 Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScore together with necessary parameters.<br><br>
@@ -237,7 +236,7 @@ Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScor
 <table>
  <tr><td>settingsObject[["MetFragScoreTypes"]]<-c("FragmenterScore","SmartsSubstructureInclusionScore","RetentionTimeScore")</td></tr>
  <tr><td>settingsObject[["ScoreSmartsInclusionList"]]<-c("[OX2H]","c1cccc1")</td></tr>
- <tr><td>settingsObject[["RetentionTimeTrainingFile"]]<-"C:/Documents/RetentionTimeFile.txt"</td></tr>
+ <tr><td>settingsObject[["RetentionTimeTrainingFile"]]<-"C:/Documents/RetentionTimeFile.csv"</td></tr>
  <tr><td>settingsObject[["ExperimentalRetentionTimeValue"]]<-9.4</td></tr>
  <tr><td>settingsObject[["MetFragScoreWeights"]]<-c(1.0,0.5,0.5)</td></tr>
 </table><br>
