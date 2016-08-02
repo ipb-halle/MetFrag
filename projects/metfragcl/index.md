@@ -104,7 +104,8 @@ There are different databases available that can be queried for candidate molecu
 <il>ExtendedPubChem</il><br>
 <il>ChemSpider (only available with a valid token -> ChemSpiderToken)</il><br>
 <il>LocalSDF</il><br>
-<il>LocalInChI (<a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
+<il>LocalPSV (<a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
+<il>LocalCSV</il><br>
 </ul>
 If you use a local file database (LocalSDF, LocalInChI) you have to provide the path to the file database (LocalDatabasePath). The KEGG, PubChem and ChemSpider databases are queried either by <span style="font-weight:bold">database dependent compound ids (PrecursorCompoundIDs)</span>, <span style="font-weight:bold">molecular formula (NeutralPrecursorMolecularFormula)</span> or 
 <span style="font-weight:bold">neutral monoisotopic mass (NeutralPrecursorMass) together with a relative mass deviation (DatabaseSearchRelativeMassDeviation)</span> in the given order if more than one is defined. Next to PubChem there is also an extended PubChem database available that fetches patent (PubChemNumberPatents) and reference (PubChemNumberPubMedReferences) information for the retrieved candidates. These can then be used as an additional scoring term like the additional information that comes with a ChemSpider database query. These are the number of references (ChemSpiderReferenceCount), external references (ChemSpiderNumberExternalReferences), citations in Royal Society of Chemistry journals (ChemSpiderRSCCount), references in PubMed (ChemSpiderNumberPubMedReferences) and data sources (ChemSpiderDataSourceCount). 
@@ -118,6 +119,31 @@ To tell MetFrag which information you want to be included in the final scoring, 
  </table>
 </div>
 <p><p>
+<h4>Further Parameters</h4>
+<h5>PrecursorIonMode</h5>
+The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
+<br>positive (IsPositiveIonMode = True)</br>
+<ul>
+	<il>1 - [M+H]<sup>+</sup></il><br>
+	<il>18 - [M+NH4]+</il><br>
+	<il>23 - [M+Na]+</il><br>
+	<il>39 - [M+K]+</il><br>
+	<il>33 - [M+CH3OH+H]+</il><br>
+	<il>42 - [M+ACN+H]+</il><br>
+	<il>64 - [M+ACN+Na]+</il><br>
+	<il>83 - [M+2ACN+H]+</il><br>
+</ul>
+<br>negative (IsPositiveIonMode = False)</br>
+<ul>
+	<il>-1 - [M-H]-</il><br>
+	<il>35 - [M+Cl]-</il><br>
+	<il>45 - [M+HCOO]-</il><br>
+	<il>59 - [M+CH3COO]-</il><br>
+</ul>
+<br>no adduct (IsPositiveIonMode = True/False)</br>
+<ul>
+	<il>0 - [M]+/-</il><br>
+</ul>
 <h4>Known issues</h4>
 If you are getting the java exception when using the commandline version<p>
 <div class="code">
