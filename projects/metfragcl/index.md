@@ -124,7 +124,7 @@ To tell MetFrag which information you want to be included in the final scoring, 
 <span style="font-weight:italic">PrecursorIonMode</span>
 The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)</br>
-<table>
+<table class="params">
 	<tr><td>1</td><td>[M+H]<sup>+</sup></td></tr>
 	<tr><td>18</td><td>[M+NH4]<sup>+</sup></td></tr>
 	<tr><td>23</td><td>[M+Na]<sup>+</sup></td></tr>
