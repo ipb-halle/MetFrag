@@ -76,6 +76,10 @@ ul.news li:hover {
   background-color: #F5F8F8
 }
 
+table.params {
+  margin: 10px 0 0 10px;
+}
 
-
-
+table.params td {
+  padding: 10px 0 10px 0;
+}
