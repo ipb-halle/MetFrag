@@ -95,7 +95,8 @@ INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate
 </div>
 <p><p>
 First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
-The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter.
+The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter
+<p><p>
 <h4>Databases</h4>
 There are different databases available that can be queried for candidate molecules (MetFragDatabaseType)<p>
 <ul>
@@ -120,19 +121,19 @@ To tell MetFrag which information you want to be included in the final scoring, 
 </div>
 <p><p>
 <h4>Further Parameters</h4>
-<h5>PrecursorIonMode</h5>
+<span style="font-weight:italic">PrecursorIonMode</span>
 The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)</br>
-<ul>
-	<il>1 - [M+H]<sup>+</sup></il><br>
-	<il>18 - [M+NH4]+</il><br>
-	<il>23 - [M+Na]+</il><br>
-	<il>39 - [M+K]+</il><br>
-	<il>33 - [M+CH3OH+H]+</il><br>
-	<il>42 - [M+ACN+H]+</il><br>
-	<il>64 - [M+ACN+Na]+</il><br>
-	<il>83 - [M+2ACN+H]+</il><br>
-</ul>
+<table>
+	<tr><td>1</td><td>[M+H]<sup>+</sup></td></tr>
+	<tr><td>18</td><td>[M+NH4]<sup>+</sup></td></tr>
+	<tr><td>23</td><td>[M+Na]<sup>+</sup></td></tr>
+	<tr><td>39</td><td>[M+K]<sup>+</sup></td></tr>
+	<tr><td>33</td><td>[M+CH3OH+H]<sup>+</sup></td></tr>
+	<tr><td>42</td><td>[M+ACN+H]<sup>+</sup></td></tr>
+	<tr><td>64</td><td>[M+ACN+Na]<sup>+</sup></td></tr>
+	<tr><td>83</td><td>[M+2ACN+H]<sup>+</sup></td></tr>
+</table>
 <br>negative (IsPositiveIonMode = False)</br>
 <ul>
 	<il>-1 - [M-H]-</il><br>
