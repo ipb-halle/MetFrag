@@ -121,7 +121,7 @@ To tell MetFrag which information you want to be included in the final scoring, 
 </div>
 <p><p>
 <h4>Further Parameters</h4>
-<span style="font-weight:italic">PrecursorIonMode</span>
+<div style="font-style: italic">PrecursorIonMode</span>
 The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)</br>
 <table class="params">
@@ -135,16 +135,16 @@ The adduct type of the precursor is used to calculate fragment masses. Following
 	<tr><td>83</td><td>-</td><td>[M+2ACN+H]<sup>+</sup></td></tr>
 </table>
 <br>negative (IsPositiveIonMode = False)</br>
-<ul>
-	<il>-1 - [M-H]-</il><br>
-	<il>35 - [M+Cl]-</il><br>
-	<il>45 - [M+HCOO]-</il><br>
-	<il>59 - [M+CH3COO]-</il><br>
-</ul>
+<table class="params">
+	<tr><td>-1</td><td>-</td><td>[M-H]<sup>-</sup></td></tr>
+	<tr><td>35</td><td>-</td><td>[M+Cl]<sup>-</sup></td></tr>
+	<tr><td>45</td><td>-</td><td>[M+HCOO]<sup>-</sup></td></tr>
+	<tr><td>59</td><td>-</td><td>[M+CH3COO]<sup>-</sup></td></tr>
+</table>
 <br>no adduct (IsPositiveIonMode = True/False)</br>
-<ul>
-	<il>0 - [M]+/-</il><br>
-</ul>
+<table class="params">
+	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
+</table>
 <h4>Known issues</h4>
 If you are getting the java exception when using the commandline version<p>
 <div class="code">
