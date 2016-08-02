@@ -121,7 +121,7 @@ To tell MetFrag which information you want to be included in the final scoring, 
 </div>
 <p><p>
 <h4>Further Parameters</h4>
-<div style="font-style: italic">PrecursorIonMode</span>
+<div style="font-style: italic">PrecursorIonMode</div>
 The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)</br>
 <table class="params">
