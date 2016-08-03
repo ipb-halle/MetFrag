@@ -134,8 +134,8 @@ When defining pre-processing filters further parameters have to be defined:<br><
  <tr><td style="font-weight: bold;">MinimumElementsFilter</td><td>-</td><td>FilterMinimumElements</td></tr>
  <tr><td style="font-weight: bold;">MaximumElementsFilter</td><td>-</td><td>FilterMaximumElements</td></tr>
  <tr><td></td><td></td><td></td></tr>
- <tr><td style="font-weight: bold;">SmartsSubstructureInclusionFilter</td><td>-</td><td>SmartsSubstructureInclusionScoreSmartsList</td></tr>
- <tr><td style="font-weight: bold;">SmartsSubstructureExclusionFilter</td><td>-</td><td>SmartsSubstructureExclusionScoreSmartsList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureInclusionFilter</td><td>-</td><td>FilterSmartsInclusionList</td></tr>
+ <tr><td style="font-weight: bold;">SmartsSubstructureExclusionFilter</td><td>-</td><td>FilterSmartsExclusionList</td></tr>
  <tr><td></td><td></td><td></td></tr>
  <tr><td style="font-weight: bold;">ElementInclusionFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
  <tr><td style="font-weight: bold;">ElementInclusionExclusiveFilter</td><td>-</td><td>FilterIncludedElements</td></tr>
