@@ -19,22 +19,29 @@ After setting the parameters for the database query the "Retrieve Candidates" bu
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image2.png">
 </div>
-After a short processing time the number of candidates found in the database with the defined filter criteria is displayed.
+After a short processing time the number of candidates found in the database with the defined filter criteria is displayed. The next step is to define parameters for the MetFrag processing under the <span style="border-bottom: 1px black dotted;">Fragmentation Settings & Processing</span>.
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image3.png">
 </div>
-Then the parameters for MetFrag processing have to be defined under the <span style="border-bottom: 1px black dotted;">Fragmentation Settings & Processing</span>. This includes the adduct type of the precursor ion. Based on this fragment massed will be calculated. Additionally, the a relative and absolute mass deviation has to be defined with which <span style="font-style: italic;">in silico</span> generated fragments will be mapped to the experimental data defined in the "MS/MS Peak list" text field. After all parameters are defined correctly, the button "Process Candidates" has to be pushed to start the processing.<br> 
+This includes the adduct type of the precursor ion. Based on this fragment massed will be calculated. Additionally, the a relative and absolute mass deviation has to be defined with which <span style="font-style: italic;">in silico</span> generated fragments will be mapped to the experimental data defined in the "MS/MS Peak list" text field. After all parameters are defined correctly, the button "Process Candidates" has to be pushed to start the processing.<br> 
 MetFrag then starts the <span style="font-style: italic;">in silico</span> fragmentation, the mapping of the fragments to the given mass peaks and the scoring for each retrieved
-candidates. Finally, the score ranked list of candidates will be displayed after the processing has finshed successfully. Each row in this list includes the candidate image, identifier (database link), exact mass, molecualr formula, score and number of explained together with more details about fragments and scores for each candiate.
+candidates.
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image4.png">
 </div>
-<div>The fragments view shows the assigned fragments for a specific candidate of the list highlighted in blue color.</div>
+<div>After processing has finished successfully, the score ranked list of candidates will be displayed. Each row in this list includes the candidate image, identifier (database link), exact mass, molecualr formula, score and number of explained together with more details about fragments and scores for each candiate.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image5.png">
 </div>
-<div>A new feature within the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms.</div>
+<div>The fragments view shows the assigned fragments for a specific candidate of the list. The substructure from which the fragment was created is highlighted in green color. Each fragment can be viewed by scrolling through the list or by clicking on the apex of an explained peak (green highlighted). With clicking on the peak apex the fragment will be displayed automatically.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image6.png">
 </div>
-
+<div>A new feature of the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms. This includes candidate filtering by given substructures or by elemental composition or adding several scoring terms by which candidates will be ranked. This includes e.g. scoring y spectral similarity or retention time.</div>
+<div style="padding: 20px">
+<img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image7.png">
+</div>
+<div>Besides predifined scoring terms, there are also database scoring terms depending on the specified database. Scoring terms can also be defined by uploaded CSV or SDF files.</div>
+<div style="padding: 20px">
+<img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image8.png">
+</div>
