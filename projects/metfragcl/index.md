@@ -95,7 +95,8 @@ INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate
 </div>
 <p><p>
 First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
-The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter.
+The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter
+<p><p>
 <h4>Databases</h4>
 There are different databases available that can be queried for candidate molecules (MetFragDatabaseType)<p>
 <ul>
@@ -104,9 +105,10 @@ There are different databases available that can be queried for candidate molecu
 <il>ExtendedPubChem</il><br>
 <il>ChemSpider (only available with a valid token -> ChemSpiderToken)</il><br>
 <il>LocalSDF</il><br>
-<il>LocalInChI (<a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
+<il>LocalPSV (<a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
+<il>LocalCSV</il><br>
 </ul>
-If you use a local file database (LocalSDF, LocalInChI) you have to provide the path to the file database (LocalDatabasePath). The KEGG, PubChem and ChemSpider databases are queried either by <span style="font-weight:bold">database dependent compound ids (PrecursorCompoundIDs)</span>, <span style="font-weight:bold">molecular formula (NeutralPrecursorMolecularFormula)</span> or 
+If you use a local file database (LocalSDF, LocalCSV, LocalPSV) you have to provide the path to the file database (LocalDatabasePath). The KEGG, PubChem and ChemSpider databases are queried either by <span style="font-weight:bold">database dependent compound ids (PrecursorCompoundIDs)</span>, <span style="font-weight:bold">molecular formula (NeutralPrecursorMolecularFormula)</span> or 
 <span style="font-weight:bold">neutral monoisotopic mass (NeutralPrecursorMass) together with a relative mass deviation (DatabaseSearchRelativeMassDeviation)</span> in the given order if more than one is defined. Next to PubChem there is also an extended PubChem database available that fetches patent (PubChemNumberPatents) and reference (PubChemNumberPubMedReferences) information for the retrieved candidates. These can then be used as an additional scoring term like the additional information that comes with a ChemSpider database query. These are the number of references (ChemSpiderReferenceCount), external references (ChemSpiderNumberExternalReferences), citations in Royal Society of Chemistry journals (ChemSpiderRSCCount), references in PubMed (ChemSpiderNumberPubMedReferences) and data sources (ChemSpiderDataSourceCount). 
 To tell MetFrag which information you want to be included in the final scoring, you just need to adapt the parameter file. First set the proper database (ExtendedPubChem) and add the additional scoring term (PubChemNumberPatents) and a weight defining the influence of the additional scoring term in the final scoring.
 
@@ -118,6 +120,31 @@ To tell MetFrag which information you want to be included in the final scoring, 
  </table>
 </div>
 <p><p>
+<h4>Further Parameters</h4>
+<div style="font-style: italic; margin-bottom: 5px;">PrecursorIonMode</div>
+The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
+<br>positive (IsPositiveIonMode = True)</br>
+<table class="params">
+	<tr><td>1</td><td>-</td><td>[M+H]<sup>+</sup></td></tr>
+	<tr><td>18</td><td>-</td><td>[M+NH4]<sup>+</sup></td></tr>
+	<tr><td>23</td><td>-</td><td>[M+Na]<sup>+</sup></td></tr>
+	<tr><td>39</td><td>-</td><td>[M+K]<sup>+</sup></td></tr>
+	<tr><td>33</td><td>-</td><td>[M+CH3OH+H]<sup>+</sup></td></tr>
+	<tr><td>42</td><td>-</td><td>[M+ACN+H]<sup>+</sup></td></tr>
+	<tr><td>64</td><td>-</td><td>[M+ACN+Na]<sup>+</sup></td></tr>
+	<tr><td>83</td><td>-</td><td>[M+2ACN+H]<sup>+</sup></td></tr>
+</table>
+<br>negative (IsPositiveIonMode = False)</br>
+<table class="params">
+	<tr><td>-1</td><td>-</td><td>[M-H]<sup>-</sup></td></tr>
+	<tr><td>35</td><td>-</td><td>[M+Cl]<sup>-</sup></td></tr>
+	<tr><td>45</td><td>-</td><td>[M+HCOO]<sup>-</sup></td></tr>
+	<tr><td>59</td><td>-</td><td>[M+CH3COO]<sup>-</sup></td></tr>
+</table>
+<br>no adduct (IsPositiveIonMode = True/False)</br>
+<table class="params">
+	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
+</table>
 <h4>Known issues</h4>
 If you are getting the java exception when using the commandline version<p>
 <div class="code">
