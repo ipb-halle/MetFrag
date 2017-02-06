@@ -33,11 +33,11 @@ candidates.
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image5.png">
 </div>
-<div>The fragments view shows the assigned fragments for a specific candidate of the list. The substructure from which the fragment was created is highlighted in green color. Each fragment can be viewed by scrolling through the list or by clicking on the apex of an explained peak (green highlighted). With clicking on the peak apex the fragment will be displayed automatically.</div>
+<div style="margin-top: 20px;">The fragments view shows the assigned fragments for a specific candidate of the list. The substructure from which the fragment was created is highlighted in green color. Each fragment can be viewed by scrolling through the list or by clicking on the apex of an explained peak (green highlighted). With clicking on the peak apex the fragment will be displayed automatically.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image6.png">
 </div>
-<div style="margin-top: 20px;">A new feature of the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms. This includes candidate filtering by given substructures or by elemental composition or adding several scoring terms by which candidates will be ranked. This includes e.g. scoring y spectral similarity or retention time.</div>
+<div style="margin-top: 20px;">A new feature of the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms. This includes candidate filtering by given substructures or by elemental composition or adding several scoring terms by which candidates will be ranked. This includes e.g. scoring by spectral similarity or retention time.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image7.png">
 </div>
