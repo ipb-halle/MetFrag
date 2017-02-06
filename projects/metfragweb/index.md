@@ -37,11 +37,11 @@ candidates.
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image6.png">
 </div>
-<div>A new feature of the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms. This includes candidate filtering by given substructures or by elemental composition or adding several scoring terms by which candidates will be ranked. This includes e.g. scoring y spectral similarity or retention time.</div>
+<div style="margin-top: 20px;">A new feature of the new MetFrag web tool includes the inclusion of additonal candidate filters and scoring terms. This includes candidate filtering by given substructures or by elemental composition or adding several scoring terms by which candidates will be ranked. This includes e.g. scoring y spectral similarity or retention time.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image7.png">
 </div>
-<div>Besides predifined scoring terms, there are also database scoring terms depending on the specified database. Scoring terms can also be defined by uploaded CSV or SDF files.</div>
+<div style="margin-top: 20px;">Besides predifined scoring terms, there are also database scoring terms depending on the specified database. PubChem includes PubMed references and patent information that can be used as scoring term. Scoring terms can also be defined by uploaded CSV or SDF files.</div>
 <div style="padding: 20px">
 <img width="75%" height="75%" src="/MetFrag/images/metfragwebbeta/image8.png">
 </div>
