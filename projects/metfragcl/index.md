@@ -26,48 +26,48 @@ MetFrag CL needs a <span style="font-weight:bold">parameter file</span> of speci
 To view the contents of the example file it can be opened with a text editor. Lines starting with # are comments and not used by MetFrag.
 <div class="code">
   <table>
-	<tr><td>#</td><\tr>
-	<tr><td># data file containing mz intensity peak pairs (one per line)</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>PeakListPath = example_data.txt</td><\tr>
-	<tr><td></td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td># database parameters -> how to retrieve candidates</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>MetFragDatabaseType = PubChem</td><\tr>
-	<tr><td>NeutralPrecursorMolecularFormula = C9H11Cl3NO3PS</td><\tr>
-	<tr><td>NeutralPrecursorMass = 348.926284</td><\tr>
-	<tr><td></td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td># peak matching parameters</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>FragmentPeakMatchAbsoluteMassDeviation = 0.001</td><\tr>
-	<tr><td>FragmentPeakMatchRelativeMassDeviation = 5</td><\tr>
-	<tr><td>PrecursorIonMode = 1</td><\tr>
-	<tr><td>IsPositiveIonMode = True</td><\tr>
-	<tr><td></td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td># scoring parameters</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>MetFragScoreTypes = FragmenterScore</td><\tr>
-	<tr><td>MetFragScoreWeights = 1.0</td><\tr>
-	<tr><td></td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td># output</td><\tr>
-	<tr><td># SDF, XLS, CSV, ExtendedXLS, ExtendedFragmentsXLS</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>MetFragCandidateWriter = XLS</td><\tr>
-	<tr><td>SampleName = example_1</td><\tr>
-	<tr><td>ResultsPath = .</td><\tr>
-	<tr><td></td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td># following parameteres can be kept as they are</td><\tr>
-	<tr><td>#</td><\tr>
-	<tr><td>MaximumTreeDepth = 2</td><\tr>
-	<tr><td>MetFragPreProcessingCandidateFilter = UnconnectedCompoundFilter</td><\tr>
-	<tr><td>MetFragPostProcessingCandidateFilter = InChIKeyFilter</td><\tr>
-	<tr><td># NumberThreads = 1</td><\tr>
+	<tr><td>#</td></tr>
+	<tr><td># data file containing mz intensity peak pairs (one per line)</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>PeakListPath = example_data.txt</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># database parameters -> how to retrieve candidates</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragDatabaseType = PubChem</td></tr>
+	<tr><td>NeutralPrecursorMolecularFormula = C9H11Cl3NO3PS</td></tr>
+	<tr><td>NeutralPrecursorMass = 348.926284</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># peak matching parameters</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>FragmentPeakMatchAbsoluteMassDeviation = 0.001</td></tr>
+	<tr><td>FragmentPeakMatchRelativeMassDeviation = 5</td></tr>
+	<tr><td>PrecursorIonMode = 1</td></tr>
+	<tr><td>IsPositiveIonMode = True</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># scoring parameters</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragScoreTypes = FragmenterScore</td></tr>
+	<tr><td>MetFragScoreWeights = 1.0</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># output</td></tr>
+	<tr><td># SDF, XLS, CSV, ExtendedXLS, ExtendedFragmentsXLS</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragCandidateWriter = XLS</td></tr>
+	<tr><td>SampleName = example_1</td></tr>
+	<tr><td>ResultsPath = .</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># following parameteres can be kept as they are</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MaximumTreeDepth = 2</td></tr>
+	<tr><td>MetFragPreProcessingCandidateFilter = UnconnectedCompoundFilter</td></tr>
+	<tr><td>MetFragPostProcessingCandidateFilter = InChIKeyFilter</td></tr>
+	<tr><td># NumberThreads = 1</td></tr>
   </table>
 </div>
 <p><p>
@@ -114,9 +114,9 @@ To tell MetFrag which information you want to be included in the final scoring, 
 
 <div class="code">
  <table>
-	<tr><td>MetFragDatabaseType = ExtendedPubChem</td><\tr>
-	<tr><td>MetFragScoreTypes = FragmenterScore,PubChemNumberPatents</td><\tr>
-        <tr><td>MetFragScoreWeights = 1.0,0.2</td><\tr>
+	<tr><td>MetFragDatabaseType = ExtendedPubChem</td></tr>
+	<tr><td>MetFragScoreTypes = FragmenterScore,PubChemNumberPatents</td></tr>
+        <tr><td>MetFragScoreWeights = 1.0,0.2</td></tr>
  </table>
 </div>
 <p><p>
