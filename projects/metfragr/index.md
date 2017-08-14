@@ -231,10 +231,7 @@ Dependent on the used database different scores. When using local file databases
 
 Following scoring terms are pre-defined for available databases:<br><br>
 
-<table style="margin-left: 10px;">
- <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
- <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount</td></tr>
-</table><br>
+
 
 <h4>Examples</h4>
 Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScore together with necessary parameters.<br><br>
