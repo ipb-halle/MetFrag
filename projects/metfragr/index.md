@@ -230,6 +230,7 @@ When defining additional scores further parameters need to be defined:<br><br>
 Dependent on the used database different scores. When using local file databases any score defined as candidate property can be used as scoring term.<br>
 
 Following scoring terms are pre-defined for available databases:<br><br>
+
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
  <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount</td></tr>
