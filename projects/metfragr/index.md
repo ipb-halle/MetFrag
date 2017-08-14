@@ -208,6 +208,7 @@ MetFrag is able to include different scores used to calculate a final score whic
  <tr><td style="font-weight: bold;">RetentionTimeScore</td><td>-</td><td>Score candidate with retention time information</td></tr>
  <tr><td style="font-weight: bold;">OfflineMetFusionScore</td><td>-</td><td>Uses predifined spectral library to calculate MetFusion like similarity score</td></tr>
 </table><br>
+
 When defining additional scores further parameters need to be defined:<br><br>
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">SmartsSubstructureInclusionScore</td><td>-</td><td>ScoreSmartsInclusionList</td></tr>
@@ -224,13 +225,16 @@ When defining additional scores further parameters need to be defined:<br><br>
  <tr><td></td><td></td><td style="padding-left: 10px">- UserLogP (if defined) is used instead of InChI but has to be available within the candidate list as well</td></tr>
  <tr><td></td><td></td><td style="padding-left: 10px; color: red">- RetentionTime values and ExperimentalRetentionTimeValue need to be acquired on the same system</td></tr>
 </table><br>
+
 <h4>Database Dependent Scores</h4>
 Dependent on the used database different scores. When using local file databases any score defined as candidate property can be used as scoring term.<br>
+
 Following scoring terms are pre-defined for available databases:<br><br>
 <table style="margin-left: 10px;">
  <tr><td style="font-weight: bold;">ExtendedPubChem</td><td>-</td><td>PubChemNumberPatents,PubChemNumberPubMedReferences</td></tr>
  <tr><td style="font-weight: bold;">ChemSpider</td><td>-</td><td>ChemSpiderReferenceCount,ChemSpiderNumberExternalReferences, <tr><td style="font-weight: bold;"></td><td>-</td><td>ChemSpiderRSCCount,ChemSpiderNumberPubMedReferences,ChemSpiderDataSourceCount</td></tr>
 </table><br>
+
 <h4>Examples</h4>
 Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScore together with necessary parameters.<br><br>
 <div class="code">
@@ -242,6 +246,7 @@ Defining FragmenterScore, SmartsSubstructureInclusionScore and RetentionTimeScor
  <tr><td>settingsObject[["MetFragScoreWeights"]]<-c(1.0,0.5,0.5)</td></tr>
 </table><br>
 </div>
+
 Defining FragmenterScore and database dependent soring terms for ExtendedPubChem database.<br><br>
 <div class="code">
 <table>
