@@ -138,7 +138,7 @@ More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_sta
 <h4>Further Parameters</h4>
 <div style="font-style: italic; margin-bottom: 5px;">PrecursorIonMode</div>
 The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
-<br>positive (IsPositiveIonMode = True)</br>
+<br>positive (IsPositiveIonMode = True)<br>
 <table class="params">
 	<tr><td>1</td><td>-</td><td>[M+H]<sup>+</sup></td></tr>
 	<tr><td>18</td><td>-</td><td>[M+NH4]<sup>+</sup></td></tr>
@@ -149,26 +149,14 @@ The adduct type of the precursor is used to calculate fragment masses. Following
 	<tr><td>64</td><td>-</td><td>[M+ACN+Na]<sup>+</sup></td></tr>
 	<tr><td>83</td><td>-</td><td>[M+2ACN+H]<sup>+</sup></td></tr>
 </table>
-<br>negative (IsPositiveIonMode = False)</br>
+<br>negative (IsPositiveIonMode = False)<br>
 <table class="params">
 	<tr><td>-1</td><td>-</td><td>[M-H]<sup>-</sup></td></tr>
 	<tr><td>35</td><td>-</td><td>[M+Cl]<sup>-</sup></td></tr>
 	<tr><td>45</td><td>-</td><td>[M+HCOO]<sup>-</sup></td></tr>
 	<tr><td>59</td><td>-</td><td>[M+CH3COO]<sup>-</sup></td></tr>
 </table>
-<br>no adduct (IsPositiveIonMode = True/False)</br>
+<br>no adduct (IsPositiveIonMode = True/False)<br>
 <table class="params">
 	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
 </table>
-<h4>Known issues</h4>
-If you are getting the java exception when using the commandline version<p>
-<div class="code">
-  # java.lang.IllegalArgumentException: Comparison method violates its general contract!
-</div>
-<p><p>
-there is a quick workaround for java-1.6 users
-<p>
-<div class="code">
-  # java <span style="font-weight:bold">-Djava.util.Arrays.useLegacyMergeSort=true</span> -jar MetFragCommandLineTool.jar
-</div>
-<p>
