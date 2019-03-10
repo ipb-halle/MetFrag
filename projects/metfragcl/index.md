@@ -120,7 +120,7 @@ To tell MetFrag which information you want to be included in the final scoring, 
  </table>
 </div>
 <p><p>
-<h4>Statistical Scoring</h4><span style="color: red; font-style: italic">(new)</span>
+<h4>Statistical Scoring <span style="color: red; font-style: italic">(new)</span></h4>
 MetFrag now includes new scoring parameters which are based on a statistical learning approach. Therefore annotations of fragment-structures and m/z-peaks are learned by a bayesian model. 
 
 The new scores can be used along with the FragmenterScore:
