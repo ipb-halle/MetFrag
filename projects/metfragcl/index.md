@@ -120,7 +120,7 @@ To tell MetFrag which information you want to be included in the final scoring, 
  </table>
 </div>
 <p><p>
-<h4>Statistical Scoring <span color="red">(new)</span></h4>
+<h4>Statistical Scoring</h4><span style="color: red; font-style: italic">(new)</span>
 MetFrag now includes new scoring parameters which are based on a statistical learning approach. Therefore annotations of fragment-structures and m/z-peaks are learned by a bayesian model. 
 
 The new scores can be used along with the FragmenterScore:
@@ -131,7 +131,7 @@ The new scores can be used along with the FragmenterScore:
  </table>
 </div>
 
-You can find examples of the CASMI2016 contest for <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. The MetFrag2.4.5-CL.jar tool includes a trained model which can directly be used with the provided parameter files.
+You can find examples of the CASMI2016 contest for <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. The MetFrag2.4.5-CL.jar tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters have shown to improve MetFrag's annotation results.
 
 More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
 
