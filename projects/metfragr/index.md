@@ -9,7 +9,7 @@ nav:
 
 MetFrag is available as R-package.
 
-<a class="btn btn-primary" href="https://github.com/c-ruttkies/MetFragR" role="button">MetFragR on github</a> <a class="btn btn-primary" href="https://github.com/c-ruttkies/MetFragR/issues"
+<a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragR" role="button">MetFragR on github</a> <a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragR/issues"
 role="button">Submit an issue</a>
 
 <hr>
@@ -21,7 +21,7 @@ The R package enables functionalities from the MetFrag Commandline tool to be us
 First, check out the MetFragR GitHub repository and build the package (on command line):
 <div class="code">
   <table>
-    <tr><td>git clone https://github.com/c-ruttkies/MetFragR.git</td></tr>
+    <tr><td>git clone https://github.com/ipb-halle/MetFragR.git</td></tr>
     <tr><td>cd MetFragR</td></tr>
     <tr><td></td></tr>
     <tr><td>R CMD check metfRag</td></tr>
