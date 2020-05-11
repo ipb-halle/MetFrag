@@ -1,4 +1,3 @@
-<script type="text/javascript" language="javascript">
 // Email obfuscator script 2.1 by Tim Williams, University of Arizona
 // Random encryption key feature coded by Andrew Moulden
 // This code is freeware provided these four comment lines remain intact
@@ -19,4 +18,3 @@
   }
 document.write("<a href='mailto:"+link+"'>de.NBI Team @ IPB</a>")
 }
-</script><noscript>Sorry, you need Javascript on to email me.</noscript>
