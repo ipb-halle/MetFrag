@@ -1,9 +1,11 @@
+<script type="text/javascript" language="javascript">
+<!--
 // Email obfuscator script 2.1 by Tim Williams, University of Arizona
-// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+// Random encryption key feature coded by Andrew Moulden
 // This code is freeware provided these four comment lines remain intact
 // A wizard to generate this code is at http://www.jottings.com/obfuscator/
-{ coded = "EqOR5cqq@TIr-XcffO.BO"
-  key = "WXov8rxTU24AaFE1Q7k5IHd3nNuylL9PecVGtZgSwChBMqbRif0DYO6szjJKmp"
+{ coded = "1fvBG-LOC9@GlB-9O22f.1f"
+  key = "goRZjfaw0ApnhqSbIVLsKHdJzDxY4OkPMlv93iB5QuCUe18yWt7XEcNT2m6FGr"
   shift=coded.length
   link=""
   for (i=0; i<coded.length; i++) {
@@ -16,5 +18,7 @@
       link += (key.charAt(ltr))
     }
   }
-document.write("<a href='mailto:"+link+"'>sneumann@ipb-halle.de</a>")
+document.write("<a href='mailto:"+link+"'>de.NBI Team @ IPB</a>")
 }
+//-->
+</script><noscript>Sorry, you need Javascript on to email me.</noscript>
