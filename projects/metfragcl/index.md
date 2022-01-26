@@ -17,7 +17,7 @@ MetFrag is available as a commandline tool. It combines the efficient fragmenter
 <h3>Usage</h3>
 After downloading the executable jar MetFrag can generally be run by
 <div class="code">
-  # java -jar MetFragCommandLine-<version>-jar-with-dependencies.jar [parameter file]
+  # java -jar MetFragCommandLine-VERSION-jar-with-dependencies.jar [parameter file]
 </div>
 <p><p>
 <h4>Parameter file</h4>
