@@ -7,9 +7,9 @@ nav:
 
 ### MetFrag CL
 
-The new MetFrag commandline tool is available. It combines a more efficient fragmenter and functionalities to include additional information to score the retrieved candidates. The inclusion of retention time information from liquid chromatography and reference information is now possible.
+MetFrag is available as a commandline tool. It combines the efficient fragmenter and functionalities to include additional information to score the retrieved candidates. The inclusion of retention time information from liquid chromatography and reference information is possible.
 
-<a class="btn btn-primary" href="http://msbi.ipb-halle.de/~cruttkie/metfrag/MetFrag2.4.5-CL.jar" role="button">Download MetFrag CL</a>
+<a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched/releases/latest" role="button">Download MetFrag CL</a>
 <a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched" role="button">MetFrag CL on github</a>
 
 <hr>
@@ -17,7 +17,7 @@ The new MetFrag commandline tool is available. It combines a more efficient frag
 <h3>Usage</h3>
 After downloading the executable jar MetFrag can generally be run by
 <div class="code">
-  # java -jar MetFrag2.4.5-CL.jar [parameter file]
+  # java -jar MetFragCommandLine-<version>-jar-with-dependencies.jar [parameter file]
 </div>
 <p><p>
 <h4>Parameter file</h4>
