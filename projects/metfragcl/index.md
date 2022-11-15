@@ -21,7 +21,7 @@ After downloading the executable jar MetFrag can generally be run by
 </div>
 <p><p>
 <h4>Parameter file</h4>
-MetFrag CL needs a <span style="font-weight:bold">parameter file</span> of specific layout as input. The parameter file contains all necessary information for the processing of a given MS/MS peak list. An example parameter file can be downloaded <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a> and corresponding example <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">data</a> file containg the mz peak list is also needed.
+MetFrag CL needs a <span style="font-weight:bold">parameter file</span> of specific layout as input. The parameter file contains all necessary information for the processing of a given MS/MS peak list. An example parameter file can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a> and corresponding example <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">data</a> file containg the mz peak list is also needed.
 <p>
 To view the contents of the example file it can be opened with a text editor. Lines starting with # are comments and not used by MetFrag.
 <div class="code">
@@ -105,8 +105,8 @@ There are different databases available that can be queried for candidate molecu
 <il>ExtendedPubChem</il><br>
 <il>ChemSpiderRest (only available with a valid token -> ChemSpiderToken)</il><br>
 <il>LocalSDF</il><br>
-<il>LocalPSV (<a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
-<il>LocalCSV (<a href="http://msbi.ipb-halle.de/~cruttkie/databases/">example</a>)</il><br>
+<il>LocalPSV (<a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
+<il>LocalCSV (<a href="https://msbi.ipb-halle.de/~cruttkie/databases/">example</a>)</il><br>
 </ul>
 If you use a local file database (LocalSDF, LocalCSV, LocalPSV) you have to provide the path to the file database (LocalDatabasePath). The KEGG, PubChem and ChemSpider databases are queried either by <span style="font-weight:bold">database dependent compound ids (PrecursorCompoundIDs)</span>, <span style="font-weight:bold">molecular formula (NeutralPrecursorMolecularFormula)</span> or 
 <span style="font-weight:bold">neutral monoisotopic mass (NeutralPrecursorMass) together with a relative mass deviation (DatabaseSearchRelativeMassDeviation)</span> in the given order if more than one is defined. Next to PubChem there is also an extended PubChem database available that fetches patent (PubChemNumberPatents) and reference (PubChemNumberPubMedReferences) information for the retrieved candidates. These can then be used as an additional scoring term like the additional information that comes with a ChemSpider database query. These are the number of references (ChemSpiderReferenceCount), external references (ChemSpiderNumberExternalReferences), citations in Royal Society of Chemistry journals (ChemSpiderRSCCount), references in PubMed (ChemSpiderNumberPubMedReferences) and data sources (ChemSpiderDataSourceCount). 
@@ -131,7 +131,7 @@ The new scores can be used along with the FragmenterScore:
  </table>
 </div>
 
-You can find examples of the CASMI2016 contest for <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="http://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. The MetFrag2.4.5-CL.jar tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters have shown to improve MetFrag's annotation results.
+You can find examples of the CASMI2016 contest for <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. The MetFrag2.4.5-CL.jar tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters have shown to improve MetFrag's annotation results.
 
 More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
 

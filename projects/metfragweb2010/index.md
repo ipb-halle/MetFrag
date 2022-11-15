@@ -6,7 +6,7 @@ nav:
 ---
 
 ### MetFragWeb 2010
-<a class="btn btn-primary" href="http://msbi.ipb-halle.de/MetFrag" role="button">MetFragWeb 2010</a> 
+<a class="btn btn-primary" href="https://msbi.ipb-halle.de/MetFrag" role="button">MetFragWeb 2010</a> 
 <hr>
 
 The web tool of MetFrag 2010 has several fields for setting parameters that depend on your experimental conditions during the MS acquisition. For the <span style="color: red">beta</span> version of the web tool, which includes an <i>in silico</i> derivatised verions of the KEGG database, visit this <a href="/MetFrag/projects/metfragwebbeta">page</a>. At first the parameters for the 
