@@ -131,9 +131,17 @@ The new scores can be used along with the FragmenterScore:
  </table>
 </div>
 
-You can find examples of the CASMI2016 contest for <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. The MetFrag2.4.5-CL.jar tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters have shown to improve MetFrag's annotation results.
+You can find examples of the CASMI2016 contest for <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. Starting with MetFrag2.4.5-CL.jar the tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters have shown to improve MetFrag's annotation results.
 
 More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
+
+<h4>Spectral library MetFusion scores</h4>
+<div style="font-style: italic; margin-bottom: 5px;">OfflineSpectralDatabaseFile</div>
+MetFrag is implementing two kinds of scores that take a spectral library into account. 
+You can specify a single file:<br>
+<br>OfflineSpectralDatabaseFile = /path/to/MoNA-export-LC-MS.mb<br>
+or specify a directory and MetFrag will read all conatined .mb files from that directory:<br>
+<br>OfflineSpectralDatabaseFile = /path/to/<br>
 
 <h4>Further Parameters</h4>
 <div style="font-style: italic; margin-bottom: 5px;">PrecursorIonMode</div>
