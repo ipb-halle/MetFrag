@@ -12,7 +12,7 @@ container: none
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-md-3">
-      <h2>MetFragWeb</h2>
+      <h2>MetFrag Web</h2>
       <p><a class="btn btn-primary" href="/MetFrag/projects/metfragweb" role="button">Learn more</a></p>
       <p>Use <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag</a> directly from your browser for a visual, 
 	  interactive experience. Great for beginners or exploring your data</p>
@@ -26,7 +26,7 @@ container: none
     </div>
 
     <div class="col-sm-6 col-md-3">
-      <h2>MetFragR</h2>
+      <h2>MetFrag in R</h2>
       <p><a class="btn btn-primary" href="/MetFrag/projects/metfragr" role="button">Learn more</a></p>
       <p>Users familiar with R can download the <a href="https://github.com/ipb-halle/MetFragR">MetFragR</a> 
 	  R-package, or use MetFrag built into the <a href="https://rickhelmus.github.io/patRoon/">patRoon</a> workflow</p>
@@ -42,10 +42,14 @@ container: none
 
   <h3>Overview</h3>
 
-<p>MetFrag is a freely available software for the annotation of high precision tandem mass spectra of metabolites which 
-is a first and critical step for the identification of a molecule&#39;s structure. Candidate molecules 
-of different databases are fragmented in silico and matched against mass to charge values. A score calculated
-using the fragment peak matches gives hints to the quality of the candidate spectrum assignment.</p>
+<p>MetFrag is a freely available software to annotate metabolites and other small molecules using 
+fragmentation information from tandem mass spectra, which is a first and critical step towards 
+identification of a molecule&#39;s structure. Candidate molecules can be retrieved from 
+different databases using mass or molecular formula and are then fragmented in silico 
+and matched against the fragments. The resulting score calculated using the fragment peak matches 
+can be used to rank the various candidate molecules. Additional scoring terms, including an 
+experimental mass spectral library match, or database-specific scoring terms such as 
+patent and literature values can be defined in the settings. </p>
 
 <h3>Availability</h3>
 
@@ -58,32 +62,46 @@ is available for high-throughput data processing options.
 For R users, options include the <a href="/MetFrag/projects/metfragr">MetFragR R-package</a> 
 and the integrated non-target screening workflow <a href="https://rickhelmus.github.io/patRoon/">patRoon</a>.</p>
 
-<h3>Publications</h3>
+<h3>Citing MetFrag</h3>
 
-When using MetFrag, please cite: </p>
-<a href="http://jcheminf.springeropen.com/articles/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>:
-C Ruttkies, E L Schymanski, S Wolf, J Hollender, S Neumann
-Journal of Cheminformatics 2016 8:3 </p>
+<p>Please cite this article when using MetFrag: </p>
+<p>C Ruttkies, EL Schymanski, S Wolf, J Hollender, S Neumann (2016)
+<a href="https://doi.org/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>
+Journal of Cheminformatics 8:3. DOI: <a href="https://doi.org/10.1186/s13321-016-0115-9">10.1186/s13321-016-0115-9</a>
+</p>
 
-<p>MetFrag with fragment learning:</p>
+<h3>Other MetFrag Publications</h3>
+
+<p><b>Exposomics - MetFrag Meets PubChemLite: </b>
+EL Schymanski, T Kondic, S Neumann, PA Thiessen, J Zhang, EE Bolton (2021)
+<a href="https://doi.org/10.1186/s13321-021-00489-0">Empowering large chemical knowledge bases for exposomics: PubChemLite meets MetFrag</a>
+Journal of Cheminformatics 13:19. DOI: <a href="https://doi.org/10.1186/s13321-021-00489-0">10.1186/s13321-021-00489-0</a>
+</p>
+
+<p><b>MetFrag with Statistical Fragment Learning:</b>
+C Ruttkies, S Neumann, S Posch (2019)
 <a href="https://doi.org/10.1186/s12859-019-2954-7">Improving MetFrag with statistical learning of fragment annotations</a>:
-C Ruttkies, S Neumann, S Posch 
-BMC bioinformatics 20, 376</p>
+BMC Bioinformatics 20: 376. DOI: <a href="https://doi.org/10.1186/s12859-019-2954-7">10.1186/s12859-019-2954-7</a> </p>
 
-<p>MetFrag and HD Exchange:</p>
+<p><b>MetFrag and HD Exchange:</b>
+C Ruttkies, EL Schymanski, N Strehmel, J Hollender, S Neumann, AJ Williams, M Krauss (2019)
 <a href="https://doi.org/10.1007/s00216-019-01885-0">Supporting non-target identification by adding hydrogen deuterium exchange MS/MS capabilities to MetFrag</a>:
-C Ruttkies, EL Schymanski, N Strehmel, J Hollender, S Neumann, AJ Williams, M Krauss
-Analytical and Bioanalytical Chemistry 411(19), 4683–4700</p>
+Analytical and Bioanalytical Chemistry 411(19), 4683–4700.
+DOI: <a href="https://doi.org/10.1007/s00216-019-01885-0">10.1007/s00216-019-01885-0</a> </p>
 
-<p>Version 2010:</p>
-<a href="http://www.biomedcentral.com/1471-2105/11/148/abstract">In silico fragmentation for computer assisted identification of metabolite mass spectra</a>:
-S Wolf, S Schmidt, M Müller-Hannemann, S Neumann
-BMC bioinformatics 11 (1), 148 </p>
+<p><b>MetFrag Relaunched (2016): </b>
+C Ruttkies, EL Schymanski, S Wolf, J Hollender, S Neumann (2016)
+<a href="https://doi.org/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>
+Journal of Cheminformatics 8:3. DOI: <a href="https://doi.org/10.1186/s13321-016-0115-9">10.1186/s13321-016-0115-9</a>
+</p>
 
-These are the papers in 
+<p><b>Original MetFrag Version (2010):</b>
+S Wolf, S Schmidt, M Müller-Hannemann, S Neumann (2010)
+<a href="https://doi.org/10.1186/1471-2105-11-148">In silico fragmentation for computer assisted identification of metabolite mass spectra</a>:
+BMC Bioinformatics 11:148. DOI: <a href="https://doi.org/10.1186/1471-2105-11-148">10.1186/1471-2105-11-148</a>.
+Here are the papers that have cited MetFrag (version 2010) so far in 
 <a href="http://www.ncbi.nlm.nih.gov/pubmed?linkname=pubmed_pubmed_citedin&from_uid=20307295">PubMed</a> 
-and <a href="http://scholar.google.com/scholar?oi=bibs&hl=en&cites=10278388642349466161&as_sdt=5">google scholar</a> 
-that have cited MetFrag (version 2010) so far.
+and <a href="http://scholar.google.com/scholar?oi=bibs&hl=en&cites=10278388642349466161&as_sdt=5">Google Scholar</a>. </p>
 
 <h3>License</h3>
 
