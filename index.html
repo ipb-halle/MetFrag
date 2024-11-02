@@ -12,7 +12,7 @@ container: none
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-md-3">
-      <h2>MetFragWeb</h2>
+      <h2>MetFrag Web</h2>
       <p><a class="btn btn-primary" href="/MetFrag/projects/metfragweb" role="button">Learn more</a></p>
       <p>Use <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag</a> directly from your browser for a visual, 
 	  interactive experience. Great for beginners or exploring your data</p>
@@ -26,7 +26,7 @@ container: none
     </div>
 
     <div class="col-sm-6 col-md-3">
-      <h2>MetFragR</h2>
+      <h2>MetFrag in R</h2>
       <p><a class="btn btn-primary" href="/MetFrag/projects/metfragr" role="button">Learn more</a></p>
       <p>Users familiar with R can download the <a href="https://github.com/ipb-halle/MetFragR">MetFragR</a> 
 	  R-package, or use MetFrag built into the <a href="https://rickhelmus.github.io/patRoon/">patRoon</a> workflow</p>
@@ -42,10 +42,14 @@ container: none
 
   <h3>Overview</h3>
 
-<p>MetFrag is a freely available software for the annotation of high precision tandem mass spectra of metabolites which 
-is a first and critical step for the identification of a molecule&#39;s structure. Candidate molecules 
-of different databases are fragmented in silico and matched against mass to charge values. A score calculated
-using the fragment peak matches gives hints to the quality of the candidate spectrum assignment.</p>
+<p>MetFrag is a freely available software to annotate metabolites and other small molecules using 
+fragmentation information from tandem mass spectra, which is a first and critical step towards 
+identification of a molecule&#39;s structure. Candidate molecules can be retrieved from 
+different databases using mass or molecular formula and are then fragmented in silico 
+and matched against the fragments. The resulting score calculated using the fragment peak matches 
+can be used to rank the various candidate molecules. Additional scoring terms, including an 
+experimental mass spectral library match, or database-specific scoring terms such as 
+patent and literature values can be defined in the settings. </p>
 
 <h3>Availability</h3>
 
@@ -58,10 +62,18 @@ is available for high-throughput data processing options.
 For R users, options include the <a href="/MetFrag/projects/metfragr">MetFragR R-package</a> 
 and the integrated non-target screening workflow <a href="https://rickhelmus.github.io/patRoon/">patRoon</a>.</p>
 
-<h3>Publications</h3>
+<h3>Citing MetFrag</h3>
 
-When using MetFrag, please cite: </p>
-<a href="http://jcheminf.springeropen.com/articles/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>:
+<p>Please cite this article when using MetFrag: </p>
+<p>C Ruttkies, EL Schymanski, S Wolf, J Hollender, S Neumann (2016)
+<a href="https://doi.org/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>:
+Journal of Cheminformatics 8:3. DOI: <a href="https://doi.org/10.1186/s13321-016-0115-9">10.1186/s13321-016-0115-9</a>:
+</p>
+
+<h3>MetFrag Publications</h3>
+
+<p>When using MetFrag, please cite: </p>
+<p><a href="http://jcheminf.springeropen.com/articles/10.1186/s13321-016-0115-9">MetFrag relaunched: incorporating strategies beyond in silico fragmentation</a>:
 C Ruttkies, E L Schymanski, S Wolf, J Hollender, S Neumann
 Journal of Cheminformatics 2016 8:3 </p>
 
