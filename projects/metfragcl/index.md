@@ -195,7 +195,9 @@ This new model is included since MetFrag2.4.5-CL.jar. Examples to try include sp
 
 <h4>Spectral Library Match Scores</h4>
 MetFrag has two kinds of scores to take spectral library matches into account, using local
-files created from MassBank of North America (MoNA) download files. The DOI <a href="https://doi.org/10.1021/es5002105">10.5281/zenodo.13951786</a> redirects to the latest LC-MS mb file. The conversion script used to create these mb files is available <a href="https://github.com/sneumann/weizfrag/blob/main/convert-mona.R">here</a>. It is possible to use zero, one or both spectral library terms by including these options in the MetFragScoreTypes (shown here in combination with the FragmenterScore):
+files created from MassBank of North America (MoNA) download files. DOI:<a href="https://doi.org/10.5281/zenodo.13951786">10.5281/zenodo.13951786</a> redirects to the latest LC-MS mb file for download, while the conversion script used to create these mb files is available <a href="https://github.com/sneumann/weizfrag/blob/main/convert-mona.R">here</a>. Note that this is a slightly non-standard format due to the fingerprint required for MetFusion. 
+
+It is possible to use zero, one or both spectral library terms by including these options in the MetFragScoreTypes (shown here in combination with the FragmenterScore):
 
 <div class="code">
   <table>
