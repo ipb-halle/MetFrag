@@ -144,13 +144,61 @@ The adduct type of the precursor is used to calculate fragment masses. Following
 </table>
 
 <h3>Running the Example</h3>
+The <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">example parameter file</a> for running MetFrag looks like this:
 <p><p>
-A first example run can be realized by the following command:
+<div class="code">
+  <table>
+	<tr><td>#</td></tr>
+	<tr><td># data file containing mz intensity peak pairs (one per line)</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>PeakListPath = example_data.txt</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># database parameters -> how to retrieve candidates</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragDatabaseType = PubChem</td></tr>
+	<tr><td>NeutralPrecursorMolecularFormula = C9H11Cl3NO3PS</td></tr>
+	<tr><td>NeutralPrecursorMass = 348.926284</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># peak matching parameters</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>FragmentPeakMatchAbsoluteMassDeviation = 0.001</td></tr>
+	<tr><td>FragmentPeakMatchRelativeMassDeviation = 5</td></tr>
+	<tr><td>PrecursorIonMode = 1</td></tr>
+	<tr><td>IsPositiveIonMode = True</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># scoring parameters</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragScoreTypes = FragmenterScore</td></tr>
+	<tr><td>MetFragScoreWeights = 1.0</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># output</td></tr>
+	<tr><td># SDF, XLS, CSV, ExtendedXLS, ExtendedFragmentsXLS</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MetFragCandidateWriter = XLS</td></tr>
+	<tr><td>SampleName = example_1</td></tr>
+	<tr><td>ResultsPath = .</td></tr>
+	<tr><td></td></tr>
+	<tr><td>#</td></tr>
+	<tr><td># following parameteres can be kept as they are</td></tr>
+	<tr><td>#</td></tr>
+	<tr><td>MaximumTreeDepth = 2</td></tr>
+	<tr><td>MetFragPreProcessingCandidateFilter = UnconnectedCompoundFilter</td></tr>
+	<tr><td>MetFragPostProcessingCandidateFilter = InChIKeyFilter</td></tr>
+	<tr><td># NumberThreads = 1</td></tr>
+  </table>
+</div>
+<p><p>
+This example can be run using the following command (for MetFragCL v2.4.5):
 <div class="code">
   # java -jar MetFrag2.4.5-CL.jar example_parameter_file.txt
 </div>
 <p><p>
-You will get the following output:
+This will generate the following output:
 <div class="code">
 INFO  de.ipbhalle.metfraglib.database.OnlinePubChemDatabase - Fetching candidates from PubChem<br>
 INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 8 candidate(s)<br>
@@ -168,5 +216,5 @@ INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 1 candidate(s) dis
 INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate(s)<br>
 </div>
 <p><p>
-First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
-The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter
+First MetFrag uses the defined database parameters to retrieve candidates. In this case the molecular formula C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS is used, resulting in 8 matching candidates. Then the processing starts. The progress is given in percent. After the processing is finished, MetFrag gives you a small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
+The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format(s) of the result file(s) is given by the parameter <span style="font-weight:bold">MetFragCandidateWriter</span>.
