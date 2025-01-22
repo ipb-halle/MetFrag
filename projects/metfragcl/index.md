@@ -10,18 +10,18 @@ nav:
 MetFrag is available as a commandline tool. It combines the efficient fragmenter and functionalities to include additional information to score the retrieved candidates. The inclusion of retention time information from liquid chromatography and reference information is possible.
 
 <a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched/releases/latest" role="button">Download MetFrag CL</a>
-<a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched" role="button">MetFrag CL on github</a>
+<a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched" role="button">MetFrag CL on GitHub</a>
 
 <hr>
 
 <h3>Usage</h3>
-After downloading the executable jar MetFrag can generally be run by
+Once downloaded, the executable MetFrag jar can be run via a parameter file (next section) using the following command:
 <div class="code">
-  # java -jar MetFragCommandLine-VERSION-jar-with-dependencies.jar [parameter file]
+  # java -jar MetFragCommandLine-VERSION.jar [parameter file]
 </div>
 <p><p>
 <h4>Parameter file</h4>
-MetFrag CL needs a <span style="font-weight:bold">parameter file</span> of specific layout as input. The parameter file contains all necessary information for the processing of a given MS/MS peak list. An example parameter file can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a> and corresponding example <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">data</a> file containg the mz peak list is also needed.
+All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>. The parameter file contains all necessary settings to processa given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>. The corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further example files are given below. 
 <p>
 To view the contents of the example file it can be opened with a text editor. Lines starting with # are comments and not used by MetFrag.
 <div class="code">
