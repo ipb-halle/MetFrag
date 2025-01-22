@@ -21,11 +21,11 @@ Once downloaded, the executable MetFrag jar can be run via a parameter file (see
 </div>
 <p><p>
 <h3>Defining Parameters</h3>
-All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>, which contains all necessary settings to process a given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>, while the corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further example files are given below. Note that it is also possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button.
+All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>, which contains all necessary settings to process a given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>, while the corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further parameter options are given below. Note that it is also possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button.
 <p>
 The example file (full example printed below) can be viewed using a text editor. Lines starting with # are comments and are not used by MetFrag. The following headings describe the main groups of parameters. 
 
-<h4>Peak list path</h4>
+<h4>Peak List Path</h4>
 This parameter defines the path to the peak list (MS/MS fragments), which can be a two or three column text file containing m/z in the first column and intensities in the second (and optionally third column, to read files that contain both absolute and relative intensities). 
 <div class="code">
  <table>
@@ -34,7 +34,7 @@ This parameter defines the path to the peak list (MS/MS fragments), which can be
 </div>
 <p><p>
 
-<h4>Database parameters - retrieving candidates</h4>
+<h4>Database Parameters - Retrieving Candidates</h4>
 These parameters define the settings for candidate retrieval. By default, neutral species are queried (i.e., neutral exact mass or molecular formula). Settings to enable querying of charged mass (i.e. m/z values) are given below. The settings are a combination of database and retrieval parameters. If multiple candidate retrieval options are defined, PrecursorCompoundIDs over-rides NeutralPrecursorMolecularFormula, which over-rides NeutralPrecursorMass.
 <div class="code">
  <table>
@@ -51,9 +51,9 @@ These parameters define the settings for candidate retrieval. By default, neutra
 	<tr><td># Retrieval settings (at least one of these three groups must be defined)</td></tr>
 	<tr><td>NeutralPrecursorMass = ...</td></tr>
 	<tr><td>DatabaseSearchRelativeMassDeviation = ... (a value in ppm)</td></tr>
-	<tr><td>OR</td></tr>
+	<tr><td># AND/OR</td></tr>
 	<tr><td>NeutralPrecursorMolecularFormula = ...</td></tr>
-	<tr><td>OR</td></tr>
+	<tr><td># AND/OR</td></tr>
 	<tr><td>PrecursorCompoundIDs = ... </td></tr>
  </table>
 </div>
@@ -91,7 +91,7 @@ while here is an example query to retrieve candidates from PubChemLite (localCSV
 </div>
 <p><p>
 
-<h4>Peak matching parameters (fragmentation settings)</h4>
+<h4>Peak Matching Parameters (Fragmentation Settings)</h4>
 The peak matching parameters, or fragmentation settings, are defined with the following options. The absolute and relative deviations are additive. For PrecursorIonMode options, see below. 
 
 <div class="code">
@@ -104,7 +104,7 @@ The peak matching parameters, or fragmentation settings, are defined with the fo
 </div>
 <p><p>
 
-<h4>Output parameters</h4>
+<h4>Output Parameters</h4>
 The output options are defined using the following three parameters. SampleName defines the name of the results file, and the output file path is defined using "ResultsPath". The output options are one or more of SDF, XLS, CSV, ExtendedXLS, ExtendedFragmentsXLS. The latter two options give additional outputs (including images) not possible in CSV or SDF formats. 
 
 <div class="code">
@@ -116,7 +116,7 @@ The output options are defined using the following three parameters. SampleName 
 </div>
 <p><p>
 
-<h4>Additional parameters</h4>
+<h4>Additional Parameters</h4>
 For advanced users, the following parameters offer additional options, such as increasing the number of fragmentation steps (MaximumTreeDepth) or threads used (NumberThreads), or different post-processing options. For most use cases, these parameters should remain at the default settings given below: 
 
 <div class="code">
@@ -166,7 +166,7 @@ For local file databases (LocalSDF, LocalCSV, LocalPSV), additional numerical sc
 </div>
 <p><p>
 
-It is possible to adjust the weights. For example, several reference scores can be retrieved from ChemSpider, which can be weighted to form a total score of 1: 
+It is possible to adjust the weights. For example, several reference scores can be retrieved from ChemSpider, which can be weighted to form a combined reference score total of maximum 1 (total score maximum 2): 
 
 <div class="code">
   <table>
@@ -183,7 +183,7 @@ The parameter file tells MetFrag which information to include in the final scori
 
 
 <h4>Statistical Scoring</h4>
-MetFrag now includes scoring parameters based on a statistical learning approach (Bayesian model). The new scores can be used along with the FragmenterScore as follows:
+MetFrag also includes scoring parameters based on a statistical learning approach (Bayesian model). The new scores can be used along with the FragmenterScore as follows:
 
 <div class="code">
  <table>
@@ -195,8 +195,7 @@ You can find examples of the CASMI2016 contest for <a href="https://msbi.ipb-hal
 
 More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
 
-<h4>Spectral library scores</h4>
-<div style="font-style: italic; margin-bottom: 5px;">OfflineSpectralDatabaseFile</div>
+<h4>Spectral Library Match Scores</h4>
 MetFrag has two kinds of scores to take spectral library matches into account, using local
 files created from MassBank of North America (MoNA) download files. It is possible to use zero, one or both spectral library terms by including these options in the MetFragScoreTypes (shown here in combination with the FragmenterScore):
 
@@ -209,16 +208,23 @@ files created from MassBank of North America (MoNA) download files. It is possib
 </div>
 <p><p>
 
-The spectral library to use can be defined as a single file:<br>
-<br>OfflineSpectralDatabaseFile = /path/to/MoNA-export-LC-MS.mb<br>
-or a directory and MetFrag will read all .mb files in that directory:<br>
-<br>OfflineSpectralDatabaseFile = /path/to/<br>
+<div style="font-style: italic; margin-bottom: 5px;">OfflineSpectralDatabaseFile</div>
+The spectral library to use can be defined as a single file or a directory and MetFrag will read all .mb files in that directory:<br>
+<div class="code">
+  <table>
+	<tr><td>OfflineSpectralDatabaseFile = /path/to/MoNA-export-LC-MS.mb</td></tr>
+	<tr><td># OR</td></tr>
+	<tr><td>OfflineSpectralDatabaseFile = /path/to/</td></tr>
+	<tr><td></td></tr>
+  </table>
+</div>
+<p><p>
 
-The OfflineIndividualMoNAScore matches spectra to the candidates using the InChIKey, reporting the best similarity match if multiple spectra with the same InChIKey exist. This option allows the generation of "Level 2a" annotations (spectral similarity match) with sufficiently high match values (>0.8, or >0.9 for same instrument if Orbitrap). The OfflineMetFusionScore uses the MetFusion scoring approach and will return spectral match values even if no spectrum exists, using both spectral and structural similarity (see Gerlich et al, DOI: <a href="https://doi.org/10.1002/jms.3123">10.1002/jms.3123</a>). 
+The OfflineIndividualMoNAScore matches spectra to the candidates using the InChIKey, reporting the best similarity match if multiple spectra with the same InChIKey exist. This option allows the generation of "Level 2a" annotations (spectral similarity match, according to DOI: <a href="https://doi.org/10.1021/es5002105">10.1021/es5002105</a>) with sufficiently high match values (e.g., >0.9). The OfflineMetFusionScore uses the MetFusion scoring approach and will return spectral match values even if no spectrum exists, using both spectral and structural similarity (see Gerlich et al, DOI: <a href="https://doi.org/10.1002/jms.3123">10.1002/jms.3123</a>). 
 
 <h4>Further Parameters</h4>
 <div style="font-style: italic; margin-bottom: 5px;">PrecursorIonMode</div>
-The adduct type of the precursor is used to calculate fragment masses. Following adduct types can be set by their appropriate numerical value encoding the following types:<br>
+The adduct type of the precursor is used to calculate fragment masses. The following adduct types can be set by using the appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)<br>
 <table class="params">
 	<tr><td>1</td><td>-</td><td>[M+H]<sup>+</sup></td></tr>
