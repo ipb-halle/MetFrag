@@ -21,7 +21,7 @@ Once downloaded, the executable MetFrag jar can be run via a parameter file (nex
 </div>
 <p><p>
 <h4>Parameter file</h4>
-All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>. The parameter file contains all necessary settings to processa given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>. The corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further example files are given below. 
+All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>. The parameter file contains all necessary settings to process a given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>. The corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further example files are given below. 
 <p>
 To view the contents of the example file it can be opened with a text editor. Lines starting with # are comments and not used by MetFrag.
 <div class="code">
@@ -70,32 +70,6 @@ To view the contents of the example file it can be opened with a text editor. Li
 	<tr><td># NumberThreads = 1</td></tr>
   </table>
 </div>
-<p><p>
-A first example run can be realized by the following command:
-<div class="code">
-  # java -jar MetFrag2.4.5-CL.jar example_parameter_file.txt
-</div>
-<p><p>
-You will get the following output:
-<div class="code">
-INFO  de.ipbhalle.metfraglib.database.OnlinePubChemDatabase - Fetching candidates from PubChem<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 8 candidate(s)<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 10 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 30 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 40 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 50 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 60 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 80 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 90 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 100 %<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) were discarded before processing due to pre-filtering<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded during processing due to errors<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 1 candidate(s) discarded after processing due to post-filtering<br>
-INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate(s)<br>
-</div>
-<p><p>
-First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
-The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter
 <p><p>
 <h4>Databases</h4>
 There are different databases available that can be queried for candidate molecules (MetFragDatabaseType)<p>
@@ -168,3 +142,31 @@ The adduct type of the precursor is used to calculate fragment masses. Following
 <table class="params">
 	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
 </table>
+
+<h3>Running the Example</h3>
+<p><p>
+A first example run can be realized by the following command:
+<div class="code">
+  # java -jar MetFrag2.4.5-CL.jar example_parameter_file.txt
+</div>
+<p><p>
+You will get the following output:
+<div class="code">
+INFO  de.ipbhalle.metfraglib.database.OnlinePubChemDatabase - Fetching candidates from PubChem<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 8 candidate(s)<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 10 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 30 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 40 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 50 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 60 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 80 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 90 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedSingleCandidateMetFragProcess - 100 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) were discarded before processing due to pre-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded during processing due to errors<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 1 candidate(s) discarded after processing due to post-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 7 candidate(s)<br>
+</div>
+<p><p>
+First MetFrag uses the defined database parameters to retrieve candidate. In this case the molecular formula is used (C<sub>9</sub>H<sub>11</sub>Cl<sub>3</sub>NO<sub>3</sub>PS) resulting in 8 matching candidates. Then the processing starts and the progress is given in percent numbers. After the processing is finished MetFrag gives you small summary about the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. The latter can be caused by e.g. InChI parsing errors. <br>
+The result file(s) is/are stored in the result directory given in the parameter file (ResultsPath). The format of the result file is given by the parameter MetFragCandidateWriter
