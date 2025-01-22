@@ -153,7 +153,7 @@ However, there are several different options for more advanced scoring schemes, 
 </div>
 <p><p>
 
-For local file databases (LocalSDF, LocalCSV, LocalPSV), additional numerical scoring terms can be included using unique column headers (PSV, CSV) or tags (SDF). The recommended scoring terms for PubChemLite are as follows (with the addition of spectral library matching, see next section):
+For local file databases (LocalSDF, LocalCSV, LocalPSV), additional numerical scoring terms can be included using unique column headers (PSV, CSV) or tags (SDF). As an example, the recommended scoring terms for PubChemLite (DOI: <a href="https://doi.org/10.1186/s13321-021-00489-0">10.1186/s13321-021-00489-0</a>) are as follows (including the recommended spectral library matching option, see next section):
 
 <div class="code">
   <table>
@@ -166,7 +166,7 @@ For local file databases (LocalSDF, LocalCSV, LocalPSV), additional numerical sc
 </div>
 <p><p>
 
-It is possible to adjust the weights. For example, several reference scores can be retrieved from ChemSpider, which can be weighted to form a combined reference score total of maximum 1 (total score maximum 2): 
+It is possible to adjust the weights. For example, up to 5 reference scores can be retrieved from ChemSpider, which can be weighted to form a combined reference score total of maximum 1 (total score maximum 2) as follows: 
 
 <div class="code">
   <table>
@@ -179,7 +179,7 @@ It is possible to adjust the weights. For example, several reference scores can 
 </div>
 <p><p>
  
-The parameter file tells MetFrag which information to include in the final scoring via the database, scoring term and associated weight. If in doubt, use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings (it is also possible to adjust the weights) and pressing the "download parameters" button.
+The parameter file tells MetFrag which information to include in the final scoring via the database, scoring term and associated weight. If in doubt, use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate example parameter files by selecting all desired settings (it is also possible to adjust the weights) and pressing the "download parameters" button. For local databases, suitable additional scoring terms, if available, will appear automatically on the web interface in the "Candidate Filter & Score Settings" section (bottom right). 
 
 
 <h4>Statistical Scoring</h4>
@@ -191,13 +191,11 @@ MetFrag also includes scoring parameters based on a statistical learning approac
  </table>
 </div>
 
-You can find examples of the CASMI2016 contest for <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. Starting with MetFrag2.4.5-CL.jar the tool includes a trained model which can directly be used with the provided parameter files. The new scoring parameters improved MetFrag's annotation results.
-
-More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
+This new model is included since MetFrag2.4.5-CL.jar. Examples to try include spectra from the CASMI2016 contest for <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-087.txt">positive</a> and <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/Challenge-039.txt">negative</a> mode. More examples can be found on <a href="https://github.com/c-ruttkies/metfrag_statistical_annotation">GitHub</a>.
 
 <h4>Spectral Library Match Scores</h4>
 MetFrag has two kinds of scores to take spectral library matches into account, using local
-files created from MassBank of North America (MoNA) download files. It is possible to use zero, one or both spectral library terms by including these options in the MetFragScoreTypes (shown here in combination with the FragmenterScore):
+files created from MassBank of North America (MoNA) download files. The DOI <a href="https://doi.org/10.1021/es5002105">10.5281/zenodo.13951786</a> redirects to the latest LC-MS mb file. The conversion script used to create these mb files is available <a href="https://github.com/sneumann/weizfrag/blob/main/convert-mona.R">here</a>. It is possible to use zero, one or both spectral library terms by including these options in the MetFragScoreTypes (shown here in combination with the FragmenterScore):
 
 <div class="code">
   <table>
