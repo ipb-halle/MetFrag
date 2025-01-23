@@ -150,7 +150,7 @@ Different database (<span style="font-weight:bold">MetFragDatabaseType</span>) o
 <il>LocalPSV (<a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_local_inchi_file.txt">example</a>)</il><br>
 <il>LocalCSV (<a href="https://msbi.ipb-halle.de/~cruttkie/databases/">example</a>)</il><br>
 </ul>
-Using a database from a local file (<span style="font-weight:bold">LocalSDF, LocalCSV, LocalPSV</span>) requires setting a file path to the database file (<span style="font-weight:bold">LocalDatabasePath</span>). The KEGG, PubChem and ChemSpider databases can be queried either by database dependent compound ids <span style="font-weight:bold">(PrecursorCompoundIDs)</span>, molecular formula <span style="font-weight:bold">(NeutralPrecursorMolecularFormula)</span> or neutral monoisotopic mass and relative mass deviation <span style="font-weight:bold">(NeutralPrecursorMass, DatabaseSearchRelativeMassDeviation)</span>. 
+Using a database from a local file (LocalSDF, LocalCSV, LocalPSV) requires setting a file path to the database file (<span style="font-weight:bold">LocalDatabasePath</span>). The KEGG, PubChem and ChemSpider databases can be queried either by database dependent compound ids <span style="font-weight:bold">(PrecursorCompoundIDs)</span>, molecular formula <span style="font-weight:bold">(NeutralPrecursorMolecularFormula)</span> or neutral monoisotopic mass and relative mass deviation <span style="font-weight:bold">(NeutralPrecursorMass, DatabaseSearchRelativeMassDeviation)</span>. 
 
 This is an example query to retrieve candidates from PubChem via molecular formula:
 <div class="code">
@@ -199,7 +199,7 @@ The output options are defined using the following three parameters. <span style
 
 <h4>Additional Parameters</h4>
 For advanced users, the following parameters offer additional options, such as different pre- or post-processing options, increasing the number of fragmentation steps (<span style="font-weight:bold">MaximumTreeDepth</span>) or threads used (<span style="font-weight:bold">NumberThreads</span>). 
-The pre-processing option UnconnectedCompoundFilter will eliminate salts and mixtures, while the IsotopeFilter option will remove non-standard isotope forms (containing deuterium, <sup>13</sup>C, <sup>15</sup>N etc.) that would not be observed at the query mass/formula. The post-processing InChIKey filter collapses all candidates with the same InChIKey first block (structural skeleton) together with the results from the best-scoring candidate.
+The pre-processing option UnconnectedCompoundFilter will eliminate salts and mixtures, while the IsotopeFilter option will remove non-standard isotope forms (containing deuterium, <sup>13</sup>C, <sup>15</sup>N etc.) that would not be observed at the query mass/formula. The post-processing option InChIKeyFilter collapses all candidates with the same InChIKey first block (structural skeleton) together with the results from the best-scoring candidate. <span style="font-weight:bold">UseSmiles</span> defines whether SMILES (recommended) or InChIs of the candidates are used for fragmentation. SMILES are recommended since InChIs have some non-standard tautomerization definition that can affect the fragmentation results.
 For most use cases, these parameters should remain at the default settings given below: 
 
 <div class="code">
@@ -208,6 +208,7 @@ For most use cases, these parameters should remain at the default settings given
 	<tr><td>MetFragPreProcessingCandidateFilter = UnconnectedCompoundFilter,IsotopeFilter</td></tr>
 	<tr><td>MetFragPostProcessingCandidateFilter = InChIKeyFilter</td></tr>
 	<tr><td>NumberThreads = 1</td></tr>
+	<tr><td>useSmiles = TRUE</td></tr>
  </table>
 </div>
 <p><p>
@@ -331,7 +332,9 @@ The adduct type of the precursor is used to calculate fragment masses. The follo
 <table class="params">
 	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
 </table>
+<p><p>
 
-As mentioned above, it is possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button. Should you require more details about any parameters, please post a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a>.
+<h4>Further Help</h4>
+As mentioned above, it is possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button. Please post a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a> if any parameters require further explanation.
 If you are having issues with the settings, please check the MetFrag log file or inline output (which usually provide informative but rather verbose error messages) and previous issue postings before posting a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a>. Please include as many details as possible, such as parameter settings, log messages, version number and operating system.  
 <p><p>
