@@ -7,20 +7,21 @@ nav:
 
 ### MetFrag CL
 
-MetFrag is available as a command line tool, which matches the functionality present on <a href="https://msbi.ipb-halle.de/MetFrag/">MetFragWeb</a>. It combines the efficient fragmenter and additional scoring functions to rank the retrieved candidates. The inclusion of mass spectrtal match, retention time information from liquid chromatography and reference information is also possible.
+MetFrag is available as a command line tool, which matches the functionality present on <a href="https://msbi.ipb-halle.de/MetFrag/">MetFragWeb</a>. It combines the efficient fragmenter and additional scoring functions to rank the retrieved candidates, including mass spectral match, retention time information from liquid chromatography and reference information if desired.
 
 <a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched/releases/latest" role="button">Download MetFrag CL (latest)</a>
 <a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched" role="button">MetFrag CL on GitHub</a>
+<a class="btn btn-primary" href="https://github.com/ipb-halle/MetFragRelaunched/issues" role="button">Post an issue</a>
 
 <hr>
 
 <h3>Usage</h3>
-Once downloaded, the executable MetFrag jar can be run using the following command (where X.Y.Z should be replaced by the version number matching the downloaded jar files):
+Once downloaded, the executable MetFrag jar can be run using the following command (where X.Y.Z should be replaced by the version number matching the downloaded jar file):
 <div class="code">
   # java -jar MetFragCommandLine-X.Y.Z.jar [parameter file]
 </div>
 <p>
-All input parameters for MetFrag CL are specified in a <span style="font-weight:bold">parameter file</span>, which contains all necessary settings to process a given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>, while the corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further details about the parameter options are given in the section "Defining Parameters" below. Note that it is also possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button.
+All input parameters for MetFrag CL are specified in the <span style="font-weight:bold">parameter file</span>, which contains all necessary settings to process a given MS/MS peak list. An example parameter file for querying PubChem can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_parameter_file.txt">here</a>, while the corresponding example MS/MS peak list can be downloaded <a href="https://msbi.ipb-halle.de/~cruttkie/metfrag/example_data.txt">here</a>. Further details about the parameter options are given in the section "Defining Parameters" below. Note that it is also possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "Download Parameters" button in the "Fragmentation Settings & Processing" section.
 <p><p>
 
 <h3>Running the Example</h3>
@@ -152,8 +153,8 @@ INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) dis
 INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 110 candidate(s)<br>
 </div>
 <p><p>
-First MetFrag uses the ion settings (lines 3-5) and tolerance (line 6) to retrieve candidates from PubChemLite via the localCSV option (here, saved in the same folder as the MetFrag jar file). 110 matching candidates were retrieved (since the localCSV file is quite large, this can take a little bit of time to run). Then the processing starts, with progress reported in percent. After the processing is finished, a small summary is given detailing the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. Since PubChemLite was optimized for MetFrag and mass spectrometry processing, these are usually zero. <br>
-The result file(s) is/are stored in the result directory given in the parameter file (<span style="font-weight:bold">ResultsPath</span>). The format(s) of the result file(s) is given by the parameter <span style="font-weight:bold">MetFragCandidateWriter</span>. The results are sorted by the "Score" column (maximim score of 5 due to the 5 score parameters set, all with weight = 1) and clearly shows that Nicotine is ranked better (Score=4.57, MoNA match 0.999 - i.e. a Level 2a identification) than the remaining candidates (Score = 1.89 or less). The XLS output contains all columns available in PubChemLite (not just the selected scoring terms), allowing additional interpretation of the results by the classification categories. See the <a href="https://pubchemlite.lcsb.uni.lu/">PubChemLite website</a> for more information about PubChemLite. 
+First MetFrag uses the ion settings (IsPositiveIonMode = true; PrecursorIonMode = 1; IonizedPrecursorMass = 163.1229) and tolerance (DatabaseSearchRelativeMassDeviation = 5.0) to retrieve candidates from PubChemLite via the localCSV option (here, saved in the same folder as the MetFrag jar file). 110 matching candidates were retrieved (since the localCSV file is quite large, this can take a little bit of time to run). Then the processing starts, with progress reported in percent. After the processing is finished, a small summary is given detailing the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. Since PubChemLite was optimized for MetFrag and mass spectrometry data processing, these are usually zero. <br>
+The result file(s) is/are stored in the result directory given in the parameter file (<span style="font-weight:bold">ResultsPath</span>). The format(s) of the result file(s) is given by the parameter <span style="font-weight:bold">MetFragCandidateWriter</span>. The results are sorted by the "Score" column (maximim score of 5 due to the 5 score parameters set, all with weight = 1) and clearly shows that Nicotine is ranked better (Score=4.57, MoNA match 0.999 - i.e. a Level 2a identification) than the remaining candidates (Score = 1.89 or less). The XLS output contains all columns available in PubChemLite, not just the selected scoring terms, allowing additional interpretation of the results by the classification categories. See the <a href="https://pubchemlite.lcsb.uni.lu/">PubChemLite website</a> for more information about PubChemLite. 
 
 
 
@@ -172,7 +173,7 @@ This parameter defines the path to the peak list (MS/MS fragments), which can be
 <p><p>
 
 <h4>Database Parameters - Retrieving Candidates</h4>
-These parameters define the settings for candidate retrieval. By default, neutral species are queried (i.e., neutral exact mass or molecular formula). Settings to enable querying of charged mass (i.e. m/z values) are given below. The settings are a combination of database and retrieval parameters. If multiple candidate retrieval options are defined, <span style="font-weight:bold">PrecursorCompoundIDs</span> over-rides <span style="font-weight:bold">NeutralPrecursorMolecularFormula</span>, which over-rides <span style="font-weight:bold">NeutralPrecursorMass</span>.
+These parameters define the settings for candidate retrieval. By default, neutral species are queried (i.e., neutral exact mass or molecular formula). Settings to enable querying of charged mass (i.e. m/z values) are given below. The settings are a combination of database and retrieval parameters. If multiple candidate retrieval options are defined, <span style="font-weight:bold">PrecursorCompoundIDs</span> over-rides <span style="font-weight:bold">NeutralPrecursorMolecularFormula</span>, which over-rides <span style="font-weight:bold">NeutralPrecursorMass</span>. It is possible to perform queries with m/z values instead of neutral masses; see section "Adduct and Charged Mass Handling" below. 
 <div class="code">
  <table>
 	<tr><td># Database settings</td></tr>
@@ -255,7 +256,7 @@ The output options are defined using the following three parameters. <span style
 
 <h4>Additional Parameters</h4>
 For advanced users, the following parameters offer additional options, such as different pre- or post-processing options, increasing the number of fragmentation steps (<span style="font-weight:bold">MaximumTreeDepth</span>) or threads used (<span style="font-weight:bold">NumberThreads</span>). 
-The pre-processing option UnconnectedCompoundFilter will eliminate salts and mixtures, while the IsotopeFilter option will remove non-standard isotope forms (containing deuterium, <sup>13</sup>C, <sup>15</sup>N etc.) that would not be observed at the query mass/formula. The post-processing option InChIKeyFilter collapses all candidates with the same InChIKey first block (structural skeleton) together with the results from the best-scoring candidate. <span style="font-weight:bold">UseSmiles</span> defines whether SMILES (recommended) or InChIs of the candidates are used for fragmentation. SMILES are recommended since InChIs have some non-standard tautomerization definition that can affect the fragmentation results.
+The pre-processing option UnconnectedCompoundFilter will eliminate salts and mixtures, while the IsotopeFilter option will remove non-standard isotope forms (containing deuterium, <sup>13</sup>C, <sup>15</sup>N etc.) that would not be observed at the query mass/formula. The post-processing option InChIKeyFilter collapses all candidates with the same InChIKey first block (structural skeleton) together with the results from the best-scoring candidate. <span style="font-weight:bold">UseSmiles</span> defines whether SMILES (recommended) or InChIs of the candidates are used for fragmentation. SMILES are recommended since InChIs have some non-standard tautomer definitions that can adversely affect the fragmentation results.
 For most use cases, these parameters should remain at the default settings given below: 
 
 <div class="code">
@@ -320,11 +321,11 @@ It is possible to adjust the weights. For example, up to 5 reference scores can 
 </div>
 <p><p>
  
-The parameter file tells MetFrag which information to include in the final scoring via the database, scoring term and associated weight. If in doubt, use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate example parameter files by selecting all desired settings (it is also possible to adjust the weights) and pressing the "download parameters" button. For local databases, suitable additional scoring terms, if available, will appear automatically on the web interface in the "Candidate Filter & Score Settings" section (bottom right). 
+The parameter file tells MetFrag which information to include in the final scoring via the database, scoring term and associated weight. If in doubt, use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate example parameter files by selecting all desired settings (it is also possible to adjust the weights) and pressing the "Download Parameters" button. For local databases, suitable additional scoring terms, if available, will appear automatically on the web interface in the "Candidate Filter & Score Settings" section (bottom right). 
 
 
 <h4>Statistical Scoring</h4>
-MetFrag also includes scoring parameters based on a statistical learning approach (Bayesian model). The new scores can be used along with the FragmenterScore as follows:
+MetFrag also includes scoring parameters based on a statistical learning approach (Bayesian model). These scores can be used along with the FragmenterScore as follows:
 
 <div class="code">
  <table>
@@ -349,7 +350,6 @@ It is possible to use zero, one or both spectral library terms by including thes
 </div>
 <p><p>
 
-<div style="font-style: bold; margin-bottom: 5px;">OfflineSpectralDatabaseFile</div>
 The spectral library to use can be defined as a single file or a directory and MetFrag will read all .mb files in that directory:<br>
 <div class="code">
   <table>
@@ -390,7 +390,7 @@ The adduct type of the precursor (<span style="font-weight:bold">PrecursorIonMod
 </table>
 <p><p>
 
-The <span style="font-weight:bold">IsPositiveIonMode</span> can be coupled with <span style="font-weight:bold">IonizedPrecursorMass</span> (instead of <span style="font-weight:bold">NeutralPrecursorMass</span>) to use the charged mass (m/z) from the instrument to perform the database search (candidate retrieval). See the PubChemLite section above for a full example. 
+The <span style="font-weight:bold">PrecursorIonMode</span> and <span style="font-weight:bold">IsPositiveIonMode</span> parameters can be coupled with <span style="font-weight:bold">IonizedPrecursorMass</span> (instead of <span style="font-weight:bold">NeutralPrecursorMass</span>) to use the charged mass (m/z) from the instrument to perform the database search (candidate retrieval), as follows. See the PubChemLite section above for a full example. 
 
 <div class="code">
   <table>
@@ -405,6 +405,6 @@ The <span style="font-weight:bold">IsPositiveIonMode</span> can be coupled with 
 
 
 <h4>Further Help</h4>
-As mentioned above, it is possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button. Please post a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a> if any parameters require further explanation.
+As mentioned above, it is possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "Download Parameters" button. Please post a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a> if any parameters require further explanation.
 If you are having issues with the settings, please check the MetFrag log file or inline output (which usually provide informative but rather verbose error messages) and previous issue postings before posting a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a>. Please include as many details as possible, such as parameter settings, log messages, version number and operating system. Thank you! 
 <p><p>
