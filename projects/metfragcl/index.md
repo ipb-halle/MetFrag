@@ -102,7 +102,7 @@ The result file(s) is/are stored in the result directory given in the parameter 
 
 
 <h3>Running Another Example - PubChemLite with Charged Mass</h3>
-The following parameters (download file <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/MetFragCL_EQ300804_PCL_MpHp.txt?ref_type=heads&inline=false">here</a>) can be used to run MetFrag with PubChemLite coupled to MoNA (including all recommended scoring terms) using the IonizedPrecursorMass setting for a nicotine spectrum extracted from MassBank (download formatted peak list <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/EQ300804_Nicotine_peaks.txt?ref_type=heads&inline=false">here</a>). The local files (<a href="https://zenodo.org/records/14560968/files/PubChemLite_exposomics_20241227.csv?download=1">PubChemLite</a> and <a href="https://zenodo.org/records/13951787/files/MoNA-export-LC-MS-MS_Spectra-20241014-0.005.mb?download=1">MoNA MetFrag library</a>) were saved locally in the same directory as MetFrag.  
+The following parameters (download file <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/MetFragCL_EQ300804_PCL_MpHp.txt?ref_type=heads&inline=false">here</a>) can be used to run MetFrag with PubChemLite coupled to MoNA (including all recommended scoring terms) using the <span style="font-weight:bold">IonizedPrecursorMass</span> setting for a nicotine spectrum extracted from MassBank (download formatted peak list <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/EQ300804_Nicotine_peaks.txt?ref_type=heads&inline=false">here</a>). The local files (<a href="https://zenodo.org/records/14560968/files/PubChemLite_exposomics_20241227.csv?download=1">PubChemLite</a> and <a href="https://zenodo.org/records/13951787/files/MoNA-export-LC-MS-MS_Spectra-20241014-0.005.mb?download=1">MoNA MetFrag library</a>) were saved locally in the same directory as MetFrag.  
 <p><p>
 <div class="code">
   <table>
@@ -364,9 +364,9 @@ The spectral library to use can be defined as a single file or a directory and M
 The OfflineIndividualMoNAScore matches spectra to the candidates using the InChIKey, reporting the best similarity match if multiple spectra with the same InChIKey exist. This option allows the generation of "Level 2a" annotations (spectral similarity match, according to DOI: <a href="https://doi.org/10.1021/es5002105">10.1021/es5002105</a>) with sufficiently high match values (e.g., >0.9). The OfflineMetFusionScore uses the MetFusion scoring approach and will return spectral match values even if no spectrum exists, using both spectral and structural similarity (see Gerlich et al, DOI: <a href="https://doi.org/10.1002/jms.3123">10.1002/jms.3123</a>). 
 
 <h4>Adduct and Charged Mass Handling</h4>
-<div style="font-style: bold; margin-bottom: 5px;">PrecursorIonMode</div>
-The adduct type of the precursor is used to calculate fragment masses. The following adduct types can be set by using the appropriate numerical value encoding the following types:<br>
-<br>positive (IsPositiveIonMode = True)<br>
+
+The adduct type of the precursor (<span style="font-weight:bold">PrecursorIonMode</span>) is used to calculate fragment masses. The following adduct types can be set by using the appropriate numerical value encoding the following types:<br>
+<br>positive (<span style="font-weight:bold">IsPositiveIonMode</span> = True)<br>
 <table class="params">
 	<tr><td>1</td><td>-</td><td>[M+H]<sup>+</sup></td></tr>
 	<tr><td>18</td><td>-</td><td>[M+NH4]<sup>+</sup></td></tr>
@@ -377,20 +377,20 @@ The adduct type of the precursor is used to calculate fragment masses. The follo
 	<tr><td>64</td><td>-</td><td>[M+ACN+Na]<sup>+</sup></td></tr>
 	<tr><td>83</td><td>-</td><td>[M+2ACN+H]<sup>+</sup></td></tr>
 </table>
-<br>negative (IsPositiveIonMode = False)<br>
+<br>negative (<span style="font-weight:bold">IsPositiveIonMode</span> = False)<br>
 <table class="params">
 	<tr><td>-1</td><td>-</td><td>[M-H]<sup>-</sup></td></tr>
 	<tr><td>35</td><td>-</td><td>[M+Cl]<sup>-</sup></td></tr>
 	<tr><td>45</td><td>-</td><td>[M+HCOO]<sup>-</sup></td></tr>
 	<tr><td>59</td><td>-</td><td>[M+CH3COO]<sup>-</sup></td></tr>
 </table>
-<br>no adduct (IsPositiveIonMode = True/False)<br>
+<br>no adduct (<span style="font-weight:bold">IsPositiveIonMode</span> = True/False)<br>
 <table class="params">
 	<tr><td>0</td><td>-</td><td>[M]<sup>+/-</sup></td></tr>
 </table>
 <p><p>
 
-The <div style="font-style: bold; margin-bottom: 5px;">PrecursorIonMode</div> can be coupled with <div style="font-style: bold; margin-bottom: 5px;">IonizedPrecursorMass</div> (instead of <div style="font-style: bold; margin-bottom: 5px;">NeutralPrecursorMass</div>) to use the charged mass (m/z) from the instrument to perform the database search (candidate retrieval). See the PubChemLite section above for a full example. 
+The <span style="font-weight:bold">IsPositiveIonMode</span> can be coupled with <span style="font-weight:bold">IonizedPrecursorMass</span> (instead of <span style="font-weight:bold">NeutralPrecursorMass</span>) to use the charged mass (m/z) from the instrument to perform the database search (candidate retrieval). See the PubChemLite section above for a full example. 
 
 <div class="code">
   <table>
