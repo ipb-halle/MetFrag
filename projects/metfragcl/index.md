@@ -101,6 +101,62 @@ First MetFrag uses the defined database parameters to retrieve candidates. In th
 The result file(s) is/are stored in the result directory given in the parameter file (<span style="font-weight:bold">ResultsPath</span>). The format(s) of the result file(s) is given by the parameter <span style="font-weight:bold">MetFragCandidateWriter</span>.
 
 
+<h3>Running Another Example - PubChemLite with Charged Mass</h3>
+The following parameters (download file <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/MetFragCL_EQ300804_PCL_MpHp.txt?ref_type=heads&inline=false">here</a>) can be used to run MetFrag with PubChemLite coupled to MoNA (including all recommended scoring terms) using the IonizedPrecursorMass setting for a nicotine spectrum extracted from MassBank (download formatted peak list <a href="https://gitlab.com/uniluxembourg/lcsb/eci/pubchem/-/raw/master/pubchemlite/MetFrag/EQ300804_Nicotine_peaks.txt?ref_type=heads&inline=false">here</a>). The local files (<a href="https://zenodo.org/records/14560968/files/PubChemLite_exposomics_20241227.csv?download=1">PubChemLite</a> and <a href="https://zenodo.org/records/13951787/files/MoNA-export-LC-MS-MS_Spectra-20241014-0.005.mb?download=1">MoNA MetFrag library</a>) were saved locally in the same directory as MetFrag.  
+<p><p>
+<div class="code">
+  <table>
+	<tr><td>PeakListPath = EQ300804_Nicotine_peaks.txt</td></tr>
+	<tr><td>ResultsPath = .</td></tr>
+	<tr><td>IsPositiveIonMode = true</td></tr>
+	<tr><td>PrecursorIonMode = 1</td></tr>
+	<tr><td>IonizedPrecursorMass = 163.1229</td></tr>
+	<tr><td>DatabaseSearchRelativeMassDeviation = 5.0</td></tr>
+	<tr><td>FragmentPeakMatchRelativeMassDeviation = 5.0</td></tr>
+	<tr><td>FragmentPeakMatchAbsoluteMassDeviation = 0.001</td></tr>
+	<tr><td>SampleName = EQ300804_MetFragCL_PCL</td></tr>
+	<tr><td>MetFragCandidateWriter = XLS</td></tr>
+	<tr><td>OfflineSpectralDatabaseFile = MoNA-export-LC-MS-MS_Spectra-20241014-0.005.mb</td></tr>
+	<tr><td>MetFragDatabaseType = LocalCSV</td></tr>
+	<tr><td>LocalDatabasePath = PubChemLite_exposomics_20241227.csv</td></tr>
+	<tr><td>MetFragScoreTypes = FragmenterScore,OfflineIndividualMoNAScore,AnnoTypeCount,Patent_Count,PubMed_Count</td></tr>
+	<tr><td>MetFragScoreWeights = 1.0,1.0,1.0,1.0,1.0</td></tr>
+	<tr><td>MetFragPreProcessingCandidateFilter = UnconnectedCompoundFilter,IsotopeFilter</td></tr>
+	<tr><td>MaximumTreeDepth = 2</td></tr>
+	<tr><td>NumberThreads = 2</td></tr>
+	<tr><td>UseSmiles = true</td></tr>
+  </table>
+</div>
+<p><p>
+This example can be run using the following command (for MetFragCL v2.4.5):
+<div class="code">
+  # java -jar MetFrag2.4.5-CL.jar MetFragCL_EQ300804_PCL_MpHp.txt
+</div>
+<p><p>
+This will generate the following output:
+<div class="code">
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Got 110 candidate(s)<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 10 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 20 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 30 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 40 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 50 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 60 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 70 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 80 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 90 %<br>
+INFO  de.ipbhalle.metfraglib.process.ProcessingStatus - 100 %<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) were discarded before processing due to pre-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded during processing due to errors<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - 0 candidate(s) discarded after processing due to post-filtering<br>
+INFO  de.ipbhalle.metfraglib.process.CombinedMetFragProcess - Stored 110 candidate(s)<br>
+</div>
+<p><p>
+First MetFrag uses the ion settings (lines 3-5) and tolerance (line 6) to retrieve candidates from PubChemLite via the localCSV option (here, saved in the same folder as the MetFrag jar file). 110 matching candidates were retrieved (since the localCSV file is quite large, this can take a little bit of time to run). Then the processing starts, with progress reported in percent. After the processing is finished, a small summary is given detailing the number of discarded candidates due to the defined pre- and post-processing filters and errors occured during the processing. Since PubChemLite was optimized for MetFrag and mass spectrometry processing, these are usually zero. <br>
+The result file(s) is/are stored in the result directory given in the parameter file (<span style="font-weight:bold">ResultsPath</span>). The format(s) of the result file(s) is given by the parameter <span style="font-weight:bold">MetFragCandidateWriter</span>. The results are sorted by the "Score" column (maximim score of 5 due to the 5 score parameters set, all with weight = 1) and clearly shows that Nicotine is ranked better (Score=4.57, MoNA match 0.999 - i.e. a Level 2a identification) than the remaining candidates (Score = 1.89 or less). The XLS output contains all columns available in PubChemLite (not just the selected scoring terms), allowing additional interpretation of the results by the classification categories. See the <a href="https://pubchemlite.lcsb.uni.lu/">PubChemLite website</a> for more information about PubChemLite. 
+
+
+
 <p><p>
 <h3>Defining Parameters</h3>
 
@@ -307,8 +363,8 @@ The spectral library to use can be defined as a single file or a directory and M
 
 The OfflineIndividualMoNAScore matches spectra to the candidates using the InChIKey, reporting the best similarity match if multiple spectra with the same InChIKey exist. This option allows the generation of "Level 2a" annotations (spectral similarity match, according to DOI: <a href="https://doi.org/10.1021/es5002105">10.1021/es5002105</a>) with sufficiently high match values (e.g., >0.9). The OfflineMetFusionScore uses the MetFusion scoring approach and will return spectral match values even if no spectrum exists, using both spectral and structural similarity (see Gerlich et al, DOI: <a href="https://doi.org/10.1002/jms.3123">10.1002/jms.3123</a>). 
 
-<h4>Further Parameters</h4>
-<div style="font-style: italic; margin-bottom: 5px;">PrecursorIonMode</div>
+<h4>Adduct and Charged Mass Handling</h4>
+<div style="font-style: bold; margin-bottom: 5px;">PrecursorIonMode</div>
 The adduct type of the precursor is used to calculate fragment masses. The following adduct types can be set by using the appropriate numerical value encoding the following types:<br>
 <br>positive (IsPositiveIonMode = True)<br>
 <table class="params">
@@ -334,7 +390,21 @@ The adduct type of the precursor is used to calculate fragment masses. The follo
 </table>
 <p><p>
 
+The <div style="font-style: bold; margin-bottom: 5px;">PrecursorIonMode</div> can be coupled with <div style="font-style: bold; margin-bottom: 5px;">IonizedPrecursorMass</div> (instead of <div style="font-style: bold; margin-bottom: 5px;">NeutralPrecursorMass</div>) to use the charged mass (m/z) from the instrument to perform the database search (candidate retrieval). See the PubChemLite section above for a full example. 
+
+<div class="code">
+  <table>
+	<tr><td>IsPositiveIonMode = true</td></tr>
+	<tr><td>PrecursorIonMode = 1</td></tr>
+	<tr><td>IonizedPrecursorMass = 163.1229</td></tr>
+	<tr><td>DatabaseSearchRelativeMassDeviation = 5.0</td></tr>
+	<tr><td></td></tr>
+  </table>
+</div>
+<p><p>
+
+
 <h4>Further Help</h4>
 As mentioned above, it is possible to use the <a href="https://msbi.ipb-halle.de/MetFrag/">MetFrag Web</a> interface to generate parameter files by selecting all desired settings and pressing the "download parameters" button. Please post a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a> if any parameters require further explanation.
-If you are having issues with the settings, please check the MetFrag log file or inline output (which usually provide informative but rather verbose error messages) and previous issue postings before posting a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a>. Please include as many details as possible, such as parameter settings, log messages, version number and operating system.  
+If you are having issues with the settings, please check the MetFrag log file or inline output (which usually provide informative but rather verbose error messages) and previous issue postings before posting a <a href="https://github.com/ipb-halle/MetFragRelaunched/issues">GitHub issue</a>. Please include as many details as possible, such as parameter settings, log messages, version number and operating system. Thank you! 
 <p><p>
